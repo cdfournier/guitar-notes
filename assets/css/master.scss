@@ -1,0 +1,246 @@
+// COLORS
+$primary: #2d3d57;
+$gray-light: #fbf9fa;
+$gray-base: #d8d8d8;
+
+
+// MIXINS
+@mixin transition($property: all, $duration: 0.325s, $easing: ease-in-out, $delay: 0s) {
+  -webkit-transition: $property $duration $easing $delay;
+  -moz-transition: $property $duration $easing $delay;
+  -ms-transition: $property $duration $easing $delay;
+  -o-transition: $property $duration $easing $delay;
+  transition: $property $duration $easing $delay;
+};
+
+
+// BASE
+html {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  color: black;
+  background: $primary;
+  scroll-behavior: smooth;
+}
+
+/*
+@media screen and (prefers-reduced-motion: reduce) {
+	html {scroll-behavior: auto;}
+	* {
+  	animation: none !important;
+  	transition: none !important;
+	}
+}
+*/
+
+body, .body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+
+// TYPOGRAPHY
+/* 
+  NOTES:  
+  All typography is set to a 1.250 Major-Third type-scale
+*/
+h1, h2, h3, h4, h5, p {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5 {line-height: 1.125;}
+
+h1 {font-size: 3.502rem;}
+h2 {font-size: 2.441rem;}
+h3 {font-size: 1.953rem;}
+h4 {font-size: 1.563rem;}
+h5 {font-size: 1.25rem;}
+
+p {
+  margin: 0;
+  padding: 1rem 0 0;
+  font-size: 1rem;
+}
+
+strong, em {display: inline;}
+
+small {font-size: 0.8rem;}
+
+
+// HOME PAGE
+main {
+  article {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0.5rem;
+    section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0 0.5rem 1rem;
+      padding: 1rem 1rem 0;
+      border: 1px solid $gray-base;
+      border-radius: 0.25rem;
+      background: $gray-light;
+      h2 {margin-top: 0.5rem;}
+      ul {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% + 2rem);
+        margin: 0 0 0 -1rem;
+        padding: 0;
+        list-style: none;
+        li {position: relative;}
+        li:after {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: calc(100% - 2rem);
+          height: 1px;
+          margin: 0 1rem;
+          padding: 0;
+          background: $gray-base;
+          content: "";
+        }
+        li:last-child:after {display: none;}
+        li a {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin: 0;
+          padding: 1rem;
+          color: black;
+          text-decoration: none;
+          @include transition (all, 0.325s, ease);
+          span.song {
+            display: block;
+            overflow: hidden;
+            font-size: 1rem;
+            font-weight: 600;
+            text-overflow: ellipsis;
+          }
+          span.album {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+          }
+        }
+        li a:hover, li a:focus {
+          border-radius: 0.25rem;
+          background: white;
+        }
+      }
+    }
+    section:last-of-type {margin: 0 0.5rem;}
+  }
+}
+
+@media (min-width: 40rem) {
+  main {
+    article {
+      section {
+        width: calc(50% - 1rem);
+      }
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  main {
+    article {
+      section {
+        width: calc(33% - 1rem);
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  main {
+    article {
+      section {
+        width: calc(25% - 1rem);
+      }
+    }
+  }
+}
+
+
+/* CHORD PAGES */
+main {
+  article.chords {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid $gray-base;
+    border-radius: 0.25rem;
+    background: white;
+    h2, p {column-span: all;}
+    section {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 1.5rem 0;
+      border: none;
+      background: none;
+      break-inside: avoid;
+      p {
+        font-family: monospace;
+        span {font-weight: 700;}
+      }
+    }
+    section:last-of-type {padding-bottom: 0;}
+    section.chords {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 40rem) {
+  main {
+    article.chords {
+      columns: 2 auto;
+      column-gap: 2rem;
+      section {
+        p {column-span: none;}
+      }
+    }
+  }
+}
+
+/*
+@media (min-width: 64rem) {
+  main {
+    article.chords {
+      columns: 3 auto;
+    }
+  }
+}
+*/

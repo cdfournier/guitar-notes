@@ -1,0 +1,201 @@
+html {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  color: black;
+  background: #2d3d57;
+  scroll-behavior: smooth; }
+
+/*
+@media screen and (prefers-reduced-motion: reduce) {
+	html {scroll-behavior: auto;}
+	* {
+  	animation: none !important;
+  	transition: none !important;
+	}
+}
+*/
+body, .body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0; }
+
+/* 
+  NOTES:  
+  All typography is set to a 1.250 Major-Third type-scale
+*/
+h1, h2, h3, h4, h5, p {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: inherit; }
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.125; }
+
+h1 {
+  font-size: 3.502rem; }
+
+h2 {
+  font-size: 2.441rem; }
+
+h3 {
+  font-size: 1.953rem; }
+
+h4 {
+  font-size: 1.563rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
+p {
+  margin: 0;
+  padding: 1rem 0 0;
+  font-size: 1rem; }
+
+strong, em {
+  display: inline; }
+
+small {
+  font-size: 0.8rem; }
+
+main article {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0.5rem; }
+  main article section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0.5rem 1rem;
+    padding: 1rem 1rem 0;
+    border: 1px solid #d8d8d8;
+    border-radius: 0.25rem;
+    background: #fbf9fa; }
+    main article section h2 {
+      margin-top: 0.5rem; }
+    main article section ul {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% + 2rem);
+      margin: 0 0 0 -1rem;
+      padding: 0;
+      list-style: none; }
+      main article section ul li {
+        position: relative; }
+      main article section ul li:after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 2rem);
+        height: 1px;
+        margin: 0 1rem;
+        padding: 0;
+        background: #d8d8d8;
+        content: ""; }
+      main article section ul li:last-child:after {
+        display: none; }
+      main article section ul li a {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+        color: black;
+        text-decoration: none;
+        -webkit-transition: all 0.325s ease 0s;
+        -moz-transition: all 0.325s ease 0s;
+        -ms-transition: all 0.325s ease 0s;
+        -o-transition: all 0.325s ease 0s;
+        transition: all 0.325s ease 0s; }
+        main article section ul li a span.song {
+          display: block;
+          overflow: hidden;
+          font-size: 1rem;
+          font-weight: 600;
+          text-overflow: ellipsis; }
+        main article section ul li a span.album {
+          display: block;
+          margin-top: 0.5rem;
+          font-size: 0.75rem;
+          font-weight: 400; }
+      main article section ul li a:hover, main article section ul li a:focus {
+        border-radius: 0.25rem;
+        background: white; }
+  main article section:last-of-type {
+    margin: 0 0.5rem; }
+
+@media (min-width: 40rem) {
+  main article section {
+    width: calc(50% - 1rem); } }
+
+@media (min-width: 64rem) {
+  main article section {
+    width: calc(33% - 1rem); } }
+
+@media (min-width: 90rem) {
+  main article section {
+    width: calc(25% - 1rem); } }
+
+/* CHORD PAGES */
+main article.chords {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 0.25rem;
+  background: white; }
+  main article.chords h2, main article.chords p {
+    column-span: all; }
+  main article.chords section {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem 0;
+    border: none;
+    background: none;
+    break-inside: avoid; }
+    main article.chords section p {
+      font-family: monospace; }
+      main article.chords section p span {
+        font-weight: 700; }
+  main article.chords section:last-of-type {
+    padding-bottom: 0; }
+  main article.chords section.chords {
+    padding: 0; }
+
+@media (min-width: 40rem) {
+  main article.chords {
+    columns: 2 auto;
+    column-gap: 2rem; }
+    main article.chords section p {
+      column-span: none; } }
+
+/*
+@media (min-width: 64rem) {
+  main {
+    article.chords {
+      columns: 3 auto;
+    }
+  }
+}
+*/
