@@ -1,5 +1,7 @@
 // COLORS
-$primary: #2d3d57;
+// $primary: #2d3d57;
+$primary: #0b2a49;
+$action: #94d40a;
 $gray-light: #fbf9fa;
 $gray-base: #d8d8d8;
 
@@ -11,6 +13,14 @@ $gray-base: #d8d8d8;
   -ms-transition: $property $duration $easing $delay;
   -o-transition: $property $duration $easing $delay;
   transition: $property $duration $easing $delay;
+};
+
+@mixin transform($transform: all) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
 };
 
 
@@ -40,7 +50,17 @@ body, .body {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  background: $primary;
 }
+
+/*
+body.open {
+  position: fixed;
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+*/
 
 * {
   -webkit-box-sizing: border-box;
@@ -70,11 +90,12 @@ h1, h2, h3, h4, h5, p {
 
 h1, h2, h3, h4, h5 {line-height: 1.125;}
 
-h1 {font-size: 3.502rem;}
-h2 {font-size: 2.441rem;}
-h3 {font-size: 1.953rem;}
-h4 {font-size: 1.563rem;}
-h5 {font-size: 1.25rem;}
+h1 {font-size: 1.953rem;}
+h1 {font-size: 2.441rem;}
+h2 {font-size: 1.25rem;}
+h3 {font-size: 1rem;}
+h4 {font-size: 0.8rem;}
+h5 {font-size: 0.8rem;}
 
 p {
   margin: 0;
@@ -86,161 +107,339 @@ strong, em {display: inline;}
 
 small {font-size: 0.8rem;}
 
+.visuallyhidden {display: none;}
 
-// HOME PAGE
-main {
-  article {
+
+// TEXT LINK STYLES
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  @include transition(all, 0.25s, ease);
+}
+
+
+// NAVIGATION
+nav {
+  width: 100%;
+  max-height: 4rem;
+  padding: 1rem;
+  background: $primary;
+  button.menu-toggle {
     display: flex;
-    align-items: baseline;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    margin: 0;
-    padding: 1rem 0.5rem;
-    section {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin: 0 0.5rem 1rem;
-      padding: 1rem 1rem 0;
-      border: 1px solid $gray-base;
-      border-radius: 0.25rem;
-      background: $gray-light;
-      h2 {margin-top: 0.5rem;}
-      ul {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% + 2rem);
-        margin: 0 0 0 -1rem;
-        padding: 0;
-        list-style: none;
-        li {position: relative;}
-        li:after {
-          display: block;
-          position: absolute;
-          bottom: 0;
-          width: calc(100% - 2rem);
-          height: 1px;
-          margin: 0 1rem;
-          padding: 0;
-          background: $gray-base;
-          content: "";
-        }
-        li:last-child:after {display: none;}
-        li a {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          margin: 0;
-          padding: 1rem;
-          color: black;
-          text-decoration: none;
-          @include transition (all, 0.325s, ease);
-          span.song {
-            display: block;
-            overflow: hidden;
-            font-size: 1rem;
-            font-weight: 600;
-            text-overflow: ellipsis;
-          }
-          span.album {
-            display: block;
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 400;
-          }
-        }
-        li a:hover, li a:focus {
-          border-radius: 0.25rem;
-          background: white;
-        }
-      }
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: white;
     }
-    section:last-of-type {margin: 0 0.5rem;}
-  }
-}
-
-@media (min-width: 40rem) {
-  main {
-    article {
-      section {
-        width: calc(50% - 1rem);
-      }
+    svg.menu-toggle-open {@include transition(width, 0.25s, ease);}
+    svg.menu-toggle-close {
+      width: 0;
+      @include transition(width, 0.25s, ease);
     }
   }
-}
-
-@media (min-width: 64rem) {
-  main {
-    article {
-      section {
-        width: calc(33% - 1rem);
-      }
+  ul {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    max-height: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    list-style-type: none;
+    @include transform(translateX(-100rem));
+    @include transition(all, 0.25s, ease);
+    li {
+      padding: 1rem 0;
     }
-  }
-}
-
-@media (min-width: 90rem) {
-  main {
-    article {
-      section {
-        width: calc(25% - 1rem);
-      }
-    }
+    li a {text-decoration: none;}
+    li:last-child {padding: 1rem 0;}
   }
 }
 
 
-/* CHORD PAGES */
-main {
-  article.chords {
-    display: block;
-    width: calc(100% - 2rem);
-    margin: 1rem auto;
-    padding: 1rem;
-    border: 1px solid $gray-base;
-    border-radius: 0.25rem;
-    background: white;
-    h2, p {column-span: all;}
-    section {
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 1.5rem 0;
-      border: none;
-      background: none;
-      break-inside: avoid;
-      p {
-        font-family: monospace;
-        span {font-weight: 700;}
-      }
+// HEADER
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.headroom {
+  @include transition(all, 0.25s, ease);
+  will-change: transform
+}
+
+.headroom--pinned {@include transform(translateY(0));}
+
+.headroom--unpinned {@include transform(translateY(-100%));}
+
+
+// OPEN HEADER
+header.open {
+  nav {
+    height: 100vh;
+    max-height: 100vh;
+    button.menu-toggle {
+      svg.menu-toggle-open {width: 0;}
+      svg.menu-toggle-close {width: 2rem;}
     }
-    section:last-of-type {padding-bottom: 0;}
-    section.chords {
+    ul {
+      height: auto;
+      max-height: 100%;
+      margin: 1rem 0 0;
       padding: 0;
+      @include transform(translateX(0));
+    }
+  }
+  .logo {@include transform(translateX(-10rem));}
+}
+
+
+// FOOTER
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1rem;
+  text-align: left;
+  color: white;
+  p:last-of-type {font-size: 0.8rem;}
+}
+
+
+// WELCOME
+main {
+  section.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 8rem auto 4rem;
+    .logo {
+      padding: 1rem;
+      width: 50vh;
+      svg {fill: white;}
     }
   }
 }
 
-@media (min-width: 40rem) {
+@media (orientation: portrait) {
+  main section.welcome .logo {
+    width: 70%;
+  }
+}
+
+@media (min-width: 48rem) and (orientation: portrait) {
   main {
-    article.chords {
-      columns: 2 auto;
-      column-gap: 2rem;
-      section {
-        p {column-span: none;}
-      }
+    section.welcome {
+      .logo {max-width: 50%;}
+    }
+  }
+}
+
+@media (min-width: 48rem) and (orientation: landscape) {
+  main {
+    section.welcome {
+      .logo {max-width: 35%;}
+    }
+  }
+}
+
+
+/* SECTIONS */
+main section.songs {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 0.5rem;
+  h1 {
+    width: calc(100% - 2rem);
+    margin: 4rem auto 0;
+    color: white;
+    span {
+      display: inline-block;
+      margin: 0 0 0 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
     }
   }
 }
 
 /*
-@media (min-width: 64rem) {
-  main {
-    article.chords {
-      columns: 3 auto;
-    }
+@media (min-width: 40rem) {
+  main section.songs {
+    width: calc(100% - 2rem);
   }
 }
 */
+
+
+// ACCORDIONS
+.artist, .album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: calc(100% - 1rem);
+  overflow: hidden;
+  margin: 1rem 0.5rem 0;
+  padding: 0;
+  border: 1px solid $gray-light;
+  border-radius: 0.25rem;
+  background: white;
+  cursor: pointer;
+  input {display: none;}
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
+    cursor: pointer;
+    span.image {
+      display: grid;
+      width: 4rem;
+      height: 4rem;
+      margin: 0 1rem 0 0;
+      img {border-radius: 100%;}
+    }
+    h2 {
+      width: calc(100% - 6.5rem);
+    }
+    span.carat {
+      position: absolute;
+      right: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      @include transition(all, 0.25s, ease);
+    }
+  }
+  input:focus + label, input:not(:placeholder-shown) + label {
+    font-size: 1rem;
+  }
+  input:not(:placeholder-shown) + label, input:focus + label {
+    @include transform(translate(0,0));
+  }
+  .songs {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    @include transition(max-height, 0.25s, ease-in-out);
+    ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: black;
+      li a {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 100%;
+        padding: 1rem;
+        background: white;
+        white-space: nowrap;
+        span.song {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: black;
+        }
+        span.album {
+          display: none;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &:after {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: $gray-base;
+          content: "";
+        }
+        &:hover {background: $gray-light;}
+      }
+      li:last-of-type a {
+        &:after {display: none;}
+      }
+    }
+  }
+}
+
+
+.artist input:checked ~ .songs,
+.album input:checked ~ .songs {
+  max-height: 200rem;
+}
+
+.artist input:checked ~ label span.carat,
+.album input:checked ~ label span.carat {
+  @include transform(rotate(-0.5turn));
+}
+
+@media (min-width: 40rem) {
+  .artist, .album {width: calc(50% - 1rem);}
+}
+
+@media (min-width: 64rem) {
+  .artist, .album {width: calc(33.3% - 1rem);}
+}
+
+@media (min-width: 88rem) {
+  .artist, .album {width: calc(25% - 1rem);}
+}
+
+@media (min-width: 112rem) {
+  .artist, .album {width: calc(20% - 1rem);}
+}
+
+
+// CHORDS
+article.chords {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 1rem 1rem 0;
+  padding: 1rem;
+  border: 1px solid $gray-light;
+  border-radius: 0.25rem;
+  background: white;
+  font-family: monospace;
+  h2, p {column-span: all;}
+  p span {font-weight: bold;}
+  section {
+    margin: 2rem 0 0;
+    h2, p {column-span: none;}
+  }
+  section.chords {margin: 2rem 0 0;}
+  section:first-of-type {margin: 0;}
+}
+
+@media (min-width: 40rem) {
+  article.chords {
+    columns: 2;
+    column-gap: 4rem;
+  }
+}
