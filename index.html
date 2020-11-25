@@ -75,9 +75,9 @@ request.send();
 */
 
     $(document).ready(function(){
-        $.getJSON("assets/scripts/others.json", function(data){
-            console.log(data.id);
-            console.log(data.name);
+        $.getJSON("assets/scripts/others.json", function(artists){
+            console.log(artists.id);
+            console.log(artists.name);
         }).fail(function(){
             console.log("An error has occurred.");
         });
