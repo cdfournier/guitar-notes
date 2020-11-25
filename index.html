@@ -76,8 +76,8 @@ request.send();
 
     $(document).ready(function(){
         $.getJSON("assets/scripts/others.json", function(data){
-            console.log(data.name); // Prints: Harry
-            console.log(data.song); // Prints: 14
+            console.log(data.id);
+            console.log(data.name);
         }).fail(function(){
             console.log("An error has occurred.");
         });
