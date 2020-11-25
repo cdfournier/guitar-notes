@@ -434,18 +434,26 @@ article.chords {
   border-radius: 0.25rem;
   background: white;
   font-family: monospace;
-  h2, p {column-span: all;}
+  h2 + p {padding: 0;}
   p span {font-weight: bold;}
+  section {
+    margin: 2rem 0 0;
+    span.chords {font-weight: 700;}
+    p {padding: 0 0 1rem;}
+  }
+/*
   section {
     margin: 2rem 0 0;
     h2, p {column-span: none;}
   }
   section.chords {margin: 2rem 0 0;}
   section:first-of-type {margin: 0;}
+*/
 }
 
 @media (min-width: 40rem) {
   article.chords {
+    h2, p {column-span: all;}
     columns: 2;
     column-gap: 4rem;
   }
