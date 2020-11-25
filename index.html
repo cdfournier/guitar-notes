@@ -66,17 +66,23 @@
         }
       };
       
+/*
 let requestURL = 'assets/scripts/others.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
-
-/*
-      $(document).ready(function(){
-        $.getJSON("assets/scripts/others.json")
-      });
 */
+
+    $(document).ready(function(){
+        $.getJSON("assets/scripts/others.json", function(data){
+            console.log(data.name); // Prints: Harry
+            console.log(data.song); // Prints: 14
+        }).fail(function(){
+            console.log("An error has occurred.");
+        });
+    });
+
 
 
     </script>
