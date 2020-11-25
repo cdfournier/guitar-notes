@@ -214,7 +214,11 @@ footer {
   padding: 1rem;
   text-align: left;
   color: white;
-  p:last-of-type {font-size: 0.8rem;}
+  p:last-of-type {
+    padding: 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
 }
 
 
