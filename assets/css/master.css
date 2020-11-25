@@ -305,8 +305,11 @@ main section.songs {
       margin: 0 1rem 0 0; }
       .artist label span.image img, .album label span.image img {
         border-radius: 100%; }
-    .artist label h2, .album label h2 {
-      width: calc(100% - 6.5rem); }
+    .artist label span.performer, .artist label span.title, .album label span.performer, .album label span.title {
+      display: block;
+      width: calc(100% - 6.5rem);
+      font-size: 1.25rem;
+      font-weight: 700; }
     .artist label span.carat, .album label span.carat {
       position: absolute;
       right: 1rem;

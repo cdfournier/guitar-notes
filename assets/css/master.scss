@@ -326,8 +326,11 @@ main section.songs {
       margin: 0 1rem 0 0;
       img {border-radius: 100%;}
     }
-    h2 {
+    span.performer, span.title {
+      display: block;
       width: calc(100% - 6.5rem);
+      font-size: 1.25rem;
+      font-weight: 700;
     }
     span.carat {
       position: absolute;
