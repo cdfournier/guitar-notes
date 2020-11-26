@@ -407,33 +407,47 @@ article.chords {
   display: block;
   width: calc(100% - 2rem);
   margin: 1rem 1rem 0;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   border: 1px solid #fbf9fa;
   border-radius: 0.25rem;
   background: white;
-  font-family: monospace;
-  /*
-  section {
-    margin: 2rem 0 0;
-    h2, p {column-span: none;}
-  }
-  section.chords {margin: 2rem 0 0;}
-  section:first-of-type {margin: 0;}
-*/ }
+  font-family: monospace; }
   article.chords h2 + p {
     padding: 0; }
   article.chords p span {
     font-weight: bold; }
   article.chords section {
     margin: 2rem 0 0; }
-    article.chords section span.chords {
-      font-weight: 700; }
     article.chords section p {
-      padding: 0 0 1rem; }
+      position: relative;
+      padding: 0 0 1.5rem;
+      line-height: 2.5; }
+      article.chords section p span.chords {
+        display: inline-block;
+        position: relative;
+        top: -1rem;
+        width: 0;
+        font-weight: bold;
+        line-height: 1; }
+    article.chords section:after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 0 0 1rem;
+      background: #d8d8d8;
+      content: ""; }
+    article.chords section:last-child:after {
+      display: none; }
 
 @media (min-width: 40rem) {
   article.chords {
     columns: 2;
     column-gap: 4rem; }
     article.chords h2, article.chords p {
-      column-span: all; } }
+      column-span: all; }
+    article.chords section p {
+      column-span: none; } }
+
+@media (min-width: 72rem) {
+  article.chords {
+    columns: 3; } }

@@ -429,7 +429,7 @@ article.chords {
   display: block;
   width: calc(100% - 2rem);
   margin: 1rem 1rem 0;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   border: 1px solid $gray-light;
   border-radius: 0.25rem;
   background: white;
@@ -438,17 +438,29 @@ article.chords {
   p span {font-weight: bold;}
   section {
     margin: 2rem 0 0;
-    span.chords {font-weight: 700;}
-    p {padding: 0 0 1rem;}
+    p {
+      position: relative;
+      padding: 0 0 1.5rem;
+      line-height: 2.5;
+      span.chords {
+        display: inline-block;
+        position: relative;
+        top: -1rem;
+        width: 0;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+    &:after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 0 0 1rem;
+      background: $gray-base;
+      content: "";
+    }
+    &:last-child:after {display: none;}
   }
-/*
-  section {
-    margin: 2rem 0 0;
-    h2, p {column-span: none;}
-  }
-  section.chords {margin: 2rem 0 0;}
-  section:first-of-type {margin: 0;}
-*/
 }
 
 @media (min-width: 40rem) {
@@ -456,5 +468,12 @@ article.chords {
     h2, p {column-span: all;}
     columns: 2;
     column-gap: 4rem;
+    section p {column-span: none;}
+  }
+}
+
+@media (min-width: 72rem) {
+  article.chords {
+    columns: 3;
   }
 }
