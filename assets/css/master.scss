@@ -1,5 +1,4 @@
 // COLORS
-// $primary: #2d3d57;
 $primary: #0b2a49;
 $action: #94d40a;
 $gray-light: #fbf9fa;
@@ -53,14 +52,12 @@ body, .body {
   background: $primary;
 }
 
-/*
 body.open {
   position: fixed;
   height: 100%;
   max-height: 100vh;
   overflow-y: hidden;
 }
-*/
 
 * {
   -webkit-box-sizing: border-box;
@@ -133,8 +130,8 @@ nav {
     border: none;
     background-color: transparent;
     svg {
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       fill: white;
     }
     svg.menu-toggle-open {@include transition(width, 0.25s, ease);}
@@ -145,19 +142,54 @@ nav {
   }
   ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 0;
     max-height: 0;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     list-style-type: none;
     @include transform(translateX(-100rem));
     @include transition(all, 0.25s, ease);
     li {
-      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      margin: 0.25rem 0.25rem 0.25rem 0;
+      padding: 0 0.5rem 0 0;
+      border: 1px solid white;
+      border-radius: 1rem;
+      background: white;
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 0.25rem 0 0;
+        border-radius: 100%;
+      }
     }
-    li a {text-decoration: none;}
-    li:last-child {padding: 1rem 0;}
+    li a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 0.69rem;
+      line-height: 2;
+      text-decoration: none;
+      color: $primary;
+    }
+    li:first-child {
+      width: 100%;
+      margin: 0 0 1rem;
+      padding: 0;
+      border: none;
+      color: white;
+      background: transparent;
+    }
+    li:first-child a {
+      max-width: none;
+      font-size: 1.5rem;
+      line-height: inherit;
+      color: white;
+    }
   }
 }
 
@@ -434,14 +466,16 @@ article.chords {
   border-radius: 0.25rem;
   background: white;
   font-family: monospace;
-  h2 + p {padding: 0;}
+  h2 + p {padding: 0 0 1rem;}
   p span {font-weight: bold;}
-  section {
-    margin: 2rem 0 0;
+  .details {
+    display: inline-block;
+    width: 100%;
+    margin: 1rem 0 0;
     p {
       position: relative;
-      padding: 0 0 1.5rem;
-      line-height: 2.5;
+      padding: 0 0 1.25rem;
+      line-height: 2;
       span.chords {
         display: inline-block;
         position: relative;
@@ -449,6 +483,13 @@ article.chords {
         width: 0;
         font-weight: bold;
         line-height: 1;
+      }
+    }
+    p.stretch {
+      width: 100%;
+      span.chords {
+        top: 0;
+        width: auto;
       }
     }
     &:after {
@@ -468,7 +509,7 @@ article.chords {
     h2, p {column-span: all;}
     columns: 2;
     column-gap: 4rem;
-    section p {column-span: none;}
+    .details p {column-span: none;}
   }
 }
 
