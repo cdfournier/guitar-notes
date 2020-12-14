@@ -1,5 +1,6 @@
 // COLORS
-$primary: #0b2a49;
+$primary: #bcb5ab;
+$primary-light: #f6f4ed;
 $action: #94d40a;
 $gray-light: #fbf9fa;
 $gray-base: #d8d8d8;
@@ -111,7 +112,7 @@ small {font-size: 0.8rem;}
 a {
   font-weight: 700;
   text-decoration: none;
-  color: white;
+  color: inherit;
   cursor: pointer;
   @include transition(all, 0.25s, ease);
 }
@@ -132,7 +133,7 @@ nav {
     svg {
       width: 1.5rem;
       height: 1.5rem;
-      fill: white;
+      fill: black;
     }
     svg.menu-toggle-open {@include transition(width, 0.25s, ease);}
     svg.menu-toggle-close {
@@ -161,8 +162,8 @@ nav {
       border-radius: 1rem;
       background: white;
       img {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
         margin: 0 0.25rem 0 0;
         border-radius: 100%;
       }
@@ -171,24 +172,67 @@ nav {
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-size: 0.69rem;
+      font-size: 0.512rem;
       line-height: 2;
       text-decoration: none;
-      color: $primary;
+      color: black;
     }
     li:first-child {
       width: 100%;
       margin: 0 0 1rem;
       padding: 0;
       border: none;
-      color: white;
       background: transparent;
     }
     li:first-child a {
       max-width: none;
       font-size: 1.5rem;
       line-height: inherit;
-      color: white;
+      img {
+        width: 3rem;
+        height: 2rem;
+        margin: 0 0.5rem 0 0;
+        border: 2px solid white;
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+}
+
+/*
+@media (min-width: 25.875rem) {
+  nav {
+    ul {
+      li {
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+      li a {font-size: 0.8rem;}
+    }
+  }
+}
+*/
+
+@media (min-width: 25.875rem) {
+  nav {
+    button.menu-toggle {
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    ul {
+      li {
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+      li a {font-size: 0.8rem;}
     }
   }
 }
@@ -245,7 +289,7 @@ footer {
   margin: 0;
   padding: 1rem;
   text-align: left;
-  color: white;
+  color: black;
   p:last-of-type {
     padding: 0;
     font-size: 0.8rem;
@@ -265,7 +309,7 @@ main {
     .logo {
       padding: 1rem;
       width: 50vh;
-      svg {fill: white;}
+      svg {fill: black;}
     }
   }
 }
@@ -312,6 +356,11 @@ main section.songs {
       font-weight: 400;
       text-transform: uppercase;
     }
+  }
+  h2 {
+    margin: 2rem 0 0;
+    padding: 0 0.5rem;
+    font-size: 2.441rem;
   }
 }
 
