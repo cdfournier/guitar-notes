@@ -563,9 +563,12 @@ article.chords {
   }
   .details.simple {
     p {
-      padding: 0;
       line-height: 1;
       &:last-of-type {padding: 0 0 1rem;}
+      span.chords {
+        width: auto;
+      }
+      &:first-of-type {padding: 0;}
     }
   }
 }
