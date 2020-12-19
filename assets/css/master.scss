@@ -72,6 +72,12 @@ img {
   margin: 0;
 }
 
+@media (min-width: 64rem) {
+  html {
+    font-size: 14px;
+  }
+}
+
 
 // TYPOGRAPHY
 /* 
@@ -155,19 +161,8 @@ nav {
     li {
       display: flex;
       align-items: center;
-      flex-direction: row;
-      margin: 0.4rem 0.2rem 0 0;
-      padding: 0 0.4rem 0 0;
-      border: 1px solid white;
-      border-radius: 1rem;
-      background: white;
-      img {
-        display: grid;
-        width: 1.25rem;
-        height: 1.25rem;
-        margin: 0 0.4rem 0 0;
-        border-radius: 100%;
-      }
+      margin: 1rem 1rem 0 0;
+      img {display: none;}
     }
     li a {
       display: flex;
@@ -175,6 +170,7 @@ nav {
       align-items: center;
       font-size: 0.512rem;
       text-decoration: none;
+      text-transform: uppercase;
       color: black;
     }
     li:first-child {
@@ -188,6 +184,7 @@ nav {
       max-width: none;
       font-size: 1.5rem;
       line-height: 1;
+      text-transform: none;
       img {
         width: 3rem;
         height: 3rem;
@@ -201,12 +198,6 @@ nav {
 @media (min-width: 21.75rem) {
   nav {
     ul {
-      li {
-        img {
-          width: 1.475rem;
-          height: 1.475rem;
-        }
-      }
       li a {font-size: 0.69rem;}
     }
   }
@@ -221,13 +212,46 @@ nav {
       }
     }
     ul {
+      li a {font-size: 0.8rem;}
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  nav {
+    ul {
       li {
+        margin: 0.4rem 0.2rem 0 0;
+        padding: 0 0.4rem 0 0;
+        border: 2px solid white;
+        border-radius: 2rem;;
+        background: white;
+        &:hover {background: $primary-light;}
         img {
-          width: 1.5rem;
-          height: 1.5rem;
+          display: grid;
+          width: 1.25rem;
+          height: 1.25rem;
+          margin: 0 0.4rem 0 0;
+          border-radius: 100%;
         }
       }
-      li a {font-size: 0.8rem;}
+      li a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-transform: none;
+      }
+      li:first-child a {
+        max-width: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        img {
+          width: 3rem;
+          height: 3rem;
+          margin: 0 0.5rem 0 0;
+          border: 2px solid white;
+        }
+      }
     }
   }
 }
