@@ -580,6 +580,8 @@ article.chords {
       span.chords {width: auto;}
       &:first-of-type {padding: 0;}
     }
+    p.stretch {padding: 0;}
+    p.stretch:last-of-type {padding: 0 0 1rem;}
   }
 }
 
