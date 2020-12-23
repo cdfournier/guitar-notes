@@ -146,6 +146,31 @@ nav {
       @include transition(width, 0.25s, ease);
     }
   }
+  h2 {
+    display: none;
+    max-height: 0;
+    @include transform(translateX(-100rem));
+    @include transition(all, 0.325s, ease);
+  }
+  p {
+    width: 0;
+    height: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    @include transform(translateX(-100rem));
+    @include transition(all, 0.325s, ease);
+  }
+  p a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 1rem;
+    padding: 0;
+    font-size: 1.563rem;
+    img {width: 0;}
+  }
   ul {
     display: flex;
     flex-direction: row;
@@ -174,6 +199,7 @@ nav {
       text-transform: uppercase;
       color: black;
     }
+/*
     li:first-child {
       width: 100%;
       margin: 0 0 1rem;
@@ -193,6 +219,7 @@ nav {
         border: 2px solid white;
       }
     }
+*/
   }
 }
 
@@ -220,6 +247,21 @@ nav {
 
 @media (min-width: 48rem) {
   nav {
+    h2, p {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 100%;
+    }
+    p a {
+      font-size: 1.953rem;
+      img {
+        width: 6rem;
+        margin: 0 1rem 0 0;
+        border: 2px solid white;
+        border-radius: 100%;        
+      }
+    }
     ul {
       li {
         margin: 0.8rem 0.8rem 0 0;
@@ -228,7 +270,7 @@ nav {
         border-radius: 2rem;;
         background: white;
         &:hover {background: $primary-light;}
-        &:first-child:hover {background: transparent;}
+        // &:first-child:hover {background: transparent;}
         img {
           display: grid;
           width: 2.5rem;
@@ -244,6 +286,7 @@ nav {
         font-size: 1rem;
         text-transform: none;
       }
+/*
       li:first-child a {
         max-width: none;
         font-size: 2rem;
@@ -255,6 +298,7 @@ nav {
           border: 2px solid white;
         }
       }
+*/
     }
   }
 }
@@ -292,6 +336,12 @@ header.open {
       svg.menu-toggle-open {width: 0;}
       svg.menu-toggle-close {width: 2rem;}
     }
+    p {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      @include transform(translateX(0));
+    }
     ul {
       height: auto;
       max-height: 100%;
@@ -299,7 +349,14 @@ header.open {
       @include transform(translateX(0));
     }
   }
-  .logo {@include transform(translateX(-10rem));}
+}
+
+@media (min-width: 48rem) {
+  header.open {
+    nav {
+      h2 {@include transform(translateX(0));}
+    }
+  }
 }
 
 
