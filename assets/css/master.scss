@@ -7,7 +7,7 @@ $gray-base: #d8d8d8;
 
 
 // MIXINS
-@mixin transition($property: all, $duration: 0.325s, $easing: ease-in-out, $delay: 0s) {
+@mixin transition($property: all, $duration: 0.325s, $easing: ease, $delay: 0s) {
   -webkit-transition: $property $duration $easing $delay;
   -moz-transition: $property $duration $easing $delay;
   -ms-transition: $property $duration $easing $delay;
@@ -162,10 +162,10 @@ nav {
     @include transition(all, 0.325s, ease);
   }
   p a {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: auto;
     margin: 0 0 1rem;
     padding: 0;
     font-size: 1.563rem;
@@ -247,20 +247,48 @@ nav {
 
 @media (min-width: 48rem) {
   nav {
+    h2 {display: block;}
     h2, p {
-      display: block;
+      position: relative;
       width: auto;
       height: auto;
       max-height: 100%;
     }
+    h2:before {
+      display: block;
+      width: 0;
+      height: 1px;
+      background: $primary-light;
+      margin: 0;
+      content: "";
+    }
     p a {
-      font-size: 1.953rem;
+      display: inline-flex;
+      width: auto;
+      font-size: 3.052rem;
+      @include transition(all, 0.5s, ease);
+      .overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 100%;
+        background: black;
+        opacity: 0.1;
+        @include transition(all, 0.5s, ease);
+      }
       img {
         width: 6rem;
         margin: 0 1rem 0 0;
         border: 2px solid white;
         border-radius: 100%;        
       }
+    }
+    p a:hover, p a:focus {
+      color: $gray-light;
+      .overlay {opacity: 0;}
     }
     ul {
       li {
@@ -354,7 +382,13 @@ header.open {
 @media (min-width: 48rem) {
   header.open {
     nav {
-      h2 {@include transform(translateX(0));}
+      h2 {
+        @include transform(translateX(0));
+        &:before {
+          width: 50%;
+          margin: 2rem 0 1rem 0;
+        }
+      }
     }
   }
 }
@@ -510,7 +544,7 @@ main section.songs {
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    @include transition(max-height, 0.25s, ease-in-out);
+    @include transition(max-height, 0.25s, ease);
     ul {
       width: 100%;
       margin: 0;
