@@ -541,10 +541,11 @@ main section.songs {
   }
   .songs {
     width: 100%;
+    height: auto;
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    @include transition(max-height, 0.25s, ease);
+    @include transition(max-height, 0.5s, ease);
     ul {
       width: 100%;
       margin: 0;
@@ -592,7 +593,7 @@ main section.songs {
 
 .artist input:checked ~ .songs,
 .album input:checked ~ .songs {
-  max-height: 200rem;
+  max-height: 100rem;
 }
 
 .artist input:checked ~ label span.carat,
