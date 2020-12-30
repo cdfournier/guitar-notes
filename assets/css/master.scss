@@ -1,6 +1,7 @@
 // COLORS
 $primary: #faa61a;
 $primary-light: #f6f4ed;
+$secondary: #333333;
 $action: #333333;
 $gray-light: #fbf9fa;
 $gray-base: #d8d8d8;
@@ -138,7 +139,7 @@ nav {
     svg {
       width: 1.5rem;
       height: 1.5rem;
-      fill: black;
+      fill: $secondary;
     }
     svg.menu-toggle-open {@include transition(width, 0.25s, ease);}
     svg.menu-toggle-close {
@@ -169,6 +170,7 @@ nav {
     margin: 0 0 1rem;
     padding: 0;
     font-size: 1.563rem;
+    color: $secondary;
     img {width: 0;}
   }
   ul {
@@ -196,7 +198,7 @@ nav {
       font-size: 0.512rem;
       text-decoration: none;
       text-transform: uppercase;
-      color: black;
+      color: $secondary;
     }
   }
 }
@@ -246,6 +248,7 @@ nav {
       display: inline-flex;
       width: auto;
       font-size: 3.052rem;
+      color: $secondary;
       @include transition(all, 0.5s, ease);
       .overlay {
         display: block;
