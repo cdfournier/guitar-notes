@@ -167,7 +167,7 @@ nav {
     flex-direction: row;
     align-items: center;
     width: auto;
-    margin: 0 0 1rem;
+    margin: 0;
     padding: 0;
     font-size: 1.563rem;
     color: $secondary;
@@ -187,7 +187,7 @@ nav {
     li {
       display: flex;
       align-items: center;
-      margin: 1rem 1rem 0 0;
+      margin: 0.69rem 0.69rem 0 0;
       @include transition(all, 0.25s, ease);
       img {display: none;}
     }
@@ -195,7 +195,7 @@ nav {
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-size: 0.512rem;
+      font-size: 0.69rem;
       text-decoration: none;
       text-transform: uppercase;
       color: $secondary;
@@ -203,17 +203,7 @@ nav {
   }
 }
 
-/*
-@media (min-width: 21.75rem) {
-  nav {
-    ul {
-      li a {font-size: 0.69rem;}
-    }
-  }
-}
-*/
-
-@media (min-width: 25.875rem) {
+@media (min-width: 48rem) {
   nav {
     button.menu-toggle {
       svg {
@@ -221,16 +211,6 @@ nav {
         height: 2rem;
       }
     }
-/*
-    ul {
-      li a {font-size: 0.8rem;}
-    }
-*/
-  }
-}
-
-@media (min-width: 48rem) {
-  nav {
     h2 {display: block;}
     h2, p {
       position: relative;
@@ -392,6 +372,14 @@ main {
     margin: 0;
     .logo {
       width: 50vh;
+    }
+  }
+}
+
+@media (min-width: 40rem) {
+  main {
+    section.welcome {
+      .logo {width: 60vh;}
     }
   }
 }
