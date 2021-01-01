@@ -150,7 +150,7 @@ nav {
   h2 {
     display: none;
     max-height: 0;
-    @include transform(translateX(-100rem));
+    @include transform(translateX(-200rem));
     @include transition(all, 0.325s, ease);
   }
   p {
@@ -159,7 +159,7 @@ nav {
     max-height: 0;
     margin: 0;
     padding: 0;
-    @include transform(translateX(-100rem));
+    @include transform(translateX(-200rem));
     @include transition(all, 0.325s, ease);
   }
   p a {
