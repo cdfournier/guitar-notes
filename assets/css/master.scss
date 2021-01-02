@@ -353,10 +353,17 @@ footer {
   padding: 1rem;
   text-align: left;
   color: black;
-  p:last-of-type {
+  p {
     padding: 0;
     font-size: 0.8rem;
     text-align: center;
+  }
+}
+
+@media (min-width: 48rem) {
+  footer {
+    padding: 2rem 1rem;
+    p {font-size: 1rem;}
   }
 }
 
