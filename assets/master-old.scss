@@ -32,7 +32,7 @@ html {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 1.3;
-  color: $secondary;
+  color: black;
   background: $primary;
   scroll-behavior: smooth;
 }
@@ -118,7 +118,7 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  @include transition(all, 0.325s, ease);
+  @include transition(all, 0.25s, ease);
 }
 
 
@@ -145,24 +145,20 @@ nav {
       @include transition(width, 0.25s, ease);
     }
   }
-  h2, p, ul {
-    @include transform(translateX(-150rem));
+  h2 {
+    display: none;
+    max-height: 0;
+    @include transform(translateX(-200rem));
     @include transition(all, 0.325s, ease);
   }
-  h2, p {
+  p {
     width: 0;
     height: 0;
     max-height: 0;
     margin: 0;
     padding: 0;
-  }
-  h2:before {
-    display: block;
-    width: 0;
-    height: 1px;
-    background: $secondary;
-    margin: 0;
-    content: "";
+    @include transform(translateX(-200rem));
+    @include transition(all, 0.325s, ease);
   }
   p a {
     display: inline-flex;
@@ -184,11 +180,13 @@ nav {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    @include transform(translateX(-150rem));
+    @include transition(all, 0.25s, ease);
     li {
       display: flex;
       align-items: center;
       margin: 0.69rem 0.69rem 0 0;
-      @include transition(all, 0.325s, ease);
+      @include transition(all, 0.25s, ease);
       img {display: none;}
     }
     li a {
@@ -218,12 +216,20 @@ nav {
       height: auto;
       max-height: 100%;
     }
+    h2:before {
+      display: block;
+      width: 0;
+      height: 1px;
+      background: $primary-light;
+      margin: 0;
+      content: "";
+    }
     p a {
       display: inline-flex;
       width: auto;
       font-size: 3.052rem;
       color: $secondary;
-      @include transition(all, 0.325s, ease);
+      @include transition(all, 0.5s, ease);
       .overlay {
         display: block;
         position: absolute;
@@ -234,7 +240,7 @@ nav {
         border-radius: 100%;
         background: black;
         opacity: 0.1;
-        @include transition(all, 0.325s, ease);
+        @include transition(all, 0.5s, ease);
       }
       img {
         width: 6rem;
@@ -289,7 +295,7 @@ header {
 }
 
 .headroom {
-  @include transition(all, 0.325s, ease);
+  @include transition(all, 0.25s, ease);
   will-change: transform
 }
 
@@ -307,16 +313,31 @@ header.open {
       svg.menu-toggle-open {width: 0;}
       svg.menu-toggle-close {width: 2rem;}
     }
-    h2, p, ul {
+    p {
       width: 100%;
       height: auto;
       max-height: 100%;
       @include transform(translateX(0));
     }
-    h2 {margin: 1rem 0 0;}
-    h2:before {
-      width: 100%;
-      margin: 1rem 0 1rem 0;
+    ul {
+      height: auto;
+      max-height: 100%;
+      padding: 0;
+      @include transform(translateX(0));
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  header.open {
+    nav {
+      h2 {
+        @include transform(translateX(0));
+        &:before {
+          width: 50%;
+          margin: 2rem 0 1rem 0;
+        }
+      }
     }
   }
 }
@@ -367,6 +388,30 @@ main {
     }
   }
 }
+
+/*
+@media (orientation: portrait) {
+  main section.welcome .logo {
+    width: 70%;
+  }
+}
+
+@media (min-width: 48rem) and (orientation: portrait) {
+  main {
+    section.welcome {
+      .logo {max-width: 50%;}
+    }
+  }
+}
+
+@media (min-width: 48rem) and (orientation: landscape) {
+  main {
+    section.welcome {
+      .logo {max-width: 35%;}
+    }
+  }
+}
+*/
 
 
 /* SECTIONS */
@@ -445,16 +490,27 @@ main section.songs {
       font-size: 1.25rem;
       font-weight: 700;
     }
+    span.carat {
+      position: absolute;
+      right: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      @include transition(all, 0.25s, ease);
+    }
   }
-  input:focus + label, input:not(:placeholder-shown) + label {font-size: 1rem;}
-  input:not(:placeholder-shown) + label, input:focus + label {@include transform(translate(0,0));}
+  input:focus + label, input:not(:placeholder-shown) + label {
+    font-size: 1rem;
+  }
+  input:not(:placeholder-shown) + label, input:focus + label {
+    @include transform(translate(0,0));
+  }
   .songs {
     width: 100%;
     height: auto;
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    @include transition(max-height, 0.325s, ease);
+    @include transition(max-height, 0.5s, ease);
     ul {
       width: 100%;
       margin: 0;
@@ -499,9 +555,15 @@ main section.songs {
   }
 }
 
+
 .artist input:checked ~ .songs,
 .album input:checked ~ .songs {
   max-height: 100rem;
+}
+
+.artist input:checked ~ label span.carat,
+.album input:checked ~ label span.carat {
+  @include transform(rotate(-0.5turn));
 }
 
 @media (min-width: 40rem) {
