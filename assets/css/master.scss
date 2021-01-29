@@ -382,7 +382,11 @@ footer {
 
 @media (min-width: 64rem) {
   footer {
-    section p {margin: 1rem 0 0 0.8rem;}
+    section p {
+      margin: 1rem 0 0 0.8rem;
+      font-size: 1.1rem;
+      line-height: 2;
+    }
   }
 }
 
