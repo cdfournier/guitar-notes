@@ -327,21 +327,72 @@ header.open {
 footer {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 1rem;
-  text-align: left;
-  color: black;
-  p {
+  margin: 4rem 0 0;
+  padding: 2rem;
+  background: $secondary;
+  color: white;
+  h2 {
+    position: relative;
+    line-height: inherit;
+    text-indent: -100rem;
+    svg {
+      position: relative;
+      left: 84rem;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      fill: white;
+    }
+  }
+  section p {
+    margin: 0.8rem 0 0;
     padding: 0;
     font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .logo {
+    margin: 2rem 0 0;
     text-align: center;
+    svg {
+      width: 60%;
+      max-width: 10rem;
+    }
+    p {font-size: 0.64rem;}
   }
 }
 
 @media (min-width: 48rem) {
   footer {
-    padding: 2rem 1rem;
-    p {font-size: 1rem;}
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    section p {
+      font-size: 1rem;
+      margin: 1rem 0 0 0.5rem;
+    }
+    .logo {
+      min-width: calc(50% - 2rem);
+      margin: 0 0 0 2rem;
+      text-align: right;
+      svg {max-width: none;}
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  footer {
+    section p {margin: 1rem 0 0 0.8rem;}
+  }
+}
+
+@media (min-width: 90rem) {
+  footer {
+    section p {
+      margin: 1rem 0 0 1rem;
+      font-size: 1.25rem;
+    }
+    .logo p {font-size: 1rem;}
   }
 }
 
