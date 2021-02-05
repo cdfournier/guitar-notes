@@ -24,6 +24,14 @@ $gray-base: #d8d8d8;
   transform: $transform;
 };
 
+@mixin transform-origin($transform-origin: all) {
+  -webkit-transform-origin: $transform-origin;
+  -moz-transform-origin: $transform-origin;
+  -ms-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+};
+
 
 // BASE
 html {
