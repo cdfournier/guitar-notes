@@ -644,23 +644,6 @@ article.chords {
   }
 }
 
-/*
-@media (min-width: 40rem) {
-  article.chords {
-    h2, p {column-span: all;}
-    columns: 2;
-    column-gap: 4rem;
-    .details p {column-span: none;}
-  }
-}
-
-@media (min-width: 72rem) {
-  article.chords {
-    columns: 3;
-  }
-}
-*/
-
 
 // COLUMNS
 article.chords {
@@ -671,7 +654,7 @@ article.chords {
 @media (min-width: 40rem) {
   article.chords {
     columns: 2;
-    column-gap: 4rem;
+    column-gap: 2rem;
   }
 }
 
