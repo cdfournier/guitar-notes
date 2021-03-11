@@ -654,19 +654,27 @@ article.chords {
 @media (min-width: 40rem) {
   article.chords {
     columns: 2;
-    column-gap: 2rem;
+    column-gap: 4rem;
+    column-width: 40vw;
   }
 }
 
 @media (min-width: 64rem) {
   article.chords {
     columns: 3;
+    column-width: 30vw;
   }
 }
 
 @media (min-width: 74rem) {
   article.chords {
-    &.lg {columns: 4;}
-    &.xl {columns: 5;}
+    &.lg {
+      columns: 4;
+      column-width: 20vw;
+    }
+    &.xl {
+      columns: 5;
+      column-width: 15vw;
+    }
   }
 }
