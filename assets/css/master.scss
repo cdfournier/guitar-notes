@@ -655,14 +655,14 @@ article.chords {
   article.chords {
     columns: 2;
     column-gap: 4rem;
-    column-width: 40vw;
+    column-width: calc((100vw / 2) - 4rem);
   }
 }
 
 @media (min-width: 64rem) {
   article.chords {
     columns: 3;
-    column-width: 30vw;
+    column-width: calc((100vw / 3) - 8rem);
   }
 }
 
@@ -670,11 +670,11 @@ article.chords {
   article.chords {
     &.lg {
       columns: 4;
-      column-width: 20vw;
+      column-width: calc((100vw / 4) - 12rem);
     }
     &.xl {
       columns: 5;
-      column-width: 15vw;
+      column-width: calc((100vw / 5) - 16rem);
     }
   }
 }
