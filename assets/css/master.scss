@@ -587,7 +587,8 @@ main section.songs {
 
 // CHORDS
 article.chords {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: calc(100% - 2rem);
   margin: 0 1rem 0;
   padding: 1rem 1rem 0;
@@ -653,6 +654,7 @@ article.chords {
 
 @media (min-width: 40rem) {
   article.chords {
+    display: block;
     columns: 2;
     column-gap: 4rem;
     column-width: calc((100vw / 2) - 4rem);
