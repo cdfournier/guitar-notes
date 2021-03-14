@@ -343,8 +343,8 @@ footer {
     line-height: inherit;
     text-indent: -100rem;
     svg {
-      position: relative;
-      left: 84rem;
+      position: absolute;
+      left: 0;
       width: auto;
       max-width: 100%;
       height: auto;
@@ -352,10 +352,9 @@ footer {
     }
   }
   section p {
-    margin: 0.8rem 0 0;
-    padding: 0;
+    padding: 1rem 0 0;
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.875;
     text-align: left;
   }
   .logo {
@@ -376,11 +375,11 @@ footer {
     justify-content: space-between;
     section p {
       font-size: 1rem;
-      margin: 1rem 0 0 0.5rem;
+      padding: 2rem 0 0;
     }
     .logo {
       min-width: calc(50% - 2rem);
-      margin: 0 0 0 2rem;
+      padding: 0 0 0 2rem;
       text-align: right;
       svg {max-width: none;}
     }
@@ -390,7 +389,7 @@ footer {
 @media (min-width: 64rem) {
   footer {
     section p {
-      margin: 1rem 0 0 0.8rem;
+      padding: 3rem 0 0;
       font-size: 1.1rem;
       line-height: 2;
     }
@@ -400,7 +399,7 @@ footer {
 @media (min-width: 90rem) {
   footer {
     section p {
-      margin: 1rem 0 0 1rem;
+      padding: 5rem 0 0;
       font-size: 1.25rem;
     }
     .logo p {font-size: 1rem;}
