@@ -1,0 +1,20 @@
+{
+    "name": "Guitar Notes",
+    "short_name": "Guitar Notes",
+    "icons": [
+        {
+            "src": "https://cdfournier.github.io/guitar-notes/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://cdfournier.github.io/guitar-notes/assets/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#faa61a",
+    "background_color": "#faa61a",
+    "start_url": "https://cdfournier.github.io/guitar-notes/",
+    "display": "standalone"
+}
