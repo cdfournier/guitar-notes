@@ -33,8 +33,6 @@ html {
   font-family: "Courier", monospace;
   font-size: 14px;
   line-height: 2;
-  color: black;
-  background: white;
   scroll-behavior: smooth;
 }
 
@@ -50,6 +48,13 @@ body, .body {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  color: black;
+  background: white;
+  @include transition(all, 0.25s, ease);
+  &.dark {
+    color: white;
+    background: $gray;
+  }
 }
 
 * {
@@ -138,7 +143,6 @@ main {
   article {
     position: relative;
     section {
-      // position: absolute;
       top: 0;
       width: 100%;
       padding: 0 1rem;
@@ -150,9 +154,14 @@ main {
     section.chords, section.chords.simplified {
       position: absolute;
       top: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: pre;
       opacity: 0;
       @include transition(opacity, 0.25s, ease);
+    }
+    section.chords.simplified {
+      white-space: pre-line;
     }
     section.chords.show, section.chords.simplified.show {
       opacity: 1;
@@ -209,27 +218,105 @@ footer {
         display: none;
       }
     }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 1rem 0 0;
+      fieldset {
+        width: 100%;
+        margin: 0;
+        padding: 1rem 0 0;
+        border: none;
+        label {
+          display: flex;
+          position: relative;
+          width: 100%;
+          margin: 0;
+          line-height: 1.25;
+          input[type="checkbox"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2.5rem;
+            height: 1.25rem;
+            margin: 0;
+            padding: 0;
+            border: 1px solid $gray;
+            border-radius: 2rem;
+            appearance: none;
+            &:after {
+              display: block;
+              position: absolute;
+              top: 0.125rem;
+              left: 0.125rem;
+              width: 0.875rem;
+              height: 0.875rem;
+              border-radius: 100%;
+              background: $gray;
+              content: "";
+              @include transition(all, 0.25s, ease);
+            }
+            &:checked:after {
+              margin-left: 1.25rem;
+            }
+          }
+        }
+      }
+    }
   }
   section.about {
+    display: flex;
+    flex-direction: column;
     svg {
       fill: $gray;
     }
-  }
-  section.logo {
-    padding: 1rem;
-    text-align: center;
-    svg {
-      max-width: 18rem;
-      .white {
-        fill: white;
+    .logo {
+      padding: 1rem 1rem 0;
+      text-align: center;
+      svg {
+        max-width: 18rem;
+        .white {
+          fill: white;
+        }
+        .gray {
+          fill: $gray;
+        }
       }
-      .gray {
-        fill: $gray;
+      p {
+        padding: 0;
+        line-height: 1.25;
       }
     }
-    p {
-      padding: 0;
-      line-height: 1.25;
+  }
+}
+
+body.dark, .body.dark {
+  footer {
+    section.details {
+      form fieldset {
+        input[type="checkbox"] {
+          border-color: white;
+          &:after {
+            background: white;
+          }
+        }
+      }
+    }
+    section.about {
+      svg {
+        fill: white;
+      }
+      .logo {
+        svg {
+          .white {
+            fill: $gray;
+          }
+          .gray {
+            fill: white;
+          }
+        }
+      }
     }
   }
 }
@@ -238,12 +325,13 @@ footer {
   footer {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     section.details {
       width: 40%;
     }
     section.about {
-      width: 60%;
+      align-items: flex-end;
+      width: 55%;
     }
   }
 }
@@ -251,19 +339,25 @@ footer {
 @media (min-width: 64rem) {
   footer {
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     section.details {
-      width: 40%;
-      max-width: 18.75rem;
+      width: 30%;
     }
     section.about {
-      width: 60%;
-    }
-    section.logo {
-      width: 25%;
-      p {
-        font-size: 0.75rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 70%;
+      .text {
+        width: 65%
+      }
+      .logo {
+        width: 30%;
+        padding: 0 1rem;
+        p {
+          font-size: 0.75rem;
+        }
       }
     }
   }
@@ -277,57 +371,8 @@ footer {
     }
     section.about {
       width: 40%;
-    }
-    section.logo {
-      width: 25%;
-    }
-  }
-}
-
-
-// SWITCHES
-form {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 1rem 0 0;
-  fieldset {
-    width: 100%;
-    margin: 0;
-    padding: 1rem 0 0;
-    border: none;
-    label {
-      display: flex;
-      position: relative;
-      width: 100%;
-      margin: 0;
-      line-height: 1.25;
-      input[type="checkbox"] {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 2.5rem;
-        height: 1.25rem;
-        margin: 0;
-        padding: 0;
-        border: 1px solid $gray;
-        border-radius: 2rem;
-        appearance: none;
-        &:after {
-          display: block;
-          position: absolute;
-          top: 0.125rem;
-          left: 0.125rem;
-          width: 0.875rem;
-          height: 0.875rem;
-          border-radius: 100%;
-          background: $gray;
-          content: "";
-          @include transition(all, 0.25s, ease);
-        }
-        &:checked:after {
-          margin-left: 1.25rem;
-        }
+      .logo {
+        width: 25%;
       }
     }
   }
