@@ -31,7 +31,7 @@ html {
   margin: 0 auto;
   padding: 0;
   font-family: "Courier", monospace;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: black;
   background: white;
@@ -50,6 +50,13 @@ body, .body {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+}
+
+body.open {
+  position: fixed;
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
 * {
@@ -132,49 +139,26 @@ a {
 // MAIN
 main {
   position: relative;
-  width: 100%;
-  min-height: 50vh;
-  padding: 0 1rem;
+  min-height: 100vh;
+  padding: 1rem;
   article {
     position: relative;
     section {
-      // position: absolute;
-      top: 0;
-      width: 100%;
-      padding: 0 1rem;
-      white-space: pre-line;
-    }
-    section.lyrics {
-      padding: 1rem;
-    }
-    section.chords, section.chords.simplified {
       position: absolute;
       top: 0;
-      white-space: pre;
-      opacity: 0;
-      @include transition(opacity, 0.25s, ease);
+      width: 100%;
+      max-width: 100%;
     }
-    section.chords.show, section.chords.simplified.show {
-      opacity: 1;
-    }
-  }
-}
-
-@media (min-width: 48rem) {
-  main {
-    article  {
-      section {
-        column-gap: 2rem;
+    section.lyrics {
+      position: relative;
+      p {
+        padding: 0 1rem;
+        white-space: pre;
       }
     }
-    article.two {
-      section {
-        column-count: 2;
-      }
-    }
-    article.three {
-      section {
-        column-count: 3;
+    section.chords {
+      pre {
+        padding: 0 1rem;
       }
     }
   }
@@ -217,9 +201,7 @@ footer {
   }
   section.logo {
     padding: 1rem;
-    text-align: center;
     svg {
-      max-width: 18rem;
       .white {
         fill: white;
       }
@@ -230,6 +212,7 @@ footer {
     p {
       padding: 0;
       line-height: 1.25;
+      text-align: center;
     }
   }
 }
@@ -241,6 +224,7 @@ footer {
     justify-content: flex-end;
     section.details {
       width: 40%;
+      max-width: 18.75rem;
     }
     section.about {
       width: 60%;
