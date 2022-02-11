@@ -159,6 +159,10 @@ main {
       white-space: pre;
       opacity: 0;
       @include transition(opacity, 0.25s, ease);
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
     section.chords.simplified {
       white-space: pre-line;
