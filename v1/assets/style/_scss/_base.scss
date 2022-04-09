@@ -1,0 +1,50 @@
+@import "variables";
+@import "mixins";
+
+// BASE
+html {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Courier", monospace;
+  font-size: 14px;
+  line-height: 2;
+  color: black;
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {scroll-behavior: auto;}
+	* {
+  	animation: none !important;
+  	transition: none !important;
+	}
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: white;
+  @include transition(all, 0.25s, ease);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+
+// DARK MODE
+html.dark {
+  color: white;
+  body {
+    background: $gray;
+  }
+}

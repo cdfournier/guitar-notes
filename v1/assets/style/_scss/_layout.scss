@@ -1,0 +1,58 @@
+// MAIN
+main {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  padding: 1rem 1rem 0;
+  article {
+    position: relative;
+    section {
+      top: 0;
+      width: 100%;
+      padding: 0 1rem;
+      white-space: pre-line;
+    }
+    section.lyrics {
+      padding: 1rem;
+    }
+    section.chords, section.chords.simplified {
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: pre;
+      opacity: 0;
+      @include transition(opacity, 0.25s, ease);
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    section.chords.simplified {
+      white-space: pre-line;
+    }
+    section.chords.show, section.chords.simplified.show {
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  main {
+    article  {
+      section {
+        column-gap: 2rem;
+      }
+    }
+    article.two {
+      section {
+        column-count: 2;
+      }
+    }
+    article.three {
+      section {
+        column-count: 3;
+      }
+    }
+  }
+}

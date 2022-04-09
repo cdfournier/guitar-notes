@@ -1,0 +1,187 @@
+// FOOTER
+footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  section {
+    padding: 1rem;
+    p {
+      padding: 0.25rem 0 0;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+  }
+  section.details {
+    figure {
+      display: grid;
+      max-width: 7.75rem;
+      margin: 0;
+      img {
+        border-radius: 0.25rem;
+      }
+      figcaption {
+        display: none;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 1rem 0 0;
+      fieldset {
+        width: 100%;
+        margin: 0;
+        padding: 1rem 0 0;
+        border: none;
+        label {
+          display: flex;
+          position: relative;
+          width: 100%;
+          margin: 0;
+          line-height: 1.25;
+          input[type="checkbox"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2.5rem;
+            height: 1.25rem;
+            margin: 0;
+            padding: 0;
+            border: 1px solid $gray;
+            border-radius: 2rem;
+            appearance: none;
+            &:after {
+              display: block;
+              position: absolute;
+              top: 0.125rem;
+              left: 0.125rem;
+              width: 0.875rem;
+              height: 0.875rem;
+              border-radius: 100%;
+              background: $gray;
+              content: "";
+              @include transition(all, 0.25s, ease);
+            }
+            &:checked:after {
+              margin-left: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  section.about {
+    display: flex;
+    flex-direction: column;
+    svg {
+      fill: $gray;
+    }
+    .logo {
+      padding: 1rem 1rem 0;
+      text-align: center;
+      svg {
+        max-width: 18rem;
+        .white {
+          fill: white;
+        }
+        .gray {
+          fill: $gray;
+        }
+      }
+      p {
+        padding: 0;
+        line-height: 1.25;
+      }
+    }
+  }
+}
+
+html.dark {
+  footer {
+    section.details {
+      form fieldset {
+        input[type="checkbox"] {
+          border-color: white;
+          &:after {
+            background: white;
+          }
+        }
+      }
+    }
+    section.about {
+      svg {
+        fill: white;
+      }
+      .logo {
+        svg {
+          .white {
+            fill: $gray;
+          }
+          .gray {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    section.details {
+      width: 40%;
+    }
+    section.about {
+      align-items: flex-end;
+      width: 55%;
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  footer {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    section.details {
+      width: 30%;
+    }
+    section.about {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 70%;
+      .text {
+        width: 65%
+      }
+      .logo {
+        width: 30%;
+        padding: 0 1rem;
+        p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  footer {
+    section.details {
+      width: 25%;
+      max-width: none;
+    }
+    section.about {
+      width: 70%;
+      .logo {
+        width: 25%;
+      }
+    }
+  }
+}
