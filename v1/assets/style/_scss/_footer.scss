@@ -154,7 +154,7 @@ html.dark {
     }
     section.about {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       width: 70%;
       .text {
