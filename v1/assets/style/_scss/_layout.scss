@@ -20,9 +20,9 @@ main {
           margin-top: -0.875rem;
         }
         span {
-          position: relative;
-          max-width: none;
-          @include transform(translateY(-0.875rem));
+          // position: relative;
+          // max-width: none;
+          // @include transform(translateY(-0.875rem));
         }
       }
     }
