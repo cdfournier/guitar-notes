@@ -23,13 +23,19 @@
     </style>
     <link rel="stylesheet" href="assets/style/master.min.css">
     <style>
+      main article p, pre {
+        margin: 0;
+        padding: 0;
+        line-height: 1.125;
+        white-space: pre-wrap;
+      }
       @media (min-width: 48rem) {
       }
     </style>
   </head>
   <body class="hidden">
     <main>
-      <article>
+      <article style="column-count: 1;">
         <h1 class="visuallyhidden"></h1>
         <section>
           <p id="song"></p>
@@ -77,16 +83,16 @@
       });
       // GET SONG TEXT
       var txtFile = new XMLHttpRequest();
-      var allText = "file not found";
-      txtFile.onreadystatechange = function () {
-          if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
-              allText = txtFile.responseText;
-              allText = allText.split("\n").join("<br>");
-          }
-
-          document.getElementById('song').innerHTML = allText;
+      var allText = "Song not found";
+      txtFile.onreadystatechange = function(){
+        if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
+          allText = txtFile.responseText;
+          allText = allText.split("\n").join("<br>");
+          // allText = allText.split("\n\n").join("<p>");
+        }
+        document.getElementById('song').innerHTML = allText;
       }
-      txtFile.open("GET", 'assets/songs/lyrics/phish-theme-from-the-bottom.txt', true);
+      txtFile.open("GET", 'assets/songs/phish-theme-from-the-bottom.txt', true);
       txtFile.send(null);
     </script>
   </body>
