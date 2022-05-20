@@ -8,22 +8,9 @@ main {
     position: relative;
     overflow: hidden;
     padding: 0 1rem;
-    column-gap: 2rem;
     section {
       overflow: hidden;
       p {
-        position: relative;
-        span {
-          display: inline-block;
-          position: absolute;
-          max-width: 0;
-          margin-top: -0.875rem;
-        }
-        span {
-          // position: relative;
-          // max-width: none;
-          // @include transform(translateY(-0.875rem));
-        }
       }
     }
   }
@@ -32,8 +19,6 @@ main {
 @media (min-width: 48rem) {
   main {
     article {
-      column-count: 2;
-      column-gap: 2rem;
     }
   }
 }
@@ -41,7 +26,6 @@ main {
 @media (min-width: 64rem) {
   main {
     article {
-      column-count: 3;
     }
   }
 }
