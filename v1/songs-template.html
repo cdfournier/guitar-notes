@@ -22,28 +22,12 @@
       body.visible {opacity: 1;}
     </style>
     <link rel="stylesheet" href="assets/style/master.min.css">
-    <style>
-      main article section p {
-        margin: 0;
-        line-height: 1.125;
-        white-space: pre-wrap;
-      }
-      main article section p:first-of-type {
-        padding: 0;
-      }
-      @media (min-width: 48rem) {
-        main article section {
-          column-count: 2;
-        }
-      }
-    </style>
   </head>
   <body class="hidden">
     <main>
-      <article style="column-count: 1;">
+      <article>
         <h1 class="visuallyhidden"></h1>
-        <section>
-          <p id="song"></p>
+        <section id="song">
         </section>
       </article>
     </main>
@@ -79,7 +63,6 @@
       </section>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/site.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function(){
@@ -99,6 +82,27 @@
       }
       txtFile.open("GET", 'assets/songs/phish-theme-from-the-bottom.txt', true);
       txtFile.send(null);
+      // COLOR THEME MODES
+      window.addEventListener('DOMContentLoaded', function(theme) {
+        if(localStorage.getItem('theme') === 'true') {
+          $('html').toggleClass('dark');
+          $('input#switch-theme').prop('checked',true);
+        }
+        else {
+          localStorage.setItem('theme',false);
+        }
+      });
+      $('input#switch-theme').click(function() {
+        $('html').toggleClass('dark');
+        if(localStorage.getItem('theme') === 'true') {
+          $('input#switch-theme').prop('checked',false);
+          localStorage.setItem('theme',false);
+        }
+        else {
+          $('input#switch-theme').prop('checked',true);
+          localStorage.setItem('theme',true);
+        }
+      });
     </script>
   </body>
 </html>

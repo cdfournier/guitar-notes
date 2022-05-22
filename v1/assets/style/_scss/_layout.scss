@@ -29,3 +29,29 @@ main {
     }
   }
 }
+
+
+// COLUMNS
+@media (min-width: 48rem) {
+  main {
+    article {
+      section {
+        &.sm {
+          column-count: 2;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  main {
+    article {
+      section {
+        &.sm {
+          column-count: 3;
+        }
+      }
+    }
+  }
+}
