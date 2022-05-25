@@ -27,7 +27,7 @@
     <main>
       <article>
         <h1 class="visuallyhidden"></h1>
-        <section id="song">
+        <section id="song" class="sm">
         </section>
       </article>
     </main>
@@ -69,19 +69,21 @@
         $("body").addClass("visible");
         $("body").removeClass("hidden");
       });
+
       // GET SONG TEXT
       var txtFile = new XMLHttpRequest();
       var allText = "Song not found";
       txtFile.onreadystatechange = function(){
         if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
           allText = txtFile.responseText;
-          allText = allText.split("\n").join("<br>");
-          // allText = allText.split("\n\n").join("<p>");
+          // allText = allText.split("\n").join("<br>");
+          allText = allText.split("\n\n").join("<p>");
         }
         document.getElementById('song').innerHTML = allText;
       }
       txtFile.open("GET", 'assets/songs/phish-theme-from-the-bottom.txt', true);
       txtFile.send(null);
+
       // COLOR THEME MODES
       window.addEventListener('DOMContentLoaded', function(theme) {
         if(localStorage.getItem('theme') === 'true') {

@@ -3,7 +3,7 @@ main {
   position: relative;
   width: 100%;
   min-height: 50vh;
-  padding: 1rem 1rem 0;
+  padding: 0 1rem;
   article {
     position: relative;
     overflow: hidden;
@@ -11,6 +11,12 @@ main {
     section {
       overflow: hidden;
       p {
+        overflow: hidden;
+        margin: 0;
+        break-inside: avoid;
+        line-height: 1.125;
+        white-space: pre;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -19,6 +25,12 @@ main {
 @media (min-width: 48rem) {
   main {
     article {
+      section {
+        p {
+          white-space: pre-wrap;
+          text-overflow: inherit;
+        }
+      }
     }
   }
 }
