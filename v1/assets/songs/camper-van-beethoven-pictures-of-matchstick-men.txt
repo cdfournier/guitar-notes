@@ -1,4 +1,4 @@
-D F C G D D D D
+D F C G D F C G
 
 D              F
 When I look up to the sky
@@ -19,7 +19,7 @@ G           A                  D
 Pictures of matchstick men and you
 G         A                  D
 Images of matchstick men and you
-G          A               D F C G
+G          A               D  F C G
 All I ever see is them and you
 
 D

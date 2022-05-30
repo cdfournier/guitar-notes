@@ -50,6 +50,11 @@ main {
       section {
         &.sm {
           column-count: 2;
+          column-gap: 2rem;
+        }
+        &.md {
+          column-count: 3;
+          column-gap: 2rem;
         }
       }
     }
@@ -62,6 +67,9 @@ main {
       section {
         &.sm {
           column-count: 3;
+        }
+        &.md {
+          column-count: 4;
         }
       }
     }
