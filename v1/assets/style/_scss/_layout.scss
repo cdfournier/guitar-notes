@@ -42,6 +42,12 @@ main {
   }
 }
 
+@media (display-mode: fullscreen) {
+  main {
+    padding: 1rem 2rem 0;
+  }
+}
+
 
 // COLUMNS
 @media (min-width: 48rem) {
