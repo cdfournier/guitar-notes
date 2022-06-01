@@ -1,4 +1,4 @@
-A C G D A E Em D
+A C G D - A E Em D
 
 A               C
 It's hidden far away
@@ -34,7 +34,7 @@ The binding belt enclosing me
   D           A
 A sample in a jar
 
-A C G D A E Em D
+A C G D - A E Em D
 
 A                          C
 And on the market stands unfolding
@@ -94,4 +94,4 @@ The binding belt enclosing me
   D           A
 A sample in a jar
 
-A C G D A E Em D
+A C G D - A E Em D

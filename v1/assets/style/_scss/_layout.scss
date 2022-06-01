@@ -56,6 +56,14 @@ main {
           column-count: 3;
           column-gap: 2rem;
         }
+        &.sm.md {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+        &.md.lg {
+          column-count: 3;
+          column-gap: 2rem;
+        }
       }
     }
   }
@@ -65,10 +73,10 @@ main {
   main {
     article {
       section {
-        &.sm {
+        &.sm.md {
           column-count: 3;
         }
-        &.md {
+        &.md.lg {
           column-count: 4;
         }
       }
