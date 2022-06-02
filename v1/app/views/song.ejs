@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<%- include('includes/head'); %>  </head>
+  <body class="hidden">
+    <main>
+      <article>
+        <h1 class="visuallyhidden"></h1>
+        <section id="song" class="sm">
+        </section>
+      </article>
+    </main>
+    <footer>
+      <section class="details">
+        <figure>
+          <img src="/images/" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <ul>
+          <li><span>Song:</span></li>
+          <li><span>Artist:</span></li>
+          <li><span>Album:</span></li>
+          <li><span>Year:</span></li>
+        </ul>
+        <form>
+          <fieldset>
+            <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
+          </fieldset>
+        </form>
+      </section>
+      <section class="about">
+<%- include('includes/footer-about'); %>
+      </section>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/scripts.js"></script>
+    <script>
+      // GET SONG TEXT
+      var txtFile = new XMLHttpRequest();
+      var allText = "Song not found";
+      txtFile.onreadystatechange = function(){
+        if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
+          allText = txtFile.responseText;
+          allText = allText.split("\n\n").join("<p>");
+        }
+        document.getElementById('song').innerHTML = allText;
+      }
+      txtFile.open("GET", '/songs/beck-asshole.txt', true);
+      txtFile.send(null);
+    </script>
+  </body>
+</html>
