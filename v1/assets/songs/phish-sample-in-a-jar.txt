@@ -29,7 +29,7 @@ A         D            E
 And I was foggy rather groggy
 D                   A
 You helped me to my car
-A           D    E
+A   D            E
 The binding belt enclosing me
   D           A
 A sample in a jar
@@ -89,7 +89,7 @@ A         D            E
 And I was foggy rather groggy
 D                   A
 You helped me to my car
-A           D    E
+A   D            E
 The binding belt enclosing me
   D           A
 A sample in a jar

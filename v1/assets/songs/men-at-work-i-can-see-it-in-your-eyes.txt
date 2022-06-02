@@ -9,9 +9,9 @@ I looked up all my mother's recipes
 C                        A
 I can't think what I did wrong
 
-G          D          G             D
+G          D          G                  D
 We go to a restaurant but you don't like wine
-G            D             G            D
+G            D             G               D
 You say it's love you want but there is no time
 
 C    D          C              D
@@ -37,6 +37,8 @@ C    D          C              D
 I realize I can see it in your eyes
 C         D             G
 I've only got myself to blame
+
+C G C A - G D G D - G D G D - C D C D - C D C D
 
 C                       G
 Winter kisses when your lips were blue
