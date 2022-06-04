@@ -1,0 +1,62 @@
+// TYPOGRAPHY
+h1, h2, h3, h4, h5, p {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5 {line-height: 1.125;}
+
+h1 {font-size: 1.953rem;}
+h2 {font-size: 1.563rem;}
+h3 {font-size: 1.25rem;}
+h4 {font-size: 1rem;}
+h5 {font-size: 0.8rem;}
+
+p {
+  margin: 0;
+  padding: 1rem 0 0;
+  font-size: 1rem;
+  &:first-child {
+    // padding: 0;
+  }
+}
+
+strong, em {display: inline;}
+
+small {font-size: 0.875rem;}
+
+ul {
+  margin: 0;
+  padding: 1rem 0 0;
+  font-size: 1rem;
+  list-style: none;
+  li {
+    padding: 0.5rem 0 0;
+    line-height: 1.25;
+    span {
+      padding: 0 0.5rem 0 0;
+    }
+    &:first-child {
+      padding: 0;
+      font-weight: bold;
+    }
+  }
+}
+
+.visuallyhidden {display: none;}
+
+
+// TEXT LINK STYLES
+a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  @include transition(all, 0.25s, ease);
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}

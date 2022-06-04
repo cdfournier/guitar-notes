@@ -1,0 +1,159 @@
+// MAIN
+main {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  padding: 0 1rem;
+  article {
+    position: relative;
+    overflow: hidden;
+    padding: 0 1rem;
+    section {
+      overflow: hidden;
+      p {
+        overflow: hidden;
+        margin: 0;
+        break-inside: avoid;
+        line-height: 1.125;
+        white-space: pre;
+        text-overflow: ellipsis;
+      }
+    }
+    section#song:not(p) {
+      visibility: hidden;
+      line-height: 0;
+    }
+    section#song p {
+      visibility: visible;
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  main {
+    article {
+      section {
+        p {
+          white-space: pre-wrap;
+          text-overflow: inherit;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  main {
+    article {
+    }
+  }
+}
+
+@media (display-mode: fullscreen) {
+  main {
+    padding: 1rem 4rem 0;
+  }
+}
+
+
+// COLUMNS
+@media (min-width: 48rem) {
+  main {
+    article {
+      section {
+        &.sm {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+        &.md {
+          column-count: 3;
+          column-gap: 2rem;
+        }
+        &.sm.md {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+        &.md.lg {
+          column-count: 3;
+          column-gap: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  main {
+    article {
+      section {
+        &.sm.md {
+          column-count: 3;
+        }
+        &.md.lg {
+          column-count: 4;
+        }
+      }
+    }
+  }
+}
+
+
+// ALERTS
+.alert {
+  display: grid;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100vw;
+  @include transition(all, 0.5s, ease);
+  @include transform(translateY(-100vh));
+  &.show {
+    @include transform(translateY(0));
+  }
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+    &.note {
+      color: white;
+      background: $gray;
+    }
+    p {
+      padding: 0 1rem;
+    }
+    span, button {
+      display: grid;
+      max-width: 2rem;
+      max-height: 2rem;
+      svg {
+        width: 100%;
+        height: auto;
+      }
+      &.close {
+        cursor: pointer;
+        @include transition(opacity, 0.25s, ease);
+        &:hover, &:focus {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+
+// ALERTS DARK MODE
+html.dark {
+  .alert {
+    .message {
+      &.note {
+        color: black;
+        background: white;
+      }
+    }
+  }
+}
