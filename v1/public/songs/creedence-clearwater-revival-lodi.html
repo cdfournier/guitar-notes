@@ -25,6 +25,26 @@
     <link rel="stylesheet" href="assets/style/master.min.css">
   </head>
   <body class="hidden">
+    <section class="alert">
+      <div class="message note">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="clipboard-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+            <rect x="9" y="3" width="6" height="4" rx="2" />
+            <path d="M9 14l2 2l4 -4" />
+          </svg>
+        </span>
+        <p>Note: Capo on 3</p>
+        <button class="close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="close" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </section>
     <main>
       <article>
         <h1 class="visuallyhidden">Lodi by Creedence Clearwater Revival</h1>
@@ -65,6 +85,7 @@
       </section>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/site.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function(){
@@ -84,28 +105,6 @@
       }
       txtFile.open("GET", 'assets/songs/creedence-clearwater-revival-lodi.txt', true);
       txtFile.send(null);
-
-      // COLOR THEME MODES
-      window.addEventListener('DOMContentLoaded', function(theme) {
-        if(localStorage.getItem('theme') === 'true') {
-          $('html').toggleClass('dark');
-          $('input#switch-theme').prop('checked',true);
-        }
-        else {
-          localStorage.setItem('theme',false);
-        }
-      });
-      $('input#switch-theme').click(function() {
-        $('html').toggleClass('dark');
-        if(localStorage.getItem('theme') === 'true') {
-          $('input#switch-theme').prop('checked',false);
-          localStorage.setItem('theme',false);
-        }
-        else {
-          $('input#switch-theme').prop('checked',true);
-          localStorage.setItem('theme',true);
-        }
-      });
     </script>
   </body>
 </html>

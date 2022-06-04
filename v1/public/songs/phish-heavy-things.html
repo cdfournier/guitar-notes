@@ -64,6 +64,7 @@
       </section>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/site.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function(){
@@ -83,28 +84,6 @@
       }
       txtFile.open("GET", 'assets/songs/phish-heavy-things.txt', true);
       txtFile.send(null);
-
-      // COLOR THEME MODES
-      window.addEventListener('DOMContentLoaded', function(theme) {
-        if(localStorage.getItem('theme') === 'true') {
-          $('html').toggleClass('dark');
-          $('input#switch-theme').prop('checked',true);
-        }
-        else {
-          localStorage.setItem('theme',false);
-        }
-      });
-      $('input#switch-theme').click(function() {
-        $('html').toggleClass('dark');
-        if(localStorage.getItem('theme') === 'true') {
-          $('input#switch-theme').prop('checked',false);
-          localStorage.setItem('theme',false);
-        }
-        else {
-          $('input#switch-theme').prop('checked',true);
-          localStorage.setItem('theme',true);
-        }
-      });
     </script>
   </body>
 </html>
