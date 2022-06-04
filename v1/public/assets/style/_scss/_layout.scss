@@ -19,6 +19,13 @@ main {
         text-overflow: ellipsis;
       }
     }
+    section#song:not(p) {
+      visibility: hidden;
+      line-height: 0;
+    }
+    section#song p {
+      visibility: visible;
+    }
   }
 }
 
