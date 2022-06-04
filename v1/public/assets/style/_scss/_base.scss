@@ -40,6 +40,15 @@ img {
   margin: 0;
 }
 
+button {
+  display: grid;
+  appearance: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  background: none;
+}
+
 
 // DARK MODE
 html.dark {
