@@ -124,7 +124,7 @@ main {
       background: $gray;
     }
     p {
-      padding: 0 1rem;
+      padding: 0 1rem 0 0.25rem;
     }
     span, button {
       display: grid;
@@ -135,6 +135,8 @@ main {
         height: auto;
       }
       &.close {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
         cursor: pointer;
         @include transition(opacity, 0.25s, ease);
         &:hover, &:focus {
