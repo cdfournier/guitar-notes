@@ -98,6 +98,71 @@ main {
 }
 
 
+// INDEX
+main.index {
+  padding-top: 1rem;
+  article {
+    section {
+      h1, h2, h3 {
+        column-span: all;
+      }
+      h3 {
+        padding: 1rem 0 0;
+      }
+      p {
+        padding: 0;
+        line-height: 1.5;
+        white-space: normal;
+        a {
+          font-weight: normal;
+          text-decoration: none;
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+      h2 + p {
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.125;
+        column-span: all;
+      }
+      h4 {
+        padding: 1rem 0 0;
+        font-size: 1.25rem;
+      }
+      h4 + p {
+        break-before: avoid;
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  main.index {
+    article {
+      section {
+        column-count: 2;
+        column-gap: 2rem;
+        p {
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  main.index {
+    article {
+      section {
+        column-count: 3;
+      }
+    }
+  }
+}
+
+
 // ALERTS
 .alert {
   display: grid;

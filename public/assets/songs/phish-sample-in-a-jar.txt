@@ -95,6 +95,6 @@ The binding belt enclosing me
 A sample in a jar
 
 A C G  D
-     A sample in a jar
+        A sample in a jar
 A E Em D
-     A sample in a jar
+        A sample in a jar

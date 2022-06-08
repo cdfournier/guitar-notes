@@ -9,7 +9,7 @@
    "img": "beck.jpg",
    "notes": "",
    "song-id": "asshole",
-   "artist-song": "beck-asshole"
+   "artist-song": "beck-asshole.txt"
  },
  {
    "artist-id": "beck",
@@ -21,7 +21,7 @@
    "img": "beck.jpg",
    "notes": "Capo on 1",
    "song-id": "girl",
-   "artist-song": "beck-girl"
+   "artist-song": "beck-girl.txt"
  },
  {
    "artist-id": "beck",
@@ -33,7 +33,19 @@
    "img": "beck.jpg",
    "notes": "",
    "song-id": "lost-cause",
-   "artist-song": "beck-lost-cause"
+   "artist-song": "beck-lost-cause.txt"
+ },
+ {
+   "artist-id": "beck",
+   "artist-sort": "beck",
+   "artist": "Beck",
+   "song": "Rowboat",
+   "album": "Stereopathetic Soulmanure",
+   "year": 1994,
+   "img": "beck.jpg",
+   "notes": "",
+   "song-id": "rowboat",
+   "artist-song": "beck-rowboat.txt"
  },
  {
    "artist-id": "camper-van-beethoven",
@@ -45,19 +57,7 @@
    "img": "camper-van-beethoven.jpg",
    "notes": "",
    "song-id": "51-7",
-   "artist-song": "camper-van-beethoven-51-7"
- },
- {
-   "artist-id": "camper-van-beethoven",
-   "artist-sort": "camper van beethoven",
-   "artist": "Camper Van Beethoven",
-   "song": "Pictures Of Matchstick Men",
-   "album": "Camper Van Beethoven",
-   "year": 1983,
-   "img": "camper-van-beethoven.jpg",
-   "notes": "",
-   "song-id": "pictures-of-matchstick-men",
-   "artist-song": "camper-van-beethoven-pictures-of-matchstick-men"
+   "artist-song": "camper-van-beethoven-51-7.txt"
  },
  {
    "artist-id": "camper-van-beethoven",
@@ -69,7 +69,7 @@
    "img": "camper-van-beethoven.jpg",
    "notes": "",
    "song-id": "take-the-skinheads-bowling",
-   "artist-song": "camper-van-beethoven-take-the-skinheads-bowling"
+   "artist-song": "camper-van-beethoven-take-the-skinheads-bowling.txt"
  },
  {
    "artist-id": "cracker",
@@ -81,7 +81,7 @@
    "img": "cracker.jpg",
    "notes": "",
    "song-id": "euro-trash-girl",
-   "artist-song": "cracker-euro-trash-girl"
+   "artist-song": "cracker-euro-trash-girl.txt"
  },
  {
    "artist-id": "cracker",
@@ -93,7 +93,7 @@
    "img": "cracker.jpg",
    "notes": "",
    "song-id": "get-off-this",
-   "artist-song": "cracker-get-off-this"
+   "artist-song": "cracker-get-off-this.txt"
  },
  {
    "artist-id": "cracker",
@@ -105,7 +105,7 @@
    "img": "cracker.jpg",
    "notes": "",
    "song-id": "it-aint-gonna-suck-itself",
-   "artist-song": "cracker-it-aint-gonna-suck-itself"
+   "artist-song": "cracker-it-aint-gonna-suck-itself.txt"
  },
  {
    "artist-id": "creedence-clearwater-revival",
@@ -117,7 +117,19 @@
    "img": "creedence-clearwater-revival.jpg",
    "notes": "Capo on 3",
    "song-id": "lodi",
-   "artist-song": "creedence-clearwater-revival-lodi"
+   "artist-song": "creedence-clearwater-revival-lodi.txt"
+ },
+ {
+   "artist-id": "michael-dorman",
+   "artist-sort": "dorman, michael",
+   "artist": "Michael Dorman",
+   "song": "Dead Serious Rick",
+   "album": "Patriot: Season 1 EP (An Amazon Original Soundtrack)",
+   "year": 2017,
+   "img": "michael-dorman.jpg",
+   "notes": "",
+   "song-id": "dead-serious-rick",
+   "artist-song": "michael-dorman-dead-serious-rick.txt"
  },
  {
    "artist-id": "george-harrison",
@@ -129,139 +141,7 @@
    "img": "george-harrison.jpg",
    "notes": "",
    "song-id": "cheer-down",
-   "artist-song": "george-harrison-cheer-down"
- },
- {
-   "artist-id": "john-prine",
-   "artist-sort": "prine, john",
-   "artist": "John Prine",
-   "song": "Pretty Good",
-   "album": "John Prine",
-   "year": 1971,
-   "img": "john-prine.jpg",
-   "notes": "",
-   "song-id": "pretty-good",
-   "artist-song": "john-prine-pretty-good"
- },
- {
-   "artist-id": "men-at-work",
-   "artist-sort": "men at work",
-   "artist": "Men At Work",
-   "song": "I Can See It In Your Eyes",
-   "album": "Business As Usual",
-   "year": 1981,
-   "img": "men-at-work.jpg",
-   "notes": "Capo on 2",
-   "song-id": "i-can-see-it-in-your-eyes",
-   "artist-song": "men-at-work-i-can-see-it-in-your-eyes"
- },
- {
-   "artist-id": "men-at-work",
-   "artist-sort": "men at work",
-   "artist": "Men At Work",
-   "song": "Overkill",
-   "album": "Cargo",
-   "year": 1983,
-   "img": "men-at-work.jpg",
-   "notes": "",
-   "song-id": "overkill",
-   "artist-song": "men-at-work-overkill"
- },
- {
-   "artist-id": "men-at-work",
-   "artist-sort": "men at work",
-   "artist": "Men At Work",
-   "song": "People Just Love To Play With Words",
-   "album": "Business As Usual",
-   "year": 1981,
-   "img": "men-at-work.jpg",
-   "notes": "",
-   "song-id": "people-just-love-to-play-with-words",
-   "artist-song": "men-at-work-people-just-love-to-play-with-words"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "AC/DC Bag",
-   "album": "Phish",
-   "year": 1986,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "ac-dc-bag",
-   "artist-song": "phish-ac-dc-bag"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Driver",
-   "album": "Farmhouse",
-   "year": 2000,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "driver",
-   "artist-song": "phish-driver"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Heavy Things",
-   "album": "Farmhouse",
-   "year": 2000,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "heavy-things",
-   "artist-song": "phish-heavy-things"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Pebbles and Marbles",
-   "album": "Round Room",
-   "year": 2002,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "pebbles-and-marbles",
-   "artist-song": "phish-pebbles-and-marbles"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Prince Caspian",
-   "album": "Billy Breathes",
-   "year": 1996,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "prince-caspian",
-   "artist-song": "phish-prince-caspian"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Sample In A Jar",
-   "album": "Phish",
-   "year": 1994,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "sample-in-a-jar",
-   "artist-song": "phish-sample-in-a-jar"
- },
- {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Theme From The Bottom",
-   "album": "Billy Breathes",
-   "year": 1996,
-   "img": "phish.jpg",
-   "notes": "",
-   "song-id": "theme-from-the-bottom",
-   "artist-song": "phish-theme-from-the-bottom"
+   "artist-song": "george-harrison-cheer-down.txt"
  },
  {
    "artist-id": "the-hollies",
@@ -273,6 +153,222 @@
    "img": "the-hollies.jpg",
    "notes": "",
    "song-id": "long-cool-woman-in-a-black-dress",
-   "artist-song": "the-hollies-long-cool-woman-in-a-black-dress"
+   "artist-song": "the-hollies-long-cool-woman-in-a-black-dress.txt"
+ },
+ {
+   "artist-id": "mazzy-star",
+   "artist-sort": "mazzy-star",
+   "artist": "Mazzy Star",
+   "song": "Bells Ring",
+   "album": "So Tonight That I May See",
+   "year": 1993,
+   "img": "mazzy-star.jpg",
+   "notes": "",
+   "song-id": "bells-ring",
+   "artist-song": "mazzy-star-bells-ring.txt"
+ },
+ {
+   "artist-id": "men-at-work",
+   "artist-sort": "men at work",
+   "artist": "Men At Work",
+   "song": "I Can See It In Your Eyes",
+   "album": "Business As Usual",
+   "year": 1981,
+   "img": "men-at-work.jpg",
+   "notes": "Capo on 2",
+   "song-id": "i-can-see-it-in-your-eyes",
+   "artist-song": "men-at-work-i-can-see-it-in-your-eyes.txt"
+ },
+ {
+   "artist-id": "men-at-work",
+   "artist-sort": "men at work",
+   "artist": "Men At Work",
+   "song": "Overkill",
+   "album": "Cargo",
+   "year": 1983,
+   "img": "men-at-work.jpg",
+   "notes": "",
+   "song-id": "overkill",
+   "artist-song": "men-at-work-overkill.txt"
+ },
+ {
+   "artist-id": "men-at-work",
+   "artist-sort": "men at work",
+   "artist": "Men At Work",
+   "song": "People Just Love To Play With Words",
+   "album": "Business As Usual",
+   "year": 1981,
+   "img": "men-at-work.jpg",
+   "notes": "",
+   "song-id": "people-just-love-to-play-with-words",
+   "artist-song": "men-at-work-people-just-love-to-play-with-words.txt"
+ },
+ {
+   "artist-id": "pearl-jam",
+   "artist-sort": "pearl-jam",
+   "artist": "Pearl Jam",
+   "song": "Better Man",
+   "album": "Vitalogy",
+   "year": 1994,
+   "img": "pearl-jam.jpg",
+   "notes": "",
+   "song-id": "better-man",
+   "artist-song": "pearl-jam-better-man.txt"
+ },
+ {
+   "artist-id": "pearl-jam",
+   "artist-sort": "pearl-jam",
+   "artist": "Pearl Jam",
+   "song": "Thin Air",
+   "album": "Binaural",
+   "year": 2000,
+   "img": "pearl-jam.jpg",
+   "notes": "",
+   "song-id": "thin-air",
+   "artist-song": "pearl-jam-thin-air.txt"
+ },
+ {
+   "artist-id": "pearl-jam",
+   "artist-sort": "pearl-jam",
+   "artist": "Pearl Jam",
+   "song": "Come Back",
+   "album": "Pearl Jam",
+   "year": 2006,
+   "img": "pearl-jam.jpg",
+   "notes": "",
+   "song-id": "come-back",
+   "artist-song": "pearl-jam-come-back.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "AC/DC Bag",
+   "album": "Phish",
+   "year": 1986,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "ac-dc-bag",
+   "artist-song": "phish-ac-dc-bag.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Driver",
+   "album": "Farmhouse",
+   "year": 2000,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "driver",
+   "artist-song": "phish-driver.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Heavy Things",
+   "album": "Farmhouse",
+   "year": 2000,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "heavy-things",
+   "artist-song": "phish-heavy-things.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Pebbles and Marbles",
+   "album": "Round Room",
+   "year": 2002,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "pebbles-and-marbles",
+   "artist-song": "phish-pebbles-and-marbles.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Prince Caspian",
+   "album": "Billy Breathes",
+   "year": 1996,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "prince-caspian",
+   "artist-song": "phish-prince-caspian.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Sample In A Jar",
+   "album": "Phish",
+   "year": 1994,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "sample-in-a-jar",
+   "artist-song": "phish-sample-in-a-jar.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Theme From The Bottom",
+   "album": "Billy Breathes",
+   "year": 1996,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "theme-from-the-bottom",
+   "artist-song": "phish-theme-from-the-bottom.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
+   "song": "Runaway Jim",
+   "album": "",
+   "year": null,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "runaway-jim",
+   "artist-song": "phish-runaway-jim.txt"
+ },
+ {
+   "artist-id": "john-prine",
+   "artist-sort": "prine, john",
+   "artist": "John Prine",
+   "song": "Pretty Good",
+   "album": "John Prine",
+   "year": 1971,
+   "img": "john-prine.jpg",
+   "notes": "",
+   "song-id": "pretty-good",
+   "artist-song": "john-prine-pretty-good.txt"
+ },
+ {
+   "artist-id": "keith-richards",
+   "artist-sort": "richards, keith",
+   "artist": "Keith Richards",
+   "song": "Eileen",
+   "album": "Main Offender",
+   "year": 1992,
+   "img": "keith-richards.jpg",
+   "notes": "",
+   "song-id": "eileen",
+   "artist-song": "keith-richards-eileen.txt"
+ },
+ {
+   "artist-id": "traveling-wilburys",
+   "artist-sort": "traveling wilburys",
+   "artist": "Traveling Wilburys",
+   "song": "Traveling Wilburys Vol. 1",
+   "album": "Traveling Wilburys",
+   "year": 1988,
+   "img": "traveling-wilburys.jpg",
+   "notes": "",
+   "song-id": "handle-with-care",
+   "artist-song": "traveling-wilburys-handle-with-care.txt"
  }
 ]
