@@ -224,3 +224,48 @@ html.dark {
     }
   }
 }
+
+
+// ALERTS INFO BUTTON
+.info {
+  display: grid;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+  padding: 0;
+  button {
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid $gray;
+    border-radius: 100%;
+    color: white;
+    background: $gray;
+    &:hover, &:focus {
+      color: $gray;
+      background: white;
+    }
+  }
+}
+
+
+// ALERTS INFO BUTTON DARK MODE
+html.dark {
+  .info {
+    button {
+      border-color: white;
+      color: $gray;
+      background: white;
+      &:hover, &:focus {
+        color: white;
+        background: $gray;
+      }
+    }
+  }
+}
