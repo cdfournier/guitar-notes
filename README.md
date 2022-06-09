@@ -11,9 +11,9 @@ I also like to design in code. I love the power of designing in code: there is s
 I would love help with all of it: I have started to set up an environment here for some templating using the dependencies below, but I could use help making it work.
 
 ## Built With
-[Express](https://expressjs.com/)
-[Embedded JavaScript Templating](https://ejs.co/)
-[SCSS](https://sass-lang.com/documentation/syntax)
+- [Express](https://expressjs.com/)
+- [Embedded JavaScript Templating](https://ejs.co/)
+- [SCSS](https://sass-lang.com/documentation/syntax)
 
 ## License
 Distributed under the MIT License. See LICENSE.txt for more information.
