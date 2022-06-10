@@ -98,6 +98,71 @@ main {
 }
 
 
+// INDEX
+main.index {
+  padding-top: 1rem;
+  article {
+    section {
+      h1, h2, h3 {
+        column-span: all;
+      }
+      h3 {
+        padding: 1rem 0 0;
+      }
+      p {
+        padding: 0;
+        line-height: 1.5;
+        white-space: normal;
+        a {
+          font-weight: normal;
+          text-decoration: none;
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+      h2 + p {
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.125;
+        column-span: all;
+      }
+      h4 {
+        padding: 1rem 0 0;
+        font-size: 1.25rem;
+      }
+      h4 + p {
+        break-before: avoid;
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  main.index {
+    article {
+      section {
+        column-count: 2;
+        column-gap: 2rem;
+        p {
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  main.index {
+    article {
+      section {
+        column-count: 3;
+      }
+    }
+  }
+}
+
+
 // ALERTS
 .alert {
   display: grid;
@@ -124,7 +189,7 @@ main {
       background: $gray;
     }
     p {
-      padding: 0 1rem;
+      padding: 0 1rem 0 0.25rem;
     }
     span, button {
       display: grid;
@@ -135,6 +200,8 @@ main {
         height: auto;
       }
       &.close {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
         cursor: pointer;
         @include transition(opacity, 0.25s, ease);
         &:hover, &:focus {
@@ -153,6 +220,58 @@ html.dark {
       &.note {
         color: black;
         background: white;
+      }
+    }
+  }
+}
+
+
+// ALERTS INFO BUTTON
+.info {
+  display: grid;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+  padding: 0;
+  button {
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid $gray;
+    border-radius: 100%;
+    color: white;
+    background: $gray;
+    &:hover, &:focus {
+      color: $gray;
+      background: white;
+    }
+  }
+}
+
+@media (display-mode: fullscreen) {
+  .info {
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+
+// ALERTS INFO BUTTON DARK MODE
+html.dark {
+  .info {
+    button {
+      border-color: white;
+      color: $gray;
+      background: white;
+      &:hover, &:focus {
+        color: white;
+        background: $gray;
       }
     }
   }

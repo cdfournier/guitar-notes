@@ -17,15 +17,20 @@ window.addEventListener('DOMContentLoaded', function(theme) {
     else {
       $('input#switch-theme').prop('checked',true);
       localStorage.setItem('theme',true);
-  }
-});
+    }
+  });
 
 // ALERTS
 window.addEventListener('DOMContentLoaded', function(alerts) {
   $('.alert').addClass('show');
-  setTimeout(function() {
-    $('.alert').removeClass('show') }, 10000);
+    setTimeout(function() {
+      $('.alert').removeClass('show') }, 10000);
   });
   $('.alert .message button.close').click( function() {
     $('.alert').removeClass('show');
+  });
+  $('.info button').click( function() {
+    $('.alert').addClass('show');
+    setTimeout(function() {
+      $('.alert').removeClass('show') }, 10000);
   });

@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/assets/style/master.min.css' />
+    <%- include('includes/head', { title }); %>
+    <style>
+    </style>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body class="hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <main class="index">
+      <article>
+        <h1 class="visuallyhidden"><%= title %> Temporary Index</h1>
+        <section>
+          <h2>Welcome to <%= title %></h2>
+          <p>This is the temporary index for the new version of <%= title %>.</p>
+          <h3>Current list:</h3>
+          <h4>Beck</h4><p><a href='songs/beck-asshole.html' target='_blank'>Asshole</a>
+          <p><a href='songs/beck-girl.html' target='_blank'>Girl</a></p>
+          <p><a href='songs/beck-lost-cause.html' target='_blank'>Lost Cause</a></p>
+          <p><a href='songs/beck-rowboat.html' target='_blank'>Rowboat</a></p>
+          <h4>Camper Van Beethoven</h4><p><a href='songs/camper-van-beethoven-51-7.html' target='_blank'>51-7</a>
+          <p><a href='songs/camper-van-beethoven-take-the-skinheads-bowling.html' target='_blank'>Take The Skinheads Bowling</a></p>
+          <h4>Cracker</h4><p><a href='songs/cracker-euro-trash-girl.html' target='_blank'>Euro Trash Girl</a>
+          <p><a href='songs/cracker-get-off-this.html' target='_blank'>Get Off This</a></p>
+          <p><a href='songs/cracker-it-aint-gonna-suck-itself.html' target='_blank'>It Ain't Gonna Suck Itself</a></p>
+          <h4>Creedence Clearwater Revival</h4><p><a href='songs/creedence-clearwater-revival-lodi.html' target='_blank'>Lodi</a>
+          <h4>Evan Dando</h4><p><a href='songs/evan-dando-frying-pan.html' target='_blank'>Frying Pan</a>
+          <h4>Michael Dorman</h4><p><a href='songs/michael-dorman-dead-serious-rick.html' target='_blank'>Dead Serious Rick</a>
+          <h4>George Harrison</h4><p><a href='songs/george-harrison-cheer-down.html' target='_blank'>Cheer Down</a>
+          <h4>The Hollies</h4><p><a href='songs/the-hollies-long-cool-woman-in-a-black-dress.html' target='_blank'>Long Cool Woman In A Black Dress</a>
+          <h4>Mazzy Star</h4><p><a href='songs/mazzy-star-bells-ring.html' target='_blank'>Bells Ring</a>
+          <p><a href='songs/mazzy-star-blue-flower.html' target='_blank'>Blue Flower</a></p>
+          <p><a href='songs/mazzy-star-five-string-serenade.html' target='_blank'>Five String Serenade</a></p>
+          <p><a href='songs/mazzy-star-give-you-my-lovin.html' target='_blank'>Give You My Lovin'</a></p>
+          <h4>Men At Work</h4><p><a href='songs/men-at-work-i-can-see-it-in-your-eyes.html' target='_blank'>I Can See It In Your Eyes</a>
+          <p><a href='songs/men-at-work-overkill.html' target='_blank'>Overkill</a></p>
+          <p><a href='songs/men-at-work-people-just-love-to-play-with-words.html' target='_blank'>People Just Love To Play With Words</a></p>
+          <h4>Pearl Jam</h4><p><a href='songs/pearl-jam-better-man.html' target='_blank'>Better Man</a>
+          <p><a href='songs/pearl-jam-come-back.html' target='_blank'>Come Back</a></p>
+          <p><a href='songs/pearl-jam-thin-air.html' target='_blank'>Thin Air</a></p>
+          <h4>Phish</h4><p><a href='songs/phish-ac-dc-bag.html' target='_blank'>AC/DC Bag</a>
+          <p><a href='songs/phish-driver.html' target='_blank'>Driver</a></p>
+          <p><a href='songs/phish-heavy-things.html' target='_blank'>Heavy Things</a></p>
+          <p><a href='songs/phish-pebbles-and-marbles.html' target='_blank'>Pebbles and Marbles</a></p>
+          <p><a href='songs/phish-prince-caspian.html' target='_blank'>Prince Caspian</a></p>
+          <p><a href='songs/phish-runaway-jim.html' target='_blank'>Runaway Jim</a></p>
+          <p><a href='songs/phish-sample-in-a-jar.html' target='_blank'>Sample In A Jar</a></p>
+          <p><a href='songs/phish-theme-from-the-bottom.html' target='_blank'>Theme From The Bottom</a></p>
+          <h4>Pixies</h4><p><a href='songs/pixies-greens-and-blues.html' target='_blank'>Greens And Blues</a>
+          <p><a href='songs/pixies-here-comes-your-man.html' target='_blank'>Here Comes Your Man</a></p>
+          <h4>John Prine</h4><p><a href='songs/john-prine-pretty-good.html' target='_blank'>Pretty Good</a>
+          <h4>Keith Richards</h4><p><a href='songs/keith-richards-eileen.html' target='_blank'>Eileen</a>
+          <h4>Tears For Fears</h4><p><a href='songs/tears-for-fears-head-over-heels.html' target='_blank'>Head Over Heels</a>
+          <h4>Traveling Wilburys</h4><p><a href='songs/traveling-wilburys-handle-with-care.html' target='_blank'>Handle With Care</a>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <section class="details">
+        <form>
+          <fieldset>
+            <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
+          </fieldset>
+        </form>
+      </section>
+      <%- include('includes/footer-about'); %>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/site.js"></script>
+    <script>
+      // CHANGE CSS WHEN PAGE LOADS
+      $(document).ready(function(){
+        $("body").addClass("visible");
+        $("body").removeClass("hidden");
+      });
+    </script>
   </body>
 </html>

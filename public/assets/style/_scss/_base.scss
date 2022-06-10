@@ -41,12 +41,13 @@ img {
 }
 
 button {
-  display: grid;
+  display: flex;
   appearance: none;
   border: none;
   padding: 0;
   color: inherit;
   background: none;
+  @include transition(all, 0.25s, ease);
 }
 
 
