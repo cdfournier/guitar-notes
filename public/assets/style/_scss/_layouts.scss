@@ -65,7 +65,7 @@ main {
           column-count: 2;
           column-gap: 2rem;
         }
-        &.md {
+        &.md, &.lg {
           column-count: 3;
           column-gap: 2rem;
         }
@@ -91,6 +91,9 @@ main {
         }
         &.md.lg {
           column-count: 4;
+        }
+        &.lg {
+          column-count: 5;
         }
       }
     }
@@ -242,9 +245,10 @@ html.dark {
     width: 2rem;
     height: 2rem;
     margin: auto;
-    padding: 1rem;
+    padding: 0;
     border: 1px solid $gray;
     border-radius: 100%;
+    font-weight: bold;
     color: white;
     background: $gray;
     &:hover, &:focus {

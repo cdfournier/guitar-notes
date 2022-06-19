@@ -1,5 +1,17 @@
 [
  {
+   "artist-id": "abba",
+   "artist-sort": "abba",
+   "artist": "ABBA",
+   "song": "Take A Chance On Me",
+   "album": "ABBA: The Album",
+   "year": 1977,
+   "img": "abba.jpg",
+   "notes": "",
+   "song-id": "take-a-chance-on-me",
+   "artist-song": "abba-take-a-chance-on-me.txt"
+ },
+ {
    "artist-id": "beck",
    "artist-sort": "beck",
    "artist": "Beck",
@@ -72,6 +84,18 @@
    "artist-song": "camper-van-beethoven-take-the-skinheads-bowling.txt"
  },
  {
+   "artist-id": "climax-blues-band",
+   "artist-sort": "climax blues band",
+   "artist": "Climax Blues Band",
+   "song": "Couldn't Get It Right",
+   "album": "Gold Plated",
+   "year": 1976,
+   "img": "climax-blues-band.jpg",
+   "notes": "",
+   "song-id": "couldnt-get-it-right",
+   "artist-song": "climax-blues-band-couldnt-get-it-right.txt"
+ },
+ {
    "artist-id": "cracker",
    "artist-sort": "cracker",
    "artist": "Cracker",
@@ -120,6 +144,30 @@
    "artist-song": "creedence-clearwater-revival-lodi.txt"
  },
  {
+   "artist-id": "crowded-house",
+   "artist-sort": "crowded house",
+   "artist": "Crowded House",
+   "song": "Something So Strong",
+   "album": "Crowded House",
+   "year": 1986,
+   "img": "crowded-house.jpg",
+   "notes": "",
+   "song-id": "something-so-strong",
+   "artist-song": "crowded-house-something-so-strong.txt"
+ },
+ {
+   "artist-id": "evan-dando",
+   "artist-sort": "dando, evan",
+   "artist": "Evan Dando",
+   "song": "Frying Pan",
+   "album": "Heavy (Original Motion Picture Soundtrack)",
+   "year": 1997,
+   "img": "evan-dando.jpg",
+   "notes": "Capo on 2",
+   "song-id": "frying-pan",
+   "artist-song": "evan-dando-frying-pan.txt"
+ },
+ {
    "artist-id": "michael-dorman",
    "artist-sort": "dorman, michael",
    "artist": "Michael Dorman",
@@ -157,7 +205,7 @@
  },
  {
    "artist-id": "mazzy-star",
-   "artist-sort": "mazzy-star",
+   "artist-sort": "mazzy star",
    "artist": "Mazzy Star",
    "song": "Bells Ring",
    "album": "So Tonight That I May See",
@@ -166,6 +214,42 @@
    "notes": "",
    "song-id": "bells-ring",
    "artist-song": "mazzy-star-bells-ring.txt"
+ },
+ {
+   "artist-id": "mazzy-star",
+   "artist-sort": "mazzy star",
+   "artist": "Mazzy Star",
+   "song": "Blue Flower",
+   "album": "She Hangs Brightly",
+   "year": 1990,
+   "img": "mazzy-star.jpg",
+   "notes": "",
+   "song-id": "blue-flower",
+   "artist-song": "mazzy-star-blue-flower.txt"
+ },
+ {
+   "artist-id": "mazzy-star",
+   "artist-sort": "mazzy star",
+   "artist": "Mazzy Star",
+   "song": "Five String Serenade",
+   "album": "So Tonight That I May See",
+   "year": 1993,
+   "img": "mazzy-star.jpg",
+   "notes": "",
+   "song-id": "five-string-serenade",
+   "artist-song": "mazzy-star-five-string-serenade.txt"
+ },
+ {
+   "artist-id": "mazzy-star",
+   "artist-sort": "mazzy star",
+   "artist": "Mazzy Star",
+   "song": "Give You My Lovin'",
+   "album": "She Hangs Brightly",
+   "year": 1990,
+   "img": "mazzy-star.jpg",
+   "notes": "",
+   "song-id": "give-you-my-lovin",
+   "artist-song": "mazzy-star-give-you-my-lovin.txt"
  },
  {
    "artist-id": "men-at-work",
@@ -205,7 +289,7 @@
  },
  {
    "artist-id": "pearl-jam",
-   "artist-sort": "pearl-jam",
+   "artist-sort": "pearl jam",
    "artist": "Pearl Jam",
    "song": "Better Man",
    "album": "Vitalogy",
@@ -217,19 +301,7 @@
  },
  {
    "artist-id": "pearl-jam",
-   "artist-sort": "pearl-jam",
-   "artist": "Pearl Jam",
-   "song": "Thin Air",
-   "album": "Binaural",
-   "year": 2000,
-   "img": "pearl-jam.jpg",
-   "notes": "",
-   "song-id": "thin-air",
-   "artist-song": "pearl-jam-thin-air.txt"
- },
- {
-   "artist-id": "pearl-jam",
-   "artist-sort": "pearl-jam",
+   "artist-sort": "pearl jam",
    "artist": "Pearl Jam",
    "song": "Come Back",
    "album": "Pearl Jam",
@@ -238,6 +310,18 @@
    "notes": "",
    "song-id": "come-back",
    "artist-song": "pearl-jam-come-back.txt"
+ },
+ {
+   "artist-id": "pearl-jam",
+   "artist-sort": "pearl jam",
+   "artist": "Pearl Jam",
+   "song": "Thin Air",
+   "album": "Binaural",
+   "year": 2000,
+   "img": "pearl-jam.jpg",
+   "notes": "",
+   "song-id": "thin-air",
+   "artist-song": "pearl-jam-thin-air.txt"
  },
  {
    "artist-id": "phish",
@@ -303,6 +387,18 @@
    "artist-id": "phish",
    "artist-sort": "phish",
    "artist": "Phish",
+   "song": "Runaway Jim",
+   "album": "",
+   "year": null,
+   "img": "phish.jpg",
+   "notes": "",
+   "song-id": "runaway-jim",
+   "artist-song": "phish-runaway-jim.txt"
+ },
+ {
+   "artist-id": "phish",
+   "artist-sort": "phish",
+   "artist": "Phish",
    "song": "Sample In A Jar",
    "album": "Phish",
    "year": 1994,
@@ -324,16 +420,28 @@
    "artist-song": "phish-theme-from-the-bottom.txt"
  },
  {
-   "artist-id": "phish",
-   "artist-sort": "phish",
-   "artist": "Phish",
-   "song": "Runaway Jim",
-   "album": "",
-   "year": null,
-   "img": "phish.jpg",
+   "artist-id": "pixies",
+   "artist-sort": "pixies",
+   "artist": "Pixies",
+   "song": "Greens And Blues",
+   "album": "Indie Cindy",
+   "year": 2014,
+   "img": "pixies.jpg",
    "notes": "",
-   "song-id": "runaway-jim",
-   "artist-song": "phish-runaway-jim.txt"
+   "song-id": "greens-and-blues",
+   "artist-song": "pixies-greens-and-blues.txt"
+ },
+ {
+   "artist-id": "pixies",
+   "artist-sort": "pixies",
+   "artist": "Pixies",
+   "song": "Here Comes Your Man",
+   "album": "Doolittle",
+   "year": 1989,
+   "img": "pixies.jpg",
+   "notes": "",
+   "song-id": "here-comes-your-man",
+   "artist-song": "pixies-here-comes-your-man.txt"
  },
  {
    "artist-id": "john-prine",
@@ -360,15 +468,135 @@
    "artist-song": "keith-richards-eileen.txt"
  },
  {
+   "artist-id": "tears-for-fears",
+   "artist-sort": "tears for fears",
+   "artist": "Tears For Fears",
+   "song": "Head Over Heels",
+   "album": "Songs From The Big Chair",
+   "year": 1985,
+   "img": "tears-for-fears.jpg",
+   "notes": "",
+   "song-id": "head-over-heels",
+   "artist-song": "tears-for-fears-head-over-heels.txt"
+ },
+ {
    "artist-id": "traveling-wilburys",
    "artist-sort": "traveling wilburys",
    "artist": "Traveling Wilburys",
-   "song": "Traveling Wilburys Vol. 1",
-   "album": "Traveling Wilburys",
+   "song": "Handle With Care",
+   "album": "Traveling Wilburys Vol. 1",
    "year": 1988,
    "img": "traveling-wilburys.jpg",
    "notes": "",
    "song-id": "handle-with-care",
    "artist-song": "traveling-wilburys-handle-with-care.txt"
+ },
+ {
+   "artist-id": "neil-young",
+   "artist-sort": "young, neil",
+   "artist": "Neil Young",
+   "song": "Dreamin' Man",
+   "album": "Harvest Moon",
+   "year": 1992,
+   "img": "neil-young.jpg",
+   "notes": "",
+   "song-id": "dreamin-man",
+   "artist-song": "neil-young-dreamin-man.txt"
+ },
+ {
+   "artist-id": "neil-young",
+   "artist-sort": "young, neil",
+   "artist": "Neil Young",
+   "song": "I'm The Ocean",
+   "album": "Mirrow Ball",
+   "year": 1995,
+   "img": "neil-young.jpg",
+   "notes": "",
+   "song-id": "im-the-ocean",
+   "artist-song": "neil-young-im-the-ocean.txt"
+ },
+ {
+   "artist-id": "neil-young",
+   "artist-sort": "young, neil",
+   "artist": "Neil Young",
+   "song": "Natural Beauty",
+   "album": "Harvest Moon",
+   "year": 1992,
+   "img": "neil-young.jpg",
+   "notes": "",
+   "song-id": "natural-beauty",
+   "artist-song": "neil-young-natural-beauty.txt"
+ },
+ {
+   "artist-id": "neil-young",
+   "artist-sort": "young, neil",
+   "artist": "Neil Young",
+   "song": "The Old Laughing Lady",
+   "album": "Neil Young",
+   "year": 1969,
+   "img": "neil-young.jpg",
+   "notes": "",
+   "song-id": "the-old-laughing-lady",
+   "artist-song": "neil-young-the-old-laughing-lady.txt"
+ },
+ {
+   "artist-id": "pete-yorn",
+   "artist-sort": "yorn, pete",
+   "artist": "Pete Yorn",
+   "song": "Come Back Home",
+   "album": "Day I Forgot",
+   "year": 2003,
+   "img": "pete-yorn.jpg",
+   "notes": "",
+   "song-id": "come-back-home",
+   "artist-song": "pete-yorn-come-back-home.txt"
+ },
+ {
+   "artist-id": "pete-yorn",
+   "artist-sort": "yorn, pete",
+   "artist": "Pete Yorn",
+   "song": "Crystal Village",
+   "album": "Day I Forgot",
+   "year": 2003,
+   "img": "pete-yorn.jpg",
+   "notes": "",
+   "song-id": "crystal-village",
+   "artist-song": "pete-yorn-crystal-village.txt"
+ },
+ {
+   "artist-id": "pete-yorn",
+   "artist-sort": "yorn, pete",
+   "artist": "Pete Yorn",
+   "song": "Just Another",
+   "album": "musicforthemorningafter",
+   "year": 2001,
+   "img": "pete-yorn.jpg",
+   "notes": "",
+   "song-id": "just-another",
+   "artist-song": "pete-yorn-just-another.txt"
+ },
+ {
+   "artist-id": "pete-yorn",
+   "artist-sort": "yorn, pete",
+   "artist": "Pete Yorn",
+   "song": "Life On A Chain",
+   "album": "musicforthemorningafter",
+   "year": 2001,
+   "img": "pete-yorn.jpg",
+   "notes": "",
+   "song-id": "life-on-a-chain",
+   "artist-song": "pete-yorn-life-on-a-chain.txt"
+ },
+ {
+   "artist-id": "pete-yorn",
+   "artist-sort": "yorn, pete",
+   "artist": "Pete Yorn",
+   "song": "Murray",
+   "album": "musicforthemorningafter",
+   "year": 2001,
+   "img": "pete-yorn.jpg",
+   "notes": "",
+   "song-id": "murray",
+   "artist-song": "pete-yorn-murray.txt"
  }
 ]
