@@ -249,11 +249,11 @@ html.dark {
     border: 1px solid $gray;
     border-radius: 100%;
     font-weight: bold;
-    color: white;
-    background: $gray;
+    color: $gray;
+    background: white;
     &:hover, &:focus {
-      color: $gray;
-      background: white;
+      color: white;
+      background: $gray;
     }
   }
 }
@@ -271,11 +271,11 @@ html.dark {
   .info {
     button {
       border-color: white;
-      color: $gray;
-      background: white;
+      color: white;
+      background: $gray;
       &:hover, &:focus {
-        color: white;
-        background: $gray;
+        color: $gray;
+        background: white;
       }
     }
   }
