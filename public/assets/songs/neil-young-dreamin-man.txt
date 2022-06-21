@@ -40,7 +40,7 @@ G                    Em            C                 G
 Now the night is gone a new day is dawning (dreaming man)
 G                      F               C                G
 And our homeless dreams go back to the street (dreaming man)
-G                    Em       C                      G
+G                    Em             C                G
 Another time or place another civilization (dreaming man)
 G                      F            C
 Would really make this life feel so complete
@@ -51,6 +51,8 @@ Em
 I don't have to understand
 C           D
 I know it's alright
+
+G Em C D
 
 G    Em  C
 Dreaming man (he's got a problem)

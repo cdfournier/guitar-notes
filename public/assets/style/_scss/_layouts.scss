@@ -155,11 +155,25 @@ main.index {
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 64rem) {
   main.index {
     article {
       section {
         column-count: 3;
+        column-gap: 2rem;
+        p {
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  main.index {
+    article {
+      section {
+        column-count: 4;
       }
     }
   }
