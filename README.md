@@ -3,7 +3,9 @@ I like to play guitar, but I’m not a good guitar player. I also like to design
 
 [View the new and improved site](https://cdfournier.github.io/guitar-notes/public/manual.html)
 
-![Guitar Notes logo](https://raw.githubusercontent.com/cdfournier/guitar-notes/v.1.1/public/assets/icons/android-chrome-512x512.png)
+<div style="max-width: 16rem;">
+  ![Guitar Notes logo](https://raw.githubusercontent.com/cdfournier/guitar-notes/v.1.1/public/assets/icons/android-chrome-512x512.png)
+</div>
 
 ## About Guitar Notes
 I like to play guitar, but I'm not a good guitar player. So over the years I've developed my own style to compensate. I also try to transcribe songs to my style. Sometimes that means changing the chords or the strumming patterns. Sometimes I even adapt the lyrics. I used to know only a handful of songs that were easy enough to remember, but I continue to add more songs so it's become necessary to create a means for me to pull up my notes any time or place.
