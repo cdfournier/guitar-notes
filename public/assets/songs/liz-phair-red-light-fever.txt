@@ -8,7 +8,7 @@ Em
 Always going nowhere
 C
 Fraid of going somewhere
-C                               C
+D                               C
 And somewhere's a place in your heart
 
 Em                           C
@@ -84,7 +84,7 @@ Em
 Always going nowhere
 C
 Fraid of going somewhere
-C                               C
+D                               C
 And somewhere's a place in your heart
 
 G                           C
@@ -115,4 +115,4 @@ You can't commit to even her
 D
 How you gonna get through the year
 
-G C A C - G C G Am C - G C A C - G C G Am C Gs
+G C A C - G C G Am C - G C A C - G C G Am C G
