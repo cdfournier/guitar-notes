@@ -19,9 +19,6 @@ p {
   margin: 0;
   padding: 1rem 0 0;
   font-size: 1rem;
-  &:first-child {
-    // padding: 0;
-  }
 }
 
 strong, em {display: inline;}
@@ -34,7 +31,7 @@ ul {
   font-size: 1rem;
   list-style: none;
   li {
-    padding: 0.5rem 0 0;
+    padding: 0.75rem 0 0;
     line-height: 1.25;
     span {
       padding: 0 0.5rem 0 0;

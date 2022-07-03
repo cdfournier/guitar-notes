@@ -113,9 +113,11 @@ main.index {
         padding: 1rem 0 0;
       }
       p {
+        overflow: hidden;
         padding: 0;
         line-height: 1.5;
-        white-space: normal;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         a {
           font-weight: normal;
           text-decoration: none;
@@ -147,9 +149,6 @@ main.index {
       section {
         column-count: 2;
         column-gap: 2rem;
-        p {
-          white-space: normal;
-        }
       }
     }
   }
@@ -161,9 +160,6 @@ main.index {
       section {
         column-count: 3;
         column-gap: 2rem;
-        p {
-          white-space: normal;
-        }
       }
     }
   }
