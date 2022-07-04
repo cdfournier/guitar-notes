@@ -770,6 +770,20 @@
    "columns": "md"
  },
  {
+   "artist-sort": "weezer",
+   "song": "King",
+   "artist": "Weezer",
+   "album": "Weezer",
+   "year": 2008,
+   "artist-id": "weezer",
+   "img": "weezer.jpg",
+   "notes": "Capo on 1",
+   "id": 56,
+   "song-id": "king",
+   "artist-song": "weezer-king.txt",
+   "columns": "sm md"
+ },
+ {
    "artist-sort": "yorn, pete",
    "song": "Come Back Home",
    "artist": "Pete Yorn",
@@ -778,7 +792,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 56,
+   "id": 57,
    "song-id": "come-back-home",
    "artist-song": "pete-yorn-come-back-home.txt",
    "columns": "sm"
@@ -792,7 +806,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 57,
+   "id": 58,
    "song-id": "crystal-village",
    "artist-song": "pete-yorn-crystal-village.txt",
    "columns": "sm"
@@ -806,7 +820,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 58,
+   "id": 59,
    "song-id": "just-another",
    "artist-song": "pete-yorn-just-another.txt",
    "columns": "sm"
@@ -820,7 +834,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 59,
+   "id": 60,
    "song-id": "life-on-a-chain",
    "artist-song": "pete-yorn-life-on-a-chain.txt",
    "columns": "sm"
@@ -834,7 +848,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 60,
+   "id": 61,
    "song-id": "murray",
    "artist-song": "pete-yorn-murray.txt",
    "columns": "sm"
@@ -848,7 +862,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 61,
+   "id": 62,
    "song-id": "dreamin-man",
    "artist-song": "neil-young-dreamin-man.txt",
    "columns": "sm"
@@ -862,7 +876,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 62,
+   "id": 63,
    "song-id": "im-the-ocean",
    "artist-song": "neil-young-im-the-ocean.txt",
    "columns": "lg"
@@ -876,7 +890,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 63,
+   "id": 64,
    "song-id": "natural-beauty",
    "artist-song": "neil-young-natural-beauty.txt",
    "columns": "sm"
@@ -890,7 +904,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 64,
+   "id": 65,
    "song-id": "the-old-laughing-lady",
    "artist-song": "neil-young-the-old-laughing-lady.txt",
    "columns": "sm"
