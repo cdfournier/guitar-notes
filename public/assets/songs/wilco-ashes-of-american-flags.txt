@@ -16,7 +16,7 @@ I wonder why we listen to poets when nobody gives a fuck
 D                     G
 How hot and sorrowful this machine begs for luck
 
-F#m    G                     D
+F#m    G               D
 All my lies are always wishes
 Em             A
 I know I would die if I could come back new
@@ -32,7 +32,7 @@ A hole without a key if I break my tongue
 D                    G
 Speaking of tomorrow how will it ever come
 
-F#m    G                     D
+F#m    G               D
 All my lies are always wishes
 Em             A
 I know I would die if I could come back new
@@ -48,10 +48,12 @@ I shake like a toothache
 G
 When I hear myself sing
 
-F#m    G                     D
+F#m    G               D
 All my lies are always wishes
 Em             A
 I know I would die if I could come back new
+
+D G D G
 
 D
 I would like to salute
