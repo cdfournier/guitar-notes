@@ -76,6 +76,9 @@ main {
         &.md.lg {
           column-count: 3;
           column-gap: 2rem;
+          &.sm {
+            column-count: 2;
+          }
         }
       }
     }
@@ -91,6 +94,9 @@ main {
         }
         &.md.lg {
           column-count: 4;
+          &.sm {
+            column-count: 4;
+          }
         }
         &.lg {
           column-count: 5;
