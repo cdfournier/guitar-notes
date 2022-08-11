@@ -271,6 +271,20 @@ main.index {
   }
 }
 
+@media (min-width: 106rem) {
+  main.index {
+    article {
+      section {
+        section {
+          .artist {
+            width: calc(20% - 1rem);
+          }
+        }
+      }
+    }
+  }
+}
+
 
 // ALERTS
 .alert {
