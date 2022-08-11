@@ -199,19 +199,16 @@ main.index {
             padding: 1rem 0 0;
             @include transition(all, 0.325s, ease);
             ul {
-              width: calc(100% - 5rem);
-              margin-left: 5rem;
+              width: calc(100% - 7rem);
+              margin: 0 0 0 6rem;
               padding: 0;
+              list-style: none;
               li {
-                padding: 0;
+                overflow: hidden;
+                padding: 0 0 1rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
                 a {
-                  display: flex;
-                  flex-direction: column;
-                  position: relative;
-                  width: 100%;
-                  padding: 0 1rem 1rem;
-                  font-weight: normal;
-                  white-space: nowrap;
                   span.album {
                     display: none;
                   }
