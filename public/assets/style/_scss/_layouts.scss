@@ -146,6 +146,84 @@ main.index {
       h4 + p {
         // break-before: avoid;
       }
+      section {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: calc(100% + 1rem);
+        margin-left: -0.5rem;
+        .artist {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          width: calc(100% - 1rem);
+          overflow: hidden;
+          margin: 1rem 0.5rem 0;
+          padding: 0;
+          border: 1px solid;
+          border-radius: 0.25rem;
+          cursor: pointer;
+          input {
+            position: absolute;
+            left: -100vw;
+          }
+          label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 1rem;
+            font-size: 1.25rem;
+            line-height: 1.25;
+            cursor: pointer;
+            span.image {
+              display: grid;
+              width: 4rem;
+              margin-right: 1rem;
+            }
+          }
+          .songs {
+            width: 100%;
+            height: auto;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0;
+            @include transition(max-height, 0.325s, ease);
+            ul {
+              width: calc(100% - 5rem);
+              margin-left: 5rem;
+              padding: 0;
+              li {
+                padding: 0;
+                a {
+                  display: flex;
+                  flex-direction: column;
+                  position: relative;
+                  width: 100%;
+                  padding: 0 1rem 1rem;
+                  white-space: nowrap;
+                  text-decoration: none;
+                  span.album {
+                    display: none;
+                  }
+                }
+                a span.song {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+          input:checked ~ .songs {
+            max-height: 100vh;
+          }
+        }
+      }
     }
   }
 }
@@ -154,8 +232,11 @@ main.index {
   main.index {
     article {
       section {
-        column-count: 2;
-        column-gap: 2rem;
+        section {
+          .artist {
+            width: calc(50% - 1rem);
+          }
+        }
       }
     }
   }
@@ -165,7 +246,11 @@ main.index {
   main.index {
     article {
       section {
-        column-count: 3;
+        section {
+          .artist {
+            width: calc(33.3% - 1rem);
+          }
+        }
       }
     }
   }
@@ -175,8 +260,11 @@ main.index {
   main.index {
     article {
       section {
-        column-count: 4;
-        column-gap: 4rem;
+        section {
+          .artist {
+            width: calc(25% - 1rem);
+          }
+        }
       }
     }
   }

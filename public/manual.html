@@ -30,6 +30,27 @@
     </style>
     <link rel="stylesheet" href="assets/style/master.min.css">
     <style>
+      @media (min-width: 48rem) {
+        main.index section {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+      }
+      @media (min-width: 64rem) {
+        main.index section {
+          column-count: 3;
+        }
+      }
+      @media (min-width: 90rem) {
+        main.index section {
+          column-count: 4;
+        }
+      }
+      @media (min-width: 106rem) {
+        main.index section {
+          column-count: 5;
+        }
+      }
     </style>
   </head>
   <body class="hidden">
@@ -43,8 +64,8 @@
         <section>
           <h2>Welcome to Guitar Notes</h2>
           <p style="text-overflow: inherit; white-space: inherit;">This is the temporary index for the new version of Guitar Notes.</p>
-          <h3>Current list:</h3>
-          <small>* denotes a work in progress</small>
+          <h3 style="column-span: all;">Current list:</h3>
+          <small style="column-span: all;">* denotes a work in progress</small>
           <h4>ABBA</h4><p><a href='songs/abba-take-a-chance-on-me.html' target='_blank'>Take A Chance On Me*</a></p>
           <h4>Beck</h4><p><a href='songs/beck-asshole.html' target='_blank'>Asshole</a></p>
           <p><a href='songs/beck-bogusflow.html' target='_blank'>Bogusflow</a></p>
@@ -128,7 +149,6 @@
           <h4>John Prine</h4><p><a href='songs/john-prine-pretty-good.html' target='_blank'>Pretty Good</a></p>
           <h4>The Ramones</h4><p><a href='songs/the-ramones-bonzo-goes-to-bitburg.html' target='_blank'>Bonzo Goes To Bitburg</a></p>
           <h4>Keith Richards</h4><p><a href='songs/keith-richards-eileen.html' target='_blank'>Eileen</a></p>
-          <p><a href='songs/keith-richards-run-rudolph-run.html' target='_blank'>Run Rudolph Run</a></p>
           <h4>Tears For Fears</h4><p><a href='songs/tears-for-fears-head-over-heels.html' target='_blank'>Head Over Heels</a></p>
           <h4>Traveling Wilburys</h4><p><a href='songs/traveling-wilburys-handle-with-care.html' target='_blank'>Handle With Care</a></p>
           <h4>Travis</h4><p><a href='songs/travis-follow-the-light.html' target='_blank'>Follow The Light</a></p>
