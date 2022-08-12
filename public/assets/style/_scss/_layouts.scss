@@ -26,6 +26,12 @@ main {
     section#song p {
       visibility: visible;
     }
+    @media not all and (min-resolution:.001dpcm) {
+      section#song:not(p) {
+        visibility: visible;
+        line-height: inherit;
+      }
+    }
   }
 }
 
