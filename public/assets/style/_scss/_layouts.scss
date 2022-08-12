@@ -162,7 +162,7 @@ main.index {
           margin: 1rem 0.5rem 0;
           padding: 0;
           border: 1px solid;
-          border-radius: 0.25rem;
+          border-radius: 0.5rem;
           cursor: pointer;
           input {
             position: absolute;
@@ -179,7 +179,7 @@ main.index {
             height: auto;
             margin: 0 auto;
             padding: 1rem 1rem 0;
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: bold;
             line-height: 1.25;
             cursor: pointer;
@@ -189,6 +189,7 @@ main.index {
               width: 4rem;
               min-width: 4rem;
               margin-right: 1rem;
+              border-radius: 0.5rem;
             }
           }
           .songs {
@@ -262,6 +263,9 @@ main.index {
         section {
           .artist {
             width: calc(25% - 1rem);
+            label {
+              font-size: 1.25rem;
+            }
           }
         }
       }

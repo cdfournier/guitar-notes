@@ -20,10 +20,24 @@ footer {
       max-width: 7.75rem;
       margin: 0;
       img {
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
       }
       figcaption {
         display: none;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 1rem 0 0;
+      list-style: none;
+      li {
+        padding: 0.25rem 0;
+        line-height: 1.25;
+        span {
+          display: inline-block;
+          padding: 0 0.5rem 0 0;
+          font-weight: bold;
+        }
       }
     }
     form {
