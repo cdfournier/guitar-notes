@@ -20,11 +20,11 @@ A letter from your home town
 
 F                          C
 How could you leave me you heard what I said
-G                       C
-I'd be at the waterfall clearing my head
+G                        C
+I'll be at the waterfall clearing my head
 F                     C
 Soaking up nature and thinking of you
-G                              C
+G
 But leaving's the last thing I thought you would do
 
 F                C
@@ -42,7 +42,7 @@ But this time will be different
 G             C
 Until I do it again
 
-C             G
+C                         G
 Stared at the ceiling for over a day
 G                            C
 But none of my questions are answered this way
@@ -53,8 +53,8 @@ Til I go back to Kill Devil Falls
 
 F                          C
 How could you leave me you heard what I said
-G                       C
-I'd be at the waterfall clearing my head
+G                        C
+I'll be at the waterfall clearing my head
 F                     C
 Soaking up nature and thinking of you
 G
@@ -90,18 +90,26 @@ F C G
 Whoa  don't go back to Kill Devil Falls
 F C G
 Whoa  don't go back to Kill Devil Falls
-G
-I learned my lesson
+F C G
+    I learned my lesson
 G
 And I can still remember the last one
 G
 But this time will be different
 
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
-Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls
+C G
+  Don't go back to Kill Devil Falls

@@ -1,8 +1,8 @@
-E A G
+E A
 
      E                       A
 Come stumble my mirth beaten worker
-    E
+    E                           E A - E A
 I'm Jezmund the Family Berzerker
     E                         A
 I'm bought for the price of a flagon of rice
@@ -10,12 +10,12 @@ I'm bought for the price of a flagon of rice
 The wind buffs the cabin
 E                 A
 You speak of your life
-A                 E
+A                 E                E A - E A
 Or more willingly Locust the Lurker
 
 E                           A
 Confuse what you can of the ending
-    E
+    E                               E A - E A
 And revise your despise so impending
         E
 Cause I soak on the wrath
@@ -23,7 +23,7 @@ E                     A
 That you didn't quite mask
     E                                    A
 I'm getting it clearly through alternate paths
-   E
+   E                                      E A - E A
 Or mixed in with the signal you're sending
 
 G                           A
@@ -38,18 +38,18 @@ Thoughts follow my vision and dance in the sun
 All my vasoconstrictors they come slowly undone
 G
 Can't this wait til I'm old
-E            A
+        E                   A
 Can't I live while I'm young
 
     E                    A
 But no peace for Jezmund tonight
-  E
+  E                              E A - E A
 I plug the distress tube up tight
     E                      A
 And watch what I say as it flutters away
     E                                    A
 And all this emotion is kept harmless at bay
-E
+E                               E A - E A
 Not to educate somebody's fright
 
 G                           A
@@ -64,10 +64,10 @@ Thoughts follow my vision and dance in the sun
 All my vasoconstrictors they come slowly undone
 G
 Can't this wait til I'm old
-E            A
+        E                   A
 Can't I live while I'm young
 
-E A E - E A E A E
+E A
 
 G                           A
 But who can unlearn all the facts that I've learned
@@ -81,5 +81,5 @@ Thoughts follow my vision and dance in the sun
 All my vasoconstrictors they come slowly undone
 G
 Can't this wait til I'm old
-E            A
+        E                   A
 Can't I live while I'm young
