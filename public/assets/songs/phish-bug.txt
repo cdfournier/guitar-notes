@@ -18,7 +18,7 @@ Which did you think I meant
 C                    G
 It doesn't matter to me
 
-G F C G
+G F C G - G F C G
 
 F    C          G
 Bug (don't need it)
@@ -51,6 +51,8 @@ Which did you think I meant
 C                    G
 Nothing I see can be taken from me
 
+G F C G - G F C G
+
 F    C          G
 Bug (don't need it)
 It doesn't matter
@@ -64,7 +66,7 @@ F  C       G
 It doesn't matter
 (overrated)
 
-G F C G
+G F C G - G F C G
 
 F  C       G
    It doesn't matter

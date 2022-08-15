@@ -133,10 +133,6 @@ main.index {
         white-space: nowrap;
         a {
           font-weight: normal;
-          text-decoration: none;
-          &:hover, &:focus {
-            text-decoration: underline;
-          }
         }
       }
       h2 + p {
@@ -169,7 +165,6 @@ main.index {
           padding: 0;
           border: 1px solid;
           border-radius: 0.5rem;
-          cursor: pointer;
           input {
             position: absolute;
             left: -100vw;
@@ -188,7 +183,6 @@ main.index {
             font-size: 1.125rem;
             font-weight: bold;
             line-height: 1.25;
-            cursor: pointer;
             span.image {
               display: grid;
               overflow: hidden;
@@ -217,6 +211,7 @@ main.index {
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 a {
+                  font-weight: normal;
                   span.album {
                     display: none;
                   }

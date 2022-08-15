@@ -1,0 +1,88 @@
+// HEADER
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  max-height: 200vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  @include transition(all, 0.5s, ease);
+  .logo {
+    display: grid;
+    width: calc(100vh / 2);
+    margin-bottom: 2rem;
+    svg {
+      .white {
+        fill: white;
+      }
+      .gray {
+        fill: $gray;
+      }
+    }
+  }
+  .skip {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10vh;
+    a span.icon {
+      display: grid;
+      width: 2rem;
+      opacity: 0.5;
+      @include transition(opacity, 0.25s, ease);
+      &:hover, &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 90rem) {
+  header {
+    .skip {
+      a span.icon {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+html.dark {
+  header {
+    .logo {
+      svg {
+        .white {
+          fill: $gray;
+        }
+        .gray {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+
+
+// FADE-IN ELEMENTS ON BODY VISIBLE
+body.hidden {
+  header {
+    .logo, .skip {
+      opacity: 0;
+      margin: 0;
+    }
+  }
+}
+
+body.visible {
+  header {
+    .logo, .skip {
+      opacity: 1;
+    }
+    .logo {
+      margin-bottom: 2rem;
+    }
+  }
+}

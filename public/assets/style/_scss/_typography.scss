@@ -31,11 +31,11 @@ small {font-size: 0.875rem;}
 // TEXT LINK STYLES
 a {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   color: inherit;
   cursor: pointer;
   @include transition(all, 0.25s, ease);
   &:hover, &:focus {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
