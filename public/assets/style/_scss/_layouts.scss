@@ -145,160 +145,12 @@ main.index {
         padding: 1rem 0 0;
         font-size: 1.25rem;
       }
-      h4 + p {
-        // break-before: avoid;
-      }
-      section {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        width: calc(100% + 1rem);
-        margin-left: -0.5rem;
-        .artist {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          width: calc(100% - 1rem);
-          overflow: hidden;
-          margin: 1rem 0.5rem 0;
-          padding: 0;
-          border: 1px solid;
-          border-radius: 0.5rem;
-          input {
-            position: absolute;
-            left: -100vw;
-          }
-          label {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-            padding: 1rem 1rem 0;
-            font-size: 1.125rem;
-            font-weight: bold;
-            line-height: 1.25;
-            span.image {
-              display: grid;
-              overflow: hidden;
-              width: 4rem;
-              min-width: 4rem;
-              margin-right: 1rem;
-              border-radius: 0.5rem;
-            }
-          }
-          .songs {
-            width: 100%;
-            height: auto;
-            max-height: 0;
-            overflow: hidden;
-            padding: 1rem 0 0;
-            @include transition(all, 0.325s, ease);
-            ul {
-              width: calc(100% - 7rem);
-              margin: 0 0 0 6rem;
-              padding: 0;
-              list-style: none;
-              li {
-                overflow: hidden;
-                padding: 0 0 1rem;
-                line-height: 1.25;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                a {
-                  font-weight: normal;
-                  span.album {
-                    display: none;
-                  }
-                }
-              }
-            }
-          }
-          input:checked ~ .songs {
-            max-height: 100vh;
-            padding: 0 0 1rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 48rem) {
-  main.index {
-    article {
-      section {
-        section {
-          .artist {
-            width: calc(50% - 1rem);
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 64rem) {
-  main.index {
-    article {
-      section {
-        section {
-          .artist {
-            width: calc(33.3% - 1rem);
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 90rem) {
-  main.index {
-    article {
-      section {
-        section {
-          .artist {
-            width: calc(25% - 1rem);
-            label {
-              font-size: 1.25rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 106rem) {
-  main.index {
-    article {
-      section {
-        section {
-          .artist {
-            width: calc(20% - 1rem);
-          }
-        }
-      }
-    }
-  }
-}
-
-
-// SEARCH TEST OPTIONS
-main.index {
-  padding-top: 1rem;
-  article {
-    section.search-test {
       fieldset {
         width: 100%;
         margin: 0;
         padding: 0;
         border: none;
+        column-span: all;
         label {
           display: flex;
           flex-direction: column;
@@ -360,7 +212,7 @@ main.index {
             }
           }
         }
-        ul, section {
+        section {
           width: calc(100% - 5rem);
           height: 0;
           max-height: 0;
@@ -368,7 +220,7 @@ main.index {
           padding: 0;
           @include transition(all, 0.325s, ease);
           @include transform(translateY(100vh));
-          li, p {
+          p {
             overflow: hidden;
             width: 100%;
             margin: 0;
@@ -388,7 +240,6 @@ main.index {
             }
           }
         }
-        input:checked ~ ul,
         input:checked ~ section {
           height: auto;
           max-height: 100vh;
@@ -398,19 +249,32 @@ main.index {
           }
         }
       }
-    }
-  }
-}
-
-html.dark {
-  main.index {
-    article {
-      section.search-test {
-        fieldset {
-          label {
-            input[type="text"] {
-              border-color: white;
-              color: white;
+      ul.manual {
+        display: block;
+        width: 100%;
+        margin: 0;
+        li {
+          width: 100%;
+          min-width: 100%;
+          margin: 0;
+          padding: 1rem 0;
+          border: none;
+          span.performer {
+            font-size: 1.125rem;
+          }
+          ul {
+            display: block;
+            width: 100%;
+            margin: 0;
+            li {
+              width: 100%;
+              padding: 0;
+              a {
+                font-weight: normal;
+                span.album {
+                  display: none;
+                }
+              }
             }
           }
         }
@@ -422,21 +286,9 @@ html.dark {
 @media (min-width: 48rem) {
   main.index {
     article {
-      section.search-test {
-        fieldset {
-          label {
-            width: calc(50% - 1rem);
-          }
-        }
-        ul {
-          li {
-            width: calc(50% - 1rem);
-          }
-        }
-        section {
-          p {
-            width: calc(50% - 1rem);
-          }
+      section {
+        fieldset label, ul li {
+          width: calc(50% - 1rem);
         }
       }
     }
@@ -446,21 +298,9 @@ html.dark {
 @media (min-width: 64rem) {
   main.index {
     article {
-      section.search-test {
-        fieldset {
-          label {
-            width: calc((100% / 3) - 1rem);
-          }
-        }
-        ul {
-          li {
-            width: calc((100% / 3) - 1rem);
-          }
-        }
-        section {
-          p {
-            width: calc((100% / 3) - 1rem);
-          }
+      section {
+        fieldset label, ul li {
+          width: calc((100% / 3) - 1rem);
         }
       }
     }
@@ -470,21 +310,9 @@ html.dark {
 @media (min-width: 90rem) {
   main.index {
     article {
-      section.search-test {
-        fieldset {
-          label {
-            width: calc(25% - 1rem);
-          }
-        }
-        ul {
-          li {
-            width: calc(25% - 1rem);
-          }
-        }
-        section {
-          p {
-            width: calc(25% - 1rem);
-          }
+      section {
+        fieldset label, ul li {
+          width: calc(25% - 1rem);
         }
       }
     }
@@ -494,20 +322,25 @@ html.dark {
 @media (min-width: 116rem) {
   main.index {
     article {
-      section.search-test {
+      section {
+        fieldset label, ul li {
+          width: calc(20% - 1rem);
+        }
+      }
+    }
+  }
+}
+
+html.dark {
+  main.index {
+    article {
+      section {
         fieldset {
           label {
-            width: calc(20% - 1rem);
-          }
-        }
-        ul {
-          li {
-            width: calc(20% - 1rem);
-          }
-        }
-        section {
-          p {
-            width: calc(20% - 1rem);
+            input[type="text"] {
+              border-color: white;
+              color: white;
+            }
           }
         }
       }
