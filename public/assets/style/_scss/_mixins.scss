@@ -14,3 +14,11 @@
   -o-transform: $transform;
   transform: $transform;
 };
+
+@mixin appearance($appearance: all) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  -ms-appearance: $appearance;
+  -o-appearance: $appearance;
+  appearance: $appearance;
+};
