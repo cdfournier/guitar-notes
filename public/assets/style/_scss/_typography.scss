@@ -19,32 +19,11 @@ p {
   margin: 0;
   padding: 1rem 0 0;
   font-size: 1rem;
-  &:first-child {
-    // padding: 0;
-  }
 }
 
 strong, em {display: inline;}
 
 small {font-size: 0.875rem;}
-
-ul {
-  margin: 0;
-  padding: 1rem 0 0;
-  font-size: 1rem;
-  list-style: none;
-  li {
-    padding: 0.5rem 0 0;
-    line-height: 1.25;
-    span {
-      padding: 0 0.5rem 0 0;
-    }
-    &:first-child {
-      padding: 0;
-      font-weight: bold;
-    }
-  }
-}
 
 .visuallyhidden {display: none;}
 
@@ -52,11 +31,11 @@ ul {
 // TEXT LINK STYLES
 a {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   color: inherit;
   cursor: pointer;
   @include transition(all, 0.25s, ease);
   &:hover, &:focus {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }

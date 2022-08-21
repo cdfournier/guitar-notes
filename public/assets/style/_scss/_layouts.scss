@@ -26,6 +26,12 @@ main {
     section#song p {
       visibility: visible;
     }
+    @media not all and (min-resolution:.001dpcm) {
+      section#song:not(p) {
+        visibility: visible;
+        line-height: inherit;
+      }
+    }
   }
 }
 
@@ -65,7 +71,7 @@ main {
           column-count: 2;
           column-gap: 2rem;
         }
-        &.md {
+        &.md, &.lg {
           column-count: 3;
           column-gap: 2rem;
         }
@@ -76,6 +82,9 @@ main {
         &.md.lg {
           column-count: 3;
           column-gap: 2rem;
+          &.sm {
+            column-count: 2;
+          }
         }
       }
     }
@@ -91,6 +100,12 @@ main {
         }
         &.md.lg {
           column-count: 4;
+          &.sm {
+            column-count: 4;
+          }
+        }
+        &.lg {
+          column-count: 5;
         }
       }
     }
@@ -110,15 +125,14 @@ main.index {
         padding: 1rem 0 0;
       }
       p {
+        overflow: hidden;
         padding: 0;
         line-height: 1.5;
-        white-space: normal;
+        break-before: avoid;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         a {
           font-weight: normal;
-          text-decoration: none;
-          &:hover, &:focus {
-            text-decoration: underline;
-          }
         }
       }
       h2 + p {
@@ -131,8 +145,112 @@ main.index {
         padding: 1rem 0 0;
         font-size: 1.25rem;
       }
-      h4 + p {
-        break-before: avoid;
+      ul {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: calc(100% + 1rem);
+        margin: 0 0 0 -0.5rem;
+        padding: 0;
+        list-style: none;
+        li {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          width: 100%;
+          margin: 1rem 0.5rem 0;
+          padding: 1rem;
+          border: 1px solid;
+          border-radius: 0.25rem;
+          input {
+            position: absolute;
+            left: -100vw;
+          }
+          label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            overflow: hidden;
+            padding: 0;
+            font-size: 1rem;
+            line-height: 1.25;
+            span.image {
+              display: grid;
+              overflow: hidden;
+              width: 4rem;
+              min-width: 4rem;
+              margin-right: 1rem;
+              border-radius: 0.25rem;
+            }
+          }
+        }
+        section {
+          width: calc(100% - 5rem);
+          height: 0;
+          max-height: 0;
+          margin: 0 0 0 5rem;
+          padding: 0;
+          @include transition(all, 0.325s, ease);
+          @include transform(translateY(100vh));
+          p {
+            overflow: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            white-space: nowrap;
+            a {
+              overflow: hidden;
+              font-weight: normal;
+              text-overflow: ellipsis;
+              span.artist {
+                width: 100%
+              }
+              span.album {
+                display: none;
+              }
+            }
+          }
+        }
+        input:checked ~ section {
+          height: auto;
+          max-height: 100vh;
+          @include transform(translateY(0));
+          p {
+            padding: 0.5rem 0;
+          }
+        }
+      }
+      ul.manual {
+        display: block;
+        width: 100%;
+        margin: 0;
+        li {
+          width: 100%;
+          min-width: 100%;
+          margin: 0;
+          padding: 1rem 0;
+          border: none;
+          span.performer {
+            font-size: 1.125rem;
+          }
+          ul {
+            display: block;
+            width: 100%;
+            margin: 0;
+            li {
+              width: 100%;
+              padding: 0;
+              a {
+                font-weight: normal;
+                span.album {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -142,10 +260,20 @@ main.index {
   main.index {
     article {
       section {
-        column-count: 2;
-        column-gap: 2rem;
-        p {
-          white-space: normal;
+        ul li {
+          width: calc(50% - 1rem);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  main.index {
+    article {
+      section {
+        ul li {
+          width: calc((100% / 3) - 1rem);
         }
       }
     }
@@ -156,7 +284,30 @@ main.index {
   main.index {
     article {
       section {
-        column-count: 3;
+        ul li {
+          width: calc(25% - 1rem);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 116rem) {
+  main.index {
+    article {
+      section {
+        ul li {
+          width: calc(20% - 1rem);
+        }
+      }
+    }
+  }
+}
+
+html.dark {
+  main.index {
+    article {
+      section {
       }
     }
   }
@@ -234,30 +385,48 @@ html.dark {
   right: 1rem;
   margin: 0;
   padding: 0;
-  button {
+  button, a {
     appearance: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin: auto;
-    padding: 1rem;
+    padding: 0;
     border: 1px solid $gray;
     border-radius: 100%;
-    color: white;
-    background: $gray;
+    font-weight: bold;
+    color: $gray;
+    background: white;
     &:hover, &:focus {
-      color: $gray;
-      background: white;
+      color: white;
+      background: $gray;
     }
   }
+  a {
+    padding: 0.5rem;
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke-width: 2.5;
+    }
+  }
+}
+
+.info.go-to-search {
+  top: 4rem;
+  right: 2rem;
 }
 
 @media (display-mode: fullscreen) {
   .info {
     top: 2rem;
-    right: 2rem;
+    right: 4rem;
+  }
+  .info.go-to-search {
+    top: 4rem;
+    right: 5rem;
   }
 }
 
@@ -265,13 +434,13 @@ html.dark {
 // ALERTS INFO BUTTON DARK MODE
 html.dark {
   .info {
-    button {
+    button, a {
       border-color: white;
-      color: $gray;
-      background: white;
+      color: white;
+      background: $gray;
       &:hover, &:focus {
-        color: white;
-        background: $gray;
+        color: $gray;
+        background: white;
       }
     }
   }
