@@ -2,25 +2,6 @@
 <html>
   <head>
     <%- include('includes/head', { title }); %>
-    <style>
-      header {
-        max-height: 0;
-        min-height: 0;
-        padding: 0;
-        opacity: 0;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-      }
-      header.show {
-        max-height: 200vh;
-        min-height: 100vh;
-        padding: 2rem;
-        opacity: 1;
-      }
-    </style>
   </head>
   <body class="hidden">
     <!-- Google Tag Manager (noscript) -->
@@ -32,24 +13,9 @@
         <h1 class="visuallyhidden"><%= title %> Index</h1>
         <section>
           <h2>Welcome to <%= title %></h2>
-          <fieldset>
-            <label>
-              <span>Search</span>
-              <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
-              <span class="icon">
-                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
-              </span>
-            </label>
-          </fieldset>
           <h3>Current list:</h3>
           <small>* denotes a work in progress</small>
           <ul id="list">
-            <li>
-              <input type='checkbox' name='abba' id='abba'><a href='#'><label for='abba'><span class='image'><img src='assets/images/abba.jpg' alt='ABBA'></span><span class='performer'>ABBA</span></label></a>
-              <section>
-                <p><a href='songs/abba-take-a-chance-on-me.html' target='_blank' rel='noopener noreferrer'><span class='song'>Take A Chance On Me*</span><span class='album'>ABBA: The Album</span></a></p>
-              </section>
-            </li>
             <li>
               <input type='checkbox' name='beck' id='beck'><a href='#'><label for='beck'><span class='image'><img src='assets/images/beck.jpg' alt='Beck'></span><span class='performer'>Beck</span></label></a>
               <section>
@@ -64,7 +30,6 @@
               <input type='checkbox' name='camper-van-beethoven' id='camper-van-beethoven'><a href='#'><label for='camper-van-beethoven'><span class='image'><img src='assets/images/camper-van-beethoven.jpg' alt='Camper Van Beethoven'></span><span class='performer'>Camper Van Beethoven</span></label></a>
               <section>
                 <p><a href='songs/camper-van-beethoven-51-7.html' target='_blank' rel='noopener noreferrer'><span class='song'>51-7</span><span class='album'>New Roman Times</span></a></p>
-                <p><a href='songs/camper-van-beethoven-pictures-of-matchstick-men.html' target='_blank' rel='noopener noreferrer'><span class='song'>Pictures Of Matchstick Men*</span><span class='album'>Camper Van Beethoven</span></a></p>
                 <p><a href='songs/camper-van-beethoven-take-the-skinheads-bowling.html' target='_blank' rel='noopener noreferrer'><span class='song'>Take The Skinheads Bowling</span><span class='album'>Telephone Free Landslide Victory</span></a></p>
               </section>
             </li>
@@ -72,13 +37,6 @@
               <input type='checkbox' name='cinderella' id='cinderella'><a href='#'><label for='cinderella'><span class='image'><img src='assets/images/cinderella.jpg' alt='Cinderella'></span><span class='performer'>Cinderella</span></label></a>
               <section>
                 <p><a href='songs/cinderella-the-last-mile.html' target='_blank' rel='noopener noreferrer'><span class='song'>The Last Mile</span><span class='album'>Long Cold Winter</span></a></p>
-              </section>
-            </li>
-            <li>
-              <input type='checkbox' name='elvis-costello' id='elvis-costello'><a href='#'><label for='elvis-costello'><span class='image'><img src='assets/images/elvis-costello.jpg' alt='Elvis Costello'></span><span class='performer'>Elvis Costello</span></label></a>
-              <section>
-                <p><a href='songs/elvis-costello-the-other-side-of-summer.html' target='_blank' rel='noopener noreferrer'><span class='song'>The Other Side Of Summer*</span><span class='album'>Mighty Like A Rose</span></a></p>
-                <p><a href='songs/elvis-costello-veronica.html' target='_blank' rel='noopener noreferrer'><span class='song'>Veronica*</span><span class='album'>Spike</span></a></p>
               </section>
             </li>
             <li>
@@ -123,7 +81,6 @@
               <section>
                 <p><a href='songs/michael-dorman-afternoon-spray.html' target='_blank' rel='noopener noreferrer'><span class='song'>Afternoon Spray*</span><span class='album'>Patriot: Season 1 EP (An Amazon Original Soundtrack)</span></a></p>
                 <p><a href='songs/michael-dorman-dead-serious-rick.html' target='_blank' rel='noopener noreferrer'><span class='song'>Dead Serious Rick</span><span class='album'>Patriot: Season 1 EP (An Amazon Original Soundtrack)</span></a></p>
-                <p><a href='songs/michael-dorman-martin-tidy.html' target='_blank' rel='noopener noreferrer'><span class='song'>Martin Tidy*</span><span class='album'>Patriot: Season 2 (Amazon Original Soundtrack)</span></a></p>
               </section>
             </li>
             <li>
@@ -255,7 +212,7 @@
                 <p><a href='songs/phish-back-on-the-train.html' target='_blank' rel='noopener noreferrer'><span class='song'>Back On The Train</span><span class='album'>Farmhouse</span></a></p>
                 <p><a href='songs/phish-bug.html' target='_blank' rel='noopener noreferrer'><span class='song'>Bug</span><span class='album'>Farmhouse</span></a></p>
                 <p><a href='songs/phish-chalkdust-torture.html' target='_blank' rel='noopener noreferrer'><span class='song'>Chalkdust Torture</span><span class='album'>A Picture Of Nectar</span></a></p>
-                <p><a href='songs/phish-dog-faced-boy.html' target='_blank' rel='noopener noreferrer'><span class='song'>Dog Faced Boy*</span><span class='album'>Hoist</span></a></p>
+                <p><a href='songs/phish-dog-faced-boy.html' target='_blank' rel='noopener noreferrer'><span class='song'>Dog Faced Boy</span><span class='album'>Hoist</span></a></p>
                 <p><a href='songs/phish-driver.html' target='_blank' rel='noopener noreferrer'><span class='song'>Driver</span><span class='album'>Farmhouse</span></a></p>
                 <p><a href='songs/phish-heavy-things.html' target='_blank' rel='noopener noreferrer'><span class='song'>Heavy Things</span><span class='album'>Farmhouse</span></a></p>
                 <p><a href='songs/phish-kill-devil-falls.html' target='_blank' rel='noopener noreferrer'><span class='song'>Kill Devil Falls</span><span class='album'>Joy</span></a></p>
@@ -265,10 +222,10 @@
                 <p><a href='songs/phish-prince-caspian.html' target='_blank' rel='noopener noreferrer'><span class='song'>Prince Caspian</span><span class='album'>Billy Breathes</span></a></p>
                 <p><a href='songs/phish-runaway-jim.html' target='_blank' rel='noopener noreferrer'><span class='song'>Runaway Jim</span><span class='album'></span></a></p>
                 <p><a href='songs/phish-sample-in-a-jar.html' target='_blank' rel='noopener noreferrer'><span class='song'>Sample In A Jar</span><span class='album'>Phish</span></a></p>
-                <p><a href='songs/phish-sleeping-monkey.html' target='_blank' rel='noopener noreferrer'><span class='song'>Sleeping Monkey*</span><span class='album'></span></a></p>
+                <p><a href='songs/phish-sleeping-monkey.html' target='_blank' rel='noopener noreferrer'><span class='song'>Sleeping Monkey</span><span class='album'></span></a></p>
                 <p><a href='songs/phish-suzy-greenburg.html' target='_blank' rel='noopener noreferrer'><span class='song'>Suzy Greenburg</span><span class='album'></span></a></p>
                 <p><a href='songs/phish-theme-from-the-bottom.html' target='_blank' rel='noopener noreferrer'><span class='song'>Theme From The Bottom</span><span class='album'>Billy Breathes</span></a></p>
-                <p><a href='songs/phish-train-song.html' target='_blank' rel='noopener noreferrer'><span class='song'>Train Song*</span><span class='album'>Billy Breathes</span></a></p>
+                <p><a href='songs/phish-train-song.html' target='_blank' rel='noopener noreferrer'><span class='song'>Train Song</span><span class='album'>Billy Breathes</span></a></p>
                 <p><a href='songs/phish-water-in-the-sky.html' target='_blank' rel='noopener noreferrer'><span class='song'>Water In The Sky</span><span class='album'>The Story Of The Ghost</span></a></p>
               </section>
             </li>
@@ -363,11 +320,29 @@
           </ul>
         </section>
       </article>
+      <section class="info" style="top: 4rem; right: 2rem;">
+        <a href="#search">
+          <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+        </a>
+      </section>
     </main>
     <footer>
       <section class="details">
-        <form style="padding: 0;">
-          <fieldset style="padding: 0;">
+        <form>
+          <fieldset>
+            <label>
+              <span>Search</span>
+              <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
+              <span class="icon">
+                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+              </span>
+              <button type="reset" id="reset" class="clear-search" value="Reset">
+                <span class="visuallyhidden">Reset</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+            </label>
+          </fieldset>
+          <fieldset>
             <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
           </fieldset>
         </form>
@@ -400,6 +375,23 @@
           }
         }
       }
+      // RESET
+      $('button#reset').click(function() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("list");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "none";
+          } else {
+            li[i].style.display = "";
+          }
+        }
+      });
     </script>
   </body>
 </html>

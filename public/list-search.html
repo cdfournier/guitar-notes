@@ -52,19 +52,8 @@
         <h1 class="visuallyhidden">Guitar Notes List Index</h1>
         <section id="list">
           <h2>Welcome to Guitar Notes</h2>
-          <fieldset>
-            <label>
-              <span>Search</span>
-              <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search artists" title="Search">
-              <span class="icon">
-                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
-              </span>
-            </label>
-          </fieldset>
           <h3>Current list:</h3>
           <small style="display: block; column-span: all;">* denotes a work in progress</small>
-          <h4>ABBA</h4>
-          <p><a href='songs/abba-take-a-chance-on-me.html' target='_blank'>Take A Chance On Me*</a></p>
           <h4>Beck</h4>
           <p><a href='songs/beck-asshole.html' target='_blank'>Asshole</a></p>
           <p><a href='songs/beck-bogusflow.html' target='_blank'>Bogusflow</a></p>
@@ -73,13 +62,9 @@
           <p><a href='songs/beck-rowboat.html' target='_blank'>Rowboat</a></p>
           <h4>Camper Van Beethoven</h4>
           <p><a href='songs/camper-van-beethoven-51-7.html' target='_blank'>51-7</a></p>
-          <p><a href='songs/camper-van-beethoven-pictures-of-matchstick-men.html' target='_blank'>Pictures Of Matchstick Men*</a></p>
           <p><a href='songs/camper-van-beethoven-take-the-skinheads-bowling.html' target='_blank'>Take The Skinheads Bowling</a></p>
           <h4>Cinderella</h4>
           <p><a href='songs/cinderella-the-last-mile.html' target='_blank'>The Last Mile</a></p>
-          <h4>Elvis Costello</h4>
-          <p><a href='songs/elvis-costello-the-other-side-of-summer.html' target='_blank'>The Other Side Of Summer*</a></p>
-          <p><a href='songs/elvis-costello-veronica.html' target='_blank'>Veronica*</a></p>
           <h4>Cracker</h4>
           <p><a href='songs/cracker-euro-trash-girl.html' target='_blank'>Euro Trash Girl</a></p>
           <p><a href='songs/cracker-get-off-this.html' target='_blank'>Get Off This</a></p>
@@ -100,7 +85,6 @@
           <h4>Michael Dorman</h4>
           <p><a href='songs/michael-dorman-afternoon-spray.html' target='_blank'>Afternoon Spray*</a></p>
           <p><a href='songs/michael-dorman-dead-serious-rick.html' target='_blank'>Dead Serious Rick</a></p>
-          <p><a href='songs/michael-dorman-martin-tidy.html' target='_blank'>Martin Tidy*</a></p>
           <h4>Duran Duran</h4>
           <p><a href='songs/duran-duran-reach-up-for-the-sunrise.html' target='_blank'>(Reach Up for The) Sunrise</a></p>
           <p><a href='songs/duran-duran-hungry-like-the-wolf.html' target='_blank'>Hungry Like The Wolf</a></p>
@@ -164,7 +148,7 @@
           <p><a href='songs/phish-back-on-the-train.html' target='_blank'>Back On The Train</a></p>
           <p><a href='songs/phish-bug.html' target='_blank'>Bug</a></p>
           <p><a href='songs/phish-chalkdust-torture.html' target='_blank'>Chalkdust Torture</a></p>
-          <p><a href='songs/phish-dog-faced-boy.html' target='_blank'>Dog Faced Boy*</a></p>
+          <p><a href='songs/phish-dog-faced-boy.html' target='_blank'>Dog Faced Boy</a></p>
           <p><a href='songs/phish-driver.html' target='_blank'>Driver</a></p>
           <p><a href='songs/phish-heavy-things.html' target='_blank'>Heavy Things</a></p>
           <p><a href='songs/phish-kill-devil-falls.html' target='_blank'>Kill Devil Falls</a></p>
@@ -174,10 +158,10 @@
           <p><a href='songs/phish-prince-caspian.html' target='_blank'>Prince Caspian</a></p>
           <p><a href='songs/phish-runaway-jim.html' target='_blank'>Runaway Jim</a></p>
           <p><a href='songs/phish-sample-in-a-jar.html' target='_blank'>Sample In A Jar</a></p>
-          <p><a href='songs/phish-sleeping-monkey.html' target='_blank'>Sleeping Monkey*</a></p>
+          <p><a href='songs/phish-sleeping-monkey.html' target='_blank'>Sleeping Monkey</a></p>
           <p><a href='songs/phish-suzy-greenburg.html' target='_blank'>Suzy Greenburg</a></p>
           <p><a href='songs/phish-theme-from-the-bottom.html' target='_blank'>Theme From The Bottom</a></p>
-          <p><a href='songs/phish-train-song.html' target='_blank'>Train Song*</a></p>
+          <p><a href='songs/phish-train-song.html' target='_blank'>Train Song</a></p>
           <p><a href='songs/phish-water-in-the-sky.html' target='_blank'>Water In The Sky</a></p>
           <h4>Pixies</h4>
           <p><a href='songs/pixies-greens-and-blues.html' target='_blank'>Greens And Blues</a></p>
@@ -221,11 +205,29 @@
           <p><a href='songs/neil-young-the-old-laughing-lady.html' target='_blank'>The Old Laughing Lady</a></p>
         </section>
       </article>
+      <section class="info" style="top: 4rem; right: 2rem;">
+        <a href="#search">
+          <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+        </a>
+      </section>
     </main>
     <footer>
       <section class="details">
-        <form style="padding: 0;">
-          <fieldset style="padding: 0;">
+        <form>
+          <fieldset>
+            <label>
+              <span>Search</span>
+              <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search songs" title="Search">
+              <span class="icon">
+                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+              </span>
+              <button type="reset" id="reset" class="clear-search" value="Reset">
+                <span class="visuallyhidden">Reset</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+            </label>
+          </fieldset>
+          <fieldset>
             <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
           </fieldset>
         </form>
@@ -269,6 +271,23 @@
           }
         }
       }
+      // RESET
+      $('button#reset').click(function() {
+        var input, filter, section, p, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        section = document.getElementById("list");
+        p = section.getElementsByTagName("p");
+        for (i = 0; i < p.length; i++) {
+          a = p[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            p[i].style.display = "none";
+          } else {
+            p[i].style.display = "";
+          }
+        }
+      });
     </script>
   </body>
 </html>
