@@ -286,6 +286,9 @@ main.index {
       section {
         ul li {
           width: calc(25% - 1rem);
+          label {
+            font-size: 1.125rem;
+          }
         }
       }
     }

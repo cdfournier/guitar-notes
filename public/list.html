@@ -2,13 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TF6BNKF');</script>
-    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guitar Notes</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
@@ -30,6 +23,9 @@
     </style>
     <link rel="stylesheet" href="assets/style/master.min.css">
     <style>
+      main.index article section h4 {
+        opacity: 0.5;
+      }
       @media (min-width: 48rem) {
         main.index section {
           column-count: 2;
@@ -54,14 +50,10 @@
     </style>
   </head>
   <body class="hidden">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <main id="content" class="index">
       <article>
         <h1 class="visuallyhidden">Guitar Notes List Index</h1>
-        <section>
+        <section id="list">
           <h2>Welcome to Guitar Notes</h2>
           <h3>Current list:</h3>
           <small style="display: block; column-span: all;">* denotes a work in progress</small>
@@ -273,11 +265,29 @@
           <p><a href='songs/neil-young-the-old-laughing-lady.html' target='_blank'>The Old Laughing Lady</a></p>
         </section>
       </article>
+      <section class="info go-to-search">
+        <a href="#search">
+          <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+        </a>
+      </section>
     </main>
     <footer>
       <section class="details">
-        <form style="padding: 0;">
-          <fieldset style="padding: 0;">
+        <form>
+          <fieldset>
+            <label>
+              <span>Search</span>
+              <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search songs" title="Search">
+              <span class="icon">
+                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+              </span>
+              <button type="reset" id="reset" class="clear-search" value="Reset">
+                <span class="visuallyhidden">Reset</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+            </label>
+          </fieldset>
+          <fieldset>
             <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
           </fieldset>
         </form>
@@ -302,6 +312,41 @@
       $(document).ready(function(){
         $("body").addClass("visible");
         $("body").removeClass("hidden");
+      });
+    </script>
+    <script>
+      function searchSongs() {
+        var input, filter, section, p, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        section = document.getElementById("list");
+        p = section.getElementsByTagName("p");
+        for (i = 0; i < p.length; i++) {
+          a = p[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            p[i].style.display = "";
+          } else {
+            p[i].style.display = "none";
+          }
+        }
+      }
+      // RESET
+      $('button#reset').click(function() {
+        var input, filter, section, p, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        section = document.getElementById("list");
+        p = section.getElementsByTagName("p");
+        for (i = 0; i < p.length; i++) {
+          a = p[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            p[i].style.display = "none";
+          } else {
+            p[i].style.display = "";
+          }
+        }
       });
     </script>
   </body>

@@ -33,9 +33,10 @@ a {
   font-weight: bold;
   text-decoration: none;
   color: inherit;
+  opacity: 1;
   cursor: pointer;
-  @include transition(all, 0.25s, ease);
+  @include transition(opacity, 0.25s, ease);
   &:hover, &:focus {
-    text-decoration: underline;
+    opacity: 0.7;
   }
 }
