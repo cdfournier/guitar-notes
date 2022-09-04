@@ -50,12 +50,29 @@
     </style>
   </head>
   <body class="hidden">
+    <header>
+      <h1>Welcome to Guitar Notes</h1>
+      <form>
+        <fieldset>
+          <label>
+            <span class="label">Search</span>
+            <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search songs" title="Search">
+            <span class="icon">
+              <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+            </span>
+            <button type="reset" id="reset" class="clear-search" value="Reset">
+              <span class="visuallyhidden">Reset</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </label>
+        </fieldset>
+      </form>
+    </header>
     <main id="content" class="index">
       <article>
         <h1 class="visuallyhidden">Guitar Notes List Index</h1>
         <section id="list">
-          <h2>Welcome to Guitar Notes</h2>
-          <h3>Current list:</h3>
+          <h2>Current list:</h2>
           <small style="display: block; column-span: all;">* denotes a work in progress</small>
           <h4>Beck</h4>
           <p><a href='songs/beck-asshole.html' target='_blank'>Asshole</a></p>
@@ -170,6 +187,8 @@
           <h4>Oasis</h4>
           <p><a href='songs/oasis-dont-look-back-in-anger.html' target='_blank'>Don't Look Back In Anger</a></p>
           <p><a href='songs/oasis-morning-glory.html' target='_blank'>Morning Glory</a></p>
+          <p><a href='songs/oasis-rock-n-roll-star.html' target='_blank'>Rock 'N' Roll Star</a></p>
+          <p><a href='songs/oasis-slide-away.html' target='_blank'>Slide Away</a></p>
           <h4>One Direction</h4>
           <p><a href='songs/one-direction-perfect.html' target='_blank'>Perfect</a></p>
           <h4>Pearl Jam</h4>
@@ -265,28 +284,10 @@
           <p><a href='songs/neil-young-the-old-laughing-lady.html' target='_blank'>The Old Laughing Lady</a></p>
         </section>
       </article>
-      <section class="info go-to-search">
-        <a href="#search">
-          <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
-        </a>
-      </section>
     </main>
     <footer>
       <section class="details">
         <form>
-          <fieldset>
-            <label>
-              <span>Search</span>
-              <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search songs" title="Search">
-              <span class="icon">
-                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
-              </span>
-              <button type="reset" id="reset" class="clear-search" value="Reset">
-                <span class="visuallyhidden">Reset</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
-              </button>
-            </label>
-          </fieldset>
           <fieldset>
             <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
           </fieldset>
@@ -307,12 +308,17 @@
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="assets/js/site.js"></script>
+    <script type="text/javascript" src="assets/js/headroom.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function(){
         $("body").addClass("visible");
         $("body").removeClass("hidden");
       });
+      // HEADROOM
+      var myElement = document.querySelector("header");
+      var headroom  = new Headroom(myElement);
+      headroom.init();
     </script>
     <script>
       function searchSongs() {

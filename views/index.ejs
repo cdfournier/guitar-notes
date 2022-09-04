@@ -8,12 +8,29 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <h1>Welcome to <%= title %></h1>
+      <form>
+        <fieldset>
+          <label>
+            <span class="label">Search</span>
+            <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
+            <span class="icon">
+              <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+            </span>
+            <button type="reset" id="reset" class="clear-search" value="Reset">
+              <span class="visuallyhidden">Reset</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </label>
+        </fieldset>
+      </form>
+    </header>
     <main id="content" class="index">
       <article>
         <h1 class="visuallyhidden"><%= title %> Index</h1>
         <section>
-          <h2>Welcome to <%= title %></h2>
-          <h3>Current list:</h3>
+          <h2>Current list:</h2>
           <small>* denotes a work in progress</small>
           <ul id="list">
             <li>
@@ -263,6 +280,8 @@
               <section>
                 <p><a href='songs/oasis-dont-look-back-in-anger.html' target='_blank' rel='noopener noreferrer'><span class='song'>Don't Look Back In Anger</span><span class='album'>(What's The Story) Morning Glory?</span></a></p>
                 <p><a href='songs/oasis-morning-glory.html' target='_blank' rel='noopener noreferrer'><span class='song'>Morning Glory</span><span class='album'>(What's The Story) Morning Glory?</span></a></p>
+                <p><a href='songs/oasis-rock-n-roll-star.html' target='_blank' rel='noopener noreferrer'><span class='song'>Rock 'N' Roll Star</span><span class='album'>Definitely Maybe</span></a></p>
+                <p><a href='songs/oasis-slide-away.html' target='_blank' rel='noopener noreferrer'><span class='song'>Slide Away</span><span class='album'>Definitely Maybe</span></a></p>
               </section>
             </li>
             <li>
@@ -441,28 +460,10 @@
           </ul>
         </section>
       </article>
-      <section class="info go-to-search">
-        <a href="#search">
-          <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
-        </a>
-      </section>
     </main>
     <footer>
       <section class="details">
         <form>
-          <fieldset>
-            <label>
-              <span>Search</span>
-              <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
-              <span class="icon">
-                <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
-              </span>
-              <button type="reset" id="reset" class="clear-search" value="Reset">
-                <span class="visuallyhidden">Reset</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M18 6 6 18M6 6l12 12"/></svg>
-              </button>
-            </label>
-          </fieldset>
           <fieldset>
             <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
           </fieldset>
@@ -472,12 +473,17 @@
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="assets/js/site.js"></script>
+    <script type="text/javascript" src="assets/js/headroom.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function(){
         $("body").addClass("visible");
         $("body").removeClass("hidden");
       });
+      // HEADROOM
+      var myElement = document.querySelector("header");
+      var headroom  = new Headroom(myElement);
+      headroom.init();
     </script>
     <script>
       function searchArtists() {

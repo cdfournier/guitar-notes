@@ -115,7 +115,7 @@ main {
 
 // INDEX
 main.index {
-  padding-top: 1rem;
+  padding-top: 12rem;
   article {
     section {
       h1, h2, h3 {
@@ -175,6 +175,7 @@ main.index {
             padding: 0;
             font-size: 1rem;
             line-height: 1.25;
+            cursor: pointer;
             span.image {
               display: grid;
               overflow: hidden;
@@ -258,6 +259,7 @@ main.index {
 
 @media (min-width: 48rem) {
   main.index {
+    padding-top: 8rem;
     article {
       section {
         ul li {
