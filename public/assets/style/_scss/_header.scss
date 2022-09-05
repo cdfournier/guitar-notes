@@ -111,7 +111,6 @@ header {
 
 .header--fixed {
   position: fixed;
-  z-index: 10;
   right: 0;
   left: 0;
   top: 0
@@ -122,12 +121,21 @@ header {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+    padding: 2rem;
     form {
       padding: 0;
     }
   }
 }
 
+@media (display-mode: fullscreen) {
+  header {
+    padding: 4rem 4rem 0;
+  }
+}
+
+
+// DARK MODE
 html.dark {
   header {
     background: $gray;
