@@ -20,6 +20,20 @@ window.addEventListener('DOMContentLoaded', function(theme) {
     }
   });
 
+// WELCOME LOGO
+window.addEventListener('DOMContentLoaded', function(visited) {
+  if(localStorage.getItem('visited') === 'true') {
+    $('.welcome').toggleClass('dismissed');
+  }
+  else {
+    localStorage.setItem('visited',false);
+  }
+  });
+  $('button#dismiss').click(function() {
+    $('.welcome').toggleClass('dismissed');
+    localStorage.setItem('visited',true);
+  });
+
 // ALERTS
 window.addEventListener('DOMContentLoaded', function(alerts) {
   $('.alert').addClass('show');
