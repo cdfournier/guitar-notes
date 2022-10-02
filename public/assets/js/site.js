@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', function(visited) {
     $('.welcome').addClass('dismissed');
   });
 
-
 // ALERTS
 window.addEventListener('DOMContentLoaded', function(alerts) {
   $('.alert').addClass('show');
