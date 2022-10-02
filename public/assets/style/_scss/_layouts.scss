@@ -461,21 +461,22 @@ html.dark {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  z-index: 100;
   width: 100%;
   max-height: 100vh;
   min-height: 100vh;
   margin: 0;
-  padding: 2rem;
+  padding: 8rem 0 0;
   background: white;
   @include transition(all, 0.5s, ease);
   @include transform(translateY(0));
   .logo {
     width: 100%;
+    padding: 0;
     text-align: center;
     svg {
-      max-width: 28rem;
+      max-width: 21rem;
+      opacity: 0;
+      @include transition(all, 0.5s, ease);
       .white {
         fill: white;
       }
@@ -487,24 +488,43 @@ html.dark {
   button.dismiss-welcome {
     display: flex;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: auto;
     margin: 1rem auto 0;
     padding: 1rem;
+    opacity: 0;
+    @include transition(all, 0.25s, ease);
     span.icon {
       width: 2rem;
       height: 2rem;
-      margin: 0.5rem 0 0;
+      margin: 0.5rem 0;
     }
   }
   &.dismissed {
     z-index: 0;
     max-height: 0;
+    min-height: 0;
+    padding: 0;
     opacity: 0;
     @include transform(translateY(-100vh));
-    @include transition(all, 0.125s, ease);
-    .logo, button.dismiss-welcome {
+    button.dismiss-welcome {
       display: none;
+    }
+  }
+}
+
+body.visible {
+  .welcome {
+    .logo {
+      svg {
+        opacity: 1;
+      }
+    }
+    button.dismiss-welcome {
+      opacity: 1;
+      &:hover, &:focus {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -520,6 +540,26 @@ html.dark {
         .gray {
           fill: white;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  .welcome {
+    .logo {
+      svg {
+        max-width: 28rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 120rem) {
+  .welcome {
+    .logo {
+      svg {
+        max-width: 34rem;
       }
     }
   }

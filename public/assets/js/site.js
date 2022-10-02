@@ -26,13 +26,13 @@ window.addEventListener('DOMContentLoaded', function(visited) {
     $('.welcome').toggleClass('dismissed');
   }
   else {
-    localStorage.setItem('visited',false);
+    localStorage.setItem('visited',true);
   }
   });
-  $('button#dismiss').click(function() {
-    $('.welcome').toggleClass('dismissed');
-    localStorage.setItem('visited',true);
+  $('button.dismiss-welcome').click( function() {
+    $('.welcome').addClass('dismissed');
   });
+
 
 // ALERTS
 window.addEventListener('DOMContentLoaded', function(alerts) {
