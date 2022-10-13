@@ -1,6 +1,6 @@
-G C D G - C D - G C - G D - G C D
+G C G D - G C D - G C G D - G C D
 
-    G              C                   D     G
+    G              C              G    D
 I'm sitting by the window of your 32nd floor apartment
 G                C                  D
 Waiting for your phone calls all to end
@@ -19,22 +19,21 @@ Out the window so far down
 Would I start to regret it
    G
 Or would I smile
-    D               G
+    D               G    C    D
 And watch it slowly fall fall fall
 
-G C D G - C D - G C - G D - G C D
 
 G                  C
 Garbage trucks and taxi cabs
       G                  D
 Don't seem like they can reach me here
-    G                     C
+    G                     C        D
 The clamor of jackhammers seems so faint
          G
 Well the way you treat me
 C             G                  D
 Like the only slightly brings me down a lot
-  G                     C
+  G                     C           D
 I don't think that I'll ever be the same
 
    G          C
@@ -45,5 +44,18 @@ Out the window so far down
 Would I start to regret it
    G
 Or would I smile
-    D               G
+    D               G    C    D
+And watch it slowly fall fall fall
+
+G C G D - G C D - G C G D - G C D
+
+   G          C
+If I threw my guitar
+        G             D
+Out the window so far down
+      G          C
+Would I start to regret it
+   G
+Or would I smile
+    D               G    C    D
 And watch it slowly fall fall fall
