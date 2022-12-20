@@ -20,7 +20,7 @@ I ain't no fortunate one
 
 G                   F
 Some folks are born silver spoon in hand
-C                    C
+C                    G
 Lord don't they help themselves
 G                   F
 But when the taxman comes to the door
@@ -35,6 +35,8 @@ G           D
 It ain't me it ain't me
 C                    G
 I ain't no fortunate one
+
+G F C G
 
 G                  F
 Some folks inherit star-spangled eyes
