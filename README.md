@@ -1,7 +1,5 @@
 # Guitar Notes
 
-[Guitar Notes](https://guitar-notes.herokuapp.com/)
-
 ## About Guitar Notes
 I like to play guitar, but I’m not a good guitar player. I also like to design and write code, but I’m not good at those either, so I built this thing.
 
