@@ -992,6 +992,50 @@ footer section.details figure figcaption {
   display: none;
 }
 
+<<<<<<< Updated upstream
+=======
+footer section.details section.layout-mode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0 1rem;
+}
+
+footer section.details section.layout-mode p {
+  width: auto;
+  max-width: calc(50% - 0.5rem);
+}
+
+footer section.details section.layout-mode p a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.5;
+}
+
+footer section.details section.layout-mode p a span.icon {
+  display: -ms-grid;
+  display: grid;
+  width: 1.71428571429rem;
+  margin-right: 0.5rem;
+}
+
+footer section.details section.layout-mode p a:hover, footer section.details section.layout-mode p a:focus, footer section.details section.layout-mode p a.active {
+  opacity: 1;
+}
+
+>>>>>>> Stashed changes
 footer section.details ul {
   margin: 0;
   padding: 1rem 0;
@@ -1143,6 +1187,7 @@ footer section.details form fieldset + fieldset {
   padding: 1rem 0 0;
 }
 
+<<<<<<< Updated upstream
 footer section.details section.layout-mode,
 footer section.details section.song-library {
   display: -webkit-box;
@@ -1206,6 +1251,8 @@ footer section.details section.song-library {
   padding: 0 0 1rem;
 }
 
+=======
+>>>>>>> Stashed changes
 footer section.about {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1238,6 +1285,29 @@ footer section.about .logo svg .gray {
   fill: var(--gray);
 }
 
+<<<<<<< Updated upstream
+=======
+footer section.about .logo ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+>>>>>>> Stashed changes
 footer section.about .logo p {
   padding: 0;
   line-height: 1.25;
