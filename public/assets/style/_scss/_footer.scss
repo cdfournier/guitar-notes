@@ -26,30 +26,6 @@ footer {
         display: none;
       }
     }
-    section.layout-mode {
-      display: flex;
-      align-items: flex-start;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      padding: 0 0 1rem;
-      p {
-        width: auto;
-        max-width: calc(50% - 0.5rem);
-        a {
-          display: flex;
-          align-items: center;
-          opacity: 0.5;
-          span.icon {
-            display: grid;
-            width: 1.71428571429rem;
-            margin-right: 0.5rem;
-          }
-          &:hover, &:focus, &.active {
-            opacity: 1;
-          }
-        }
-      }
-    }
     ul {
       margin: 0;
       padding: 1rem 0;
@@ -159,6 +135,38 @@ footer {
         }
       }
     }
+    section.layout-mode,
+    section.song-library {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      padding: 0 0 1rem;
+      p {
+        width: auto;
+        max-width: calc(50% - 0.5rem);
+        a {
+          display: flex;
+          align-items: center;
+          opacity: 0.5;
+          span.icon {
+            display: grid;
+            width: 1.71428571429rem;
+            margin-right: 0.5rem;
+          }
+          &:hover, &:focus, &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    section.song-library {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      padding: 0 0 1rem;
+    }
   }
   section.about {
     display: flex;
@@ -241,8 +249,6 @@ html.dark {
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: space-between;
-    section.details {
-    }
     section.about {
       flex-direction: row;
       align-items: flex-start;
