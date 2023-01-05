@@ -584,31 +584,39 @@
       </article>
     </main>
     <footer>
-      <section class="details">
-        <h2 class="visuallyhidden">View controls</h2>
-        <section class="layout-mode">
-          <h3 class="visuallyhidden">Layout mode switches</h3>
-          <p><a href="grid.html" class="active">
-            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon-grid" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>
-            <span class="text">Grid view</span>
-          </a></p>
-          <p><a href="list.html">
-            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon-list" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/></svg></span>
-            <span class="text">List view</span>
-          </a></p>
-        </section>
-        <section class="song-library">
-          <ul>
-            <li>Live</li>
-            <li><a href="">Lab</a></li>
-          </ul>      
-        </section>
+      <nav>
+        <ul>
+          <a href="grid.html" class="selected">
+            <li>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon-live" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path stroke="none" d="M0 0h24v24H0z"/><path d="M18.364 19.364a9 9 0 1 0-12.728 0"/><path d="M15.536 16.536a5 5 0 1 0-7.072 0"/><circle cx="12" cy="13" r="1"/></svg></span>
+              <span class="text">Live</span>
+            </li>
+          </a>
+          <a href="grid.html" class="selected">
+            <li>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon-grid" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>
+              <span class="text">Grid view</span>
+            </li>
+          </a>
+          <a href="lab-grid.html">
+            <li>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon-lab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path stroke="none" d="M0 0h24v24H0z"/><path d="M15 3v15a3 3 0 0 1-6 0V3M9 12h6M8 3h8"/></svg></span>
+              <span class="text">Lab</span>
+            </li>
+          </a>
+          <a href="list.html" >
+            <li>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon-list" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/></svg></span>
+              <span class="text">List view</span>
+            </li>
+          </a>
+        </ul>
         <form>
           <fieldset>
             <label for="switch-theme">Theme<input type="checkbox" name="switch-theme" class="switch" id="switch-theme"></label>
           </fieldset>
         </form>
-      </section>
+      </nav>
       <%- include('includes/footer-about'); %>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

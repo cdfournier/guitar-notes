@@ -967,6 +967,201 @@ footer {
   padding: 1rem;
 }
 
+footer nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 1rem 0;
+  list-style: none;
+}
+
+footer nav ul a:nth-of-type(odd) {
+  width: 40%;
+}
+
+footer nav ul a:nth-of-type(even) {
+  width: 60%;
+}
+
+footer nav ul a:nth-of-type(even) li {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+footer nav ul a.selected {
+  opacity: 0.5;
+}
+
+footer nav ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+
+footer nav ul li span.icon {
+  display: -ms-grid;
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+footer nav ul li span.text {
+  padding: 0 0 0 0.5rem;
+}
+
+footer nav form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+  padding: 1rem;
+}
+
+footer nav form fieldset {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-column-span: all;
+          column-span: all;
+}
+
+footer nav form fieldset label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+footer nav form fieldset label input[type="text"],
+footer nav form fieldset label input[type="search"] {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--gray);
+  background: transparent;
+}
+
+footer nav form fieldset label span.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 2.5rem;
+  padding: 0.25rem 0 0.425rem 0.5rem;
+  opacity: 0.7;
+}
+
+footer nav form fieldset label button[type="reset"].clear-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.25rem;
+  width: 1.5rem;
+  height: 2.125rem;
+  opacity: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: all 0.325s ease 0s;
+  transition: all 0.325s ease 0s;
+}
+
+footer nav form fieldset label input[type="text"]:not(:placeholder-shown) ~ span.clear-search,
+footer nav form fieldset label input[type="text"]:not(:placeholder-shown) ~ button.clear-search {
+  opacity: 0.7;
+}
+
+footer nav form fieldset label input[type="text"]:not(:placeholder-shown) ~ span.clear-search:hover, footer nav form fieldset label input[type="text"]:not(:placeholder-shown) ~ span.clear-search:focus,
+footer nav form fieldset label input[type="text"]:not(:placeholder-shown) ~ button.clear-search:hover,
+footer nav form fieldset label input[type="text"]:not(:placeholder-shown) ~ button.clear-search:focus {
+  opacity: 1;
+}
+
+footer nav form fieldset label input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  min-width: 2.5rem;
+  height: 1.25rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--gray);
+  border-radius: 2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+footer nav form fieldset label input[type="checkbox"]:after {
+  display: block;
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 100%;
+  background: var(--gray);
+  content: "";
+  -webkit-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+
+footer nav form fieldset label input[type="checkbox"]:checked:after {
+  margin-left: 1.25rem;
+}
+
+footer nav form fieldset + fieldset {
+  padding: 1rem 0 0;
+}
+
 footer section {
   padding: 1rem;
 }
@@ -992,50 +1187,6 @@ footer section.details figure figcaption {
   display: none;
 }
 
-<<<<<<< Updated upstream
-=======
-footer section.details section.layout-mode {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 0 1rem;
-}
-
-footer section.details section.layout-mode p {
-  width: auto;
-  max-width: calc(50% - 0.5rem);
-}
-
-footer section.details section.layout-mode p a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  opacity: 0.5;
-}
-
-footer section.details section.layout-mode p a span.icon {
-  display: -ms-grid;
-  display: grid;
-  width: 1.71428571429rem;
-  margin-right: 0.5rem;
-}
-
-footer section.details section.layout-mode p a:hover, footer section.details section.layout-mode p a:focus, footer section.details section.layout-mode p a.active {
-  opacity: 1;
-}
-
->>>>>>> Stashed changes
 footer section.details ul {
   margin: 0;
   padding: 1rem 0;
@@ -1187,72 +1338,6 @@ footer section.details form fieldset + fieldset {
   padding: 1rem 0 0;
 }
 
-<<<<<<< Updated upstream
-footer section.details section.layout-mode,
-footer section.details section.song-library {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 0 1rem;
-}
-
-footer section.details section.layout-mode p,
-footer section.details section.song-library p {
-  width: auto;
-  max-width: calc(50% - 0.5rem);
-}
-
-footer section.details section.layout-mode p a,
-footer section.details section.song-library p a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  opacity: 0.5;
-}
-
-footer section.details section.layout-mode p a span.icon,
-footer section.details section.song-library p a span.icon {
-  display: -ms-grid;
-  display: grid;
-  width: 1.71428571429rem;
-  margin-right: 0.5rem;
-}
-
-footer section.details section.layout-mode p a:hover, footer section.details section.layout-mode p a:focus, footer section.details section.layout-mode p a.active,
-footer section.details section.song-library p a:hover,
-footer section.details section.song-library p a:focus,
-footer section.details section.song-library p a.active {
-  opacity: 1;
-}
-
-footer section.details section.song-library {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 0 1rem;
-}
-
-=======
->>>>>>> Stashed changes
 footer section.about {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1285,8 +1370,6 @@ footer section.about .logo svg .gray {
   fill: var(--gray);
 }
 
-<<<<<<< Updated upstream
-=======
 footer section.about .logo ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1307,22 +1390,21 @@ footer section.about .logo ul {
   list-style: none;
 }
 
->>>>>>> Stashed changes
 footer section.about .logo p {
   padding: 0;
   line-height: 1.25;
 }
 
-html.dark footer section.details form fieldset input[type="text"],
-html.dark footer section.details form fieldset input[type="search"],
-html.dark footer section.details form fieldset input[type="checkbox"] {
+html.dark footer form fieldset input[type="text"],
+html.dark footer form fieldset input[type="search"],
+html.dark footer form fieldset input[type="checkbox"] {
   border-color: white;
   color: white;
 }
 
-html.dark footer section.details form fieldset input[type="text"]:after,
-html.dark footer section.details form fieldset input[type="search"]:after,
-html.dark footer section.details form fieldset input[type="checkbox"]:after {
+html.dark footer form fieldset input[type="text"]:after,
+html.dark footer form fieldset input[type="search"]:after,
+html.dark footer form fieldset input[type="checkbox"]:after {
   background: white;
 }
 
