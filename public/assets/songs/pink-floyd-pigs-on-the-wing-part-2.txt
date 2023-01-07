@@ -1,18 +1,20 @@
-G C G
+G C
 
-G               C    F
+G               C
 You know that I care
-C               G   C G
+C               G
 What happens to you
-G                   C    F
+G                   C
 And I know that you care
-C      G   C G
+C      G
 For me too
-G    A
+
+
+G    A          G     A
 So I don't feel alone
-A
+A      A7
 Or the weight of the stone
-G
+G             C
 Now that I've found
 C                 D       G
 Somewhere safe to bury my bone
@@ -20,5 +22,5 @@ Somewhere safe to bury my bone
 And any fool knows
 Am            F    C Am
 A dog needs a home
-  D                    C   G
+  D                        G
 A shelter from pigs on the wing
