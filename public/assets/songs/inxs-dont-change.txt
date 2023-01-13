@@ -2,7 +2,7 @@ A F#m E D A
 
 A
 I'm standing here on the ground
-F#n
+F#m
 The sky above won't fall down
 E           D      A
 See no evil in all directions
@@ -46,7 +46,7 @@ F#m E D - F#m E D
 
 A
 I'm standing here on the ground
-F#n
+F#m
 The sky above won't fall down
 E           D      A
 See no evil in all directions
