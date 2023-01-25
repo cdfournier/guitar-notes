@@ -6,147 +6,6 @@ footer {
   width: 100%;
   margin: 0;
   padding: 1rem;
-  nav {
-    ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 100%;
-      margin: 0;
-      padding: 1rem 1rem 0;
-      list-style: none;
-      a:nth-of-type(odd) {
-        width: 40%;
-      }
-      a:nth-of-type(even) {
-        width: 60%;
-        li {
-          justify-content: flex-end;
-        }
-      }
-      a.selected {
-        opacity: 0.5;
-      }
-      li {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: 100%;
-        span.icon {
-          display: grid;
-          width: 1.25rem;
-          height: 1.25rem;
-        }
-        span.text {
-          padding: 0 0 0 0.5rem;
-        }
-      }
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 1rem;
-      fieldset {
-        width: 100%;
-        margin: 0;
-        padding: 0 0 0 1.75rem;
-        border: none;
-        column-span: all;
-        label {
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          font-size: 0.875rem;
-          font-weight: bold;
-          line-height: 1.5;
-          input[type="text"],
-          input[type="search"] {
-            margin: 0.5rem 0 0;
-            padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-            border: 1px solid $gray;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: $gray;
-            background: transparent;
-          }
-          span.icon {
-            display: grid;
-            position: absolute;
-            top: 0;
-            left: -1.75rem;
-            width: 1.25rem;
-            height: 1.25rem;
-            svg {
-              width: 100%;
-              height: 100%;
-              @include transition(all, 0.325s, ease);
-              &.dark-mode {
-                width: 0;
-                height: 0;
-                opacity: 0s;
-              }
-            }
-          }
-          button[type="reset"].clear-search {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            right: 0.5rem;
-            bottom: 0.25rem;
-            width: 1.5rem;
-            height: 2.125rem;
-            opacity: 0;
-            @include appearance(none);
-            @include transition(all, 0.325s, ease);
-          }
-          input[type="text"]:not(:placeholder-shown) ~ span.clear-search,
-          input[type="text"]:not(:placeholder-shown) ~ button.clear-search {
-            opacity: 0.7;
-            &:hover, &:focus {
-              opacity: 1;
-            }
-          }
-          input[type="checkbox"] {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 2.5rem;
-            min-width: 2.5rem;
-            height: 1.25rem;
-            margin: 0;
-            padding: 0;
-            border: 1px solid $gray;
-            border-radius: 2rem;
-            appearance: none;
-            &:after {
-              display: block;
-              position: absolute;
-              top: 0.125rem;
-              left: 0.125rem;
-              width: 0.875rem;
-              height: 0.875rem;
-              border-radius: 100%;
-              background: $gray;
-              content: "";
-              @include transition(all, 0.25s, ease);
-            }
-            &:checked:after {
-              margin-left: 1.25rem;
-            }
-          }
-        }
-        & + fieldset {
-          padding: 1rem 0 0;
-        }
-      }
-    }
-  }
   section {
     padding: 1rem;
     p {
@@ -182,99 +41,7 @@ footer {
       }
     }
     form {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-      fieldset {
-        width: 100%;
-        margin: 0;
-        padding: 0 0 1rem;
-        border: none;
-        column-span: all;
-        label {
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          font-size: 0.875rem;
-          font-weight: bold;
-          line-height: 1.5;
-          input[type="text"],
-          input[type="search"] {
-            margin: 0.5rem 0 0;
-            padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-            border: 1px solid $gray;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: $gray;
-            background: transparent;
-          }
-          span.icon {
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 2rem;
-            height: 2.5rem;
-            padding: 0.25rem 0 0.425rem 0.5rem;
-            opacity: 0.7;
-          }
-          button[type="reset"].clear-search {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            right: 0.5rem;
-            bottom: 0.25rem;
-            width: 1.5rem;
-            height: 2.125rem;
-            opacity: 0;
-            @include appearance(none);
-            @include transition(all, 0.325s, ease);
-          }
-          input[type="text"]:not(:placeholder-shown) ~ span.clear-search,
-          input[type="text"]:not(:placeholder-shown) ~ button.clear-search {
-            opacity: 0.7;
-            &:hover, &:focus {
-              opacity: 1;
-            }
-          }
-          input[type="checkbox"] {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 2.5rem;
-            min-width: 2.5rem;
-            height: 1.25rem;
-            margin: 0;
-            padding: 0;
-            border: 1px solid $gray;
-            border-radius: 2rem;
-            appearance: none;
-            &:after {
-              display: block;
-              position: absolute;
-              top: 0.125rem;
-              left: 0.125rem;
-              width: 0.875rem;
-              height: 0.875rem;
-              border-radius: 100%;
-              background: $gray;
-              content: "";
-              @include transition(all, 0.25s, ease);
-            }
-            &:checked:after {
-              margin-left: 1.25rem;
-            }
-          }
-        }
-        & + fieldset {
-          padding: 1rem 0 0;
-        }
-      }
+      display: none;
     }
   }
   section.about {
@@ -285,9 +52,11 @@ footer {
       fill: $gray;
     }
     .logo {
+      display: flex;
+      justify-content: center;
       padding: 1rem 1rem 0;
-      text-align: center;
       svg {
+        width: 100%;
         max-width: 18rem;
         .white {
           fill: white;
@@ -296,19 +65,83 @@ footer {
           fill: $gray;
         }
       }
-      ul {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+    }
+  }
+  p.copyright {
+    padding: 1rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0 1rem;
+      list-style: none;
+      li {
+        padding: 0 0.5rem;
+        span.icon {
+          display: grid;
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+        span.text {
+          display: none;
+        }
       }
-      p {
-        padding: 0;
-        line-height: 1.25;
+    }
+    form {
+      fieldset {
+        margin: 0;
+        padding: 0 1rem;
+        border: none;
+        label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 100%;
+          margin: 0;
+          span {
+            display: grid;
+            width: 1.25rem;
+            height: 1.25rem;
+          }
+          input {
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 2.5rem;
+            min-width: 2.5rem;
+            height: 1.25rem;
+            margin: 0 0.5rem;
+            padding: 0;
+            border: 1px solid $gray;
+            border-radius: 2rem;
+            @include appearance(none);
+            &:after {
+              display: block;
+              position: absolute;
+              top: 0.125rem;
+              left: 0.125rem;
+              width: 0.875rem;
+              height: 0.875rem;
+              border-radius: 100%;
+              background: $gray;
+              content: "";
+              @include transition(all 0.25s 0);
+            }
+            &:checked:after {
+              margin-left: 1.25rem;
+            }
+          }
+        }
       }
     }
   }
@@ -326,15 +159,22 @@ footer {
     section.about {
       align-items: flex-end;
       width: calc((100% / 3) * 2);
+      .logo {
+        justify-content: flex-end;
+      }
+    }
+    p.copyright {
+      text-align: right;
+    }
+    nav {
+      margin: 0 0 0 auto;
     }
   }
 }
 
 @media (min-width: 64rem) {
   footer {
-    flex-wrap: nowrap;
     align-items: flex-start;
-    justify-content: space-between;
     section.about {
       flex-direction: row;
       align-items: flex-start;
@@ -345,9 +185,6 @@ footer {
       .logo {
         width: 30%;
         padding: 0 0 0 1rem;
-        p {
-          font-size: 0.75rem;
-        }
       }
     }
   }
@@ -376,37 +213,6 @@ footer {
 // DARK MODE
 html.dark {
   footer {
-    nav {
-      form {
-        fieldset {
-          label {
-            span.icon {
-              svg.light-mode {
-                width: 0;
-                height: 0;
-                opacity: 0;
-              }
-              svg.dark-mode {
-                width: 100%;
-                height: 100%;
-                opacity: 1;
-              }
-            }
-          }
-        }
-      }
-    }
-    form fieldset {
-      input[type="text"],
-      input[type="search"],
-      input[type="checkbox"] {
-        border-color: white;
-        color: white;
-        &:after {
-          background: white;
-        }
-      }
-    }
     section.about {
       svg {
         fill: white;
@@ -418,6 +224,16 @@ html.dark {
           }
           .gray {
             fill: white;
+          }
+        }
+      }
+    }
+    nav {
+      form {
+        input {
+          border-color: white;
+          &:after {
+            background: white;
           }
         }
       }
