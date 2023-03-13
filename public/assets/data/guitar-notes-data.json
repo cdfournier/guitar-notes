@@ -70,6 +70,20 @@
    "columns": "sm"
  },
  {
+   "artist-sort": "blind melon",
+   "song": "Candy Says (Country Jellyfish Version)",
+   "artist": "Blind Melon",
+   "album": "The Cowboy Way: Music From The Motion Picture",
+   "year": 1994,
+   "artist-id": "blind-melon",
+   "img": "blind-melon.jpg",
+   "notes": "",
+   "id": 6,
+   "song-id": "candy-says",
+   "artist-song": "blind-melon-candy-says",
+   "columns": "sm md"
+ },
+ {
    "artist-sort": "bragg, billy and wilco",
    "song": "California Stars",
    "artist": "Billy Bragg And Wilco",
@@ -78,7 +92,7 @@
    "artist-id": "billy-bragg-and-wilco",
    "img": "billy-bragg-and-wilco.jpg",
    "notes": "Capo on 2",
-   "id": 6,
+   "id": 7,
    "song-id": "california-stars",
    "artist-song": "billy-bragg-and-wilco-california-stars",
    "columns": "sm md"
@@ -92,7 +106,7 @@
    "artist-id": "billy-bragg-and-wilco",
    "img": "billy-bragg-and-wilco.jpg",
    "notes": "Capo on 5",
-   "id": 7,
+   "id": 8,
    "song-id": "when-the-roses-bloom-again",
    "artist-song": "billy-bragg-and-wilco-when-the-roses-bloom-again",
    "columns": "sm md"
@@ -106,7 +120,7 @@
    "artist-id": "cake",
    "img": "cake.jpg",
    "notes": "",
-   "id": 8,
+   "id": 9,
    "song-id": "aint-no-good",
    "artist-song": "cake-aint-no-good",
    "columns": "sm"
@@ -120,7 +134,7 @@
    "artist-id": "cake",
    "img": "cake.jpg",
    "notes": "",
-   "id": 9,
+   "id": 10,
    "song-id": "alpha-beta-parking-lot",
    "artist-song": "cake-alpha-beta-parking-lot",
    "columns": "sm"
@@ -134,7 +148,7 @@
    "artist-id": "cake",
    "img": "cake.jpg",
    "notes": "",
-   "id": 10,
+   "id": 11,
    "song-id": "guitar",
    "artist-song": "cake-guitar",
    "columns": "sm"
@@ -148,7 +162,7 @@
    "artist-id": "cake",
    "img": "cake.jpg",
    "notes": "",
-   "id": 11,
+   "id": 12,
    "song-id": "pentagram",
    "artist-song": "cake-pentagram",
    "columns": "sm"
@@ -162,7 +176,7 @@
    "artist-id": "camper-van-beethoven",
    "img": "camper-van-beethoven.jpg",
    "notes": "",
-   "id": 12,
+   "id": 13,
    "song-id": "51-7",
    "artist-song": "camper-van-beethoven-51-7",
    "columns": "sm"
@@ -176,9 +190,23 @@
    "artist-id": "camper-van-beethoven",
    "img": "camper-van-beethoven.jpg",
    "notes": "",
-   "id": 13,
+   "id": 14,
    "song-id": "take-the-skinheads-bowling",
    "artist-song": "camper-van-beethoven-take-the-skinheads-bowling",
+   "columns": "sm"
+ },
+ {
+   "artist-sort": "chapman, tracy",
+   "song": "Baby Can I Hold You",
+   "artist": "Tracy Chapman",
+   "album": "Tracy Chapman",
+   "year": 1988,
+   "artist-id": "tracy-chapman",
+   "img": "tracy-chapman.jpg",
+   "notes": "",
+   "id": 15,
+   "song-id": "baby-can-i-hold-you",
+   "artist-song": "tracy-chapman-baby-can-i-hold-you",
    "columns": "sm"
  },
  {
@@ -190,7 +218,7 @@
    "artist-id": "cinderella",
    "img": "cinderella.jpg",
    "notes": "",
-   "id": 14,
+   "id": 16,
    "song-id": "the-last-mile",
    "artist-song": "cinderella-the-last-mile",
    "columns": "sm md"
@@ -204,7 +232,7 @@
    "artist-id": "cracker",
    "img": "cracker.jpg",
    "notes": "",
-   "id": 15,
+   "id": 17,
    "song-id": "euro-trash-girl",
    "artist-song": "cracker-euro-trash-girl",
    "columns": "md lg"
@@ -218,7 +246,7 @@
    "artist-id": "cracker",
    "img": "cracker.jpg",
    "notes": "",
-   "id": 16,
+   "id": 18,
    "song-id": "get-off-this",
    "artist-song": "cracker-get-off-this",
    "columns": "md"
@@ -232,7 +260,7 @@
    "artist-id": "cracker",
    "img": "cracker.jpg",
    "notes": "",
-   "id": 17,
+   "id": 19,
    "song-id": "it-aint-gonna-suck-itself",
    "artist-song": "cracker-it-aint-gonna-suck-itself",
    "columns": "sm"
@@ -246,7 +274,7 @@
    "artist-id": "creedence-clearwater-revival",
    "img": "creedence-clearwater-revival.jpg",
    "notes": "",
-   "id": 18,
+   "id": 20,
    "song-id": "down-on-the-corner",
    "artist-song": "creedence-clearwater-revival-down-on-the-corner",
    "columns": "sm md"
@@ -260,7 +288,7 @@
    "artist-id": "creedence-clearwater-revival",
    "img": "creedence-clearwater-revival.jpg",
    "notes": "",
-   "id": 19,
+   "id": 21,
    "song-id": "fortunate-son",
    "artist-song": "creedence-clearwater-revival-fortunate-son",
    "columns": "sm"
@@ -274,7 +302,7 @@
    "artist-id": "creedence-clearwater-revival",
    "img": "creedence-clearwater-revival.jpg",
    "notes": "",
-   "id": 20,
+   "id": 22,
    "song-id": "have-you-ever-seen-the-rain",
    "artist-song": "creedence-clearwater-revival-have-you-ever-seen-the-rain",
    "columns": "sm"
@@ -288,7 +316,7 @@
    "artist-id": "creedence-clearwater-revival",
    "img": "creedence-clearwater-revival.jpg",
    "notes": "",
-   "id": 21,
+   "id": 23,
    "song-id": "i-heard-it-through-the-grapevine",
    "artist-song": "creedence-clearwater-revival-i-heard-it-through-the-grapevine",
    "columns": "md"
@@ -302,7 +330,7 @@
    "artist-id": "creedence-clearwater-revival",
    "img": "creedence-clearwater-revival.jpg",
    "notes": "Capo on 3",
-   "id": 22,
+   "id": 24,
    "song-id": "lodi",
    "artist-song": "creedence-clearwater-revival-lodi",
    "columns": "sm md"
@@ -316,7 +344,7 @@
    "artist-id": "creedence-clearwater-revival",
    "img": "creedence-clearwater-revival.jpg",
    "notes": "",
-   "id": 23,
+   "id": 25,
    "song-id": "proud-mary",
    "artist-song": "creedence-clearwater-revival-proud-mary",
    "columns": "sm"
@@ -330,10 +358,38 @@
    "artist-id": "crowded-house",
    "img": "crowded-house.jpg",
    "notes": "",
-   "id": 24,
+   "id": 26,
    "song-id": "something-so-strong",
    "artist-song": "crowded-house-something-so-strong",
    "columns": "md"
+ },
+ {
+   "artist-sort": "cult, the",
+   "song": "Edie (Ciao Baby)",
+   "artist": "The Cult",
+   "album": "Sonic Temple",
+   "year": 1989,
+   "artist-id": "the-cult",
+   "img": "the-cult.jpg",
+   "notes": "",
+   "id": 27,
+   "song-id": "edie-ciao-baby",
+   "artist-song": "the-cult-edie-ciao-baby",
+   "columns": "sm md"
+ },
+ {
+   "artist-sort": "cult, the",
+   "song": "She Sells Sanctuary",
+   "artist": "The Cult",
+   "album": "Love",
+   "year": 1985,
+   "artist-id": "the-cult",
+   "img": "the-cult.jpg",
+   "notes": "",
+   "id": 28,
+   "song-id": "she-sells-sanctuary",
+   "artist-song": "the-cult-she-sells-sanctuary",
+   "columns": "sm md"
  },
  {
    "artist-sort": "dando, evan",
@@ -344,7 +400,7 @@
    "artist-id": "evan-dando",
    "img": "evan-dando.jpg",
    "notes": "Capo on 2",
-   "id": 25,
+   "id": 29,
    "song-id": "frying-pan",
    "artist-song": "evan-dando-frying-pan",
    "columns": "sm"
@@ -358,21 +414,21 @@
    "artist-id": "danzig",
    "img": "danzig.jpg",
    "notes": "",
-   "id": 26,
+   "id": 30,
    "song-id": "thirteen",
    "artist-song": "danzig-thirteen",
    "columns": "sm"
  },
  {
    "artist-sort": "dorman, michael",
-   "song": "Afternoon Spray*",
+   "song": "Afternoon Spray",
    "artist": "Michael Dorman",
    "album": "Patriot: Season 1 EP (An Amazon Original Soundtrack)",
    "year": 2017,
    "artist-id": "michael-dorman",
    "img": "michael-dorman.jpg",
    "notes": "",
-   "id": 27,
+   "id": 31,
    "song-id": "afternoon-spray",
    "artist-song": "michael-dorman-afternoon-spray",
    "columns": "sm"
@@ -386,7 +442,7 @@
    "artist-id": "michael-dorman",
    "img": "michael-dorman.jpg",
    "notes": "",
-   "id": 28,
+   "id": 32,
    "song-id": "dead-serious-rick",
    "artist-song": "michael-dorman-dead-serious-rick",
    "columns": "sm"
@@ -400,7 +456,7 @@
    "artist-id": "duran-duran",
    "img": "duran-duran.jpg",
    "notes": "",
-   "id": 29,
+   "id": 33,
    "song-id": "reach-up-for-the-sunrise",
    "artist-song": "duran-duran-reach-up-for-the-sunrise",
    "columns": "sm md"
@@ -414,7 +470,7 @@
    "artist-id": "duran-duran",
    "img": "duran-duran.jpg",
    "notes": "",
-   "id": 30,
+   "id": 34,
    "song-id": "hungry-like-the-wolf",
    "artist-song": "duran-duran-hungry-like-the-wolf",
    "columns": "sm"
@@ -428,7 +484,7 @@
    "artist-id": "the-flaming-lips",
    "img": "the-flaming-lips.jpg",
    "notes": "",
-   "id": 31,
+   "id": 35,
    "song-id": "yoshimi-battles-the-pink-robots",
    "artist-song": "the-flaming-lips-yoshimi-battles-the-pink-robots",
    "columns": "sm"
@@ -442,35 +498,35 @@
    "artist-id": "the-flying-burrito-brothers",
    "img": "the-flying-burrito-brothers.jpg",
    "notes": "",
-   "id": 32,
+   "id": 36,
    "song-id": "cody-cody",
    "artist-song": "the-flying-burrito-brothers-cody-cody",
    "columns": "sm"
  },
  {
    "artist-sort": "foo fighters",
-   "song": "Have It All*",
+   "song": "Have It All",
    "artist": "Foo Fighters",
    "album": "One By One",
    "year": 2002,
    "artist-id": "foo-fighters",
    "img": "foo-fighters.jpg",
    "notes": "",
-   "id": 33,
+   "id": 37,
    "song-id": "have-it-all",
    "artist-song": "foo-fighters-have-it-all",
    "columns": "sm md"
  },
  {
    "artist-sort": "foo fighters",
-   "song": "Learn To Fly*",
+   "song": "Learn To Fly",
    "artist": "Foo Fighters",
    "album": "There Is Nothing Left To Lose",
    "year": 1999,
    "artist-id": "foo-fighters",
    "img": "foo-fighters.jpg",
    "notes": "",
-   "id": 34,
+   "id": 38,
    "song-id": "learn-to-fly",
    "artist-song": "foo-fighters-learn-to-fly",
    "columns": "sm md"
@@ -484,21 +540,21 @@
    "artist-id": "foo-fighters",
    "img": "foo-fighters.jpg",
    "notes": "",
-   "id": 35,
+   "id": 39,
    "song-id": "next-year",
    "artist-song": "foo-fighters-next-year",
    "columns": "md"
  },
  {
    "artist-sort": "foo fighters",
-   "song": "Overdrive*",
+   "song": "Overdrive",
    "artist": "Foo Fighters",
    "album": "One By One",
    "year": 2002,
    "artist-id": "foo-fighters",
    "img": "foo-fighters.jpg",
    "notes": "",
-   "id": 36,
+   "id": 40,
    "song-id": "overdrive",
    "artist-song": "foo-fighters-overdrive",
    "columns": "md"
@@ -512,7 +568,7 @@
    "artist-id": "foo-fighters",
    "img": "foo-fighters.jpg",
    "notes": "",
-   "id": 37,
+   "id": 41,
    "song-id": "times-like-these",
    "artist-song": "foo-fighters-times-like-these",
    "columns": "sm"
@@ -526,7 +582,7 @@
    "artist-id": "g-love",
    "img": "g-love.jpg",
    "notes": "",
-   "id": 38,
+   "id": 42,
    "song-id": "hot-cookin",
    "artist-song": "g-love-hot-cookin",
    "columns": "sm md"
@@ -540,7 +596,7 @@
    "artist-id": "golden-smog",
    "img": "golden-smog.jpg",
    "notes": "Capo on 3",
-   "id": 39,
+   "id": 43,
    "song-id": "please-tell-my-brother",
    "artist-song": "golden-smog-please-tell-my-brother",
    "columns": "sm"
@@ -554,7 +610,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 40,
+   "id": 44,
    "song-id": "2000-light-years-away",
    "artist-song": "green-day-2000-light-years-away",
    "columns": "sm md"
@@ -568,7 +624,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 41,
+   "id": 45,
    "song-id": "basket-case",
    "artist-song": "green-day-basket-case",
    "columns": "sm md"
@@ -582,7 +638,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "Capo on 1",
-   "id": 42,
+   "id": 46,
    "song-id": "boulevard-over-broken-dreams",
    "artist-song": "green-day-boulevard-over-broken-dreams",
    "columns": "sm md"
@@ -596,7 +652,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 43,
+   "id": 47,
    "song-id": "burnout",
    "artist-song": "green-day-burnout",
    "columns": "sm md"
@@ -610,7 +666,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 44,
+   "id": 48,
    "song-id": "going-to-pasalacqua",
    "artist-song": "green-day-going-to-pasalacqua",
    "columns": "sm md"
@@ -624,7 +680,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 45,
+   "id": 49,
    "song-id": "good-riddence-time-of-your-life",
    "artist-song": "green-day-good-riddence-time-of-your-life",
    "columns": "sm"
@@ -638,7 +694,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 46,
+   "id": 50,
    "song-id": "ha-ha-youre-dead",
    "artist-song": "green-day-ha-ha-youre-dead",
    "columns": "sm md"
@@ -652,7 +708,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 47,
+   "id": 51,
    "song-id": "one-for-the-razorbacks",
    "artist-song": "green-day-one-for-the-razorbacks",
    "columns": "sm md"
@@ -666,7 +722,7 @@
    "artist-id": "green-day",
    "img": "green-day.jpg",
    "notes": "",
-   "id": 48,
+   "id": 52,
    "song-id": "paper-lanterns",
    "artist-song": "green-day-paper-lanterns",
    "columns": "sm md"
@@ -680,7 +736,7 @@
    "artist-id": "guns-n-roses",
    "img": "guns-n-roses.jpg",
    "notes": "",
-   "id": 49,
+   "id": 53,
    "song-id": "used-to-love-her",
    "artist-song": "guns-n-roses-used-to-love-her",
    "columns": "sm"
@@ -694,7 +750,7 @@
    "artist-id": "george-harrison",
    "img": "george-harrison.jpg",
    "notes": "",
-   "id": 50,
+   "id": 54,
    "song-id": "cheer-down",
    "artist-song": "george-harrison-cheer-down",
    "columns": "sm"
@@ -708,7 +764,7 @@
    "artist-id": "the-hollies",
    "img": "the-hollies.jpg",
    "notes": "",
-   "id": 51,
+   "id": 55,
    "song-id": "long-cool-woman-in-a-black-dress",
    "artist-song": "the-hollies-long-cool-woman-in-a-black-dress",
    "columns": "sm"
@@ -722,7 +778,7 @@
    "artist-id": "inxs",
    "img": "inxs.jpg",
    "notes": "",
-   "id": 52,
+   "id": 56,
    "song-id": "devil-inside",
    "artist-song": "inxs-devil-inside",
    "columns": "sm md"
@@ -736,7 +792,7 @@
    "artist-id": "inxs",
    "img": "inxs.jpg",
    "notes": "",
-   "id": 53,
+   "id": 57,
    "song-id": "dont-change",
    "artist-song": "inxs-dont-change",
    "columns": "sm md"
@@ -750,9 +806,23 @@
    "artist-id": "inxs",
    "img": "inxs.jpg",
    "notes": "",
-   "id": 54,
+   "id": 58,
    "song-id": "new-sensation",
    "artist-song": "inxs-new-sensation",
+   "columns": "sm md"
+ },
+ {
+   "artist-sort": "inxs",
+   "song": "Original Sin",
+   "artist": "INXS",
+   "album": "The Swing",
+   "year": 1984,
+   "artist-id": "inxs",
+   "img": "inxs.jpg",
+   "notes": "",
+   "id": 59,
+   "song-id": "original-sin",
+   "artist-song": "inxs-original-sin",
    "columns": "sm md"
  },
  {
@@ -764,7 +834,7 @@
    "artist-id": "inxs",
    "img": "inxs.jpg",
    "notes": "",
-   "id": 55,
+   "id": 60,
    "song-id": "tiny-daggers",
    "artist-song": "inxs-tiny-daggers",
    "columns": "sm md"
@@ -778,7 +848,7 @@
    "artist-id": "joe-strummer-and-the-mescaleros",
    "img": "joe-strummer-and-the-mescaleros.jpg",
    "notes": "",
-   "id": 56,
+   "id": 61,
    "song-id": "tony-adams",
    "artist-song": "joe-strummer-and-the-mescaleros-tony-adams",
    "columns": "sm md"
@@ -792,7 +862,7 @@
    "artist-id": "kiss",
    "img": "kiss.jpg",
    "notes": "",
-   "id": 57,
+   "id": 62,
    "song-id": "forever",
    "artist-song": "kiss-forever",
    "columns": "sm"
@@ -806,7 +876,7 @@
    "artist-id": "kiss",
    "img": "kiss.jpg",
    "notes": "",
-   "id": 58,
+   "id": 63,
    "song-id": "plaster-caster",
    "artist-song": "kiss-plaster-caster",
    "columns": "md"
@@ -820,7 +890,7 @@
    "artist-id": "the-lemonheads",
    "img": "the-lemonheads.jpg",
    "notes": "",
-   "id": 59,
+   "id": 64,
    "song-id": "confetti",
    "artist-song": "the-lemonheads-confetti",
    "columns": "sm"
@@ -834,7 +904,7 @@
    "artist-id": "the-lemonheads",
    "img": "the-lemonheads.jpg",
    "notes": "",
-   "id": 60,
+   "id": 65,
    "song-id": "into-your-arms",
    "artist-song": "the-lemonheads-into-your-arms",
    "columns": "sm"
@@ -848,7 +918,7 @@
    "artist-id": "julian-lennon",
    "img": "julian-lennon.jpg",
    "notes": "",
-   "id": 61,
+   "id": 66,
    "song-id": "too-late-for-goodbyes",
    "artist-song": "julian-lennon-too-late-for-goodbyes",
    "columns": "sm"
@@ -862,7 +932,7 @@
    "artist-id": "level-42",
    "img": "level-42.jpg",
    "notes": "",
-   "id": 62,
+   "id": 67,
    "song-id": "lessons-in-love",
    "artist-song": "level-42-lessons-in-love",
    "columns": "sm md"
@@ -876,7 +946,7 @@
    "artist-id": "level-42",
    "img": "level-42.jpg",
    "notes": "",
-   "id": 63,
+   "id": 68,
    "song-id": "something-about-you",
    "artist-song": "level-42-something-about-you",
    "columns": "sm"
@@ -890,7 +960,7 @@
    "artist-id": "loose-fur",
    "img": "loose-fur.jpg",
    "notes": "Capo on 1 (optional)",
-   "id": 64,
+   "id": 69,
    "song-id": "laminated-cat",
    "artist-song": "loose-fur-laminated-cat",
    "columns": "sm"
@@ -904,7 +974,7 @@
    "artist-id": "mazzy-star",
    "img": "mazzy-star.jpg",
    "notes": "",
-   "id": 65,
+   "id": 70,
    "song-id": "bells-ring",
    "artist-song": "mazzy-star-bells-ring",
    "columns": "sm"
@@ -918,7 +988,7 @@
    "artist-id": "mazzy-star",
    "img": "mazzy-star.jpg",
    "notes": "",
-   "id": 66,
+   "id": 71,
    "song-id": "blue-flower",
    "artist-song": "mazzy-star-blue-flower",
    "columns": "sm"
@@ -932,7 +1002,7 @@
    "artist-id": "mazzy-star",
    "img": "mazzy-star.jpg",
    "notes": "",
-   "id": 67,
+   "id": 72,
    "song-id": "five-string-serenade",
    "artist-song": "mazzy-star-five-string-serenade",
    "columns": "sm"
@@ -946,7 +1016,7 @@
    "artist-id": "mazzy-star",
    "img": "mazzy-star.jpg",
    "notes": "",
-   "id": 68,
+   "id": 73,
    "song-id": "give-you-my-lovin",
    "artist-song": "mazzy-star-give-you-my-lovin",
    "columns": "sm"
@@ -960,7 +1030,7 @@
    "artist-id": "men-at-work",
    "img": "men-at-work.jpg",
    "notes": "Capo on 2",
-   "id": 69,
+   "id": 74,
    "song-id": "i-can-see-it-in-your-eyes",
    "artist-song": "men-at-work-i-can-see-it-in-your-eyes",
    "columns": "sm"
@@ -974,7 +1044,7 @@
    "artist-id": "men-at-work",
    "img": "men-at-work.jpg",
    "notes": "",
-   "id": 70,
+   "id": 75,
    "song-id": "overkill",
    "artist-song": "men-at-work-overkill",
    "columns": "sm"
@@ -988,7 +1058,7 @@
    "artist-id": "men-at-work",
    "img": "men-at-work.jpg",
    "notes": "",
-   "id": 71,
+   "id": 76,
    "song-id": "people-just-love-to-play-with-words",
    "artist-song": "men-at-work-people-just-love-to-play-with-words",
    "columns": "sm"
@@ -1002,7 +1072,7 @@
    "artist-id": "the-mighty-mighty-bosstones",
    "img": "the-mighty-mighty-bosstones.jpg",
    "notes": "",
-   "id": 72,
+   "id": 77,
    "song-id": "dont-worry-desmond-decker",
    "artist-song": "the-mighty-mighty-bosstones-dont-worry-desmond-decker",
    "columns": "sm md"
@@ -1016,7 +1086,7 @@
    "artist-id": "the-mighty-mighty-bosstones",
    "img": "the-mighty-mighty-bosstones.jpg",
    "notes": "",
-   "id": 73,
+   "id": 78,
    "song-id": "kinder-words",
    "artist-song": "the-mighty-mighty-bosstones-kinder-words",
    "columns": "sm md"
@@ -1030,7 +1100,7 @@
    "artist-id": "the-mighty-mighty-bosstones",
    "img": "the-mighty-mighty-bosstones.jpg",
    "notes": "",
-   "id": 74,
+   "id": 79,
    "song-id": "numbered-days",
    "artist-song": "the-mighty-mighty-bosstones-numbered-days",
    "columns": "sm md"
@@ -1044,7 +1114,7 @@
    "artist-id": "the-mighty-mighty-bosstones",
    "img": "the-mighty-mighty-bosstones.jpg",
    "notes": "",
-   "id": 75,
+   "id": 80,
    "song-id": "the-bricklayers-song",
    "artist-song": "the-mighty-mighty-bosstones-the-bricklayers-song",
    "columns": "sm md"
@@ -1058,7 +1128,7 @@
    "artist-id": "the-mighty-mighty-bosstones",
    "img": "the-mighty-mighty-bosstones.jpg",
    "notes": "",
-   "id": 76,
+   "id": 81,
    "song-id": "the-impression-that-i-get",
    "artist-song": "the-mighty-mighty-bosstones-the-impression-that-i-get",
    "columns": "sm md"
@@ -1072,7 +1142,7 @@
    "artist-id": "morrissey",
    "img": "morrissey.jpg",
    "notes": "",
-   "id": 77,
+   "id": 82,
    "song-id": "everyday-is-like-sunday",
    "artist-song": "morrissey-everyday-is-like-sunday",
    "columns": "sm"
@@ -1086,7 +1156,7 @@
    "artist-id": "morrissey",
    "img": "morrissey.jpg",
    "notes": "",
-   "id": 78,
+   "id": 83,
    "song-id": "why-dont-you-find-out-for-yourself",
    "artist-song": "morrissey-why-dont-you-find-out-for-yourself",
    "columns": "md"
@@ -1100,23 +1170,9 @@
    "artist-id": "nirvana",
    "img": "nirvana.jpg",
    "notes": "",
-   "id": 79,
+   "id": 84,
    "song-id": "come-as-you-are",
    "artist-song": "nirvana-come-as-you-are",
-   "columns": "sm md"
- },
- {
-   "artist-sort": "nirvana",
-   "song": "Oh Me",
-   "artist": "Nirvana",
-   "album": "MTV Unplugged In New York",
-   "year": 1994,
-   "artist-id": "nirvana",
-   "img": "nirvana.jpg",
-   "notes": "",
-   "id": 80,
-   "song-id": "oh-me",
-   "artist-song": "nirvana-oh-me",
    "columns": "sm md"
  },
  {
@@ -1128,10 +1184,10 @@
    "artist-id": "nirvana",
    "img": "nirvana.jpg",
    "notes": "",
-   "id": 81,
+   "id": 85,
    "song-id": "old-age",
    "artist-song": "nirvana-old-age",
-   "columns": "lg"
+   "columns": "md"
  },
  {
    "artist-sort": "oasis",
@@ -1142,7 +1198,7 @@
    "artist-id": "oasis",
    "img": "oasis.jpg",
    "notes": "",
-   "id": 82,
+   "id": 86,
    "song-id": "dont-look-back-in-anger",
    "artist-song": "oasis-dont-look-back-in-anger",
    "columns": "md"
@@ -1156,7 +1212,7 @@
    "artist-id": "oasis",
    "img": "oasis.jpg",
    "notes": "",
-   "id": 83,
+   "id": 87,
    "song-id": "morning-glory",
    "artist-song": "oasis-morning-glory",
    "columns": "md"
@@ -1170,7 +1226,7 @@
    "artist-id": "oasis",
    "img": "oasis.jpg",
    "notes": "",
-   "id": 84,
+   "id": 88,
    "song-id": "rock-n-roll-star",
    "artist-song": "oasis-rock-n-roll-star",
    "columns": "sm md"
@@ -1184,7 +1240,7 @@
    "artist-id": "oasis",
    "img": "oasis.jpg",
    "notes": "",
-   "id": 85,
+   "id": 89,
    "song-id": "slide-away",
    "artist-song": "oasis-slide-away",
    "columns": "sm md"
@@ -1198,10 +1254,38 @@
    "artist-id": "one-direction",
    "img": "one-direction.jpg",
    "notes": "",
-   "id": 86,
+   "id": 90,
    "song-id": "perfect",
    "artist-song": "one-direction-perfect",
    "columns": "md"
+ },
+ {
+   "artist-sort": "palmer, robert",
+   "song": "Addicted To Love",
+   "artist": "Robert Palmer",
+   "album": "Riptide",
+   "year": 1985,
+   "artist-id": "robert-palmer",
+   "img": "robert-palmer.jpg",
+   "notes": "",
+   "id": 91,
+   "song-id": "addicted-to-love",
+   "artist-song": "robert-palmer-addicted-to-love",
+   "columns": "lg"
+ },
+ {
+   "artist-sort": "palmer, robert",
+   "song": "I Didn’t Mean To Turn You On",
+   "artist": "Robert Palmer",
+   "album": "Riptide",
+   "year": 1985,
+   "artist-id": "robert-palmer",
+   "img": "robert-palmer.jpg",
+   "notes": "Capo on 1",
+   "id": 92,
+   "song-id": "i-didnt-mean-to-turn-you-on",
+   "artist-song": "robert-palmer-i-didnt-mean-to-turn-you-on",
+   "columns": "sm md"
  },
  {
    "artist-sort": "pearl jam",
@@ -1212,7 +1296,7 @@
    "artist-id": "pearl-jam",
    "img": "pearl-jam.jpg",
    "notes": "",
-   "id": 87,
+   "id": 93,
    "song-id": "better-man",
    "artist-song": "pearl-jam-better-man",
    "columns": "sm"
@@ -1226,7 +1310,7 @@
    "artist-id": "pearl-jam",
    "img": "pearl-jam.jpg",
    "notes": "",
-   "id": 88,
+   "id": 94,
    "song-id": "come-back",
    "artist-song": "pearl-jam-come-back",
    "columns": "sm"
@@ -1240,7 +1324,7 @@
    "artist-id": "pearl-jam",
    "img": "pearl-jam.jpg",
    "notes": "",
-   "id": 89,
+   "id": 95,
    "song-id": "last-kiss",
    "artist-song": "pearl-jam-last-kiss",
    "columns": "sm"
@@ -1254,7 +1338,7 @@
    "artist-id": "pearl-jam",
    "img": "pearl-jam.jpg",
    "notes": "",
-   "id": 90,
+   "id": 96,
    "song-id": "thin-air",
    "artist-song": "pearl-jam-thin-air",
    "columns": "sm"
@@ -1268,7 +1352,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 91,
+   "id": 97,
    "song-id": "a-face-in-the-crowd",
    "artist-song": "tom-petty-a-face-in-the-crowd",
    "columns": "sm"
@@ -1282,7 +1366,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 92,
+   "id": 98,
    "song-id": "american-girl",
    "artist-song": "tom-petty-american-girl",
    "columns": "sm"
@@ -1296,7 +1380,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 93,
+   "id": 99,
    "song-id": "angel-dream",
    "artist-song": "tom-petty-angel-dream",
    "columns": "sm"
@@ -1310,21 +1394,21 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 94,
+   "id": 100,
    "song-id": "change-the-locks",
    "artist-song": "tom-petty-change-the-locks",
    "columns": "sm md"
  },
  {
    "artist-sort": "petty, tom",
-   "song": "I Won't Back Down*",
+   "song": "I Won't Back Down",
    "artist": "Tom Petty",
    "album": "Full Moon Fever",
    "year": 1989,
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 95,
+   "id": 101,
    "song-id": "i-wont-back-down",
    "artist-song": "tom-petty-i-wont-back-down",
    "columns": "sm"
@@ -1338,7 +1422,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 96,
+   "id": 102,
    "song-id": "learning-to-fly",
    "artist-song": "tom-petty-learning-to-fly",
    "columns": "sm md"
@@ -1352,7 +1436,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 97,
+   "id": 103,
    "song-id": "runnin-down-a-dream",
    "artist-song": "tom-petty-runnin-down-a-dream",
    "columns": "sm"
@@ -1366,7 +1450,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 98,
+   "id": 104,
    "song-id": "swingin",
    "artist-song": "tom-petty-swingin",
    "columns": "sm"
@@ -1380,7 +1464,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 99,
+   "id": 105,
    "song-id": "walls",
    "artist-song": "tom-petty-walls",
    "columns": "sm md"
@@ -1394,7 +1478,7 @@
    "artist-id": "tom-petty",
    "img": "tom-petty.jpg",
    "notes": "",
-   "id": 100,
+   "id": 106,
    "song-id": "you-get-me-high",
    "artist-song": "tom-petty-you-get-me-high",
    "columns": "sm"
@@ -1408,7 +1492,7 @@
    "artist-id": "liz-phair",
    "img": "liz-phair.jpg",
    "notes": "",
-   "id": 101,
+   "id": 107,
    "song-id": "fuck-and-run",
    "artist-song": "liz-phair-fuck-and-run",
    "columns": "sm md"
@@ -1422,7 +1506,7 @@
    "artist-id": "liz-phair",
    "img": "liz-phair.jpg",
    "notes": "",
-   "id": 102,
+   "id": 108,
    "song-id": "red-light-fever",
    "artist-song": "liz-phair-red-light-fever",
    "columns": "sm md"
@@ -1436,7 +1520,7 @@
    "artist-id": "liz-phair",
    "img": "liz-phair.jpg",
    "notes": "",
-   "id": 103,
+   "id": 109,
    "song-id": "shitloads-of-money",
    "artist-song": "liz-phair-shitloads-of-money",
    "columns": "sm md"
@@ -1450,7 +1534,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 104,
+   "id": 110,
    "song-id": "ac-dc-bag",
    "artist-song": "phish-ac-dc-bag",
    "columns": "sm md"
@@ -1464,7 +1548,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 105,
+   "id": 111,
    "song-id": "back-on-the-train",
    "artist-song": "phish-back-on-the-train",
    "columns": "sm md"
@@ -1478,7 +1562,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 106,
+   "id": 112,
    "song-id": "bug",
    "artist-song": "phish-bug",
    "columns": "sm"
@@ -1492,7 +1576,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 107,
+   "id": 113,
    "song-id": "chalkdust-torture",
    "artist-song": "phish-chalkdust-torture",
    "columns": "sm"
@@ -1506,7 +1590,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 108,
+   "id": 114,
    "song-id": "dog-faced-boy",
    "artist-song": "phish-dog-faced-boy",
    "columns": "sm"
@@ -1520,7 +1604,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 109,
+   "id": 115,
    "song-id": "driver",
    "artist-song": "phish-driver",
    "columns": "sm"
@@ -1534,7 +1618,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 110,
+   "id": 116,
    "song-id": "heavy-things",
    "artist-song": "phish-heavy-things",
    "columns": "sm md"
@@ -1548,7 +1632,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 111,
+   "id": 117,
    "song-id": "kill-devil-falls",
    "artist-song": "phish-kill-devil-falls",
    "columns": "md"
@@ -1562,7 +1646,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 112,
+   "id": 118,
    "song-id": "meatstick",
    "artist-song": "phish-meatstick",
    "columns": "sm md"
@@ -1576,7 +1660,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 113,
+   "id": 119,
    "song-id": "nicu",
    "artist-song": "phish-nicu",
    "columns": "sm md"
@@ -1590,7 +1674,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 114,
+   "id": 120,
    "song-id": "pebbles-and-marbles",
    "artist-song": "phish-pebbles-and-marbles",
    "columns": "sm"
@@ -1604,7 +1688,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 115,
+   "id": 121,
    "song-id": "prince-caspian",
    "artist-song": "phish-prince-caspian",
    "columns": "sm"
@@ -1618,7 +1702,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 116,
+   "id": 122,
    "song-id": "runaway-jim",
    "artist-song": "phish-runaway-jim",
    "columns": "sm"
@@ -1632,7 +1716,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 117,
+   "id": 123,
    "song-id": "sample-in-a-jar",
    "artist-song": "phish-sample-in-a-jar",
    "columns": "sm md"
@@ -1646,7 +1730,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 118,
+   "id": 124,
    "song-id": "sleeping-monkey",
    "artist-song": "phish-sleeping-monkey",
    "columns": "sm"
@@ -1660,7 +1744,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 119,
+   "id": 125,
    "song-id": "suzy-greenburg",
    "artist-song": "phish-suzy-greenburg",
    "columns": "sm md"
@@ -1674,7 +1758,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 120,
+   "id": 126,
    "song-id": "theme-from-the-bottom",
    "artist-song": "phish-theme-from-the-bottom",
    "columns": "sm"
@@ -1688,7 +1772,7 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 121,
+   "id": 127,
    "song-id": "train-song",
    "artist-song": "phish-train-song",
    "columns": "sm"
@@ -1702,10 +1786,80 @@
    "artist-id": "phish",
    "img": "phish.jpg",
    "notes": "",
-   "id": 122,
+   "id": 128,
    "song-id": "water-in-the-sky",
    "artist-song": "phish-water-in-the-sky",
    "columns": "sm"
+ },
+ {
+   "artist-sort": "pink floyd",
+   "song": "Brain Damage",
+   "artist": "Pink Floyd",
+   "album": "Dark Side Of The Moon",
+   "year": 1973,
+   "artist-id": "pink-floyd",
+   "img": "pink-floyd.jpg",
+   "notes": "",
+   "id": 129,
+   "song-id": "brain-damage-eclipse",
+   "artist-song": "pink-floyd-brain-damage-eclipse",
+   "columns": "sm md"
+ },
+ {
+   "artist-sort": "pink floyd",
+   "song": "Pigs (Three Different Ones)",
+   "artist": "Pink Floyd",
+   "album": "Animals",
+   "year": 1977,
+   "artist-id": "pink-floyd",
+   "img": "pink-floyd.jpg",
+   "notes": "",
+   "id": 130,
+   "song-id": "pigs-three-different-ones",
+   "artist-song": "pink-floyd-pigs-three-different-ones",
+   "columns": "sm md"
+ },
+ {
+   "artist-sort": "pink floyd",
+   "song": "Pigs On The Wing (Part 1)",
+   "artist": "Pink Floyd",
+   "album": "Animals",
+   "year": 1977,
+   "artist-id": "pink-floyd",
+   "img": "pink-floyd.jpg",
+   "notes": "",
+   "id": 131,
+   "song-id": "pigs-on-the-wing-part-1",
+   "artist-song": "pink-floyd-pigs-on-the-wing-part-1",
+   "columns": "sm"
+ },
+ {
+   "artist-sort": "pink floyd",
+   "song": "Pigs On The Wing (Part 2)",
+   "artist": "Pink Floyd",
+   "album": "Animals",
+   "year": 1977,
+   "artist-id": "pink-floyd",
+   "img": "pink-floyd.jpg",
+   "notes": "",
+   "id": 132,
+   "song-id": "pigs-on-the-wing-part-2",
+   "artist-song": "pink-floyd-pigs-on-the-wing-part-2",
+   "columns": "sm"
+ },
+ {
+   "artist-sort": "pink floyd",
+   "song": "Wish You Were Here",
+   "artist": "Pink Floyd",
+   "album": "Wish You Were Here",
+   "year": 1975,
+   "artist-id": "pink-floyd",
+   "img": "pink-floyd.jpg",
+   "notes": "",
+   "id": 133,
+   "song-id": "wish-you-were-here",
+   "artist-song": "pink-floyd-wish-you-were-here",
+   "columns": "sm md"
  },
  {
    "artist-sort": "pixies",
@@ -1716,7 +1870,7 @@
    "artist-id": "pixies",
    "img": "pixies.jpg",
    "notes": "",
-   "id": 123,
+   "id": 134,
    "song-id": "greens-and-blues",
    "artist-song": "pixies-greens-and-blues",
    "columns": "sm"
@@ -1730,7 +1884,7 @@
    "artist-id": "pixies",
    "img": "pixies.jpg",
    "notes": "",
-   "id": 124,
+   "id": 135,
    "song-id": "here-comes-your-man",
    "artist-song": "pixies-here-comes-your-man",
    "columns": "md"
@@ -1744,7 +1898,7 @@
    "artist-id": "john-prine",
    "img": "john-prine.jpg",
    "notes": "",
-   "id": 125,
+   "id": 136,
    "song-id": "pretty-good",
    "artist-song": "john-prine-pretty-good",
    "columns": "sm"
@@ -1758,7 +1912,7 @@
    "artist-id": "the-ramones",
    "img": "the-ramones.jpg",
    "notes": "",
-   "id": 126,
+   "id": 137,
    "song-id": "bonzo-goes-to-bitburg",
    "artist-song": "the-ramones-bonzo-goes-to-bitburg",
    "columns": "sm md"
@@ -1772,7 +1926,7 @@
    "artist-id": "rem",
    "img": "rem.jpg",
    "notes": "Capo on 1",
-   "id": 127,
+   "id": 138,
    "song-id": "leave",
    "artist-song": "rem-leave",
    "columns": "md"
@@ -1786,7 +1940,7 @@
    "artist-id": "rem",
    "img": "rem.jpg",
    "notes": "",
-   "id": 128,
+   "id": 139,
    "song-id": "the-one-i-love",
    "artist-song": "rem-the-one-i-love",
    "columns": "sm"
@@ -1800,7 +1954,7 @@
    "artist-id": "rem",
    "img": "rem.jpg",
    "notes": "",
-   "id": 129,
+   "id": 140,
    "song-id": "whats-the-frequency-kenneth",
    "artist-song": "rem-whats-the-frequency-kenneth",
    "columns": "sm"
@@ -1814,7 +1968,7 @@
    "artist-id": "keith-richards",
    "img": "keith-richards.jpg",
    "notes": "",
-   "id": 130,
+   "id": 141,
    "song-id": "eileen",
    "artist-song": "keith-richards-eileen",
    "columns": "sm md"
@@ -1828,7 +1982,7 @@
    "artist-id": "the-rolling-stones",
    "img": "the-rolling-stones.jpg",
    "notes": "",
-   "id": 131,
+   "id": 142,
    "song-id": "slipping-away",
    "artist-song": "the-rolling-stones-slipping-away",
    "columns": "sm md"
@@ -1842,7 +1996,7 @@
    "artist-id": "the-rolling-stones",
    "img": "the-rolling-stones.jpg",
    "notes": "",
-   "id": 132,
+   "id": 143,
    "song-id": "when-the-whip-comes-down",
    "artist-song": "the-rolling-stones-when-the-whip-comes-down",
    "columns": "sm md"
@@ -1856,7 +2010,7 @@
    "artist-id": "smashing-pumpkins",
    "img": "smashing-pumpkins.jpg",
    "notes": "",
-   "id": 133,
+   "id": 144,
    "song-id": "cherub-rock",
    "artist-song": "smashing-pumpkins-cherub-rock",
    "columns": "sm md"
@@ -1870,7 +2024,7 @@
    "artist-id": "smashing-pumpkins",
    "img": "smashing-pumpkins.jpg",
    "notes": "",
-   "id": 134,
+   "id": 145,
    "song-id": "drown",
    "artist-song": "smashing-pumpkins-drown",
    "columns": "sm md"
@@ -1884,7 +2038,7 @@
    "artist-id": "social-distortion",
    "img": "social-distortion.jpg",
    "notes": "",
-   "id": 135,
+   "id": 146,
    "song-id": "ball-and-chain",
    "artist-song": "social-distortion-ball-and-chain",
    "columns": "sm md"
@@ -1898,7 +2052,7 @@
    "artist-id": "social-distortion",
    "img": "social-distortion.jpg",
    "notes": "",
-   "id": 136,
+   "id": 147,
    "song-id": "story-of-my-life",
    "artist-song": "social-distortion-story-of-my-life",
    "columns": "sm md"
@@ -1912,7 +2066,7 @@
    "artist-id": "stealers-wheel",
    "img": "stealers-wheel.jpg",
    "notes": "",
-   "id": 137,
+   "id": 148,
    "song-id": "stuck-in-the-middle-with-you",
    "artist-song": "stealers-wheel-stuck-in-the-middle-with-you",
    "columns": "sm md"
@@ -1926,7 +2080,7 @@
    "artist-id": "tears-for-fears",
    "img": "tears-for-fears.jpg",
    "notes": "",
-   "id": 138,
+   "id": 149,
    "song-id": "head-over-heels",
    "artist-song": "tears-for-fears-head-over-heels",
    "columns": "md"
@@ -1940,7 +2094,7 @@
    "artist-id": "traveling-wilburys",
    "img": "traveling-wilburys.jpg",
    "notes": "",
-   "id": 139,
+   "id": 150,
    "song-id": "handle-with-care",
    "artist-song": "traveling-wilburys-handle-with-care",
    "columns": "sm md"
@@ -1954,7 +2108,7 @@
    "artist-id": "travis",
    "img": "travis.jpg",
    "notes": "Capo on 2",
-   "id": 140,
+   "id": 151,
    "song-id": "follow-the-light",
    "artist-song": "travis-follow-the-light",
    "columns": "sm"
@@ -1968,7 +2122,7 @@
    "artist-id": "travis",
    "img": "travis.jpg",
    "notes": "Capo on 3",
-   "id": 141,
+   "id": 152,
    "song-id": "side",
    "artist-song": "travis-side",
    "columns": "sm"
@@ -1982,23 +2136,37 @@
    "artist-id": "tweedy",
    "img": "tweedy.jpg",
    "notes": "",
-   "id": 142,
+   "id": 153,
    "song-id": "lets-find-each-other-tonight",
    "artist-song": "tweedy-lets-find-each-other-tonight",
    "columns": "sm md"
  },
  {
-   "artist-sort": "van halen",
-   "song": "Ain't Talkin' 'Bout Love",
-   "artist": "Van Halen",
-   "album": "Van Halen",
-   "year": 1978,
-   "artist-id": "van-halen",
-   "img": "van-halen.jpg",
+   "artist-sort": "u2",
+   "song": "All I Want Is You",
+   "artist": "U2",
+   "album": "Rattle And Hum",
+   "year": 1988,
+   "artist-id": "u2",
+   "img": "u2.jpg",
+   "notes": "Capo on 1",
+   "id": 154,
+   "song-id": "all-i-want-is-you",
+   "artist-song": "u2-all-i-want-is-you",
+   "columns": "sm md"
+ },
+ {
+   "artist-sort": "u2",
+   "song": "Love Rescue Me",
+   "artist": "U2",
+   "album": "Rattle And Hum",
+   "year": 1988,
+   "artist-id": "u2",
+   "img": "u2.jpg",
    "notes": "",
-   "id": 143,
-   "song-id": "aint-talkin-bout-loce",
-   "artist-song": "van-halen-aint-talkin-bout-loce",
+   "id": 155,
+   "song-id": "love-rescue-me",
+   "artist-song": "u2-love-rescue-me",
    "columns": "sm md"
  },
  {
@@ -2010,37 +2178,9 @@
    "artist-id": "van-halen",
    "img": "van-hagar.jpg",
    "notes": "",
-   "id": 144,
+   "id": 156,
    "song-id": "dreams",
    "artist-song": "van-halen-dreams",
-   "columns": "sm md"
- },
- {
-   "artist-sort": "van halen",
-   "song": "Finish What You Started",
-   "artist": "Van Halen",
-   "album": "OU812",
-   "year": 1988,
-   "artist-id": "van-halen",
-   "img": "van-hagar.jpg",
-   "notes": "",
-   "id": 145,
-   "song-id": "finish-what-you-started",
-   "artist-song": "van-halen-finish-what-you-started",
-   "columns": "sm md"
- },
- {
-   "artist-sort": "van halen",
-   "song": "When It's Love",
-   "artist": "Van Halen",
-   "album": "OU812",
-   "year": 1988,
-   "artist-id": "van-halen",
-   "img": "van-hagar.jpg",
-   "notes": "",
-   "id": 146,
-   "song-id": "when-its-love",
-   "artist-song": "van-halen-when-its-love",
    "columns": "sm md"
  },
  {
@@ -2052,7 +2192,7 @@
    "artist-id": "van-halen",
    "img": "van-hagar.jpg",
    "notes": "",
-   "id": 147,
+   "id": 157,
    "song-id": "why-cant-this-be-love",
    "artist-song": "van-halen-why-cant-this-be-love",
    "columns": "sm md"
@@ -2066,7 +2206,7 @@
    "artist-id": "ween",
    "img": "ween.jpg",
    "notes": "",
-   "id": 148,
+   "id": 158,
    "song-id": "piss-up-a-rope",
    "artist-song": "ween-piss-up-a-rope",
    "columns": "md"
@@ -2080,7 +2220,7 @@
    "artist-id": "weezer",
    "img": "weezer.jpg",
    "notes": "Capo on 1",
-   "id": 149,
+   "id": 159,
    "song-id": "king",
    "artist-song": "weezer-king",
    "columns": "sm md"
@@ -2094,7 +2234,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "",
-   "id": 150,
+   "id": 160,
    "song-id": "ashes-of-american-flags",
    "artist-song": "wilco-ashes-of-american-flags",
    "columns": "sm md"
@@ -2108,7 +2248,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "",
-   "id": 151,
+   "id": 161,
    "song-id": "blasting-fonda",
    "artist-song": "wilco-blasting-fonda",
    "columns": "sm"
@@ -2122,7 +2262,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 2 or 3 or 5",
-   "id": 152,
+   "id": 162,
    "song-id": "bob-dylans-49th-beard",
    "artist-song": "wilco-bob-dylans-49th-beard",
    "columns": "sm"
@@ -2136,7 +2276,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 1 (optional)",
-   "id": 153,
+   "id": 163,
    "song-id": "cars-cant-escape",
    "artist-song": "wilco-cars-cant-escape",
    "columns": "sm"
@@ -2150,7 +2290,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "",
-   "id": 154,
+   "id": 164,
    "song-id": "handshake-drugs",
    "artist-song": "wilco-handshake-drugs",
    "columns": "sm"
@@ -2164,7 +2304,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 2",
-   "id": 155,
+   "id": 165,
    "song-id": "heavy-metal-drummer",
    "artist-song": "wilco-heavy-metal-drummer",
    "columns": "sm"
@@ -2178,7 +2318,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "",
-   "id": 156,
+   "id": 166,
    "song-id": "how-to-fight-loneliness",
    "artist-song": "wilco-how-to-fight-loneliness",
    "columns": "sm"
@@ -2192,7 +2332,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 2",
-   "id": 157,
+   "id": 167,
    "song-id": "i-am-trying-to-break-your-heart",
    "artist-song": "wilco-i-am-trying-to-break-your-heart",
    "columns": "sm md"
@@ -2206,7 +2346,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 3",
-   "id": 158,
+   "id": 168,
    "song-id": "im-always-in-love",
    "artist-song": "wilco-im-always-in-love",
    "columns": "sm"
@@ -2220,7 +2360,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 1 or 2",
-   "id": 159,
+   "id": 169,
    "song-id": "kamera",
    "artist-song": "wilco-kamera",
    "columns": "sm"
@@ -2234,7 +2374,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "",
-   "id": 160,
+   "id": 170,
    "song-id": "passenger-side",
    "artist-song": "wilco-passenger-side",
    "columns": "sm"
@@ -2248,7 +2388,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "Capo on 1",
-   "id": 161,
+   "id": 171,
    "song-id": "pot-kettle-black",
    "artist-song": "wilco-pot-kettle-black",
    "columns": "sm"
@@ -2262,7 +2402,7 @@
    "artist-id": "wilco",
    "img": "wilco.jpg",
    "notes": "",
-   "id": 162,
+   "id": 172,
    "song-id": "the-thanks-i-get",
    "artist-song": "wilco-the-thanks-i-get",
    "columns": "sm md"
@@ -2276,7 +2416,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 163,
+   "id": 173,
    "song-id": "come-back-home",
    "artist-song": "pete-yorn-come-back-home",
    "columns": "sm"
@@ -2290,7 +2430,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 164,
+   "id": 174,
    "song-id": "crystal-village",
    "artist-song": "pete-yorn-crystal-village",
    "columns": "sm"
@@ -2304,7 +2444,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 165,
+   "id": 175,
    "song-id": "just-another",
    "artist-song": "pete-yorn-just-another",
    "columns": "sm"
@@ -2318,7 +2458,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 166,
+   "id": 176,
    "song-id": "life-on-a-chain",
    "artist-song": "pete-yorn-life-on-a-chain",
    "columns": "sm"
@@ -2332,7 +2472,7 @@
    "artist-id": "pete-yorn",
    "img": "pete-yorn.jpg",
    "notes": "",
-   "id": 167,
+   "id": 177,
    "song-id": "murray",
    "artist-song": "pete-yorn-murray",
    "columns": "sm"
@@ -2346,7 +2486,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 168,
+   "id": 178,
    "song-id": "dreamin-man",
    "artist-song": "neil-young-dreamin-man",
    "columns": "sm"
@@ -2360,7 +2500,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 169,
+   "id": 179,
    "song-id": "im-the-ocean",
    "artist-song": "neil-young-im-the-ocean",
    "columns": "lg"
@@ -2374,7 +2514,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 170,
+   "id": 180,
    "song-id": "natural-beauty",
    "artist-song": "neil-young-natural-beauty",
    "columns": "sm"
@@ -2388,7 +2528,7 @@
    "artist-id": "neil-young",
    "img": "neil-young.jpg",
    "notes": "",
-   "id": 171,
+   "id": 181,
    "song-id": "the-old-laughing-lady",
    "artist-song": "neil-young-the-old-laughing-lady",
    "columns": "sm"
