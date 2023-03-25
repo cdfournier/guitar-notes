@@ -57,7 +57,10 @@ main {
 
 @media (display-mode: fullscreen) {
   main {
-    padding: 1rem 4rem 0;
+    padding: 1rem 2rem 0;
+    article {
+      padding: 0 2rem;
+    }
   }
 }
 
@@ -115,7 +118,7 @@ main {
 
 // INDEX
 main.index {
-  padding-top: 1rem;
+  padding-top: 12rem;
   article {
     section {
       h1, h2, h3 {
@@ -175,6 +178,7 @@ main.index {
             padding: 0;
             font-size: 1rem;
             line-height: 1.25;
+            cursor: pointer;
             span.image {
               display: grid;
               overflow: hidden;
@@ -258,6 +262,7 @@ main.index {
 
 @media (min-width: 48rem) {
   main.index {
+    padding-top: 8rem;
     article {
       section {
         ul li {
@@ -286,6 +291,9 @@ main.index {
       section {
         ul li {
           width: calc(25% - 1rem);
+          label {
+            font-size: 1.125rem;
+          }
         }
       }
     }
@@ -441,6 +449,117 @@ html.dark {
       &:hover, &:focus {
         color: $gray;
         background: white;
+      }
+    }
+  }
+}
+
+
+// WELCOME
+.welcome {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 8rem 0 0;
+  background: white;
+  @include transition(all, 0.5s, ease);
+  @include transform(translateY(0));
+  .logo {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    svg {
+      max-width: 21rem;
+      opacity: 0;
+      @include transition(all, 0.5s, ease);
+      .white {
+        fill: white;
+      }
+      .gray {
+        fill: $gray;
+      }
+    }
+  }
+  button.dismiss-welcome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    opacity: 0;
+    @include transition(all, 0.25s, ease);
+    span.icon {
+      width: 2rem;
+      height: 2rem;
+      margin: 0.5rem 0;
+    }
+  }
+  &.dismissed {
+    z-index: 0;
+    max-height: 0;
+    min-height: 0;
+    padding: 0;
+    opacity: 0;
+    @include transform(translateY(-100vh));
+    button.dismiss-welcome {
+      display: none;
+    }
+  }
+}
+
+body.visible {
+  .welcome {
+    .logo {
+      svg {
+        opacity: 1;
+      }
+    }
+    button.dismiss-welcome {
+      opacity: 1;
+      &:hover, &:focus {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+html.dark {
+  .welcome {
+    background: $gray;
+    .logo {
+      svg {
+        .white {
+          fill: $gray;
+        }
+        .gray {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  .welcome {
+    .logo {
+      svg {
+        max-width: 28rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 120rem) {
+  .welcome {
+    .logo {
+      svg {
+        max-width: 34rem;
       }
     }
   }

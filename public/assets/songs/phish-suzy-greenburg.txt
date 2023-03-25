@@ -32,7 +32,7 @@ C         G
 Suzy Suzy Greenberg
 D
 Suzy Suzy Suzy Suzy
-C         G
+C         G        A
 Suzy Suzy Greenberg
 
 D C G
@@ -55,7 +55,6 @@ Little Suzy Greenberg's always playing a game
 C               A              G
 But today I bet she's probably forgotten my name
 
-
 D
 Suzy Suzy Suzy Suzy
 C         G
@@ -70,7 +69,7 @@ C         G
 Suzy Suzy Greenberg
 D
 Suzy Suzy Suzy Suzy
-C         G
+C         G        A
 Suzy Suzy Greenberg
 
 D C G
