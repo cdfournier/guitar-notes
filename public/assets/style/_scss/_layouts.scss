@@ -322,6 +322,28 @@ html.dark {
 }
 
 
+// BADGES
+span.badge {
+  display: inline-flex;
+  margin-right: 0.5rem;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2rem;
+  font-size: 0.675rem;
+  line-height: 1;
+  color: white;
+  background: $gray;
+}
+
+
+// BADGES DARK MODE
+html.dark {
+  span.badge {
+    color: $gray;
+    background: white;
+  }
+}
+
+
 // ALERTS
 .alert {
   display: grid;

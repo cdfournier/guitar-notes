@@ -14,8 +14,7 @@ html {
     scroll-behavior: auto;
   }
   * {
-    -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
     transition: none !important;
   }
 }
@@ -493,16 +492,10 @@ main section.songs h2 img {
 .artist input:not(:-moz-placeholder-shown) + label, .album input:not(:-moz-placeholder-shown) + label {
   font-size: 1rem;
 }
-.artist input:not(:-ms-input-placeholder) + label, .album input:not(:-ms-input-placeholder) + label {
-  font-size: 1rem;
-}
 .artist input:focus + label, .artist input:not(:placeholder-shown) + label, .album input:focus + label, .album input:not(:placeholder-shown) + label {
   font-size: 1rem;
 }
 .artist input:not(:-moz-placeholder-shown) + label, .album input:not(:-moz-placeholder-shown) + label {
-  transform: translate(0, 0);
-}
-.artist input:not(:-ms-input-placeholder) + label, .album input:not(:-ms-input-placeholder) + label {
   transform: translate(0, 0);
 }
 .artist input:not(:placeholder-shown) + label, .artist input:focus + label, .album input:not(:placeholder-shown) + label, .album input:focus + label {
