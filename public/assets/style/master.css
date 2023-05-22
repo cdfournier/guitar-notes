@@ -17,8 +17,7 @@ html {
     scroll-behavior: auto;
   }
   * {
-    -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
     transition: none !important;
   }
 }
@@ -103,7 +102,7 @@ strong, em {
 }
 
 small {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .visuallyhidden {
@@ -202,17 +201,11 @@ header form fieldset label button[type=reset].clear-search {
 header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ span.clear-search, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ button.clear-search {
   opacity: 0.7;
 }
-header form fieldset label input[type=text]:not(:-ms-input-placeholder) ~ span.clear-search, header form fieldset label input[type=text]:not(:-ms-input-placeholder) ~ button.clear-search {
-  opacity: 0.7;
-}
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search,
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ button.clear-search {
   opacity: 0.7;
 }
 header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ span.clear-search:hover, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ span.clear-search:focus, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ button.clear-search:hover, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ button.clear-search:focus {
-  opacity: 1;
-}
-header form fieldset label input[type=text]:not(:-ms-input-placeholder) ~ span.clear-search:hover, header form fieldset label input[type=text]:not(:-ms-input-placeholder) ~ span.clear-search:focus, header form fieldset label input[type=text]:not(:-ms-input-placeholder) ~ button.clear-search:hover, header form fieldset label input[type=text]:not(:-ms-input-placeholder) ~ button.clear-search:focus {
   opacity: 1;
 }
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search:hover, header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search:focus,
@@ -572,6 +565,22 @@ main.index article section ul.manual li ul li a span.album {
     width: calc(20% - 1rem);
   }
 }
+span.badge {
+  display: inline-flex;
+  margin-right: 0.5rem;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2rem;
+  font-size: 0.675rem;
+  line-height: 1;
+  color: white;
+  background: var(--gray);
+}
+
+html.dark span.badge {
+  color: var(--gray);
+  background: white;
+}
+
 .alert {
   display: grid;
   position: fixed;
