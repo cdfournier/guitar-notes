@@ -225,6 +225,20 @@
  },
  {
    "artist-sort": "cracker",
+   "song": "Ain't Gonna Suck Itself",
+   "artist": "Cracker",
+   "album": "Countrysides",
+   "year": 2003,
+   "artist-id": "cracker",
+   "img": "cracker.jpg",
+   "notes": "",
+   "id": 17,
+   "song-id": "aint-gonna-suck-itself",
+   "artist-song": "cracker-aint-gonna-suck-itself",
+   "columns": "sm"
+ },
+ {
+   "artist-sort": "cracker",
    "song": "Euro Trash Girl",
    "artist": "Cracker",
    "album": "Kerosene Hat",
@@ -232,7 +246,7 @@
    "artist-id": "cracker",
    "img": "cracker.jpg",
    "notes": "",
-   "id": 17,
+   "id": 18,
    "song-id": "euro-trash-girl",
    "artist-song": "cracker-euro-trash-girl",
    "columns": "md lg"
@@ -246,24 +260,10 @@
    "artist-id": "cracker",
    "img": "cracker.jpg",
    "notes": "",
-   "id": 18,
+   "id": 19,
    "song-id": "get-off-this",
    "artist-song": "cracker-get-off-this",
    "columns": "md"
- },
- {
-   "artist-sort": "cracker",
-   "song": "It Ain't Gonna Suck Itself",
-   "artist": "Cracker",
-   "album": "Countrysides",
-   "year": 2003,
-   "artist-id": "cracker",
-   "img": "cracker.jpg",
-   "notes": "",
-   "id": 19,
-   "song-id": "it-aint-gonna-suck-itself",
-   "artist-song": "cracker-it-aint-gonna-suck-itself",
-   "columns": "sm"
  },
  {
    "artist-sort": "cracker",
