@@ -343,7 +343,7 @@ main article section#song p {
 }
 @media (display-mode: fullscreen) {
   main {
-    padding: 1rem 2rem 0;
+    padding: 2rem 2rem 0;
   }
   main article {
     padding: 0 2rem;
