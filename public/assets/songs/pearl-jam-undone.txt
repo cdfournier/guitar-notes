@@ -22,8 +22,6 @@ Change don't come at once
        D                       A
 It's a wave building before it breaks
 
-G D A
-
 A
 Can't wait for election day
 A
@@ -46,9 +44,9 @@ Change don't come at once
        D                       A
 It's a wave building before it breaks
 
-E        B        A
+C        D        A
 All this hope and nowhere to go
-E       B   E         B           A
+C       D   C         D           A
 This is how I used to feel but no more
 
 G D A
