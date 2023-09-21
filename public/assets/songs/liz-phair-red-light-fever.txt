@@ -76,6 +76,8 @@ You knew what everybody else
 C                    Em
 Should do with their lives
 
+G C A C - G C Am C
+
 G                       C
 Lying wide awake in the dark
 Em                             C
@@ -83,9 +85,11 @@ Trying to figure out where you are
 Em
 Always going nowhere
 C
-Fraid of going somewhere
+Afraid of going somewhere
 D                               C
 And somewhere's a place in your heart
+D                           C
+Somewhere's a place in your heart
 
 G                           C
 Scared the lights will turn green
@@ -115,4 +119,4 @@ You can't commit to even her
 D
 How you gonna get through the year
 
-G C A C - G C G Am C - G C A C - G C G Am C G
+G C A C - G C Am C - G C A C - G C Am C G
