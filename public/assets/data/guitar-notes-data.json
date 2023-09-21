@@ -2727,7 +2727,7 @@
    "song-id": "come-back-home",
    "artist-song": "pete-yorn-come-back-home",
    "new": "",
-   "columns": "sm"
+   "columns": "sm md"
  },
  {
    "artist-sort": "yorn, pete",
@@ -2742,7 +2742,7 @@
    "song-id": "crystal-village",
    "artist-song": "pete-yorn-crystal-village",
    "new": "",
-   "columns": "sm"
+   "columns": "sm md"
  },
  {
    "artist-sort": "yorn, pete",
@@ -2772,7 +2772,7 @@
    "song-id": "life-on-a-chain",
    "artist-song": "pete-yorn-life-on-a-chain",
    "new": "",
-   "columns": "sm"
+   "columns": "sm md"
  },
  {
    "artist-sort": "yorn, pete",
@@ -2787,7 +2787,7 @@
    "song-id": "murray",
    "artist-song": "pete-yorn-murray",
    "new": "",
-   "columns": "sm"
+   "columns": "sm md"
  },
  {
    "artist-sort": "young, neil",
