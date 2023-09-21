@@ -5,6 +5,8 @@ I like to play guitar, but I'm not a good guitar player. I also like to design a
 
 I would love help with all of it: I have started to set up an environment here for some templating using the dependencies below, but I could use help making it work.
 
+[Guitar Notes](https://cdfournier.github.io/guitar-notes/public/grid.html)
+
 ## Built With
 - [Express](https://expressjs.com/)
 - [Embedded JavaScript Templating](https://ejs.co/)
