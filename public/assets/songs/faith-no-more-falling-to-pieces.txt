@@ -20,7 +20,7 @@ Indecision clouds my vision
 D      E
 No one listens
 
-D                     A  D  E
+E                     A  D  E
 Because I'm somewhere in between
 E              A D E
 My love and my agony
@@ -50,7 +50,7 @@ Indecision clouds my vision
 D      E
 No one listens
 
-D                     A  D  E
+E                     A  D  E
 Because I'm somewhere in between
 E              A D E
 My love and my agony
@@ -81,7 +81,7 @@ Indecision clouds my vision
 D      E
 No one listens
 
-D                     A  D  E
+E                     A  D  E
 Because I'm somewhere in between
 E              A D E
 My love and my agony
@@ -92,7 +92,7 @@ My life is falling to pieces
 G                      A
 Somebody put me together
 
-D  E                   A D E
+E                      A D E
 Between my love and my agony
 E                     A  D  E
 You see I'm somewhere in between
