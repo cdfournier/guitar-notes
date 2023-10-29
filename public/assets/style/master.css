@@ -10,6 +10,7 @@ html {
   line-height: 2;
   color: black;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: none;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
