@@ -322,6 +322,26 @@ html.dark {
 }
 
 
+// CLOCK
+.clock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 1rem 0 0;
+  background-color: white;
+}
+
+
+// CLOCK DARK MODE
+html.dark {
+  .clock {
+    color: white;
+    background-color: $gray;
+  }
+}
+
+
 // BADGES
 span.badge {
   display: inline-flex;
@@ -411,7 +431,7 @@ html.dark {
 .info {
   display: grid;
   position: absolute;
-  top: 1rem;
+  top: 3rem;
   right: 1rem;
   margin: 0;
   padding: 0;

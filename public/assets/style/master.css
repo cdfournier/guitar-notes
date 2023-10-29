@@ -566,6 +566,20 @@ main.index article section ul.manual li ul li a span.album {
     width: calc(20% - 1rem);
   }
 }
+.clock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 1rem 0 0;
+  background-color: white;
+}
+
+html.dark .clock {
+  color: white;
+  background-color: var(--gray);
+}
+
 span.badge {
   display: inline-flex;
   margin-left: 0.5rem;
@@ -638,7 +652,7 @@ html.dark .alert .message.note {
 .info {
   display: grid;
   position: absolute;
-  top: 1rem;
+  top: 3rem;
   right: 1rem;
   margin: 0;
   padding: 0;
