@@ -577,7 +577,7 @@ main.index article section ul.manual li ul li a span.album {
 
 @media (display-mode: fullscreen) {
   .clock {
-    padding: 2rem 2rem 0 0;
+    padding: 2rem 4rem 0 0;
   }
 }
 html.dark .clock {
