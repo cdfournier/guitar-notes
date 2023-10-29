@@ -571,10 +571,15 @@ main.index article section ul.manual li ul li a span.album {
   top: 0;
   right: 0;
   z-index: 100;
-  padding: 0 1rem 0 0;
+  padding: 0.25rem 1rem 0 0;
   background-color: white;
 }
 
+@media (display-mode: fullscreen) {
+  .clock {
+    padding: 2rem 2rem 0 0;
+  }
+}
 html.dark .clock {
   color: white;
   background-color: var(--gray);
