@@ -32,6 +32,8 @@ body.open {
 }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -41,7 +43,7 @@ img {
   margin: 0;
 }
 
-@media (min-width: 64rem), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 1.1) {
+@media (min-width: 64rem), (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 1.1) {
   html {
     font-size: 14px;
   }
@@ -105,6 +107,10 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  -webkit-transition: all 0.325s ease 0s;
+  -moz-transition: all 0.325s ease 0s;
+  -ms-transition: all 0.325s ease 0s;
+  -o-transition: all 0.325s ease 0s;
   transition: all 0.325s ease 0s;
 }
 
@@ -128,14 +134,30 @@ nav button.menu-toggle svg {
   fill: #333333;
 }
 nav button.menu-toggle svg.menu-toggle-open {
+  -webkit-transition: width 0.25s ease 0s;
+  -moz-transition: width 0.25s ease 0s;
+  -ms-transition: width 0.25s ease 0s;
+  -o-transition: width 0.25s ease 0s;
   transition: width 0.25s ease 0s;
 }
 nav button.menu-toggle svg.menu-toggle-close {
   width: 0;
+  -webkit-transition: width 0.25s ease 0s;
+  -moz-transition: width 0.25s ease 0s;
+  -ms-transition: width 0.25s ease 0s;
+  -o-transition: width 0.25s ease 0s;
   transition: width 0.25s ease 0s;
 }
 nav h2, nav p, nav ul {
+  -webkit-transform: translateX(-150rem);
+  -moz-transform: translateX(-150rem);
+  -ms-transform: translateX(-150rem);
+  -o-transform: translateX(-150rem);
   transform: translateX(-150rem);
+  -webkit-transition: all 0.325s ease 0s;
+  -moz-transition: all 0.325s ease 0s;
+  -ms-transition: all 0.325s ease 0s;
+  -o-transition: all 0.325s ease 0s;
   transition: all 0.325s ease 0s;
 }
 nav h2, nav p {
@@ -180,6 +202,10 @@ nav ul li {
   display: flex;
   align-items: center;
   margin: 0.69rem 0.69rem 0 0;
+  -webkit-transition: all 0.325s ease 0s;
+  -moz-transition: all 0.325s ease 0s;
+  -ms-transition: all 0.325s ease 0s;
+  -o-transition: all 0.325s ease 0s;
   transition: all 0.325s ease 0s;
 }
 nav ul li img {
@@ -214,6 +240,10 @@ nav ul li a {
     width: auto;
     font-size: 3.052rem;
     color: #333333;
+    -webkit-transition: all 0.325s ease 0s;
+    -moz-transition: all 0.325s ease 0s;
+    -ms-transition: all 0.325s ease 0s;
+    -o-transition: all 0.325s ease 0s;
     transition: all 0.325s ease 0s;
   }
   nav p a .overlay {
@@ -226,6 +256,10 @@ nav ul li a {
     border-radius: 100%;
     background: black;
     opacity: 0.1;
+    -webkit-transition: all 0.325s ease 0s;
+    -moz-transition: all 0.325s ease 0s;
+    -ms-transition: all 0.325s ease 0s;
+    -o-transition: all 0.325s ease 0s;
     transition: all 0.325s ease 0s;
   }
   nav p a img {
@@ -278,15 +312,27 @@ header {
 }
 
 .headroom {
+  -webkit-transition: all 0.325s ease 0s;
+  -moz-transition: all 0.325s ease 0s;
+  -ms-transition: all 0.325s ease 0s;
+  -o-transition: all 0.325s ease 0s;
   transition: all 0.325s ease 0s;
   will-change: transform;
 }
 
 .headroom--pinned {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
 }
 
 .headroom--unpinned {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 
@@ -304,6 +350,10 @@ header.open nav h2, header.open nav p, header.open nav ul {
   width: 100%;
   height: auto;
   max-height: 100%;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
   transform: translateX(0);
 }
 header.open nav h2 {
@@ -489,16 +539,14 @@ main section.songs h2 img {
   font-size: 1.25rem;
   font-weight: 700;
 }
-.artist input:not(:-moz-placeholder-shown) + label, .album input:not(:-moz-placeholder-shown) + label {
-  font-size: 1rem;
-}
 .artist input:focus + label, .artist input:not(:placeholder-shown) + label, .album input:focus + label, .album input:not(:placeholder-shown) + label {
   font-size: 1rem;
 }
-.artist input:not(:-moz-placeholder-shown) + label, .album input:not(:-moz-placeholder-shown) + label {
-  transform: translate(0, 0);
-}
 .artist input:not(:placeholder-shown) + label, .artist input:focus + label, .album input:not(:placeholder-shown) + label, .album input:focus + label {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .artist .songs, .album .songs {
@@ -507,6 +555,10 @@ main section.songs h2 img {
   max-height: 0;
   overflow: hidden;
   padding: 0;
+  -webkit-transition: max-height 0.325s ease 0s;
+  -moz-transition: max-height 0.325s ease 0s;
+  -ms-transition: max-height 0.325s ease 0s;
+  -o-transition: max-height 0.325s ease 0s;
   transition: max-height 0.325s ease 0s;
 }
 .artist .songs ul, .album .songs ul {
@@ -653,44 +705,33 @@ article.chords .details.simple p.stretch:last-of-type {
 }
 
 article.chords h2, article.chords p {
-  -moz-column-span: all;
-       column-span: all;
+  column-span: all;
 }
 article.chords .details p {
-  -moz-column-span: none;
-       column-span: none;
+  column-span: none;
 }
 
 @media (min-width: 40rem) {
   article.chords {
     display: block;
-    -moz-columns: 2;
-         columns: 2;
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
-    -moz-column-width: calc(50vw - 4rem);
-         column-width: calc(50vw - 4rem);
+    columns: 2;
+    column-gap: 4rem;
+    column-width: calc(50vw - 4rem);
   }
 }
 @media (min-width: 64rem) {
   article.chords {
-    -moz-columns: 3;
-         columns: 3;
-    -moz-column-width: calc(33.3333333333vw - 8rem);
-         column-width: calc(33.3333333333vw - 8rem);
+    columns: 3;
+    column-width: calc(33.3333333333vw - 8rem);
   }
 }
 @media (min-width: 74rem) {
   article.chords.lg {
-    -moz-columns: 4;
-         columns: 4;
-    -moz-column-width: calc(25vw - 12rem);
-         column-width: calc(25vw - 12rem);
+    columns: 4;
+    column-width: calc(25vw - 12rem);
   }
   article.chords.xl {
-    -moz-columns: 5;
-         columns: 5;
-    -moz-column-width: calc(20vw - 16rem);
-         column-width: calc(20vw - 16rem);
+    columns: 5;
+    column-width: calc(20vw - 16rem);
   }
 }

@@ -27,10 +27,16 @@ body {
   margin: 0 auto;
   padding: 0;
   background: white;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
   transition: all 0.25s ease 0s;
 }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -42,14 +48,16 @@ img {
 
 button {
   display: flex;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   border: none;
   padding: 0;
   font-family: "Courier", monospace;
   color: inherit;
   background: none;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
   transition: all 0.25s ease 0s;
 }
 
@@ -116,6 +124,10 @@ a {
   color: inherit;
   opacity: 1;
   cursor: pointer;
+  -webkit-transition: opacity 0.25s ease 0s;
+  -moz-transition: opacity 0.25s ease 0s;
+  -ms-transition: opacity 0.25s ease 0s;
+  -o-transition: opacity 0.25s ease 0s;
   transition: opacity 0.25s ease 0s;
 }
 a:hover, a:focus {
@@ -144,8 +156,7 @@ header form fieldset {
   margin: 0;
   padding: 0;
   border: none;
-  -moz-column-span: all;
-       column-span: all;
+  column-span: all;
 }
 header form fieldset label {
   display: flex;
@@ -195,19 +206,18 @@ header form fieldset label button[type=reset].clear-search {
   opacity: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+  -webkit-transition: all 0.325s ease 0s;
+  -moz-transition: all 0.325s ease 0s;
+  -ms-transition: all 0.325s ease 0s;
+  -o-transition: all 0.325s ease 0s;
   transition: all 0.325s ease 0s;
-}
-header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ span.clear-search, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ button.clear-search {
-  opacity: 0.7;
 }
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search,
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ button.clear-search {
   opacity: 0.7;
-}
-header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ span.clear-search:hover, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ span.clear-search:focus, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ button.clear-search:hover, header form fieldset label input[type=text]:not(:-moz-placeholder-shown) ~ button.clear-search:focus {
-  opacity: 1;
 }
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search:hover, header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search:focus,
 header form fieldset label input[type=text]:not(:placeholder-shown) ~ button.clear-search:hover,
@@ -225,9 +235,7 @@ header form fieldset label input[type=checkbox] {
   padding: 0;
   border: 1px solid var(--gray);
   border-radius: 2rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 header form fieldset label input[type=checkbox]:after {
   display: block;
@@ -239,6 +247,10 @@ header form fieldset label input[type=checkbox]:after {
   border-radius: 100%;
   background: var(--gray);
   content: "";
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
   transition: all 0.25s ease 0s;
 }
 header form fieldset label input[type=checkbox]:checked:after {
@@ -287,15 +299,27 @@ html.dark header form fieldset input[type=checkbox]:after {
 }
 
 .headroom {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   will-change: transform;
 }
 
 .headroom--pinned {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
 }
 
 .headroom--unpinned {
+  -webkit-transform: translateY(-100vh);
+  -moz-transform: translateY(-100vh);
+  -ms-transform: translateY(-100vh);
+  -o-transform: translateY(-100vh);
   transform: translateY(-100vh);
 }
 
@@ -316,8 +340,7 @@ main article section {
 main article section p {
   overflow: hidden;
   margin: 0;
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
+  break-inside: avoid;
   line-height: 1.125;
   white-space: pre;
   text-overflow: ellipsis;
@@ -329,7 +352,7 @@ main article section#song:not(p) {
 main article section#song p {
   visibility: visible;
 }
-@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+@media not all and (min-resolution: 0.001dpcm) {
   main article section#song:not(p) {
     visibility: visible;
     line-height: inherit;
@@ -352,58 +375,44 @@ main article section#song p {
 }
 @media (min-width: 48rem) {
   main article section.sm {
-    -moz-column-count: 2;
-         column-count: 2;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
   }
   main article section.md, main article section.lg {
-    -moz-column-count: 3;
-         column-count: 3;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-count: 3;
+    column-gap: 2rem;
   }
   main article section.sm.md {
-    -moz-column-count: 2;
-         column-count: 2;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
   }
   main article section.md.lg {
-    -moz-column-count: 3;
-         column-count: 3;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-count: 3;
+    column-gap: 2rem;
   }
   main article section.md.lg.sm {
-    -moz-column-count: 2;
-         column-count: 2;
+    column-count: 2;
   }
 }
 @media (min-width: 90rem) {
   main article section.sm.md {
-    -moz-column-count: 3;
-         column-count: 3;
+    column-count: 3;
   }
   main article section.md.lg {
-    -moz-column-count: 4;
-         column-count: 4;
+    column-count: 4;
   }
   main article section.md.lg.sm {
-    -moz-column-count: 4;
-         column-count: 4;
+    column-count: 4;
   }
   main article section.lg {
-    -moz-column-count: 5;
-         column-count: 5;
+    column-count: 5;
   }
 }
 main.index {
   padding-top: 12rem;
 }
 main.index article section h1, main.index article section h2, main.index article section h3 {
-  -moz-column-span: all;
-       column-span: all;
+  column-span: all;
 }
 main.index article section h3 {
   padding: 1rem 0 0;
@@ -412,8 +421,7 @@ main.index article section p {
   overflow: hidden;
   padding: 0;
   line-height: 1.5;
-  -moz-column-break-before: avoid;
-       break-before: avoid;
+  break-before: avoid;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -424,8 +432,7 @@ main.index article section h2 + p {
   padding: 0;
   font-size: 1rem;
   line-height: 1.125;
-  -moz-column-span: all;
-       column-span: all;
+  column-span: all;
 }
 main.index article section h4 {
   padding: 1rem 0 0;
@@ -479,7 +486,15 @@ main.index article section ul section {
   max-height: 0;
   margin: 0 0 0 5rem;
   padding: 0;
+  -webkit-transition: all 0.325s ease 0s;
+  -moz-transition: all 0.325s ease 0s;
+  -ms-transition: all 0.325s ease 0s;
+  -o-transition: all 0.325s ease 0s;
   transition: all 0.325s ease 0s;
+  -webkit-transform: translateY(100vh);
+  -moz-transform: translateY(100vh);
+  -ms-transform: translateY(100vh);
+  -o-transform: translateY(100vh);
   transform: translateY(100vh);
 }
 main.index article section ul section p {
@@ -504,6 +519,10 @@ main.index article section ul section p a span.album {
 main.index article section ul input:checked ~ section {
   height: auto;
   max-height: 100vh;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
 }
 main.index article section ul input:checked ~ section p {
@@ -607,10 +626,22 @@ html.dark span.badge {
   top: 0;
   z-index: 1000;
   width: 100vw;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
+  -webkit-transform: translateY(-100vh);
+  -moz-transform: translateY(-100vh);
+  -ms-transform: translateY(-100vh);
+  -o-transform: translateY(-100vh);
   transform: translateY(-100vh);
 }
 .alert.show {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
 }
 .alert .message {
@@ -643,6 +674,10 @@ html.dark span.badge {
   max-width: 1.5rem;
   max-height: 1.5rem;
   cursor: pointer;
+  -webkit-transition: opacity 0.25s ease 0s;
+  -moz-transition: opacity 0.25s ease 0s;
+  -ms-transition: opacity 0.25s ease 0s;
+  -o-transition: opacity 0.25s ease 0s;
   transition: opacity 0.25s ease 0s;
 }
 .alert .message span.close:hover, .alert .message span.close:focus, .alert .message button.close:hover, .alert .message button.close:focus {
@@ -657,15 +692,13 @@ html.dark .alert .message.note {
 .info {
   display: grid;
   position: absolute;
-  top: 3rem;
+  top: 5rem;
   right: 1rem;
   margin: 0;
   padding: 0;
 }
 .info button, .info a {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -699,7 +732,7 @@ html.dark .alert .message.note {
 
 @media (display-mode: fullscreen) {
   .info {
-    top: 2rem;
+    top: 5rem;
     right: 4rem;
   }
   .info.go-to-search {
@@ -728,7 +761,15 @@ html.dark .info button:hover, html.dark .info button:focus, html.dark .info a:ho
   margin: 0;
   padding: 8rem 0 0;
   background: white;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
 }
 .welcome .logo {
@@ -739,6 +780,10 @@ html.dark .info button:hover, html.dark .info button:focus, html.dark .info a:ho
 .welcome .logo svg {
   max-width: 21rem;
   opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 .welcome .logo svg .white {
@@ -755,6 +800,10 @@ html.dark .info button:hover, html.dark .info button:focus, html.dark .info a:ho
   margin: 1rem auto 0;
   padding: 1rem;
   opacity: 0;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
   transition: all 0.25s ease 0s;
 }
 .welcome button.dismiss-welcome span.icon {
@@ -768,6 +817,10 @@ html.dark .info button:hover, html.dark .info button:focus, html.dark .info a:ho
   min-height: 0;
   padding: 0;
   opacity: 0;
+  -webkit-transform: translateY(-100vh);
+  -moz-transform: translateY(-100vh);
+  -ms-transform: translateY(-100vh);
+  -o-transform: translateY(-100vh);
   transform: translateY(-100vh);
 }
 .welcome.dismissed button.dismiss-welcome {
@@ -932,6 +985,7 @@ footer nav form fieldset label input {
   border-radius: 2rem;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
 }
@@ -945,6 +999,10 @@ footer nav form fieldset label input:after {
   border-radius: 100%;
   background: var(--gray);
   content: "";
+  -webkit-transition: all 0.25s 0 0.325s ease 0s;
+  -moz-transition: all 0.25s 0 0.325s ease 0s;
+  -ms-transition: all 0.25s 0 0.325s ease 0s;
+  -o-transition: all 0.25s 0 0.325s ease 0s;
   transition: all 0.25s 0 0.325s ease 0s;
 }
 footer nav form fieldset label input:checked:after {

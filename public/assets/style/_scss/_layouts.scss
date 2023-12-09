@@ -437,7 +437,7 @@ html.dark {
 .info {
   display: grid;
   position: absolute;
-  top: 3rem;
+  top: 5rem;
   right: 1rem;
   margin: 0;
   padding: 0;
@@ -477,7 +477,7 @@ html.dark {
 
 @media (display-mode: fullscreen) {
   .info {
-    top: 2rem;
+    top: 5rem;
     right: 4rem;
   }
   .info.go-to-search {
