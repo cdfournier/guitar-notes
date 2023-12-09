@@ -692,7 +692,7 @@ html.dark .alert .message.note {
 .info {
   display: grid;
   position: absolute;
-  top: 5rem;
+  top: 3rem;
   right: 1rem;
   margin: 0;
   padding: 0;
