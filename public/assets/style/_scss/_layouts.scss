@@ -4,12 +4,15 @@ main {
   width: 100%;
   min-height: 50vh;
   padding: 0 1rem;
+
   article {
     position: relative;
     overflow: hidden;
     padding: 0 1rem;
+
     section {
       overflow: hidden;
+
       p {
         overflow: hidden;
         margin: 0;
@@ -19,13 +22,16 @@ main {
         text-overflow: ellipsis;
       }
     }
+
     section#song:not(p) {
       visibility: hidden;
       line-height: 0;
     }
+
     section#song p {
       visibility: visible;
     }
+
     @media not all and (min-resolution:.001dpcm) {
       section#song:not(p) {
         visibility: visible;
@@ -50,14 +56,14 @@ main {
 
 @media (min-width: 64rem) {
   main {
-    article {
-    }
+    article {}
   }
 }
 
 @media (display-mode: fullscreen) {
   main {
     padding: 2rem 2rem 0;
+
     article {
       padding: 0 2rem;
     }
@@ -74,17 +80,22 @@ main {
           column-count: 2;
           column-gap: 2rem;
         }
-        &.md, &.lg {
+
+        &.md,
+        &.lg {
           column-count: 3;
           column-gap: 2rem;
         }
+
         &.sm.md {
           column-count: 2;
           column-gap: 2rem;
         }
+
         &.md.lg {
           column-count: 3;
           column-gap: 2rem;
+
           &.sm {
             column-count: 2;
           }
@@ -101,12 +112,15 @@ main {
         &.sm.md {
           column-count: 3;
         }
+
         &.md.lg {
           column-count: 4;
+
           &.sm {
             column-count: 4;
           }
         }
+
         &.lg {
           column-count: 5;
         }
@@ -119,14 +133,20 @@ main {
 // INDEX
 main.index {
   padding-top: 12rem;
+
   article {
     section {
-      h1, h2, h3 {
+
+      h1,
+      h2,
+      h3 {
         column-span: all;
       }
+
       h3 {
         padding: 1rem 0 0;
       }
+
       p {
         overflow: hidden;
         padding: 0;
@@ -134,20 +154,24 @@ main.index {
         break-before: avoid;
         text-overflow: ellipsis;
         white-space: nowrap;
+
         a {
           font-weight: normal;
         }
       }
-      h2 + p {
+
+      h2+p {
         padding: 0;
         font-size: 1rem;
         line-height: 1.125;
         column-span: all;
       }
+
       h4 {
         padding: 1rem 0 0;
         font-size: 1.25rem;
       }
+
       ul {
         display: flex;
         align-items: flex-start;
@@ -157,6 +181,7 @@ main.index {
         margin: 0 0 0 -0.5rem;
         padding: 0;
         list-style: none;
+
         li {
           display: flex;
           flex-direction: column;
@@ -166,10 +191,12 @@ main.index {
           padding: 1rem;
           border: 1px solid;
           border-radius: 0.25rem;
+
           input {
             position: absolute;
             left: -100vw;
           }
+
           label {
             display: flex;
             flex-direction: row;
@@ -179,6 +206,7 @@ main.index {
             font-size: 1rem;
             line-height: 1.25;
             cursor: pointer;
+
             span.image {
               display: grid;
               overflow: hidden;
@@ -189,6 +217,7 @@ main.index {
             }
           }
         }
+
         section {
           width: calc(100% - 5rem);
           height: 0;
@@ -197,6 +226,7 @@ main.index {
           padding: 0;
           @include transition(all, 0.325s, ease);
           @include transform(translateY(100vh));
+
           p {
             overflow: hidden;
             width: 100%;
@@ -204,50 +234,62 @@ main.index {
             padding: 0;
             border: none;
             white-space: nowrap;
+
             a {
               overflow: hidden;
               font-weight: normal;
               text-overflow: ellipsis;
+
               span.artist {
                 width: 100%
               }
+
               span.album {
                 display: none;
               }
             }
           }
         }
-        input:checked ~ section {
+
+        input:checked~section {
           height: auto;
           max-height: 100vh;
           @include transform(translateY(0));
+
           p {
             padding: 0.5rem 0;
           }
         }
       }
+
       ul.manual {
         display: block;
         width: 100%;
         margin: 0;
+
         li {
           width: 100%;
           min-width: 100%;
           margin: 0;
           padding: 1rem 0;
           border: none;
+
           span.performer {
             font-size: 1.125rem;
           }
+
           ul {
             display: block;
             width: 100%;
             margin: 0;
+
             li {
               width: 100%;
               padding: 0;
+
               a {
                 font-weight: normal;
+
                 span.album {
                   display: none;
                 }
@@ -263,6 +305,7 @@ main.index {
 @media (min-width: 48rem) {
   main.index {
     padding-top: 8rem;
+
     article {
       section {
         ul li {
@@ -291,6 +334,7 @@ main.index {
       section {
         ul li {
           width: calc(25% - 1rem);
+
           label {
             font-size: 1.125rem;
           }
@@ -315,8 +359,7 @@ main.index {
 html.dark {
   main.index {
     article {
-      section {
-      }
+      section {}
     }
   }
 }
@@ -379,9 +422,11 @@ html.dark {
   width: 100vw;
   @include transition(all, 0.5s, ease);
   @include transform(translateY(-100vh));
+
   &.show {
     @include transform(translateY(0));
   }
+
   .message {
     display: flex;
     align-items: center;
@@ -391,27 +436,35 @@ html.dark {
     margin: 0 auto;
     padding: 1rem;
     border-radius: 0 0 0.25rem 0.25rem;
+
     &.note {
       color: white;
       background: $gray;
     }
+
     p {
       padding: 0 1rem 0 0.25rem;
     }
-    span, button {
+
+    span,
+    button {
       display: grid;
       max-width: 2rem;
       max-height: 2rem;
+
       svg {
         width: 100%;
         height: auto;
       }
+
       &.close {
         max-width: 1.5rem;
         max-height: 1.5rem;
         cursor: pointer;
         @include transition(opacity, 0.25s, ease);
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           opacity: 0.5;
         }
       }
@@ -441,7 +494,9 @@ html.dark {
   right: 1rem;
   margin: 0;
   padding: 0;
-  button, a {
+
+  button,
+  a {
     appearance: none;
     display: flex;
     align-items: center;
@@ -455,13 +510,17 @@ html.dark {
     font-weight: bold;
     color: $gray;
     background: white;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       color: white;
       background: $gray;
     }
   }
+
   a {
     padding: 0.5rem;
+
     svg {
       width: 100%;
       height: 100%;
@@ -480,6 +539,7 @@ html.dark {
     top: 5rem;
     right: 4rem;
   }
+
   .info.go-to-search {
     top: 4rem;
     right: 5rem;
@@ -490,11 +550,15 @@ html.dark {
 // ALERTS INFO BUTTON DARK MODE
 html.dark {
   .info {
-    button, a {
+
+    button,
+    a {
       border-color: white;
       color: white;
       background: $gray;
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         color: $gray;
         background: white;
       }
@@ -517,22 +581,27 @@ html.dark {
   background: white;
   @include transition(all, 0.5s, ease);
   @include transform(translateY(0));
+
   .logo {
     width: 100%;
     padding: 0;
     text-align: center;
+
     svg {
       max-width: 21rem;
       opacity: 0;
       @include transition(all, 0.5s, ease);
+
       .white {
         fill: white;
       }
+
       .gray {
         fill: $gray;
       }
     }
   }
+
   button.dismiss-welcome {
     display: flex;
     align-items: center;
@@ -542,12 +611,14 @@ html.dark {
     padding: 1rem;
     opacity: 0;
     @include transition(all, 0.25s, ease);
+
     span.icon {
       width: 2rem;
       height: 2rem;
       margin: 0.5rem 0;
     }
   }
+
   &.dismissed {
     z-index: 0;
     max-height: 0;
@@ -555,6 +626,7 @@ html.dark {
     padding: 0;
     opacity: 0;
     @include transform(translateY(-100vh));
+
     button.dismiss-welcome {
       display: none;
     }
@@ -568,9 +640,12 @@ body.visible {
         opacity: 1;
       }
     }
+
     button.dismiss-welcome {
       opacity: 1;
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         opacity: 0.7;
       }
     }
@@ -580,11 +655,13 @@ body.visible {
 html.dark {
   .welcome {
     background: $gray;
+
     .logo {
       svg {
         .white {
           fill: $gray;
         }
+
         .gray {
           fill: white;
         }
@@ -608,6 +685,83 @@ html.dark {
     .logo {
       svg {
         max-width: 34rem;
+      }
+    }
+  }
+}
+
+
+// SETLISTS
+main.setlists {
+  padding-top: 6rem;
+
+  section {
+    position: relative;
+    padding: 2rem 0;
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $gray;
+      content: "";
+    }
+
+    &:first-of-type {
+      padding-top: 1rem;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 1rem 0 0;
+      list-style-type: none;
+
+      &:first-of-type {
+        padding-top: 0.25rem;
+      }
+
+      li {
+        line-height: 1.75;
+      }
+
+      li:first-of-type {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+html.dark {
+  main.setlists {
+    section {
+      &:before {
+        background-color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  main.setlists {
+    section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      ul {
+        max-width: 50%;
+        min-width: calc(100% / 3);
+        padding: 0.5rem 0 0 2rem;
+
+        &:first-of-type {
+          padding: 0.5rem 0 0 0;
+        }
       }
     }
   }

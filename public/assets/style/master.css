@@ -411,7 +411,9 @@ main article section#song p {
 main.index {
   padding-top: 12rem;
 }
-main.index article section h1, main.index article section h2, main.index article section h3 {
+main.index article section h1,
+main.index article section h2,
+main.index article section h3 {
   column-span: all;
 }
 main.index article section h3 {
@@ -661,16 +663,19 @@ html.dark span.badge {
 .alert .message p {
   padding: 0 1rem 0 0.25rem;
 }
-.alert .message span, .alert .message button {
+.alert .message span,
+.alert .message button {
   display: grid;
   max-width: 2rem;
   max-height: 2rem;
 }
-.alert .message span svg, .alert .message button svg {
+.alert .message span svg,
+.alert .message button svg {
   width: 100%;
   height: auto;
 }
-.alert .message span.close, .alert .message button.close {
+.alert .message span.close,
+.alert .message button.close {
   max-width: 1.5rem;
   max-height: 1.5rem;
   cursor: pointer;
@@ -680,7 +685,9 @@ html.dark span.badge {
   -o-transition: opacity 0.25s ease 0s;
   transition: opacity 0.25s ease 0s;
 }
-.alert .message span.close:hover, .alert .message span.close:focus, .alert .message button.close:hover, .alert .message button.close:focus {
+.alert .message span.close:hover, .alert .message span.close:focus,
+.alert .message button.close:hover,
+.alert .message button.close:focus {
   opacity: 0.5;
 }
 
@@ -697,7 +704,8 @@ html.dark .alert .message.note {
   margin: 0;
   padding: 0;
 }
-.info button, .info a {
+.info button,
+.info a {
   appearance: none;
   display: flex;
   align-items: center;
@@ -712,7 +720,9 @@ html.dark .alert .message.note {
   color: var(--gray);
   background: white;
 }
-.info button:hover, .info button:focus, .info a:hover, .info a:focus {
+.info button:hover, .info button:focus,
+.info a:hover,
+.info a:focus {
   color: white;
   background: var(--gray);
 }
@@ -740,12 +750,15 @@ html.dark .alert .message.note {
     right: 5rem;
   }
 }
-html.dark .info button, html.dark .info a {
+html.dark .info button,
+html.dark .info a {
   border-color: white;
   color: white;
   background: var(--gray);
 }
-html.dark .info button:hover, html.dark .info button:focus, html.dark .info a:hover, html.dark .info a:focus {
+html.dark .info button:hover, html.dark .info button:focus,
+html.dark .info a:hover,
+html.dark .info a:focus {
   color: var(--gray);
   background: white;
 }
@@ -855,6 +868,62 @@ html.dark .welcome .logo svg .gray {
 @media (min-width: 120rem) {
   .welcome .logo svg {
     max-width: 34rem;
+  }
+}
+main.setlists {
+  padding-top: 6rem;
+}
+main.setlists section {
+  position: relative;
+  padding: 2rem 0;
+}
+main.setlists section:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray);
+  content: "";
+}
+main.setlists section:first-of-type {
+  padding-top: 1rem;
+}
+main.setlists section:first-of-type:before {
+  display: none;
+}
+main.setlists section ul {
+  margin: 0;
+  padding: 1rem 0 0;
+  list-style-type: none;
+}
+main.setlists section ul:first-of-type {
+  padding-top: 0.25rem;
+}
+main.setlists section ul li {
+  line-height: 1.75;
+}
+main.setlists section ul li:first-of-type {
+  text-transform: uppercase;
+}
+
+html.dark main.setlists section:before {
+  background-color: white;
+}
+
+@media (min-width: 48rem) {
+  main.setlists section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  main.setlists section ul {
+    max-width: 50%;
+    min-width: 33.3333333333%;
+    padding: 0.5rem 0 0 2rem;
+  }
+  main.setlists section ul:first-of-type {
+    padding: 0.5rem 0 0 0;
   }
 }
 footer {
