@@ -259,6 +259,11 @@ header form fieldset label input[type=checkbox]:checked:after {
 header form fieldset + fieldset {
   padding: 1rem 0 0;
 }
+header h1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .header--fixed {
   position: fixed;
