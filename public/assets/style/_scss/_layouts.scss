@@ -734,6 +734,10 @@ main.setlists {
         text-transform: uppercase;
       }
     }
+
+    p+p {
+      padding-top: 0.25rem;
+    }
   }
 }
 

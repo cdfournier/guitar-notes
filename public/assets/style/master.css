@@ -911,6 +911,9 @@ main.setlists section ul li {
 main.setlists section ul li:first-of-type {
   text-transform: uppercase;
 }
+main.setlists section p + p {
+  padding-top: 0.25rem;
+}
 
 html.dark main.setlists section:before {
   background-color: white;
