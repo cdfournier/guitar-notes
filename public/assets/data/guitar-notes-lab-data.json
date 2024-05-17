@@ -19,19 +19,19 @@
  {
    "artist-sort": "big head todd",
    "song": "City On Fire",
-   "artist": "Big Head Tood And The Monsters",
+   "artist": "Big Head Todd And The Monsters",
    "album": "Midnight Radio",
    "year": 1990,
    "notes": "",
    "columns": "sm md",
    "new": "",
    "id": 2,
-   "artist-regex": "Big Head Tood And The Monsters",
-   "artist-id": "big-head-tood-and-the-monsters",
-   "img": "big-head-tood-and-the-monsters.jpg",
+   "artist-regex": "Big Head Todd And The Monsters",
+   "artist-id": "big-head-todd-and-the-monsters",
+   "img": "big-head-todd-and-the-monsters.jpg",
    "song-regex": "City On Fire",
    "song-id": "city-on-fire",
-   "artist-song": "big-head-tood-and-the-monsters-city-on-fire"
+   "artist-song": "big-head-todd-and-the-monsters-city-on-fire"
  },
  {
    "artist-sort": "blind melon",
