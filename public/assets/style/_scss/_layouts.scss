@@ -401,6 +401,7 @@ span.badge {
   line-height: 1;
   color: white;
   background: $gray;
+  @include transform(translateY(-0.125rem));
 }
 
 

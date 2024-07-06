@@ -620,6 +620,11 @@ span.badge {
   line-height: 1;
   color: white;
   background: var(--gray);
+  -webkit-transform: translateY(-0.125rem);
+  -moz-transform: translateY(-0.125rem);
+  -ms-transform: translateY(-0.125rem);
+  -o-transform: translateY(-0.125rem);
+  transform: translateY(-0.125rem);
 }
 
 html.dark span.badge {
