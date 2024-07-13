@@ -1,4 +1,4 @@
-Am G Em C G
+Am G Em C G C G
 
 G            Em     C     G
 Woke up this morning in a bed
@@ -15,10 +15,10 @@ Tonight as I lay sleeping
 I try to hold your hand
 Em               A
 One eye open and dreaming
-A         C          F
+A         C          F   Am
 That this city is on fire
 
-Am G Em C G
+G Em C G C G
 
 G       Em
 Tell me sweet things
@@ -37,10 +37,10 @@ Tonight as I lay sleeping
 I try to hold your hand
 Em               A
 One eye open and dreaming
-A         C          F
+A         C          F   Am
 That this city is on fire
 
-Am G Em C G
+G Em C G C G
 
 G            Em     C     G
 Woke up this morning in a bed
@@ -57,7 +57,7 @@ Tonight as I lay sleeping
 I try to hold your hand
 Em               A
 One eye open and dreaming
-A         C          F
+A         C          F   Am
 That this city is on fire
 
-Am G Em C G
+G Em C G C G
