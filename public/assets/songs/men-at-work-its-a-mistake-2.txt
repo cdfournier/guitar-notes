@@ -84,13 +84,13 @@ It's a mistake
 Am C - Am C - Am C - Am C
 F G - F G - F G - F G
 
-C        Am       C      Am
-  It's a mistake (it's a mistake)
-C        Am       C      Am
-  It's a mistake (it's a mistake)
-C        Am       C      Am
-  It's a mistake (it's a mistake)
-C        Am       C      Am
-  It's a mistake (it's a mistake)
+C        B       A#         Am
+  It's a mistake    (it's a mistake)
+C        B       A#         Am
+  It's a mistake    (it's a mistake)
+C        B       A#         Am
+  It's a mistake    (it's a mistake)
+C        B       A#         Am
+  It's a mistake    (it's a mistake)
 Am
 It's a mistake
