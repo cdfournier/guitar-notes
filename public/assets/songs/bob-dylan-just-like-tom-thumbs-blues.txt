@@ -1,6 +1,6 @@
 D C G
 
-D C G - D C G
+D G - G C G - G - G C G - G D - D C G
 
 D           G
 When you're lost in the rain in Juarez
@@ -40,9 +40,9 @@ G
 Sweet Melinda
 G   C                                G
 The peasants call her the goddess of gloom
-G               C
+G
 She speaks good English
-C                           G
+G   C                       G
 And invites you up into her room
 G   C
 And you're so kind and careful
@@ -87,7 +87,7 @@ Who looked so fine at first
 D   C                        G
 But left looking just like a ghost
 
-G C G - C G C - G D C G
+D G - G C G - G - G C G - G D - D C G
 
 G
 I started out on Burgundy
@@ -106,4 +106,4 @@ I'm going back to New York City
 D C                   G
 I do believe I've had enough
 
-D C G - D C G - D C G - D C G
+D G - G C G - G - G C G - G D - D C G
