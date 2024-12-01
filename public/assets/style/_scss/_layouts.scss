@@ -761,7 +761,7 @@ html.dark {
 
       ul {
         max-width: 50%;
-        min-width: calc(100% / 3);
+        min-width: calc((100% / 3 - 1rem));
         padding: 0.5rem 0 0 2rem;
 
         &:first-of-type {
@@ -769,5 +769,12 @@ html.dark {
         }
       }
     }
+
+    section+section {
+      ul {
+        width: 50%;
+      }
+    }
+
   }
 }

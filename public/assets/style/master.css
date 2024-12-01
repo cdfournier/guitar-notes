@@ -932,11 +932,14 @@ html.dark main.setlists section:before {
   }
   main.setlists section ul {
     max-width: 50%;
-    min-width: 33.3333333333%;
+    min-width: calc(33.3333333333% - 1rem);
     padding: 0.5rem 0 0 2rem;
   }
   main.setlists section ul:first-of-type {
     padding: 0.5rem 0 0 0;
+  }
+  main.setlists section + section ul {
+    width: 50%;
   }
 }
 footer {
