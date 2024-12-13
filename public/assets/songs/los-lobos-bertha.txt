@@ -2,22 +2,22 @@ G C D Am
 
 G       C
 I had a hard run
-C                 G     C
+C                 G
 Running from your window
-C
+G               C
 I was all night running
-C                    G     C
+C                    G
 Lord I wonder if you care
 C
 I had a run-in
-C                  G     C
+C                  G
 Run around and run down
-C
+G              C
 Run around the corner
-C                       G     C
+C                       G
 Lord I run smack into a tree
 
-C        D   Am
+G        D   Am
 I had to move
 G             C  D
 Really had to move
@@ -32,22 +32,22 @@ G  C G
 
 G                 C
 Dressed myself in green
-C                  G     C
+C                  G
 I went down to the sea
-C
+G                 C
 Try to see what's going down
-C                            G     C
+C                            G
 Lord try to read between the lines
-C
+G                   C
 Had a feeling I was falling falling falling
-C                       G     C
+C                       G
 Lord I turned around to see
 C
 Heard a voice calling
-C                         G     C
+C                         G
 Lord you was coming after me
 
-C        D   Am
+G        D   Am
 I had to move
 G             C  D
 Really had to move
@@ -62,22 +62,22 @@ G  C G
 
 G          C
 Ran into a rainstorm
-C                      G     C
+C                      G
 Ducked back into a bar door
-C
+G                C
 It was all night pouring pouring rain
-C                      G     C
+C                      G
 Lord but not a drop on me
-C
+G               C
 Test me test me test me test me
-C                    G     C
+C                    G
 Why don't you arrest me
-C
+G                 C
 Throw me into the jail house
-C                       G     C
+C                       G
 Lord until the sun goes down
 
-C        D   Am
+G        D   Am
 I had to move
 G             C  D
 Really had to move
@@ -88,7 +88,7 @@ I am on my bended knees
 Am                    C           G
 Bertha don't you come around here anymore
 
-C        D   Am
+G        D   Am
 I had to move
 G             C  D
 Really had to move
