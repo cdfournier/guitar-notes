@@ -2,7 +2,7 @@ D C G
 
 D G - G C G - G - G C G - G D - D C G
 
-D           G
+G
 When you're lost in the rain in Juarez
 G        C           G
 And it's Easter time too
@@ -38,11 +38,11 @@ Won't even tell me what it is I've got
 
 G
 Sweet Melinda
-G                         C          G
+C                                    G
 The peasants call her the goddess of gloom
 G
 She speaks good English
-G   C                       G
+C                           G
 And invites you up into her room
 G
 And you're so kind and careful
@@ -76,11 +76,11 @@ G         C                 G
 They just stand around and boast
 G
 How they blackmailed the sergeant-at-arms
-G    C           G
+C                G
 Into leaving his post
 G
 And picking up Angel
-G   C                     G
+C                         G
 Who just arrived from the coast
 G   D
 Who looked so fine at first
@@ -95,7 +95,7 @@ G   C                   G
 But soon hit the harder stuff
 G
 Everybody said they'd stand behind me
-G        C        G
+C                 G
 When the game got rough
 G
 But the joke was on me
