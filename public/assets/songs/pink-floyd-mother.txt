@@ -4,7 +4,7 @@ G                                        C  G
 Mother do you think they'll drop the bomb
 G                                        C  G
 Mother do you think they'll like the song
-G                                           C
+C                                           G
 Mother do you think they'll try to break my balls
 D   C                          G
 Ooh ah Mother should I build a wall
@@ -13,7 +13,7 @@ G                                C  G
 Mother should I run for president
 G                                   C  G
 Mother should I trust the government
-G                                     C
+C                                     G
 Mother will they put me in the firing line
 D   C                        G
 Ooh ah is it just a waste of time
@@ -41,11 +41,11 @@ Of course Mama's gonna help build the wall
 
 G C G C G C D C G
 
-G                     C               G
+G                          C          G
 Mother do think she's good enough for me
-G                     C            D G
+G                          C       D G
 Mother do think she's dangerous to me
-C                                G
+C                                    G
 Mother will she tear your little boy apart
 D   C                           G
 Ooh ah mother will she break my heart
@@ -64,7 +64,7 @@ F                      C           G
 Mama's gonna keep baby healthy and clean
 D   C    D   C    D   C
 Ooh babe ooh babe ooh babe
-C                          G
+       C                   G
 You'll always be a baby to me
 G                           C
 Mother did it need to be so high
