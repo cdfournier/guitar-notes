@@ -4,8 +4,8 @@ D
 I'm a man who lives in the city
 D
 I'm a man who lives in the street
-D    C         G
-From F.L.A. to Frisco Bay
+D    C            G
+From F.L.A. up to Frisco Bay
 D
 And everywhere in between
 
@@ -29,12 +29,14 @@ Just like you ought to
 G            Bm           A
 Music is the doctor of my soul
 
+D D - C G - D
+
 D
 Well it seems that when I travel
 D
 And I'm out there on the road
     C                     G
-The freedom I need is the freedom I leave
+The freedom I need is the freedom I lead
       D
 In my good time rock and roll
 
@@ -51,8 +53,8 @@ D            G
 Music is the doctor
 G                       A
 Makes you feel like you want to
-A                       D
-You gotta listen to the doctor
+A             D
+Listen to the doctor
 D             G
 Just like you ought to
 G            Bm           A
@@ -64,10 +66,23 @@ C                 Am
 How to shake your blues
 Am   F           G         
 Just follow this prescription
-    A                A#           D
-And get the cure for what's ailin you
+    A                A#             D
+And get the cure for what is ailing you
 
-D            G
+D D - C G - D
+
+D             G
+(Music is the doctor) music is the doctor
+G                        A
+(Makes you feel like you want to) feel like you want to
+A              D
+(Listen to the doctor) listen to the doctor
+D               G
+(Like you ought to) just like you ought to
+G            Bm           A
+Music is the doctor of my soul
+
+A            G
 Music is the doctor
 G                       A
 Makes you feel like you want to
