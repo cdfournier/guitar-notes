@@ -1,6 +1,6 @@
-G D F C D# G D
+G D F C Em G D
 
-G D F C D# G D
+G D F C Em G D
 
 Am         G
 Nine times fined
@@ -26,7 +26,7 @@ G          D
 All in all imagine this
 F      C
 Nobody loves us
-D#
+Em
 Dab-hands at trouble
      G                       D
 With four days of stubble we are
@@ -38,7 +38,7 @@ D
 Kiss our cheeks
 F      C
 Nobody loves us
-D#       G                 D
+Em       G                 D
 So we oh we tend to please ourselves
 
 Am           G
@@ -65,7 +65,7 @@ D
 Kiss our cheeks
 F      C
 Nobody loves us
-D#
+Em
 Dab-hands at trouble
      G                       D
 With four days of stubble we are
@@ -77,10 +77,10 @@ D
 Make our tea
 F      C
 Nobody loves us
-D#       G                    D
+Em       G                    D
 So we oh we tend to please ourselves
 
-Em C Bm - Em C Bm
+G D F C Em G D - D Am Em C D Am Em C D G
 
 G
 Call us home
@@ -88,7 +88,7 @@ D
 Tuck us in
 F      C
 Nobody wants us
-D#
+Em
 Dreamers and schemers
     G                         D
 All pie-eyed and bog-eyed and cross-eyed
@@ -100,7 +100,7 @@ D
 Hug us hard
 F      C
 Nobody loves us
-D#       G                    D
+Em       G                    D
 So we oh we tend to please ourselves
 
 Am                Em            C        D
@@ -113,7 +113,7 @@ D
 Favorite song
 F      C
 Nobody loves us
-D#
+Em
 Born-again atheists
 G                      D
 Practicing troublemakers
@@ -125,7 +125,7 @@ D
 Favorite jam
 F      C
 Nobody loves us
-D#
+Em
 Useless and shiftless
 G
 And jobless

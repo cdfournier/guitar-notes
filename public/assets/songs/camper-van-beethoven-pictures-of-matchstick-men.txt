@@ -28,7 +28,7 @@ D
 Windows echo your reflection
 F                              D
 When I look in their direction now
-F                           D
+D
 Your face it keeps haunting me
 F                             A
 Your face just won't leave me alone
@@ -40,13 +40,13 @@ Images of matchstick men and you
 G          A               D
 All I ever see is them and you
 
-F                 C                G
+       F          C
 You're in the sky you're with this guy
-             D
+    G                D
 You make men cry you lie
-F                 C                G
+       F          C
 You're in the sky you're with this guy
-             D
+    G                D
 You make men cry you lie
 
 D           F
@@ -54,4 +54,6 @@ Pictures of matchstick men
 C           G
 Pictures of matchstick men
 D           F
+Pictures of matchstick men
+C           G
 Pictures of matchstick men
