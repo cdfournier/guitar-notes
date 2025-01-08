@@ -11,13 +11,13 @@ Others walked away
   Am                 G
 A snowflake falls in May
 
-G       Dm             G
+G       Am             G
 And the doors are open now
 G      Am        D
 As the bells are ringing out
 D         F
 Cause the man of the hour
-F  G
+F             G
 Is taking his final bow
 G           C
 Goodbye for now
@@ -35,7 +35,7 @@ Young men they pretend
 Am      G
 Old men comprehend
 
-G       Dm            G
+G       Am            G
 And the sky breaks at dawn
 G        Am              D
 Shedding light upon this town
@@ -43,7 +43,7 @@ D
 They'll all come around
 D         F
 Cause the man of the hour
-F  G
+F             G
 Is taking his final bow
 G           C
 Goodbye for now
@@ -58,9 +58,10 @@ D          F                   E
 The rusted signs left just for me
 E      Am         C            D
 He was guiding me love his own way
+
 D       F
 Now the man of the hour
-F  G
+F             G
 Is taking his final bow
 G      F
 As the curtain comes down
