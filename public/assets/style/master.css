@@ -942,6 +942,21 @@ html.dark main.setlists section:before {
     width: 50%;
   }
 }
+@media (min-width: 64rem) {
+  main.setlists section + section ul {
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 72rem) {
+  main.setlists section + section ul {
+    width: 25%;
+  }
+}
+@media (min-width: 80rem) {
+  main.setlists section + section ul {
+    width: 20%;
+  }
+}
 footer {
   display: flex;
   flex-direction: column;

@@ -778,3 +778,39 @@ html.dark {
 
   }
 }
+
+@media (min-width: 64rem) {
+  main.setlists {
+
+    section+section {
+      ul {
+        width: calc(100% / 3);
+      }
+    }
+
+  }
+}
+
+@media (min-width: 72rem) {
+  main.setlists {
+
+    section+section {
+      ul {
+        width: calc(100% / 4);
+      }
+    }
+
+  }
+}
+
+@media (min-width: 80rem) {
+  main.setlists {
+
+    section+section {
+      ul {
+        width: calc(100% / 5);
+      }
+    }
+
+  }
+}
