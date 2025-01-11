@@ -30,9 +30,9 @@ E                  A
 Broken back to the ceiling
 E                  A
 Broken nose to the floor
-E
+E               A
 I scream at the silence
-E    A
+A             E                A
 It's crawling crawls under the door
 E                        A
 There's a rope around my neck
@@ -40,23 +40,23 @@ E                             A
 And there's a trigger in your gun
 E         A
 Jesus say something
-E                 A      E    A
-I am someone I am someone
+E        A            E   A          E
+I am someone I am someone   I am someone
 
 E                  A
 Captains and Kings in the ship's hold
 A    B             A
 They came to collect
-           E    A          E
+           E    A          E    A
 Silver and gold silver and gold
 
 Em A
 
-Em
+Em                        A
 I seen the coming and the going
-Em
+Em                        A
 Seen the captains and the Kings
-Em
+Em                      A
 Seen their navy blue uniforms
 A         Em                      A                E
 Seen them bright and shiny things bright and shiny things
@@ -82,7 +82,7 @@ Inside the free set them free
 
 E                    A
 A prize fighter in a corner is told
-B            A                    E
+B                 A               E
 Hit where it hurts for silver and gold
 A          E
 Silver and gold

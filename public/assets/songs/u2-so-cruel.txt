@@ -6,7 +6,7 @@ A
 It doesn't matter to you it matters to me
 A
 We're cut adrift but still floating
-A                                   E
+A                                   E       A
 I'm only hanging on to watch you go down my love
 
 A
@@ -30,8 +30,6 @@ A                  D          E      A
 Oh love you say in love there are no rules
 A D E A         E               A
 Oh    love sweetheart you're so cruel
-
-A
 
 A
 Desperation is a tender trap
@@ -61,10 +59,8 @@ A                          E
 Her lips say one thing her movements something else
 E  C#m
 Oh love like a screaming flower
-C#m              A
+C#m                 A
 Love dying every hour
-
-A
 
 A
 Ah you don't know if it's fear or desire
@@ -81,5 +77,5 @@ Between the horses of love and lust we are trampled underfoot
 
 A                    D       E    A
 Oh love to stay with you I'd be a fool
-A D C#m A E                    A
-Oh        sweetheart you're so cruel
+A D E A         E               A
+Oh    love sweetheart you're so cruel
