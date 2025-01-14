@@ -6,7 +6,7 @@ A                E
 Some people wind up
 E        A             E
 With the one that they adore
-E    A            E
+E    A              E
 In a heart-shaped hotel room
 E    A               E
 It's what a heart is for
@@ -14,18 +14,18 @@ E   A                E
 The bubble floats so madly
 E       A         E
 Will it stay sky-high
-E        A              E
+A        E              A        E     A
 Hello partner kiss your name bye-bye
    D
 Oh sometimes
 
 D          E           A           E
 Romantic Piscean seeks angel in disguise
-E                A          E         A
+A                E          A         E
 Chinese-speaking girlfriend big brown eyes
-E            A      E           A
+A            E      A           E
 Liverpudlian lady sophisticated male
-E             A       E          A
+A        E            A          E
 Hello partner tell me love can't fail
 
 A
@@ -53,24 +53,24 @@ E   A            E
 But all I see is films
 E       A         E
 Where a colorless despair
-A     E           A                   E
+E     A           E           A       E     A
 Meant angry young men with immaculate hair
    D
 Oh sometimes
 
-D        E            A
+D                E
 Get up a voice inside says
-A                           E
+E       A                   E
 There's no time for looking down
 A              E
 Only a Pound a word
 E          A              E
 And you're talking to the town
-A              E               A
+E   A                   E
 And how do you coin the phrase though
 A                       E
 That will set your soul apart
-A                      E
+A       E       A      E
 Just to touch a lonely heart
 
 A
@@ -92,7 +92,7 @@ E   A
 Two peas from the same pod yes we are
 A              E        A
 Or have I read too much fiction
-A              E
+E       A      E     A
 Is this how it happens
 
 A             E             A
@@ -101,5 +101,5 @@ A             E             A
 How does it happen
 A             E             A
 How does it happen
-A                E          A
+E       A      E     A
 Is this how it happens
