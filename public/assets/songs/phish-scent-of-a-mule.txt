@@ -4,7 +4,7 @@ G
 Kitty Malone sat on a mule
 G
 Was riding in style
-G    C
+     C
 When suddenly like the sound of a buzzard's breaking
 C          A                 D
 Kitty felt laser beams being fired at her head
@@ -67,25 +67,34 @@ G
 They had never seen a southern home
 C
 And they liked it better than their UFO
-C    A             D      G
+C    A             D
 They liked it they really liked it
 
-G         D        C        F
+D               C           F
 They said here's a place of elegance
 G       C                   F
 Here we shower ourselves in lightness
-D        C        F
+D     C           F
 Here's a place of elegance
 G       C                   F
 Here we shower ourselves in lightness
-D        C        F
+D     C           F
 Here's a place of elegance
 G       C                   F
 Here we shower ourselves in lightness
-D        C        F
+D     C           F
 Here's a place of elegance
 G       C
 Here we shower ourselves in
+
+F          C               G
+Scent of a mule you better watch out where you go
+F         C           D
+Take your laser beams away
+F          C               G
+Scent of a mule you better watch out where you go
+F          C         A     D
+You better stop that laser game
 
 F          C               G
 Scent of a mule you better watch out where you go

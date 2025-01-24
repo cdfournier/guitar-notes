@@ -10,7 +10,7 @@ F           G             Am
 I hope that time will not erase
 Am                  F
 And when the moment comes
-G           G              C
+F           G              C
 To read the words that I engrave
 C      F                G            Am
 You'll find them on the walls of the cave
@@ -29,9 +29,9 @@ D               Em
 But if you ever need the names
    G                  D
 Of those you couldn't save
-C      F                G            Am
+D      F                G            C
 You'll find them on the walls of the cave
-C      F                G            Am
+C      F                G            C
 You'll find them on the walls of the cave
 
 C       G
@@ -47,7 +47,7 @@ C    G
 Look away
     Am        F
 The time goes past
-C            G        Am         F
+C                G    Am         F
 These rocks will fall    away at last
 F    G    F    Em    D
 Look away
@@ -72,17 +72,23 @@ But still your words float on the breeze
 Look away I see them all
 Carved into the cavern wall
 
-C      G
+C        G  Am  F
 Listen to
-    Am     F
+F          C        G  Am  F
 The silent trees
-    C          G
+F   C               G  Am  F
 But still your words
-Am           F
+F            C      G  Am  F
 Float on the breeze
-C    G
+
+C        G  Am   F
 Look away
-  Am       F
+F          C        G  Am  F
 I see them all
-C      G    Am            F
-Carved into    the cavern wall
+C          G  Am  F            C        G  Am  F
+Carved into         the cavern wall
+
+C        G  Am  F
+Listen to
+F          C        G  Am  F
+The silent trees
