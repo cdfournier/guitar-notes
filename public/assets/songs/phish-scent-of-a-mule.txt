@@ -31,7 +31,7 @@ F         C           D
 Take your laser beams away
 F          C               G
 Scent of a mule you better watch out where you go
-F          C         A     D
+F          C               A   D
 You better stop that laser game
                    G
 Or you'll smell my mule
@@ -49,7 +49,7 @@ In Tomahawk County
 D
 A little guy from the UFO
 Came on out and said his name was Joe
-She said Come on over for some lemonade
+She said come on over for some lemonade
 Just follow me now with the whole brigade
 
 F          C               G
@@ -58,7 +58,7 @@ F         C           D
 Take your laser beams away
 F          C               G
 Scent of a mule you better watch out where you go
-F          C         A     D
+F          C               A   D
 You better stop that laser game
 
 G
@@ -93,7 +93,7 @@ F         C           D
 Take your laser beams away
 F          C               G
 Scent of a mule you better watch out where you go
-F          C         A     D
+F          C               A   D
 You better stop that laser game
 
 F          C               G
@@ -102,5 +102,5 @@ F         C           D
 Take your laser beams away
 F          C               G
 Scent of a mule you better watch out where you go
-F          C         A     D     G
+F          C               A   D   G
 You better stop that laser game
