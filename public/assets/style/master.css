@@ -894,11 +894,11 @@ main.setlists section:before {
   top: 0;
   width: 100%;
   height: 1px;
-  background-color: var(--gray);
+  background-color: #5b5b5b;
   content: "";
 }
 main.setlists section:first-of-type {
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 main.setlists section:first-of-type:before {
   display: none;
@@ -919,10 +919,6 @@ main.setlists section ul li:first-of-type {
 }
 main.setlists section p + p {
   padding-top: 0.25rem;
-}
-
-html.dark main.setlists section:before {
-  background-color: white;
 }
 
 @media (min-width: 48rem) {

@@ -707,12 +707,12 @@ main.setlists {
       top: 0;
       width: 100%;
       height: 1px;
-      background-color: $gray;
+      background-color: #5b5b5b;
       content: "";
     }
 
     &:first-of-type {
-      padding-top: 1rem;
+      padding: 1rem 0;
 
       &:before {
         display: none;
@@ -743,15 +743,6 @@ main.setlists {
   }
 }
 
-html.dark {
-  main.setlists {
-    section {
-      &:before {
-        background-color: white;
-      }
-    }
-  }
-}
 
 @media (min-width: 48rem) {
   main.setlists {
