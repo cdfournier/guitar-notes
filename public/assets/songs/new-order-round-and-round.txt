@@ -31,7 +31,7 @@ And it's driving me wild
 D           G          Em
 It makes me act like a child
 
-C D G Em - C D Em
+C D G Em - C D G Em
 
 Em             D                    A
 You think I am crazy but what can I do
@@ -62,7 +62,7 @@ And it's driving me wild
 D           G          Em
 It makes me act like a child
 
-C D G Em - C D A
+C D G Em - C D G Em - C D A
 
 A   C           D
 The picture you see
