@@ -17,7 +17,7 @@ G                       Em
 Because breaking in's a crime
 Em                    G
 And it may all be too late
-G           C                Em
+G           C                Em   G  C
 But I've no passion for this hate
 
 Em                  G
@@ -46,8 +46,6 @@ Em                 G
 If we could buy it now (that's the price of love)
 C                Em
 How long will it last (that's the price of love)
-G
-(That's the price of love)
 
 Em                  G
 That's the price of love (that's the price of love)
@@ -57,8 +55,6 @@ Em                 G
 If we could buy it now (that's the price of love)
 C                Em
 How long will it last (that's the price of love)
-G
-(That's the price of love)
 
 Em Em C Em - Em Em C Em - C C C C
 
@@ -79,28 +75,30 @@ Em                 G
 If we could buy it now (that's the price of love)
 C                Em
 How long will it last (that's the price of love)
-G
-(That's the price of love)
 
-Em                 G
-If we could buy it now (that's the price of love)
-C                Em
-How long will it last (can you feel it)
-Em                 G
-If we could buy it now (that's the price of love)
-C                Em
-How long will it last (that's the price of love)
-
-Em                 G
-If we could buy it now (that's the price of love)
-C                Em
-How long will it last (can you feel it)
-Em                 G
-If we could buy it now
-C                Em
-How long will it last (that's the price of love)
-
+Em G
+   (That's the price of love)
+C                   Em
+That's the price of love (can you feel it)
 Em                 G
 If we could buy it now
 C                Em
 How long will it last
+
+Em G
+   (That's the price of love)
+C  Em
+   (Can you feel it)
+Em                 G
+If we could buy it now
+C                Em
+How long will it last (that's the price of love)
+
+Em                 G
+If we could buy it now
+C                Em
+How long will it last (can you feel it)
+Em                 G
+If we could buy it now
+C                Em
+How long will it last (that's the price of love)
