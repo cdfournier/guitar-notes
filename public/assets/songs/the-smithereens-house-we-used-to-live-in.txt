@@ -65,6 +65,8 @@ It is empty now
 F        G           Bb  D
 Worn and broken like our dreams
 
+D G D F C
+
 D                    G
 This is the house we used to live in
 D                  F         C
@@ -80,6 +82,17 @@ F             C       D
 House where I left my heart
 F             C       D
 House that we used to live in falling apart falling apart
+
+D G D F C
+
+D
+House (house)
+G
+We (we)
+D
+Used (used)
+F       C
+Used to live in
 
 D
 House (house)
