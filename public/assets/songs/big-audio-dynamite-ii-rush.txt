@@ -6,7 +6,7 @@ A       D             A   D
 I would do it all the same
 A       D               A    D
 And not change a single thing
-A           D      A    D
+A    D             A    D
 Even when I was to blame
 
 A       D                 A   D
@@ -56,18 +56,18 @@ And melody
 
               A      D
 And of all my friends
-A               D       A D
+A               D       A     D
 You've been the best to me
-A                D      A D
+A    D           A     D
 Soon will be the day
-A      D         A       D
+A        D       A       D
 When I repay you handsomely
 
-A      D          A       D
+A      D                  A     D
 Broken hearts are hard to mend
 A           D      A    D
 I know I've had my share
-A             D       A D
+A   D                 A     D
 But life just carries on
 A         D       A    D
 Even when I'm not there
@@ -90,11 +90,11 @@ I can't go on so I give in
 A         D            A     D
 Gotta get myself right outta here
 
-A         D           A
+A         D           A     D
 Gotta get myself right
-A         D           A
+A         D           A     D
 Gotta get myself right
-A         D           A
+A         D           A     D
 Gotta get myself right
-A     D
+A     D     A     D
 Outta here
