@@ -414,7 +414,7 @@ main article section#song p {
   }
 }
 main.index {
-  padding-top: 12rem;
+  padding-top: 11rem;
 }
 main.index article section h1,
 main.index article section h2,
@@ -568,7 +568,7 @@ main.index article section ul.manual li ul li a span.album {
 
 @media (min-width: 48rem) {
   main.index {
-    padding-top: 8rem;
+    padding-top: 7rem;
   }
   main.index article section ul li {
     width: calc(50% - 1rem);
