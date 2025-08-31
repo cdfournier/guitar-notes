@@ -19,7 +19,7 @@ Gotta get money
 A
 Keeping me real
 
-C#m A B E - C#m A B E
+E A - E A
 
 E                A         E
 Can't stand your loneliness
@@ -47,7 +47,7 @@ Get a lot of problems
 A
 We kicked a lot of them
 
-C#m A B E - C#m A B E
+E A - E A
 
 E                A         E
 Can't stand your loneliness
@@ -58,7 +58,7 @@ Can't stand your loneliness
 E           A         E
 Can't stand loneliness
 
-E A E A - E C A - C#m A B G#m - G#m A E
+E A - E A
 
 E                A         E
 Can't stand your loneliness
