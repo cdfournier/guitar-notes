@@ -17,8 +17,7 @@ The sky turns green
 Am      C       Em      Am
 Where I end and you begin
 
-Am Em F Dm Em Am
-           Four five six seven
+Am Em F Dm Em Am C G
 
 Am             Em
 I am up in the clouds
@@ -35,7 +34,7 @@ Where you you left me alone
 G
 You left me alone
 
-Am Em F Dm Em Am
+Am Em F Dm Em Am C G
 
 Am              Em
 X will mark the place
