@@ -32,7 +32,7 @@ I'm locked in tight I'm out of range
   Em               B           Em
 I used to care but things have changed
 
-Em - Am - Em B - Em
+Em - Am - Em B - Em - Am - Em B Em
 
 Em
 This place ain't doing me any good
@@ -102,7 +102,7 @@ I'm locked in tight I'm out of range
   Em               B           Em
 I used to care but things have changed
 
-Em - Am - Em B - Em
+Em - Am - Em B - Em - Am - Em B Em
 
 Em
 I hurt easy I just don't show it
@@ -117,7 +117,7 @@ B         Em
 Gonna get low down gonna fly high
 Em      Am
 All the truth in the world adds up to one big lie
-Am     E
+Am     Em
 I'm in love with a woman who
 B          Em
 Don't even appeal to me
@@ -138,4 +138,4 @@ I'm locked in tight I'm out of range
   Em               B           Em
 I used to care but things have changed
 
-Em - Am - Em B - Em
+Em - Am - Em B - Em - Am - Em B Em
