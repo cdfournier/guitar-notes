@@ -1,12 +1,12 @@
 D A
 
-A D A D
+A                 D    A          D
 The light in this place is really bad
-A D A D
+A                 D           A     D
 Like being at the bottom of a stream
-A D A D
-Any minute now
-A D A D
+A           D   A   D
+ Any minute now
+    A                 D         A    D
 I'm expecting to wake up from a dream
 
 G    D   E
@@ -14,25 +14,25 @@ Means so much
 G    D            E
       The softest touch
 
-A D A D
+E      A             D
 By the grave of some child
-A D A D
+D           A       D
 Who neither wept or smiled
-A D A D
+  A           D            A   D
 I pondered my faith in the rain
 
-A D A D
+A                     D   A            D
 I've been dreaming of you that's all I do
-A D A D
+D        A       D  A
 And it's driving me insane
 
-A D A D
+A         D              A  D
 Somewhere dawn is breaking
-A D A D
+A        D                   A   D
 Light is streaking cross the floor
-A D A D
+A      D               A  D
 Church bells are ringing
-A D A D
+A                    D       A  D
 I wonder who they're ringing for
 
 G      D         E
@@ -44,6 +44,7 @@ A D A D
 The shadowy past is awake and so vast
 A D A D
 I'm sleeping in the palace of pain
+
 A D A D
 I've been dreaming of you that's all I do
 A D A D
