@@ -23,7 +23,7 @@ I pondered my faith in the rain
 
 A                     D   A            D
 I've been dreaming of you that's all I do
-D        A       D  A
+D        A       D  A    D
 And it's driving me insane
 
 A         D              A  D
@@ -47,7 +47,7 @@ I'm sleeping in the palace of pain
 
 A                     D   A            D
 I've been dreaming of you that's all I do
-D        A       D  A
+D        A       D  A    D
 But it's driving me insane
 
 A             D     A           D
@@ -73,7 +73,7 @@ And they never ever explain
 
 A                     D   A            D
 I've been dreaming of you that's all I do
-D        A       D  A
+D        A       D  A    D
 And it's driving me insane
 
 A D A D - A D A D - A D A D - A D A D
@@ -101,7 +101,7 @@ Feel further than I can take
 
 A           D   A            D
 Dreaming of you that's all I do
-D        A       D  A
+D        A       D  A    D
 But it's driving me insane
 
 A D A D - A D A D - A D A D - A D A D
@@ -112,9 +112,9 @@ A           D       A    D
 A queer and unusual fall
 A          D
 Spirals of golden haze
-A        D          A
+A                   D
 Here and there in a blaze
-A             D            A
+A             D            A     D
 Like beams of light in the storm
 
 G              D                  E
@@ -129,5 +129,5 @@ Burning a hole in my brain
 
 A                     D   A            D
 I've been dreaming of you that's all I do
-D        A       D  A
+D        A       D  A    D
 But it's driving me insane

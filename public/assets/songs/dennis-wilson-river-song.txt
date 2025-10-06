@@ -37,19 +37,19 @@ Some kicking room no more city life
 D          A             D
 I want the river
 
-A       D                  A
+A       D                  A     D
 Rolling rolling rolling on river
 (I got to get away I got to get away I got to get away)
-A       D                  A
+A       D                  A     D
 Rolling rolling rolling on river
 (I got to get away I got to get away I got to get away)
-A       D                  A
+A       D                  A     D
 Rolling rolling rolling on river
 (I got to get away I got to get away I got to get away)
-A       D                  A
+A       D                  A     D
 Rolling rolling rolling on river
 (I got to get away I got to get away I got to get away)
-A       D                  A
+A       D                  A     D
 Rolling rolling rolling on river
 
 C D A
@@ -58,7 +58,7 @@ C D A
 It breaks my heart to see the city
   D                   A
 I wonder why it ain't pretty
-     F#m         E
+     F#m                 E
 Oh I want to cry want to cry
 
 D                     A           D
