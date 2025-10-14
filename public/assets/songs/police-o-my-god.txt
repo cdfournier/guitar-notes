@@ -67,15 +67,15 @@ Take the space between us
 A
 And fill it up fill it up fill it up
 
-A D E
+A D 
 
-E                     A    D
+D    A                D
 Do I have to tell the story
-D        A
+D        A          D
 Of a thousand rainy days
 D              A      D    A    D
 Since we first met
-D          A        D
+D      A            D
 It's a big enough umbrella
 D        A              D               A
 But it's always me that ends up getting wet
