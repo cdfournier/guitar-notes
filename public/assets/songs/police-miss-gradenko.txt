@@ -29,9 +29,9 @@ Is anybody alive in here
 D          C
 Is anybody alive in here
 D          C
-Is anybody alive in here
+Is anybody at all in here
 E          A
-Nobody but us
+Nobody but us in here
 E          A
 Nobody but us
 D          C
@@ -59,7 +59,18 @@ Is anybody alive in here
 D          C
 Is anybody alive in here
 D          C
+Is anybody at all in here
+E          A
+Nobody but us in here
+E          A
+Nobody but us
+
+D          C
 Is anybody alive in here
+D          C
+Is anybody alive in here
+D          C
+Is anybody at all in here
 E          A
 Nobody but us in here
 E          A
