@@ -29,8 +29,6 @@ No style rookie
 D
 You better watch don't mess with me
 
-D E F
-
    C                   D
 No moneyman can win my love
      C                  D
@@ -74,8 +72,6 @@ C
 No style rookie
 D
 You better watch don't mess with me
-
-D E F
 
    C                   D
 No moneyman can win my love
@@ -122,8 +118,6 @@ Gm                    Fm  Gm
 The guy's a gigolo man
 Gm         Fm
 You know I mean
-
-D E F
 
    C                   D
 No moneyman can win my love
@@ -178,5 +172,3 @@ No moneyman can win my love
 No moneyman can win my love
    C
 No moneyman
-
-D E F - D
