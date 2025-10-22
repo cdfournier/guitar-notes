@@ -15,18 +15,18 @@ Headstrong like a horse
 
 C             F
 When it's all mixed up
-C               F     C   F
+F               C         F
 Better break it down (Ooh ooh)
 C               F
 In the world of secrets
-F               C     F   C
+F               C         F
 In the world of sound
 
 F                             G
 It's in the way you're always hiding from the light
 Am                             G
 See for yourself you have been sitting on a time bomb
-F                             G
+F                   G
 No revolution maybe someone somewhere else
 Am                           G
 Could show you something new about you and your inner song
@@ -53,11 +53,11 @@ Fresh news from the board
 
 C             F
 When it's all mixed up
-C               F     C   F
+F               C         F
 Better break it down
 C               F
 In the world of silence
-F               C     F   C
+F               C         F
 In the world of sound
 
 F                             G
@@ -77,6 +77,8 @@ G
 Waste seeping underground (break it down again)
 F
 I wanna break it down (break it down again)
+
+C F
 
 C              Dm
 Horsing around pray to the power
@@ -103,7 +105,7 @@ I wanna break it down (break it down again)
 C             F
 Break it down again (break it down again)
 C             F
-Break it down again (break it down again here we go)
+Break it down again (break it down again) here we go
 
 C             F
 Break it down again
