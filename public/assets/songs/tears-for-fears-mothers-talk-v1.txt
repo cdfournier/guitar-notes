@@ -1,12 +1,12 @@
 C C#m
 
-Em
+G
 My features form with a change in the weather
-C      A      D
+G
 We can we can work it out
 Em
 My features form with a change in the weather
-C      A      D
+C      A
 We can we can work it out
 
 Em
@@ -17,20 +17,20 @@ Em
 When the wind blows when the mothers talk
 C
 When the wind blows
-A      D
+A
 We can work it out
 
-C
+C                        C#m
 It's not that you're not good enough
-Em
+Gm                    C#m
 It's just that we can make you better
-C
+C              C#m
 Given that you pay the price
-Em
+Gm              C#m
 We can keep you young and tender
-C
+C                            C#m
 Following the footsteps of a funeral pyre
-Em
+C#m      Gm                          C#m
 You were paid not to listen now your house is on fire
 
 D
@@ -38,13 +38,13 @@ Wake me up when things get started
 D
 When everything starts to happen
 
-Em
+G
 My features form with a change in the weather
-C      A      D
+G
 We can we can work it out
 Em
 My features form with a change in the weather
-C      A      D
+C      A
 We can we can work it out
 
 Em
@@ -55,20 +55,20 @@ Em
 When the wind blows when the mothers talk
 C
 When the wind blows
-A      D
-We can work it out
+A
+We can owork it out
 
-C
+C              C#m
 Some of us are horrified
-Em
+Gm           C#m
 Others never talk about it
-C
+C                    C#m
 But when the weather starts to burn
-Em
+Gm                    C#m
 Then you'll know that you're in trouble
-C
+Em                           C#m
 Follow in the footsteps of a soldier girl
-      Em
+C#m   Gm                                 C#m
 It is time to put your clothes on and to face the world
 
 D
@@ -77,18 +77,18 @@ D
 When everything starts to happen
 D
 Put your head right next to my heart
-D
+F                                       E
 The beat of the drum is the fear of the dark
 
-Em
+G
 My features form with a change in the weather
-C      A      D
+G
 We can we can work it out
 Em
 My features form with a change in the weather
 C
 Better late than never there's a change in the weather
-A      D
+A
 We can work it out
 
 Em
