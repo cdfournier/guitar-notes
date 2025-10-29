@@ -26,8 +26,8 @@ G
 This is metallic blood
 G       A
 This is hot meat
-A       G    Em
-This is open sweat
+A      C D    Em
+This is  open sweat
 
 C Em
 
@@ -46,8 +46,8 @@ G
 This is metallic blood
 G       A
 Here is hot meat
-A       G    Em
-This is open sweat
+A      C D    Em
+This is  open sweat
 
 Em
 Out this side of the blackest meadows
@@ -58,7 +58,7 @@ Em      G
 This is hot meat
 G
 This is metallic blood
-G       A   G
+G       A       G
 This is hot meat
 
 G    Em
@@ -76,5 +76,5 @@ G
 This is metallic blood
 G       A
 This is hot meat
-A       D    Em
-This is open sweat
+A      C D    Em
+This is  open sweat
