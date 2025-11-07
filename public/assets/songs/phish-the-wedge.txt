@@ -61,7 +61,7 @@ Oh In at least as many years
 
 E        D                   C     A
 Take the highway through the Great Divide
-A        D                   C     A
+A        D                   C     D
 Take the highway through the Great Divide
 
 D A E - D A B - A E B - A E E
@@ -77,6 +77,6 @@ Oh in at least as many years
 
 E        D                   C     A
 Take the highway through the Great Divide
-A        D                   C     A
+A        D                   C     D
 Take the highway through the Great Divide
 
