@@ -18,11 +18,11 @@ I'm well dressed waiting on the last train
 
 C
 Standing on the gallows with my
-B         Em
+C         Em
 Head in a noose
 C
 Any minute now I'm expecting all hell
-C        Am
+C        D
 To break loose
 
 Em
@@ -58,7 +58,7 @@ C                  Em
 Lot of other stuff too
 C
 Don't get up gentlemen I'm only
-C       Am
+C       D
 Passing through
 
 Em
@@ -92,7 +92,7 @@ C                      Em
 With the first woman I meet
 C
 Putting her in a wheelbarrow and
-C                     Am
+C                     D
 Wheeling her down the street
 
 Em
@@ -128,7 +128,7 @@ B             Em
 Jumped in the lake
 C
 I'm not that eager to
-C         Am
+C         D
 Make a mistake
 
 Em

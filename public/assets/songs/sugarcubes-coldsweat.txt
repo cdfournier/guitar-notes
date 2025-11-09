@@ -9,9 +9,7 @@ Sweat sweat
 G    Em
 Meat meat
 
-C Em
-
-C         Em
+Em
 Close the door
 Em
 Shouldn't burn yet
@@ -28,8 +26,6 @@ G       A
 This is hot meat
 A      C D    Em
 This is  open sweat
-
-C Em
 
 Em
 I'll show you with my fingers
