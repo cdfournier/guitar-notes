@@ -32,7 +32,7 @@ I'm locked in tight I'm out of range
   Em              C            Em
 I used to care but things have changed
 
-Em - Am - Em C - Em
+Em - Am - Em C
 
 Em
 This place ain't doing me any good
@@ -68,7 +68,7 @@ I'm locked in tight I'm out of range
   Em              C            Em
 I used to care but things have changed
 
-Em - Am - Em C - Em
+Em - Am - Em C
 
 Em
 I've been walking forty miles of bad road
@@ -102,7 +102,7 @@ I'm locked in tight I'm out of range
   Em              C            Em
 I used to care but things have changed
 
-Em - Am - Em C - Em
+Em - Am - Em C
 
 Em
 I hurt easy I just don't show it
@@ -138,4 +138,4 @@ I'm locked in tight I'm out of range
   Em              C            Em
 I used to care but things have changed
 
-Em - Am - Em C - Em
+Em - Am - Em C - Em - Am - Em C Em
