@@ -2,23 +2,23 @@ A
 
 A
     Hello hello is anyone there hello
-A  F
+F
     Hello is anyone there
-G  A
+A
     Hello is anyone there
 F
     Hello is anyone there
 A
     Hello is anyone there
-A
+F
     Hello hello is anyone there hello
-F
-    Hello is anyone there
-F  A
+A
     Hello is anyone there
 F
     Hello is anyone there
-F  A
+A
+    Hello is anyone there
+F
     Hello is anyone there
 
 A - A - A - A
@@ -30,16 +30,16 @@ Gorillaz got the bass drum
 Gorillaz say they want some some
 
 A
-La-la-la-la-la-la-la-la-la-hey
-La-la-la-la-la-la-la-la-la-hey
-La-la-la-la-la-la-la-la-la-la-la-hey
-La-la-la-la-la-la-wow
+La la la la la la la la la hey
+La la la la la la la la la hey
+La la la la la la la la la hey
+La la la la la la wow
 
 A
 M1 A1
 Thousand miles an hour
 Gorillaz with the beat y'all
-So in went the seller
+Sailing with the sound
 
 A
 We go M1 A1
@@ -48,15 +48,14 @@ Gorillaz with the bass drum
 Keep that sound
 
 A
-Wake it out check it out 2001 craze (hello)
+Wig it out check it out even more craze (hello)
 D'ya hear that
 I said M1 A1
 
 A
-La-la-la-la-la-la-la-la-la-hey
-La-la-la-la-la-la-la-la-la-hey
-La-la-la-la-la-la-la-la-la-la-la-hey
-La-la-la-la-la-la-wow
+La la la la la la la la la hey
+La la la la la la la la la hey
+La la la la la la la la la hey
+La la la la la la wow
 
-A
 Hello
