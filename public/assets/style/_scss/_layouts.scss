@@ -122,6 +122,18 @@ main {
         }
 
         &.lg {
+          column-count: 4;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 132rem) {
+  main {
+    article {
+      section {
+        &.lg {
           column-count: 5;
         }
       }

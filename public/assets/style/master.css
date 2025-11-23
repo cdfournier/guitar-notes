@@ -410,6 +410,11 @@ main article section#song p {
     column-count: 4;
   }
   main article section.lg {
+    column-count: 4;
+  }
+}
+@media (min-width: 132rem) {
+  main article section.lg {
     column-count: 5;
   }
 }
