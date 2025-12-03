@@ -10,7 +10,7 @@ D                A
 You will breathe again
 A    G       Bm
 Snow falls
-Bm     G
+Bm     A     D
 And it passes
 
 A    G       D
@@ -21,28 +21,28 @@ A    G          D
 Hold on when it passes
 D           A
 You will be again
-A    G           D
-Long long on and on
-A   G            Bm
+A    G      Bm
+Long long   on and on
+Bm           A         D
 Carefree and downstream
 
-Bm            A
+D             A
 You will live again
-D               A
+D               A    D
   You will live again
 
 A     D
   All you'll be
 Dm               A
   And all that's gone
-   D           A      A7
+   D           A      D
 Is leading you on and on
-A      Dm
+A      D
 On and on
 
-Dm            A
+D             A
 You will live again
-D                A
+D                A    D
   You will sleep again
 
 A    G       D
@@ -55,32 +55,32 @@ D                A
 You will breathe again
 A    G       Bm
 Snow falls
-Bm     G
+Bm     A     D
 And it passes
 
-G              A
+D              A
 You will sleep again
 D                A
   You will sleep again
-D                A
+D                A    D
   You will sleep again
 
 A     D
   All you'll be
 Dm               A
   And all that's gone
-   D           A      A7
+   D           A      D
 Is leading you on and on
-A      Dm
+A      D
 On and on
 
 A     D
   All you'll be
 Dm               A
   And all that's gone
-   D           A      A7
+   D           A      D
 Is leading you on and on
-A      Dm
+A      D
 On and on
 
 D                A
