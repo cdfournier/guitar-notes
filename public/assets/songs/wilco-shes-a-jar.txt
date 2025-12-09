@@ -10,7 +10,7 @@ With a heavy lid
 My pop quiz kid
 C        G
 A sleepy kisser
-G        Bm
+G        Bm                C
 A pretty war with feelings hid
 C
 She begs me not to miss her
@@ -19,9 +19,9 @@ G Bm C - G Bm C
 
 C        G
 She says forever
-G            Bm
+G          Bm
 To light a fuse
-C
+         C
 We could use a hand full of wheel
 G
 And a day off
@@ -38,13 +38,13 @@ C      G             Bm
 When I forget how to talk I sing
 C
 Won't you please
-G          G
+C          G
 Bring that flash to shine
     Bm
 And turn my eyes red
 C
 Unless they close when you click
-C                G
+C      G
 And my face gets sick
 Bm           C
 Stuck like a question unposed
