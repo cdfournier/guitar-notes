@@ -48,7 +48,7 @@
               <% set.items.forEach(function (item) { %>
                 <li>
                   <% if (item.slug) { %>
-                    <a href="/songs/<%= item.slug %>" target="_blank" rel="noopener noreferrer"><%= item.song %></a><%- item.suffix %>
+                    <a href="<%= basePath %>/songs/<%= item.slug %>/" target="_blank" rel="noopener noreferrer"><%= item.song %></a><%- item.suffix %>
                   <% } else { %>
                     <%= item.song %><%- item.suffix %>
                   <% } %>
@@ -68,17 +68,17 @@
           <ul>
             <li>Previous Setlist</li>
             <% if (prev) { %>
-              <li><a href="/setlists/<%= prev.ym %>/<%= prev.ymd %>" rel="noopener noreferrer"><%= prev.date %></a></li>
+              <li><a href="<%= basePath %>/setlists/<%= prev.ym %>/<%= prev.ymd %>/" rel="noopener noreferrer"><%= prev.date %></a></li>
             <% } else { %>
-              <li class="visuallyhidden"><a href="/setlists/" rel="noopener noreferrer"></a></li>
+              <li class="visuallyhidden"><a href="<%= basePath %>/setlists/" rel="noopener noreferrer"></a></li>
             <% } %>
           </ul>
           <ul>
             <li>Next Setlist</li>
             <% if (next) { %>
-              <li><a href="/setlists/<%= next.ym %>/<%= next.ymd %>" rel="noopener noreferrer"><%= next.date %></a></li>
+              <li><a href="<%= basePath %>/setlists/<%= next.ym %>/<%= next.ymd %>/" rel="noopener noreferrer"><%= next.date %></a></li>
             <% } else { %>
-              <!-- <li><a href="/setlists/" rel="noopener noreferrer"></a></li> -->
+              <!-- <li><a href="<%= basePath %>/setlists/" rel="noopener noreferrer"></a></li> -->
             <% } %>
           </ul>
         </section>
@@ -88,8 +88,8 @@
       <%- include('includes/footer-about'); %>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="/assets/js/site.js"></script>
-    <script src="/assets/js/headroom.js"></script>
+    <script src="<%= basePath %>/assets/js/site.js"></script>
+    <script src="<%= basePath %>/assets/js/headroom.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function () {

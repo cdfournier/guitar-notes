@@ -44,7 +44,7 @@
                 <li><%= month.name %></li>
                 <% month.dates.forEach(function (entry) { %>
                   <li>
-                    <a href="/setlists/<%= entry.ym %>/<%= entry.ymd %>" target="_blank" rel="noopener noreferrer"><%= entry.date %></a>
+                    <a href="<%= basePath %>/setlists/<%= entry.ym %>/<%= entry.ymd %>/" target="_blank" rel="noopener noreferrer"><%= entry.date %></a>
                   </li>
                 <% }) %>
               </ul>
@@ -57,8 +57,8 @@
       <%- include('includes/footer-about'); %>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="/assets/js/site.js"></script>
-    <script src="/assets/js/headroom.js"></script>
+    <script src="<%= basePath %>/assets/js/site.js"></script>
+    <script src="<%= basePath %>/assets/js/headroom.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function () {

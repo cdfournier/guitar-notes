@@ -48,7 +48,7 @@
     <footer>
       <section class="details">
         <figure>
-          <img src="/assets/images/<%= song.img %>" alt="<%= song.artist %>">
+          <img src="<%= basePath %>/assets/images/<%= song.img %>" alt="<%= song.artist %>">
           <figcaption><%= song.artist %></figcaption>
         </figure>
         <ul>
@@ -61,7 +61,7 @@
       <%- include('includes/footer-about'); %>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/assets/js/site.js"></script>
+    <script type="text/javascript" src="<%= basePath %>/assets/js/site.js"></script>
     <script>
       $(document).ready(function () {
         $("body").addClass("visible");

@@ -82,7 +82,7 @@
             <h4><%= group.artist %></h4>
             <% group.songs.forEach(function (song) { %>
               <p>
-                <a href="/songs/<%= song['artist-song'] %>" target="_blank" rel="noopener noreferrer">
+                <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/" target="_blank" rel="noopener noreferrer">
                   <%= song.song %>
                   <% if (song.new) { %><span class="badge">new</span><% } %>
                 </a>
@@ -96,8 +96,8 @@
       <%- include('includes/footer-about'); %>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="/assets/js/site.js"></script>
-    <script src="/assets/js/headroom.js"></script>
+    <script src="<%= basePath %>/assets/js/site.js"></script>
+    <script src="<%= basePath %>/assets/js/headroom.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function () {

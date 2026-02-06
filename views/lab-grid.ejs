@@ -52,12 +52,12 @@
             <% groups.forEach(function (group) { %>
               <li>
                 <input type="checkbox" name="<%= group.id %>" id="<%= group.id %>">
-                <a href="#"><label for="<%= group.id %>"><span class="image"><img src="/assets/images/<%= group.img %>" alt="<%= group.artist %>"></span><span class="performer"><%= group.artist %></span></label></a>
+                <a href="#"><label for="<%= group.id %>"><span class="image"><img src="<%= basePath %>/assets/images/<%= group.img %>" alt="<%= group.artist %>"></span><span class="performer"><%= group.artist %></span></label></a>
                 <section>
                   <h4 class="visuallyhidden"><%= group.artist %></h4>
                   <% group.songs.forEach(function (song) { %>
                     <p>
-                      <a href="/songs/<%= song['artist-song'] %>?lab=1" target="_blank" rel="noopener noreferrer">
+                      <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/?lab=1" target="_blank" rel="noopener noreferrer">
                         <span class="song"><%= song.song %></span>
                         <span class="album"><%= song.album %></span>
                         <% if (song.new) { %><span class="badge">new</span><% } %>
@@ -75,8 +75,8 @@
       <%- include('includes/footer-about'); %>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="/assets/js/site.js"></script>
-    <script src="/assets/js/headroom.js"></script>
+    <script src="<%= basePath %>/assets/js/site.js"></script>
+    <script src="<%= basePath %>/assets/js/headroom.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function () {
