@@ -1,10 +1,13 @@
 const fs = require('fs/promises');
 const path = require('path');
 
-const DATA_PATH = path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-data.json');
+const DATA_PATHS = {
+  main: path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-data.json'),
+  lab: path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-lab-data.json'),
+};
 const SONGS_DIR = path.join(__dirname, '..', 'public', 'assets', 'songs');
 
-let cachedSongs = null;
+let cachedSongs = new Map();
 let fileIndex = null;
 
 function escapeHtml(value) {
@@ -24,15 +27,17 @@ function normalizeTags(tags) {
     .filter(Boolean);
 }
 
-async function loadSongs() {
-  if (cachedSongs) return cachedSongs;
-  const raw = await fs.readFile(DATA_PATH, 'utf8');
+async function loadSongs(kind = 'main') {
+  if (cachedSongs.has(kind)) return cachedSongs.get(kind);
+  const dataPath = DATA_PATHS[kind] || DATA_PATHS.main;
+  const raw = await fs.readFile(dataPath, 'utf8');
   const data = JSON.parse(raw);
-  cachedSongs = data.map((song) => ({
+  const normalized = data.map((song) => ({
     ...song,
     tagsArray: normalizeTags(song.tags),
   }));
-  return cachedSongs;
+  cachedSongs.set(kind, normalized);
+  return normalized;
 }
 
 async function buildFileIndex() {
@@ -59,8 +64,8 @@ function sortSongs(a, b) {
   return songA.localeCompare(songB);
 }
 
-async function getSongBySlug(slug) {
-  const songs = await loadSongs();
+async function getSongBySlug(slug, kind = 'main') {
+  const songs = await loadSongs(kind);
   return songs.find((song) => song['artist-song'] === slug);
 }
 
@@ -87,8 +92,8 @@ async function getSongText(slug) {
   return raw;
 }
 
-async function groupSongsByArtist() {
-  const songs = await loadSongs();
+async function groupSongsByArtist(kind = 'main') {
+  const songs = await loadSongs(kind);
   const sorted = [...songs].sort(sortSongs);
   const groups = new Map();
   for (const song of sorted) {

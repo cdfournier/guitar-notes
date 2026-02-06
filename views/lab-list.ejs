@@ -6,6 +6,36 @@
       <%= title %>
     </title>
     <%- include('includes/head', { title }); %>
+    <style>
+      main.index article section h4 {
+        opacity: 0.5;
+      }
+
+      @media (min-width: 48rem) {
+        main.index section {
+          column-count: 2;
+          column-gap: 2rem;
+        }
+      }
+
+      @media (min-width: 64rem) {
+        main.index section {
+          column-count: 3;
+        }
+      }
+
+      @media (min-width: 90rem) {
+        main.index section {
+          column-count: 4;
+        }
+      }
+
+      @media (min-width: 106rem) {
+        main.index section {
+          column-count: 5;
+        }
+      }
+    </style>
   </head>
 
   <body class="hidden">
@@ -20,7 +50,7 @@
         <fieldset>
           <label>
             <span class="label">Search</span>
-            <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
+            <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search songs" title="Search">
             <span class="icon">
               <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M0 0h24v24H0z" stroke="none" />
@@ -43,31 +73,22 @@
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
       <article>
         <h2 class="visuallyhidden">
-          <%= title %> Index
+          <%= title %> List Index
         </h2>
-        <section>
+        <section id="list">
           <h2>Current list:</h2>
-          <!-- <small>* denotes a work in progress</small> -->
-          <ul id="list">
-            <% groups.forEach(function (group) { %>
-              <li>
-                <input type="checkbox" name="<%= group.id %>" id="<%= group.id %>">
-                <a href="#"><label for="<%= group.id %>"><span class="image"><img src="/assets/images/<%= group.img %>" alt="<%= group.artist %>"></span><span class="performer"><%= group.artist %></span></label></a>
-                <section>
-                  <h4 class="visuallyhidden"><%= group.artist %></h4>
-                  <% group.songs.forEach(function (song) { %>
-                    <p>
-                      <a href="/songs/<%= song['artist-song'] %>" target="_blank" rel="noopener noreferrer">
-                        <span class="song"><%= song.song %></span>
-                        <span class="album"><%= song.album %></span>
-                        <% if (song.new) { %><span class="badge">new</span><% } %>
-                      </a>
-                    </p>
-                  <% }) %>
-                </section>
-              </li>
+          <!-- <small style="display: block; column-span: all;">* denotes a work in progress</small> -->
+          <% groups.forEach(function (group) { %>
+            <h4><%= group.artist %></h4>
+            <% group.songs.forEach(function (song) { %>
+              <p>
+                <a href="/songs/<%= song['artist-song'] %>?lab=1" target="_blank" rel="noopener noreferrer">
+                  <%= song.song %>
+                  <% if (song.new) { %><span class="badge">new</span><% } %>
+                </a>
+              </p>
             <% }) %>
-          </ul>
+          <% }) %>
         </section>
       </article>
     </main>
@@ -83,54 +104,42 @@
         $("body").addClass("visible");
         $("body").removeClass("hidden");
       });
-
-      // HEADER HIDE ON SCROLL
+      // HEADROOM
       var myElement = document.querySelector("header");
-      var headroom = new Headroom(myElement, {
-        "offset": 0,
-        "tolerance": {
-          "up": 20,
-          "down": 20
-        },
-        "classes": {
-          "initial": "header--fixed",
-          "pinned": "header--pinned",
-          "unpinned": "header--unpinned"
-        }
-      });
+      var headroom = new Headroom(myElement);
       headroom.init();
     </script>
     <script>
-      function searchArtists() {
-        var input, filter, ul, li, a, i, txtValue;
+      function searchSongs() {
+        var input, filter, section, p, a, i, txtValue;
         input = document.getElementById("search");
         filter = input.value.toUpperCase();
-        ul = document.getElementById("list");
-        li = ul.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
+        section = document.getElementById("list");
+        p = section.getElementsByTagName("p");
+        for (i = 0; i < p.length; i++) {
+          a = p[i].getElementsByTagName("a")[0];
           txtValue = a.textContent || a.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+            p[i].style.display = "";
           } else {
-            li[i].style.display = "none";
+            p[i].style.display = "none";
           }
         }
       }
       // RESET
       $('button#reset').click(function () {
-        var input, filter, ul, li, a, i, txtValue;
+        var input, filter, section, p, a, i, txtValue;
         input = document.getElementById("search");
         filter = input.value.toUpperCase();
-        ul = document.getElementById("list");
-        li = ul.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
+        section = document.getElementById("list");
+        p = section.getElementsByTagName("p");
+        for (i = 0; i < p.length; i++) {
+          a = p[i].getElementsByTagName("a")[0];
           txtValue = a.textContent || a.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "none";
+            p[i].style.display = "none";
           } else {
-            li[i].style.display = "";
+            p[i].style.display = "";
           }
         }
       });
