@@ -33,7 +33,7 @@ jobs:
 
       - name: Build static site
         env:
-          BASE_PATH: /guitar-notes/public
+          BASE_PATH: /guitar-notes
         run: npm run build:static
 
       - name: Configure Pages
