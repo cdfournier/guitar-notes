@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <%- include('includes/head', { title }); %>
+    <style>
+      body {
+        -webkit-transition: opacity 1.5s ease-in;
+        -moz-transition: opacity 1.5s ease-in;
+        -ms-transition: opacity 1.5s ease-in;
+        -o-transition: opacity 1.5s ease-in;
+        transition: opacity 1.5s ease-in;
+      }
+
+      body.hidden {
+        opacity: 0;
+      }
+
+      body.visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <h1>Guitar Notes</h1>
+    </header>
+    <main id="content" class="setlists">
+      <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
+      <article>
+        <h2>Setlists</h2>
+        <% years.forEach(function (year) { %>
+          <section>
+            <h3><%= year.year %></h3>
+            <% year.months.forEach(function (month) { %>
+              <ul style="margin: 0; padding: 1rem 0; list-style-type: none;">
+                <li><%= month.name %></li>
+                <% month.dates.forEach(function (entry) { %>
+                  <li>
+                    <a href="/setlists/<%= entry.ym %>/<%= entry.ymd %>" target="_blank" rel="noopener noreferrer"><%= entry.date %></a>
+                  </li>
+                <% }) %>
+              </ul>
+            <% }) %>
+          </section>
+        <% }) %>
+      </article>
+    </main>
+    <footer>
+      <%- include('includes/footer-about'); %>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/headroom.js"></script>
+    <script>
+      // CHANGE CSS WHEN PAGE LOADS
+      $(document).ready(function () {
+        $("body").addClass("visible");
+        $("body").removeClass("hidden");
+      });
+      // HEADROOM
+      var myElement = document.querySelector("header");
+      var headroom = new Headroom(myElement);
+      headroom.init();
+    </script>
+  </body>
+
+</html>

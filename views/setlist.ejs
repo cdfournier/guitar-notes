@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <%- include('includes/head', { title }); %>
+    <style>
+      body {
+        -webkit-transition: opacity 1.5s ease-in;
+        -moz-transition: opacity 1.5s ease-in;
+        -ms-transition: opacity 1.5s ease-in;
+        -o-transition: opacity 1.5s ease-in;
+        transition: opacity 1.5s ease-in;
+      }
+
+      body.hidden {
+        opacity: 0;
+      }
+
+      body.visible {
+        opacity: 1;
+      }
+
+      span.badge {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <h1><%= date %></h1>
+    </header>
+    <main id="content" class="setlists">
+      <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
+      <article>
+        <h2>Setlist</h2>
+        <section>
+          <h3 class="visuallyhidden">Details</h3>
+          <% sets.forEach(function (set) { %>
+            <ul>
+              <li><%= set.label %></li>
+              <% set.items.forEach(function (item) { %>
+                <li>
+                  <% if (item.slug) { %>
+                    <a href="/songs/<%= item.slug %>" target="_blank" rel="noopener noreferrer"><%= item.song %></a><%- item.suffix %>
+                  <% } else { %>
+                    <%= item.song %><%- item.suffix %>
+                  <% } %>
+                </li>
+              <% }) %>
+            </ul>
+          <% }) %>
+          <% if (hasAcoustic) { %>
+            <p><small>* Acoustic</small></p>
+          <% } %>
+          <% if (noteDetails) { %>
+            <p><small>** <%= noteDetails %></small></p>
+          <% } %>
+        </section>
+        <section>
+          <h3>Adjacent Setlists</h3>
+          <ul>
+            <li>Previous Setlist</li>
+            <% if (prev) { %>
+              <li><a href="/setlists/<%= prev.ym %>/<%= prev.ymd %>" rel="noopener noreferrer"><%= prev.date %></a></li>
+            <% } else { %>
+              <li class="visuallyhidden"><a href="/setlists/" rel="noopener noreferrer"></a></li>
+            <% } %>
+          </ul>
+          <ul>
+            <li>Next Setlist</li>
+            <% if (next) { %>
+              <li><a href="/setlists/<%= next.ym %>/<%= next.ymd %>" rel="noopener noreferrer"><%= next.date %></a></li>
+            <% } else { %>
+              <!-- <li><a href="/setlists/" rel="noopener noreferrer"></a></li> -->
+            <% } %>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <%- include('includes/footer-about'); %>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/headroom.js"></script>
+    <script>
+      // CHANGE CSS WHEN PAGE LOADS
+      $(document).ready(function () {
+        $("body").addClass("visible");
+        $("body").removeClass("hidden");
+      });
+      // HEADROOM
+      var myElement = document.querySelector("header");
+      var headroom = new Headroom(myElement);
+      headroom.init();
+    </script>
+  </body>
+
+</html>
