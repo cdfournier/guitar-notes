@@ -762,14 +762,13 @@ main.setlists {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: space-between;
 
       ul {
         max-width: 50%;
         min-width: calc((100% / 3 - 1rem));
-        padding: 0.5rem 0 0 2rem;
 
         &:first-of-type {
-          padding: 0.5rem 0 0 0;
         }
       }
     }
