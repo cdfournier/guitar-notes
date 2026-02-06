@@ -1,6 +1,7 @@
 const fs = require('fs/promises');
 const path = require('path');
 const ejs = require('ejs');
+const { execSync } = require('child_process');
 
 const {
   loadSongs,
@@ -17,6 +18,34 @@ const outputDir = process.env.OUTPUT_DIR
   : path.join(__dirname, '..', 'public');
 
 const basePath = (process.env.BASE_PATH || '').replace(/\/$/, '');
+
+function getChangedFiles() {
+  if (process.env.INCREMENTAL !== '1') return null;
+  const base = process.env.GIT_BASE;
+  const head = process.env.GIT_HEAD;
+  if (!base || !head) return null;
+  try {
+    const output = execSync(`git diff --name-only ${base} ${head}`, { encoding: 'utf8' });
+    return output.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  } catch (err) {
+    console.warn('Incremental build disabled: unable to read git diff.');
+    return null;
+  }
+}
+
+function slugsFromSongFiles(files) {
+  const slugs = new Set();
+  for (const file of files) {
+    const match = file.match(/public\/assets\/songs\/(.+)\.txt$/);
+    if (!match) continue;
+    let name = match[1];
+    if (name.endsWith('-a') || name.endsWith('-b') || name.endsWith('-c')) {
+      name = name.slice(0, -2);
+    }
+    slugs.add(name);
+  }
+  return slugs;
+}
 
 async function renderToFile(view, data, outPath) {
   const viewPath = path.join(viewsDir, `${view}.ejs`);
@@ -93,14 +122,16 @@ async function buildIndexes() {
   }
 }
 
-async function buildSongs() {
+async function buildSongs(options = {}) {
   const songs = await loadSongs('main');
   const labSongs = await loadSongs('lab');
   const allSongs = [...songs, ...labSongs];
+  const onlySlugs = options.onlySlugs ? new Set(options.onlySlugs) : null;
 
   for (const song of allSongs) {
     const slug = song['artist-song'];
     if (!slug) continue;
+    if (onlySlugs && !onlySlugs.has(slug)) continue;
     const text = await getSongText(slug);
     const paragraphs = textToParagraphs(text || '');
     const outPath = path.join(outputDir, 'songs', slug, 'index.html');
@@ -161,9 +192,44 @@ async function ensureNoJekyll() {
 }
 
 async function build() {
-  await buildIndexes();
-  await buildSongs();
-  await buildSetlists();
+  const changedFiles = getChangedFiles();
+  const hasChanges = Array.isArray(changedFiles) && changedFiles.length > 0;
+
+  const dataMain = 'public/assets/data/guitar-notes-data.json';
+  const dataLab = 'public/assets/data/guitar-notes-lab-data.json';
+  const dataSetlists = 'public/assets/data/guitar-notes-setlists.json';
+  const songsPrefix = 'public/assets/songs/';
+
+  const changedSet = new Set(changedFiles || []);
+  const dataChanged = hasChanges && (changedSet.has(dataMain) || changedSet.has(dataLab));
+  const setlistsChanged = hasChanges && changedSet.has(dataSetlists);
+  const songTextChanged = hasChanges && Array.from(changedSet).some((file) => file.startsWith(songsPrefix));
+
+  if (!hasChanges) {
+    await buildIndexes();
+    await buildSongs();
+    await buildSetlists();
+    await ensureNoJekyll();
+    return;
+  }
+
+  if (dataChanged) {
+    await buildIndexes();
+  }
+
+  if (dataChanged) {
+    await buildSongs();
+  } else if (songTextChanged) {
+    const onlySlugs = slugsFromSongFiles(changedFiles);
+    if (onlySlugs.size > 0) {
+      await buildSongs({ onlySlugs });
+    }
+  }
+
+  if (dataChanged || setlistsChanged) {
+    await buildSetlists();
+  }
+
   await ensureNoJekyll();
 }
 

@@ -34,6 +34,9 @@ jobs:
       - name: Build static site
         env:
           BASE_PATH: /guitar-notes
+          INCREMENTAL: '1'
+          GIT_BASE: ${{ github.event.before }}
+          GIT_HEAD: ${{ github.sha }}
         run: npm run build:static
 
       - name: Configure Pages
