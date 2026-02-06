@@ -6,6 +6,133 @@
       <%= title %>
     </title>
     <%- include('includes/head', { title }); %>
+    <style>
+      .filters {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .filter-field {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex: 1 1 16rem;
+      }
+
+      .filter-field input,
+      .filter-field select {
+        width: 100%%;
+        min-height: 2.5rem;
+      }
+
+      .filter-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .filter-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+        border: 1px solid currentColor;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .filter-tag input {
+        accent-color: currentColor;
+      }
+
+      .filter-toggle {
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .filter-modal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+
+      .filter-modal[aria-hidden="true"] {
+        display: none;
+      }
+
+      .filter-modal__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
+      }
+
+      .filter-modal__dialog {
+        position: relative;
+        z-index: 1;
+        width: min(720px, 92vw);
+        max-height: 85vh;
+        overflow: auto;
+        background: var(--body-color, #111);
+        color: inherit;
+        border: 1px solid currentColor;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      }
+
+      .filter-modal__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .filter-modal__close {
+        background: transparent;
+      }
+
+      .filters {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .filter-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: flex-end;
+      }
+
+      body.filter-modal-open {
+        overflow: hidden;
+      }
+    </style>
   </head>
 
   <body class="hidden">
@@ -16,11 +143,32 @@
     <header>
       <h1>Welcome to <%= title %>
       </h1>
-      <form>
-        <fieldset>
-          <label>
+      <button type="button" class="filter-toggle" data-filter-open>
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-filter" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 4h16v2l-6 6v6l-4 2v-8l-6 -6z" />
+          </svg>
+        </span>
+        <span class="text">Filters</span>
+      </button>
+    </header>
+    <div class="filter-modal" data-filter-modal aria-hidden="true">
+      <div class="filter-modal__overlay" data-filter-close></div>
+      <div class="filter-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="filter-title">
+        <div class="filter-modal__header">
+          <h2 id="filter-title">Filter Songs</h2>
+          <button type="button" class="filter-modal__close" data-filter-close aria-label="Close filters">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" stroke="none" />
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="filters" data-filter-panel>
+          <label class="filter-field">
             <span class="label">Search</span>
-            <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
+            <input type="text" id="song-filter-search" placeholder="Search songs or artists" title="Search">
             <span class="icon">
               <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M0 0h24v24H0z" stroke="none" />
@@ -28,17 +176,18 @@
                 <path d="m21 21-6-6" />
               </svg>
             </span>
-            <button type="reset" id="reset" class="clear-search" value="Reset">
-              <span class="visuallyhidden">Reset</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" stroke="none" />
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
-            </button>
           </label>
-        </fieldset>
-      </form>
-    </header>
+          <div class="filter-row">
+            <div id="tag-filters" class="filter-tags" aria-label="Filter by tag"></div>
+          </div>
+          <div class="filter-actions">
+            <button type="button" id="song-filter-reset" class="clear-search" title="Reset filters">Reset</button>
+            <button type="button" class="filter-apply" data-filter-close>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main id="content" class="index">
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
       <article>
@@ -50,13 +199,13 @@
           <!-- <small>* denotes a work in progress</small> -->
           <ul id="list">
             <% groups.forEach(function (group) { %>
-              <li>
+              <li data-artist-group data-artist="<%= group.artist %>">
                 <input type="checkbox" name="<%= group.id %>" id="<%= group.id %>">
                 <a href="#"><label for="<%= group.id %>"><span class="image"><img src="<%= basePath %>/assets/images/<%= group.img %>" alt="<%= group.artist %>"></span><span class="performer"><%= group.artist %></span></label></a>
                 <section>
                   <h4 class="visuallyhidden"><%= group.artist %></h4>
                   <% group.songs.forEach(function (song) { %>
-                    <p>
+                    <p data-song-item data-artist="<%= song.artist %>" data-title="<%= song.song %>" data-tags="<%= song.tags || '' %>">
                       <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/" target="_blank" rel="noopener noreferrer">
                         <span class="song"><%= song.song %></span>
                         <span class="album"><%= song.album %></span>
@@ -77,6 +226,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<%= basePath %>/assets/js/site.js"></script>
     <script src="<%= basePath %>/assets/js/headroom.js"></script>
+    <script src="<%= basePath %>/assets/js/filters.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function () {
@@ -100,41 +250,7 @@
       });
       headroom.init();
     </script>
-    <script>
-      function searchArtists() {
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("list");
-        li = ul.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-          } else {
-            li[i].style.display = "none";
-          }
-        }
-      }
-      // RESET
-      $('button#reset').click(function () {
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("list");
-        li = ul.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "none";
-          } else {
-            li[i].style.display = "";
-          }
-        }
-      });
-    </script>
+    
   </body>
 
 </html>
