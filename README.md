@@ -5,37 +5,48 @@ A song notebook with grid/list indexes, individual song pages, and setlists. The
 ## Live Site
 https://cdfournier.github.io/guitar-notes/
 
-## How It Works
-- Templates live in `views/` (EJS).
-- Data lives in `public/assets/data/` (JSON).
-- Song text lives in `public/assets/songs/` (plain text).
-- A build script renders everything to `public/` so GitHub Pages can serve it.
+## Prerequisites
+- Node.js 18+ (20 recommended)
+- npm
+
+## Install
+```bash
+npm install
+```
 
 ## Build (Static)
+Generates the static site into `public/`:
 ```bash
-cd /Users/chris/Sites/guitar-notes/site
 npm run build:static
 ```
 
-### Base Path
-GitHub Pages serves this repo at `/guitar-notes`, so builds should use:
+### Base Path (GitHub Pages)
+If you’re deploying to GitHub Pages at `https://<user>.github.io/<repo>/`, set:
+```bash
+BASE_PATH=/<repo> npm run build:static
+```
+For this repo:
 ```bash
 BASE_PATH=/guitar-notes npm run build:static
 ```
-The GitHub Action does this automatically on pushes to `master`.
 
 ## Local Preview (Express)
-You can still run the Express app locally for previews:
+Run the Express app locally for previews:
 ```bash
-cd /Users/chris/Sites/guitar-notes/site
 npm start
 ```
 Then visit `http://localhost:3000`.
 
+## Data Layout
+- Templates: `views/`
+- Song data: `public/assets/data/guitar-notes-data.json`
+- Lab song data: `public/assets/data/guitar-notes-lab-data.json`
+- Setlists data: `public/assets/data/guitar-notes-setlists.json`
+- Song text files: `public/assets/songs/*.txt`
+
 ## Deployment (GitHub Pages)
-- GitHub Actions builds on **push to `master`**.
-- Output is deployed from `public/`.
-- Workflow file: `.github/workflows/pages.yml`.
+This repo uses GitHub Actions to build and deploy on push to `master`.
+Workflow: `.github/workflows/pages.yml`.
 
 ## Scripts
 - `npm start` — run Express locally
