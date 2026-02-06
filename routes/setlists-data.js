@@ -3,6 +3,7 @@ const path = require('path');
 
 const SETLISTS_PATH = path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-setlists.json');
 const SONGS_PATH = path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-data.json');
+const LAB_SONGS_PATH = path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-lab-data.json');
 
 const SET_ORDER = ['0', '1', '2', '3', 'e'];
 const SET_LABELS = {
@@ -83,7 +84,8 @@ async function buildCache() {
   const setlistData = JSON.parse(rawSetlists.replace(/\r/g, ''));
 
   const rawSongs = await fs.readFile(SONGS_PATH, 'utf8');
-  const songData = JSON.parse(rawSongs);
+  const rawLabSongs = await fs.readFile(LAB_SONGS_PATH, 'utf8');
+  const songData = JSON.parse(rawSongs).concat(JSON.parse(rawLabSongs));
 
   const songSlugMap = new Map();
   const songSlugSet = new Set();
