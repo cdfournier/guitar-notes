@@ -59,6 +59,118 @@
           column-count: 5;
         }
       }
+    
+      .filter-toggle {
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .filter-modal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+
+      .filter-modal[aria-hidden="true"] {
+        display: none;
+      }
+
+      .filter-modal__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
+      }
+
+      .filter-modal__dialog {
+        position: relative;
+        z-index: 1;
+        width: min(720px, 92vw);
+        max-height: 85vh;
+        overflow: auto;
+        background: var(--body-color, #111);
+        color: inherit;
+        border: 1px solid currentColor;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      }
+
+      .filter-modal__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .filter-modal__close {
+        background: transparent;
+      }
+
+      .filters {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .filter-field {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .filter-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .filter-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+        border: 1px solid currentColor;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .filter-tag input {
+        accent-color: currentColor;
+      }
+
+      .filter-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: flex-end;
+      }
+
+      body.filter-modal-open {
+        overflow: hidden;
+      }
+
+
+      .artist-group {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
 
@@ -70,11 +182,32 @@
     <header>
       <h1>Welcome to Guitar Notes Lab list
       </h1>
-      <form>
-        <fieldset>
-          <label>
+      <button type="button" class="filter-toggle" data-filter-open>
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-filter" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 4h16v2l-6 6v6l-4 2v-8l-6 -6z" />
+          </svg>
+        </span>
+        <span class="text">Filters</span>
+      </button>
+    </header>
+    <div class="filter-modal" data-filter-modal aria-hidden="true">
+      <div class="filter-modal__overlay" data-filter-close></div>
+      <div class="filter-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="filter-title">
+        <div class="filter-modal__header">
+          <h2 id="filter-title">Filter Songs</h2>
+          <button type="button" class="filter-modal__close" data-filter-close aria-label="Close filters">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 0h24v24H0z" stroke="none" />
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="filters" data-filter-panel>
+          <label class="filter-field">
             <span class="label">Search</span>
-            <input type="text" id="search" onkeyup="searchSongs()" placeholder="Search songs" title="Search">
+            <input type="text" id="song-filter-search" placeholder="Search songs or artists" title="Search">
             <span class="icon">
               <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M0 0h24v24H0z" stroke="none" />
@@ -82,17 +215,18 @@
                 <path d="m21 21-6-6" />
               </svg>
             </span>
-            <button type="reset" id="reset" class="clear-search" value="Reset">
-              <span class="visuallyhidden">Reset</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" stroke="none" />
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
-            </button>
           </label>
-        </fieldset>
-      </form>
-    </header>
+          <div class="filter-row">
+            <div id="tag-filters" class="filter-tags" aria-label="Filter by tag"></div>
+          </div>
+          <div class="filter-actions">
+            <button type="button" id="song-filter-reset" class="clear-search" title="Reset filters">Reset</button>
+            <button type="button" class="filter-apply" data-filter-close>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main id="content" class="index">
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
       <article>
@@ -103,563 +237,641 @@
           <h2>Current list:</h2>
           <!-- <small style="display: block; column-span: all;">* denotes a work in progress</small> -->
           
-            <h4>10,000 Maniacs</h4>
-            
-              <p>
-                <a href="/songs/10000-maniacs-whats-the-matter-here/?lab=1" target="_blank" rel="noopener noreferrer">
-                  What&#39;s The Matter Here?
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="10,000 Maniacs">
+              <h4>10,000 Maniacs</h4>
+              
+                <p data-song-item data-artist="10,000 Maniacs" data-title="What&#39;s The Matter Here?" data-tags="80s, Alt-Rock, Female">
+                  <a href="/songs/10000-maniacs-whats-the-matter-here/?lab=1" target="_blank" rel="noopener noreferrer">
+                    What&#39;s The Matter Here?
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>The Beatles</h4>
-            
-              <p>
-                <a href="/songs/beatles-get-back/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Get Back
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="The Beatles">
+              <h4>The Beatles</h4>
+              
+                <p data-song-item data-artist="The Beatles" data-title="Get Back" data-tags="70s, Rock">
+                  <a href="/songs/beatles-get-back/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Get Back
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Beck</h4>
-            
-              <p>
-                <a href="/songs/beck-devils-haircut/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Devils Haircut
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/beck-guess-im-doing-fine/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Guess I&#39;m Doing Fine
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/beck-the-golden-age/?lab=1" target="_blank" rel="noopener noreferrer">
-                  The Golden Age
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Beck">
+              <h4>Beck</h4>
+              
+                <p data-song-item data-artist="Beck" data-title="Devils Haircut" data-tags="90s, Alt-Rock">
+                  <a href="/songs/beck-devils-haircut/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Devils Haircut
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Beck" data-title="Guess I&#39;m Doing Fine" data-tags="00s, Alt-Rock, Acoustic">
+                  <a href="/songs/beck-guess-im-doing-fine/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Guess I&#39;m Doing Fine
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Beck" data-title="The Golden Age" data-tags="00s, Alt-Rock, Acoustic">
+                  <a href="/songs/beck-the-golden-age/?lab=1" target="_blank" rel="noopener noreferrer">
+                    The Golden Age
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Billy Bragg And Wilco</h4>
-            
-              <p>
-                <a href="/songs/billy-bragg-and-wilco-one-by-one/?lab=1" target="_blank" rel="noopener noreferrer">
-                  One By One
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Billy Bragg And Wilco">
+              <h4>Billy Bragg And Wilco</h4>
+              
+                <p data-song-item data-artist="Billy Bragg And Wilco" data-title="One By One" data-tags="90s, Folk, Acoustic, Tweedy">
+                  <a href="/songs/billy-bragg-and-wilco-one-by-one/?lab=1" target="_blank" rel="noopener noreferrer">
+                    One By One
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Bjork</h4>
-            
-              <p>
-                <a href="/songs/bjork-army-of-me/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Army Of Me
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/bjork-big-time-sensuality/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Big Time Sensuality
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/bjork-human-behavior/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Human Behavior
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Bjork">
+              <h4>Bjork</h4>
+              
+                <p data-song-item data-artist="Bjork" data-title="Army Of Me" data-tags="90s, Art Pop, Female">
+                  <a href="/songs/bjork-army-of-me/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Army Of Me
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Bjork" data-title="Big Time Sensuality" data-tags="90s, Art Pop, Female">
+                  <a href="/songs/bjork-big-time-sensuality/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Big Time Sensuality
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Bjork" data-title="Human Behavior" data-tags="90s, Art Pop, Female">
+                  <a href="/songs/bjork-human-behavior/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Human Behavior
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Blind Melon</h4>
-            
-              <p>
-                <a href="/songs/blind-melon-no-rain/?lab=1" target="_blank" rel="noopener noreferrer">
-                  No Rain
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Blind Melon">
+              <h4>Blind Melon</h4>
+              
+                <p data-song-item data-artist="Blind Melon" data-title="No Rain" data-tags="90s, Alt-Rock">
+                  <a href="/songs/blind-melon-no-rain/?lab=1" target="_blank" rel="noopener noreferrer">
+                    No Rain
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Butthole Surfers</h4>
-            
-              <p>
-                <a href="/songs/butthole-surfers-pepper/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Pepper
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Butthole Surfers">
+              <h4>Butthole Surfers</h4>
+              
+                <p data-song-item data-artist="Butthole Surfers" data-title="Pepper" data-tags="90s, Alt-Rock">
+                  <a href="/songs/butthole-surfers-pepper/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Pepper
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Cheap Trick</h4>
-            
-              <p>
-                <a href="/songs/cheap-trick-aint-that-a-shame/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Ain&#39;t That A Shame
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/cheap-trick-i-want-you-to-want-me/?lab=1" target="_blank" rel="noopener noreferrer">
-                  I Want You To Want Me
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/cheap-trick-surrender/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Surrender
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/cheap-trick-the-flame/?lab=1" target="_blank" rel="noopener noreferrer">
-                  The Flame
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Cheap Trick">
+              <h4>Cheap Trick</h4>
+              
+                <p data-song-item data-artist="Cheap Trick" data-title="Ain&#39;t That A Shame" data-tags="70s, Rock">
+                  <a href="/songs/cheap-trick-aint-that-a-shame/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Ain&#39;t That A Shame
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Cheap Trick" data-title="I Want You To Want Me" data-tags="70s, Rock">
+                  <a href="/songs/cheap-trick-i-want-you-to-want-me/?lab=1" target="_blank" rel="noopener noreferrer">
+                    I Want You To Want Me
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Cheap Trick" data-title="Surrender" data-tags="70s, Rock">
+                  <a href="/songs/cheap-trick-surrender/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Surrender
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Cheap Trick" data-title="The Flame" data-tags="80s, Rock">
+                  <a href="/songs/cheap-trick-the-flame/?lab=1" target="_blank" rel="noopener noreferrer">
+                    The Flame
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Neneh Cherry</h4>
-            
-              <p>
-                <a href="/songs/neneh-cherry-buffalo-stance/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Buffalo Stance
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Neneh Cherry">
+              <h4>Neneh Cherry</h4>
+              
+                <p data-song-item data-artist="Neneh Cherry" data-title="Buffalo Stance" data-tags="80s, Rap, Female">
+                  <a href="/songs/neneh-cherry-buffalo-stance/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Buffalo Stance
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>The Clash</h4>
-            
-              <p>
-                <a href="/songs/clash-clampdown/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Clampdown
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="The Clash">
+              <h4>The Clash</h4>
+              
+                <p data-song-item data-artist="The Clash" data-title="Clampdown" data-tags="70s, Punk">
+                  <a href="/songs/clash-clampdown/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Clampdown
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Elvis Costello</h4>
-            
-              <p>
-                <a href="/songs/elvis-costello-veronica/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Veronica
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Elvis Costello">
+              <h4>Elvis Costello</h4>
+              
+                <p data-song-item data-artist="Elvis Costello" data-title="Veronica" data-tags="80s, Rock">
+                  <a href="/songs/elvis-costello-veronica/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Veronica
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Counting Crows</h4>
-            
-              <p>
-                <a href="/songs/counting-crows-a-murder-of-one/?lab=1" target="_blank" rel="noopener noreferrer">
-                  A Murder Of One
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Counting Crows">
+              <h4>Counting Crows</h4>
+              
+                <p data-song-item data-artist="Counting Crows" data-title="A Murder Of One" data-tags="90s, Alt-Rock">
+                  <a href="/songs/counting-crows-a-murder-of-one/?lab=1" target="_blank" rel="noopener noreferrer">
+                    A Murder Of One
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Def Leppard</h4>
-            
-              <p>
-                <a href="/songs/def-leppard-hysteria/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Hysteria
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Def Leppard">
+              <h4>Def Leppard</h4>
+              
+                <p data-song-item data-artist="Def Leppard" data-title="Hysteria" data-tags="80s, Rock">
+                  <a href="/songs/def-leppard-hysteria/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Hysteria
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Michael Dorman</h4>
-            
-              <p>
-                <a href="/songs/michael-dorman-martin-tidy/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Martin Tidy
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Michael Dorman">
+              <h4>Michael Dorman</h4>
+              
+                <p data-song-item data-artist="Michael Dorman" data-title="Martin Tidy" data-tags="10s, Folk, Acoustic">
+                  <a href="/songs/michael-dorman-martin-tidy/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Martin Tidy
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Duran Duran</h4>
-            
-              <p>
-                <a href="/songs/duran-duran-rio/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Rio
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Duran Duran">
+              <h4>Duran Duran</h4>
+              
+                <p data-song-item data-artist="Duran Duran" data-title="Rio" data-tags="80s, Rock, Horns">
+                  <a href="/songs/duran-duran-rio/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Rio
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Bob Dylan</h4>
-            
-              <p>
-                <a href="/songs/bob-dylan-hurricane/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Hurricane
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/bob-dylan-must-be-santa/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Must Be Santa
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/bob-dylan-new-morning/?lab=1" target="_blank" rel="noopener noreferrer">
-                  New Morning
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Bob Dylan">
+              <h4>Bob Dylan</h4>
+              
+                <p data-song-item data-artist="Bob Dylan" data-title="Hurricane" data-tags="70s, Folk, Acoustic">
+                  <a href="/songs/bob-dylan-hurricane/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Hurricane
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Bob Dylan" data-title="Must Be Santa" data-tags="00s, Christmas">
+                  <a href="/songs/bob-dylan-must-be-santa/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Must Be Santa
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Bob Dylan" data-title="New Morning" data-tags="70s, Folk">
+                  <a href="/songs/bob-dylan-new-morning/?lab=1" target="_blank" rel="noopener noreferrer">
+                    New Morning
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Foo Fighters</h4>
-            
-              <p>
-                <a href="/songs/foo-fighters-halo/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Halo
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Foo Fighters">
+              <h4>Foo Fighters</h4>
+              
+                <p data-song-item data-artist="Foo Fighters" data-title="Halo" data-tags="00s, Rock">
+                  <a href="/songs/foo-fighters-halo/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Halo
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Peter Gabriel</h4>
-            
-              <p>
-                <a href="/songs/peter-gabriel-sledgehammer/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Sledgehammer
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Peter Gabriel">
+              <h4>Peter Gabriel</h4>
+              
+                <p data-song-item data-artist="Peter Gabriel" data-title="Sledgehammer" data-tags="80s, Rock, Horns">
+                  <a href="/songs/peter-gabriel-sledgehammer/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Sledgehammer
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Billy Idol</h4>
-            
-              <p>
-                <a href="/songs/billy-idol-cradle-of-love/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Cradle Of Love
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/billy-idol-white-wedding/?lab=1" target="_blank" rel="noopener noreferrer">
-                  White Wedding
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Billy Idol">
+              <h4>Billy Idol</h4>
+              
+                <p data-song-item data-artist="Billy Idol" data-title="Cradle Of Love" data-tags="90s, Rock">
+                  <a href="/songs/billy-idol-cradle-of-love/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Cradle Of Love
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Billy Idol" data-title="White Wedding" data-tags="80s, Rock">
+                  <a href="/songs/billy-idol-white-wedding/?lab=1" target="_blank" rel="noopener noreferrer">
+                    White Wedding
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>INXS</h4>
-            
-              <p>
-                <a href="/songs/inxs-hear-that-sound/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Hear That Sound
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/inxs-listen-like-thieves/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Listen Like Thieves
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="INXS">
+              <h4>INXS</h4>
+              
+                <p data-song-item data-artist="INXS" data-title="Hear That Sound" data-tags="90s, Rock, Horns">
+                  <a href="/songs/inxs-hear-that-sound/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Hear That Sound
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="INXS" data-title="Listen Like Thieves" data-tags="80s, Rock, Horns">
+                  <a href="/songs/inxs-listen-like-thieves/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Listen Like Thieves
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>James</h4>
-            
-              <p>
-                <a href="/songs/james-sometimes-lester-piggott/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Sometimes (Lester Piggott)
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="James">
+              <h4>James</h4>
+              
+                <p data-song-item data-artist="James" data-title="Sometimes (Lester Piggott)" data-tags="90s, Rock">
+                  <a href="/songs/james-sometimes-lester-piggott/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Sometimes (Lester Piggott)
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>The Kinks</h4>
-            
-              <p>
-                <a href="/songs/kinks-death-of-a-clown/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Death Of A Clown
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/kinks-father-christmas/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Father Christmas
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="The Kinks">
+              <h4>The Kinks</h4>
+              
+                <p data-song-item data-artist="The Kinks" data-title="Death Of A Clown" data-tags="60s, Rock">
+                  <a href="/songs/kinks-death-of-a-clown/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Death Of A Clown
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="The Kinks" data-title="Father Christmas" data-tags="70s, Christmas">
+                  <a href="/songs/kinks-father-christmas/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Father Christmas
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>KISS</h4>
-            
-              <p>
-                <a href="/songs/kiss-hard-luck-woman/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Hard Luck Woman
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="KISS">
+              <h4>KISS</h4>
+              
+                <p data-song-item data-artist="KISS" data-title="Hard Luck Woman" data-tags="70s, Rock">
+                  <a href="/songs/kiss-hard-luck-woman/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Hard Luck Woman
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Led Zeppelin</h4>
-            
-              <p>
-                <a href="/songs/led-zeppelin-your-time-is-gonna-come/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Your Time Is Gonna Come
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Led Zeppelin">
+              <h4>Led Zeppelin</h4>
+              
+                <p data-song-item data-artist="Led Zeppelin" data-title="Your Time Is Gonna Come" data-tags="60s, Rock">
+                  <a href="/songs/led-zeppelin-your-time-is-gonna-come/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Your Time Is Gonna Come
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Aimee Mann</h4>
-            
-              <p>
-                <a href="/songs/aimee-mann-thats-just-what-you-are/?lab=1" target="_blank" rel="noopener noreferrer">
-                  That&#39;s Just What You Are
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Aimee Mann">
+              <h4>Aimee Mann</h4>
+              
+                <p data-song-item data-artist="Aimee Mann" data-title="That&#39;s Just What You Are" data-tags="90s, Alt-Rock, Female">
+                  <a href="/songs/aimee-mann-thats-just-what-you-are/?lab=1" target="_blank" rel="noopener noreferrer">
+                    That&#39;s Just What You Are
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Material Issue</h4>
-            
-              <p>
-                <a href="/songs/material-issue-next-big-thing/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Next Big Thing
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/material-issue-what-girls-want/?lab=1" target="_blank" rel="noopener noreferrer">
-                  What Girls Want
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Material Issue">
+              <h4>Material Issue</h4>
+              
+                <p data-song-item data-artist="Material Issue" data-title="Next Big Thing" data-tags="90s, Rock">
+                  <a href="/songs/material-issue-next-big-thing/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Next Big Thing
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Material Issue" data-title="What Girls Want" data-tags="90s, Rock">
+                  <a href="/songs/material-issue-what-girls-want/?lab=1" target="_blank" rel="noopener noreferrer">
+                    What Girls Want
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Mazzy Star</h4>
-            
-              <p>
-                <a href="/songs/mazzy-star-fade-into-you/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Fade Into You
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Mazzy Star">
+              <h4>Mazzy Star</h4>
+              
+                <p data-song-item data-artist="Mazzy Star" data-title="Fade Into You" data-tags="90s, Alt-Rock, Female">
+                  <a href="/songs/mazzy-star-fade-into-you/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Fade Into You
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>George Michael</h4>
-            
-              <p>
-                <a href="/songs/george-michael-a-different-corner/?lab=1" target="_blank" rel="noopener noreferrer">
-                  A Different Corner
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/george-michael-faith/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Faith
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/george-michael-freedom-90/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Freedom &#39;90
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="George Michael">
+              <h4>George Michael</h4>
+              
+                <p data-song-item data-artist="George Michael" data-title="A Different Corner" data-tags="80s, Pop">
+                  <a href="/songs/george-michael-a-different-corner/?lab=1" target="_blank" rel="noopener noreferrer">
+                    A Different Corner
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="George Michael" data-title="Faith" data-tags="80s, Pop">
+                  <a href="/songs/george-michael-faith/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Faith
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="George Michael" data-title="Freedom &#39;90" data-tags="90s, Pop">
+                  <a href="/songs/george-michael-freedom-90/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Freedom &#39;90
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>The Monkees</h4>
-            
-              <p>
-                <a href="/songs/monkees-porpoise-song-theme-from-head/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Porpoise Song (Theme From &#34;Head&#34;)
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="The Monkees">
+              <h4>The Monkees</h4>
+              
+                <p data-song-item data-artist="The Monkees" data-title="Porpoise Song (Theme From &#34;Head&#34;)" data-tags="60s, Rock">
+                  <a href="/songs/monkees-porpoise-song-theme-from-head/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Porpoise Song (Theme From &#34;Head&#34;)
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Morrissey</h4>
-            
-              <p>
-                <a href="/songs/morrissey-seasick-yet-still-dockedi-know-its-gonna-happen-someday/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Seasick, Yet Still Docked/I Know It&#39;s Gonna Happen Someday
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/morrissey-the-more-you-ignore-me-the-closer-i-get/?lab=1" target="_blank" rel="noopener noreferrer">
-                  The More You Ignore Me, The Closer I Get
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Morrissey">
+              <h4>Morrissey</h4>
+              
+                <p data-song-item data-artist="Morrissey" data-title="Seasick, Yet Still Docked/I Know It&#39;s Gonna Happen Someday" data-tags="90s, Rock">
+                  <a href="/songs/morrissey-seasick-yet-still-dockedi-know-its-gonna-happen-someday/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Seasick, Yet Still Docked/I Know It&#39;s Gonna Happen Someday
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Morrissey" data-title="The More You Ignore Me, The Closer I Get" data-tags="90s, Rock">
+                  <a href="/songs/morrissey-the-more-you-ignore-me-the-closer-i-get/?lab=1" target="_blank" rel="noopener noreferrer">
+                    The More You Ignore Me, The Closer I Get
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>New Order</h4>
-            
-              <p>
-                <a href="/songs/new-order-true-faith/?lab=1" target="_blank" rel="noopener noreferrer">
-                  True Faith
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="New Order">
+              <h4>New Order</h4>
+              
+                <p data-song-item data-artist="New Order" data-title="True Faith" data-tags="80s, Rock">
+                  <a href="/songs/new-order-true-faith/?lab=1" target="_blank" rel="noopener noreferrer">
+                    True Faith
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Oasis</h4>
-            
-              <p>
-                <a href="/songs/oasis-some-might-say/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Some Might Say
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Oasis">
+              <h4>Oasis</h4>
+              
+                <p data-song-item data-artist="Oasis" data-title="Some Might Say" data-tags="90s, Rock">
+                  <a href="/songs/oasis-some-might-say/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Some Might Say
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>The Outfield</h4>
-            
-              <p>
-                <a href="/songs/outfield-your-love/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Your Love
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="The Outfield">
+              <h4>The Outfield</h4>
+              
+                <p data-song-item data-artist="The Outfield" data-title="Your Love" data-tags="80s, Power Pop">
+                  <a href="/songs/outfield-your-love/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Your Love
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Pearl Jam</h4>
-            
-              <p>
-                <a href="/songs/pearl-jam-alive/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Alive
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Pearl Jam">
+              <h4>Pearl Jam</h4>
+              
+                <p data-song-item data-artist="Pearl Jam" data-title="Alive" data-tags="90s, Grunge">
+                  <a href="/songs/pearl-jam-alive/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Alive
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Pink Floyd</h4>
-            
-              <p>
-                <a href="/songs/pink-floyd-learning-to-fly/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Learning To Fly
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/pink-floyd-mother/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Mother
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/pink-floyd-on-the-turning-away/?lab=1" target="_blank" rel="noopener noreferrer">
-                  On The Turning Away
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/pink-floyd-one-slip/?lab=1" target="_blank" rel="noopener noreferrer">
-                  One Slip
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/pink-floyd-sorrow/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Sorrow
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/pink-floyd-us-and-them/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Us And Them
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Pink Floyd">
+              <h4>Pink Floyd</h4>
+              
+                <p data-song-item data-artist="Pink Floyd" data-title="Learning To Fly" data-tags="80s, Rock">
+                  <a href="/songs/pink-floyd-learning-to-fly/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Learning To Fly
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Pink Floyd" data-title="Mother" data-tags="70s, Rock">
+                  <a href="/songs/pink-floyd-mother/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Mother
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Pink Floyd" data-title="On The Turning Away" data-tags="80s, Rock">
+                  <a href="/songs/pink-floyd-on-the-turning-away/?lab=1" target="_blank" rel="noopener noreferrer">
+                    On The Turning Away
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Pink Floyd" data-title="One Slip" data-tags="80s, Rock">
+                  <a href="/songs/pink-floyd-one-slip/?lab=1" target="_blank" rel="noopener noreferrer">
+                    One Slip
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Pink Floyd" data-title="Sorrow" data-tags="80s, Rock">
+                  <a href="/songs/pink-floyd-sorrow/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Sorrow
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Pink Floyd" data-title="Us And Them" data-tags="70s, Rock">
+                  <a href="/songs/pink-floyd-us-and-them/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Us And Them
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Pixies</h4>
-            
-              <p>
-                <a href="/songs/pixies-gouge-away/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Gouge Away
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Pixies">
+              <h4>Pixies</h4>
+              
+                <p data-song-item data-artist="Pixies" data-title="Gouge Away" data-tags="80s, Alt-Rock">
+                  <a href="/songs/pixies-gouge-away/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Gouge Away
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>The Ramones</h4>
-            
-              <p>
-                <a href="/songs/ramones-merry-christmas-i-dont-want-to-fight-tonight/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Merry Christmas (I Don&#39;t Want To Fight Tonight)
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="The Ramones">
+              <h4>The Ramones</h4>
+              
+                <p data-song-item data-artist="The Ramones" data-title="Merry Christmas (I Don&#39;t Want To Fight Tonight)" data-tags="80s, Christmas">
+                  <a href="/songs/ramones-merry-christmas-i-dont-want-to-fight-tonight/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Merry Christmas (I Don&#39;t Want To Fight Tonight)
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Wham!</h4>
-            
-              <p>
-                <a href="/songs/wham-everything-she-wants/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Everything She Wants
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/wham-im-your-man/?lab=1" target="_blank" rel="noopener noreferrer">
-                  I&#39;m Your Man
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/wham-the-edge-of-heaven/?lab=1" target="_blank" rel="noopener noreferrer">
-                  The Edge Of Heaven
-                  
-                </a>
-              </p>
-            
-              <p>
-                <a href="/songs/wham-where-did-your-heart-go/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Where Did Your Heart Go
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Wham!">
+              <h4>Wham!</h4>
+              
+                <p data-song-item data-artist="Wham!" data-title="Everything She Wants" data-tags="80s, Pop">
+                  <a href="/songs/wham-everything-she-wants/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Everything She Wants
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Wham!" data-title="I&#39;m Your Man" data-tags="80s, Pop">
+                  <a href="/songs/wham-im-your-man/?lab=1" target="_blank" rel="noopener noreferrer">
+                    I&#39;m Your Man
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Wham!" data-title="The Edge Of Heaven" data-tags="80s, Pop">
+                  <a href="/songs/wham-the-edge-of-heaven/?lab=1" target="_blank" rel="noopener noreferrer">
+                    The Edge Of Heaven
+                    
+                  </a>
+                </p>
+              
+                <p data-song-item data-artist="Wham!" data-title="Where Did Your Heart Go" data-tags="80s, Pop">
+                  <a href="/songs/wham-where-did-your-heart-go/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Where Did Your Heart Go
+                    
+                  </a>
+                </p>
+              
+            </div>
           
-            <h4>Neil Young</h4>
-            
-              <p>
-                <a href="/songs/neil-young-rockin-in-the-free-world/?lab=1" target="_blank" rel="noopener noreferrer">
-                  Rockin&#39; In The Free World
-                  
-                </a>
-              </p>
-            
+            <div class="artist-group" data-artist-group data-artist="Neil Young">
+              <h4>Neil Young</h4>
+              
+                <p data-song-item data-artist="Neil Young" data-title="Rockin&#39; In The Free World" data-tags="90s, Rock">
+                  <a href="/songs/neil-young-rockin-in-the-free-world/?lab=1" target="_blank" rel="noopener noreferrer">
+                    Rockin&#39; In The Free World
+                    
+                  </a>
+                </p>
+              
+            </div>
           
         </section>
       </article>
@@ -772,6 +984,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="/assets/js/site.js"></script>
     <script src="/assets/js/headroom.js"></script>
+    <script src="/assets/js/filters.js"></script>
     <script>
       // CHANGE CSS WHEN PAGE LOADS
       $(document).ready(function () {
@@ -783,41 +996,7 @@
       var headroom = new Headroom(myElement);
       headroom.init();
     </script>
-    <script>
-      function searchSongs() {
-        var input, filter, section, p, a, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        section = document.getElementById("list");
-        p = section.getElementsByTagName("p");
-        for (i = 0; i < p.length; i++) {
-          a = p[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            p[i].style.display = "";
-          } else {
-            p[i].style.display = "none";
-          }
-        }
-      }
-      // RESET
-      $('button#reset').click(function () {
-        var input, filter, section, p, a, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        section = document.getElementById("list");
-        p = section.getElementsByTagName("p");
-        for (i = 0; i < p.length; i++) {
-          a = p[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            p[i].style.display = "none";
-          } else {
-            p[i].style.display = "";
-          }
-        }
-      });
-    </script>
+    
   </body>
 
 </html>
