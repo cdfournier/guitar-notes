@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <%- include('includes/head', { title }); %>
+  </head>
+
+  <body class="hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <h1>Welcome to <%= title %>
+      </h1>
+      <form>
+        <fieldset>
+          <label>
+            <span class="label">Search</span>
+            <input type="text" id="search" onkeyup="searchArtists()" placeholder="Search artists" title="Search">
+            <span class="icon">
+              <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M0 0h24v24H0z" stroke="none" />
+                <circle cx="10" cy="10" r="7" />
+                <path d="m21 21-6-6" />
+              </svg>
+            </span>
+            <button type="reset" id="reset" class="clear-search" value="Reset">
+              <span class="visuallyhidden">Reset</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M0 0h24v24H0z" stroke="none" />
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </label>
+        </fieldset>
+      </form>
+    </header>
+    <main id="content" class="index">
+      <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
+      <article>
+        <h2 class="visuallyhidden">
+          <%= title %> Index
+        </h2>
+        <section>
+          <h2>Current list:</h2>
+          <!-- <small>* denotes a work in progress</small> -->
+          <ul id="list">
+            <% groups.forEach(function (group) { %>
+              <li>
+                <input type="checkbox" name="<%= group.id %>" id="<%= group.id %>">
+                <a href="#"><label for="<%= group.id %>"><span class="image"><img src="/assets/images/<%= group.img %>" alt="<%= group.artist %>"></span><span class="performer"><%= group.artist %></span></label></a>
+                <section>
+                  <h4 class="visuallyhidden"><%= group.artist %></h4>
+                  <% group.songs.forEach(function (song) { %>
+                    <p>
+                      <a href="/songs/<%= song['artist-song'] %>">
+                        <span class="song"><%= song.song %></span>
+                        <span class="album"><%= song.album %></span>
+                        <% if (song.new) { %><span class="badge">new</span><% } %>
+                      </a>
+                    </p>
+                  <% }) %>
+                </section>
+              </li>
+            <% }) %>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <%- include('includes/footer-about'); %>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/headroom.js"></script>
+    <script>
+      // CHANGE CSS WHEN PAGE LOADS
+      $(document).ready(function () {
+        $("body").addClass("visible");
+        $("body").removeClass("hidden");
+      });
+
+      // HEADER HIDE ON SCROLL
+      var myElement = document.querySelector("header");
+      var headroom = new Headroom(myElement, {
+        "offset": 0,
+        "tolerance": {
+          "up": 20,
+          "down": 20
+        },
+        "classes": {
+          "initial": "header--fixed",
+          "pinned": "header--pinned",
+          "unpinned": "header--unpinned"
+        }
+      });
+      headroom.init();
+    </script>
+    <script>
+      function searchArtists() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("list");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+      // RESET
+      $('button#reset').click(function () {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("list");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "none";
+          } else {
+            li[i].style.display = "";
+          }
+        }
+      });
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <%- include('includes/head', { title }); %>
+  </head>
+
+  <body class="hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <% if (song.notes) { %>
+      <section class="alert">
+        <div class="message note">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="clipboard-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+              <rect x="9" y="3" width="6" height="4" rx="2" />
+              <path d="M9 14l2 2l4 -4" />
+            </svg>
+          </span>
+          <p>Note: <%= song.notes %></p>
+          <button class="close" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" class="close" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </section>
+    <% } %>
+    <main>
+      <div id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
+      <article>
+        <h1 class="visuallyhidden"><%= song.song %></h1>
+        <section id="song" class="<%= song.columns || '' %>">
+          <% paragraphs.forEach(function (block) { %>
+            <p><%- block %></p>
+          <% }) %>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <section class="details">
+        <figure>
+          <img src="/assets/images/<%= song.img %>" alt="<%= song.artist %>">
+          <figcaption><%= song.artist %></figcaption>
+        </figure>
+        <ul>
+          <li><span>Song:</span><%= song.song %></li>
+          <li><span>Artist:</span><%= song.artist %></li>
+          <li><span>Album:</span><%= song.album %></li>
+          <li><span>Year:</span><%= song.year %></li>
+        </ul>
+      </section>
+      <%- include('includes/footer-about'); %>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/js/site.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("body").addClass("visible");
+        $("body").removeClass("hidden");
+      });
+    </script>
+  </body>
+
+</html>
