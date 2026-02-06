@@ -1,0 +1,16 @@
+# Node
+node_modules/
+
+# macOS
+.DS_Store
+
+# Generated static output (rebuilt via GitHub Actions)
+/public/index.html
+/public/grid.html
+/public/list.html
+/public/lab-grid.html
+/public/lab-list.html
+/public/setlists.html
+/public/songs/
+/public/setlists/
+/public/.nojekyll
