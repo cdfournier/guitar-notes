@@ -49,6 +49,11 @@
                 <% }) %>
             </section>
           </article>
+          <% if (song.notes) { %>
+            <section class="info">
+              <button type="button" aria-label="Show note">i</button>
+            </section>
+          <% } %>
         </main>
         <footer>
           <section class="details">
@@ -71,6 +76,11 @@
               <li><span>Year:</span>
                 <%= song.year %>
               </li>
+              <% if (song.notes) { %>
+                <li><span>Note:</span>
+                  <%= song.notes %>
+                </li>
+              <% } %>
             </ul>
           </section>
           <%- include('includes/footer-about'); %>
