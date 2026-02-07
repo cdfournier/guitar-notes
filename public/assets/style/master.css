@@ -144,6 +144,7 @@ header {
   width: 100vw;
   margin: 0;
   padding: 2rem;
+  gap: 1rem;
   background: white;
 }
 header form {
@@ -262,7 +263,6 @@ header form fieldset + fieldset {
 }
 header h1 {
   overflow: hidden;
-  padding-right: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
