@@ -11,9 +11,11 @@
   const modal = document.querySelector('[data-filter]');
   const openButtons = Array.from(document.querySelectorAll('[data-filter-open]'));
   const closeButtons = Array.from(document.querySelectorAll('[data-filter-close]'));
+  let lastActiveElement = null;
 
   function openModal() {
     if (!modal) return;
+    lastActiveElement = document.activeElement;
     modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('filter--open');
     document.body.classList.add('filter-modal-open');
@@ -23,6 +25,11 @@
 
   function closeModal() {
     if (!modal) return;
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    } else if (openButtons[0]) {
+      openButtons[0].focus();
+    }
     modal.setAttribute('aria-hidden', 'true');
     modal.classList.remove('filter--open');
     document.body.classList.remove('filter-modal-open');
