@@ -136,7 +136,8 @@ a:hover, a:focus {
 
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   position: fixed;
   z-index: 50;
   top: 0;
@@ -261,8 +262,27 @@ header form fieldset + fieldset {
 }
 header h1 {
   overflow: hidden;
+  padding-right: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+header button {
+  cursor: pointer;
+}
+header button span.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+header button span.icon svg {
+  width: 100%;
+  height: auto;
+}
+header button span.text {
+  display: none;
+}
+header button:hover,
+header button :focus {
+  opacity: 0.7;
 }
 
 .header--fixed {
@@ -275,7 +295,6 @@ header h1 {
 @media (min-width: 48rem) {
   header {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
     padding: 2rem;
   }
@@ -419,7 +438,7 @@ main article section#song p {
   }
 }
 main.index {
-  padding-top: 11rem;
+  padding-top: 6rem;
 }
 main.index article section h1,
 main.index article section h2,
@@ -448,6 +467,7 @@ main.index article section h2 + p {
 }
 main.index article section h4 {
   padding: 1rem 0 0;
+  opacity: 0.5;
   font-size: 1.25rem;
 }
 main.index article section ul {
@@ -570,18 +590,26 @@ main.index article section ul.manual li ul li a {
 main.index article section ul.manual li ul li a span.album {
   display: none;
 }
+main.index article section#list .artist-group {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
 
 @media (min-width: 48rem) {
-  main.index {
-    padding-top: 7rem;
-  }
   main.index article section ul li {
     width: calc(50% - 1rem);
+  }
+  main.index article section#list {
+    column-count: 2;
+    column-gap: 2rem;
   }
 }
 @media (min-width: 64rem) {
   main.index article section ul li {
     width: calc(33.3333333333% - 1rem);
+  }
+  main.index article section#list {
+    column-count: 3;
   }
 }
 @media (min-width: 90rem) {
@@ -591,10 +619,16 @@ main.index article section ul.manual li ul li a span.album {
   main.index article section ul li label {
     font-size: 1.125rem;
   }
+  main.index article section#list {
+    column-count: 4;
+  }
 }
 @media (min-width: 116rem) {
   main.index article section ul li {
     width: calc(20% - 1rem);
+  }
+  main.index article section#list {
+    column-count: 5;
   }
 }
 .clock {
@@ -1178,4 +1212,177 @@ html.dark footer nav form input {
 }
 html.dark footer nav form input:after {
   background: white;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-transform: translateX(150vw);
+  -moz-transform: translateX(150vw);
+  -ms-transform: translateX(150vw);
+  -o-transform: translateX(150vw);
+  transform: translateX(150vw);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.filter .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(0.125rem);
+  opacity: 0;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.filter .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0 1rem;
+}
+.filter .header button {
+  cursor: pointer;
+}
+.filter .header button:hover,
+.filter .header button button:focus {
+  opacity: 0.7;
+}
+.filter .dialog {
+  width: 100%;
+  max-height: 90vh;
+  padding: 1.5rem;
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  color: inherit;
+  border: 1px solid var(--gray);
+  border-radius: 1rem;
+  opacity: 0;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.filters .filter-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.filters .filter-field span.label {
+  display: none;
+}
+.filters .filter-field input[type=text],
+.filters .filter-field input[type=search] {
+  width: 100%;
+  min-width: auto;
+  margin: 0;
+  padding: 0.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  font-family: "Courier", monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: transparent;
+  color: var(--gray);
+}
+.filters .filter-row {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.filters .filter-row .filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.filters .filter-row .filter-tags .filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--gray);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+.filters .filter-row .filter-tags .filter-tag input {
+  accent-color: currentColor;
+}
+.filters .filter-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+.filters .filter-actions button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.filters .filter-actions button:hover,
+.filters .filter-actions button :focus {
+  opacity: 0.7;
+}
+
+.filter.filter--open {
+  z-index: 1000;
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+.filter.filter--open .overlay {
+  opacity: 1;
+}
+.filter.filter--open .dialog {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+body.filter-modal-open {
+  overflow: hidden;
+}
+
+html.dark .filter .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+html.dark .filter .dialog {
+  border-color: #ffffff;
+  background: #333333;
+}
+html.dark .filter .filters input[type=text],
+html.dark .filter .filters input[type=search] {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+html.dark .filter .filter-row .filter-tags .filter-tag {
+  border-color: #ffffff;
+}
+html.dark .filter .filter-row .filter-tags .filter-tag input {
+  accent-color: var(--gray);
+}
+html.dark .filter .filter-actions button {
+  border-color: #ffffff;
 }

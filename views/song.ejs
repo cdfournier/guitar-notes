@@ -3,7 +3,9 @@
 
   <head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+      <%= title %>
+    </title>
     <%- include('includes/head', { title }); %>
   </head>
 
@@ -23,7 +25,8 @@
               <path d="M9 14l2 2l4 -4" />
             </svg>
           </span>
-          <p>Note: <%= song.notes %></p>
+          <p>Note: <%= song.notes %>
+          </p>
           <button class="close" aria-label="Close">
             <svg xmlns="http://www.w3.org/2000/svg" class="close" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -33,41 +36,53 @@
           </button>
         </div>
       </section>
-    <% } %>
-    <main>
-      <div id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
-      <article>
-        <h1 class="visuallyhidden"><%= song.song %></h1>
-        <section id="song" class="<%= song.columns || '' %>">
-          <% paragraphs.forEach(function (block) { %>
-            <p><%- block %></p>
-          <% }) %>
-        </section>
-      </article>
-    </main>
-    <footer>
-      <section class="details">
-        <figure>
-          <img src="<%= basePath %>/assets/images/<%= song.img %>" alt="<%= song.artist %>">
-          <figcaption><%= song.artist %></figcaption>
-        </figure>
-        <ul>
-          <li><span>Song:</span><%= song.song %></li>
-          <li><span>Artist:</span><%= song.artist %></li>
-          <li><span>Album:</span><%= song.album %></li>
-          <li><span>Year:</span><%= song.year %></li>
-        </ul>
-      </section>
-      <%- include('includes/footer-about'); %>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="<%= basePath %>/assets/js/site.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("body").addClass("visible");
-        $("body").removeClass("hidden");
-      });
-    </script>
+      <% } %>
+        <main>
+          <div id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
+          <article>
+            <h1 class="visuallyhidden">
+              <%= song.song %>
+            </h1>
+            <section id="song" class="<%= song.columns || '' %>">
+              <% paragraphs.forEach(function (block) { %>
+                <p><%- block %></p>
+                <% }) %>
+            </section>
+          </article>
+        </main>
+        <footer>
+          <section class="details">
+            <figure>
+              <img src="<%= basePath %>/assets/images/<%= song.img %>" alt="<%= song.artist %>">
+              <figcaption>
+                <%= song.artist %>
+              </figcaption>
+            </figure>
+            <ul>
+              <li><span>Song:</span>
+                <%= song.song %>
+              </li>
+              <li><span>Artist:</span>
+                <%= song.artist %>
+              </li>
+              <li><span>Album:</span>
+                <%= song.album %>
+              </li>
+              <li><span>Year:</span>
+                <%= song.year %>
+              </li>
+            </ul>
+          </section>
+          <%- include('includes/footer-about'); %>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="<%= basePath %>/assets/js/site.js"></script>
+        <script>
+          $(document).ready(function () {
+            $("body").addClass("visible");
+            $("body").removeClass("hidden");
+          });
+        </script>
   </body>
 
 </html>

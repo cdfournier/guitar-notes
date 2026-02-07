@@ -6,169 +6,6 @@
       <%= title %>
     </title>
     <%- include('includes/head', { title }); %>
-    <style>
-      main.index article section h4 {
-        opacity: 0.5;
-      }
-
-      @media (min-width: 48rem) {
-        main.index section {
-          column-count: 2;
-          column-gap: 2rem;
-        }
-      }
-
-      @media (min-width: 64rem) {
-        main.index section {
-          column-count: 3;
-        }
-      }
-
-      @media (min-width: 90rem) {
-        main.index section {
-          column-count: 4;
-        }
-      }
-
-      @media (min-width: 106rem) {
-        main.index section {
-          column-count: 5;
-        }
-      }
-    
-      .filters {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        margin-top: 1rem;
-      }
-
-      .filter-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        align-items: center;
-      }
-
-      .filter-field {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        flex: 1 1 16rem;
-      }
-
-      .filter-field input,
-      .filter-field select {
-        width: 100%;
-        min-height: 2.5rem;
-      }
-
-      .filter-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .filter-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.85rem;
-        border: 1px solid currentColor;
-        padding: 0.25rem 0.6rem;
-        border-radius: 999px;
-        cursor: pointer;
-        user-select: none;
-      }
-
-      .filter-tag input {
-        accent-color: currentColor;
-      }
-
-
-      .artist-group {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        margin-bottom: 1rem;
-      }
-
-      .filter-toggle {
-        margin-top: 1rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .filter-modal {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 999;
-      }
-
-      .filter-modal[aria-hidden="true"] {
-        display: none;
-      }
-
-      .filter-modal__overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(2px);
-      }
-
-      .filter-modal__dialog {
-        position: relative;
-        z-index: 1;
-        width: min(720px, 92vw);
-        max-height: 85vh;
-        overflow: auto;
-        background: var(--body-color, #111);
-        color: inherit;
-        border: 1px solid currentColor;
-        border-radius: 16px;
-        padding: 1.5rem;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-      }
-
-      .filter-modal__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .filter-modal__close {
-        background: transparent;
-      }
-
-      .filters {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .filter-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        align-items: center;
-      }
-
-      .filter-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        justify-content: flex-end;
-      }
-
-      body.filter-modal-open {
-        overflow: hidden;
-      }
-    </style>
   </head>
 
   <body class="hidden">
@@ -181,23 +18,26 @@
       </h1>
       <button type="button" class="filter-toggle" data-filter-open>
         <span class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-filter" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-filter-2">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4 4h16v2l-6 6v6l-4 2v-8l-6 -6z" />
+            <path d="M4 6h16" />
+            <path d="M6 12h12" />
+            <path d="M9 18h6" />
           </svg>
         </span>
         <span class="text">Filters</span>
       </button>
     </header>
-    <div class="filter-modal" data-filter-modal aria-hidden="true">
-      <div class="filter-modal__overlay" data-filter-close></div>
-      <div class="filter-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="filter-title">
-        <div class="filter-modal__header">
-          <h2 id="filter-title">Filter Songs</h2>
-          <button type="button" class="filter-modal__close" data-filter-close aria-label="Close filters">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-x" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M0 0h24v24H0z" stroke="none" />
-              <path d="M18 6 6 18M6 6l12 12" />
+    <div class="filter" data-filter aria-hidden="true">
+      <div class="overlay" data-filter-close></div>
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="filter-title">
+        <div class="header">
+          <h2>Filter Songs</h2>
+          <button type="button" class="filter--close" data-filter-close aria-label="Close filters">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -205,13 +45,6 @@
           <label class="filter-field">
             <span class="label">Search</span>
             <input type="text" id="song-filter-search" placeholder="Search songs or artists" title="Search">
-            <span class="icon">
-              <svg class="icon-search" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M0 0h24v24H0z" stroke="none" />
-                <circle cx="10" cy="10" r="7" />
-                <path d="m21 21-6-6" />
-              </svg>
-            </span>
           </label>
           <div class="filter-row">
             <div id="tag-filters" class="filter-tags" aria-label="Filter by tag"></div>
@@ -223,7 +56,7 @@
         </div>
       </div>
     </div>
-
+    </div>
     <main id="content" class="index">
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
       <article>
@@ -235,17 +68,20 @@
           <!-- <small style="display: block; column-span: all;">* denotes a work in progress</small> -->
           <% groups.forEach(function (group) { %>
             <div class="artist-group" data-artist-group data-artist="<%= group.artist %>">
-              <h4><%= group.artist %></h4>
+              <h4>
+                <%= group.artist %>
+              </h4>
               <% group.songs.forEach(function (song) { %>
                 <p data-song-item data-artist="<%= song.artist %>" data-title="<%= song.song %>" data-tags="<%= song.tags || '' %>">
                   <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/" target="_blank" rel="noopener noreferrer">
                     <%= song.song %>
-                    <% if (song.new) { %><span class="badge">new</span><% } %>
+                      <% if (song.new) { %><span class="badge">new</span>
+                        <% } %>
                   </a>
                 </p>
-              <% }) %>
+                <% }) %>
             </div>
-          <% }) %>
+            <% }) %>
         </section>
       </article>
     </main>
@@ -267,7 +103,6 @@
       var headroom = new Headroom(myElement);
       headroom.init();
     </script>
-    
   </body>
 
 </html>

@@ -8,13 +8,14 @@
   const resetButton = document.getElementById('song-filter-reset');
 
 
-  const modal = document.querySelector('[data-filter-modal]');
+  const modal = document.querySelector('[data-filter]');
   const openButtons = Array.from(document.querySelectorAll('[data-filter-open]'));
   const closeButtons = Array.from(document.querySelectorAll('[data-filter-close]'));
 
   function openModal() {
     if (!modal) return;
     modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('filter--open');
     document.body.classList.add('filter-modal-open');
     const focusTarget = modal.querySelector('#song-filter-search');
     if (focusTarget) focusTarget.focus();
@@ -23,6 +24,7 @@
   function closeModal() {
     if (!modal) return;
     modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('filter--open');
     document.body.classList.remove('filter-modal-open');
   }
 

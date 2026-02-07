@@ -34,6 +34,10 @@ async function loadSongs(kind = 'main') {
   const data = JSON.parse(raw);
   const normalized = data.map((song) => ({
     ...song,
+    artist: typeof song.artist === 'string' ? song.artist.trim() : song.artist,
+    song: typeof song.song === 'string' ? song.song.trim() : song.song,
+    album: typeof song.album === 'string' ? song.album.trim() : song.album,
+    tags: typeof song.tags === 'string' ? song.tags.trim() : song.tags,
     tagsArray: normalizeTags(song.tags),
   }));
   cachedSongs.set(kind, normalized);

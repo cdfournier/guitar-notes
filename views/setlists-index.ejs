@@ -3,25 +3,27 @@
 
   <head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+      <%= title %>
+    </title>
     <%- include('includes/head', { title }); %>
-    <style>
-      body {
-        -webkit-transition: opacity 1.5s ease-in;
-        -moz-transition: opacity 1.5s ease-in;
-        -ms-transition: opacity 1.5s ease-in;
-        -o-transition: opacity 1.5s ease-in;
-        transition: opacity 1.5s ease-in;
-      }
+      <style>
+        body {
+          -webkit-transition: opacity 1.5s ease-in;
+          -moz-transition: opacity 1.5s ease-in;
+          -ms-transition: opacity 1.5s ease-in;
+          -o-transition: opacity 1.5s ease-in;
+          transition: opacity 1.5s ease-in;
+        }
 
-      body.hidden {
-        opacity: 0;
-      }
+        body.hidden {
+          opacity: 0;
+        }
 
-      body.visible {
-        opacity: 1;
-      }
-    </style>
+        body.visible {
+          opacity: 1;
+        }
+      </style>
   </head>
 
   <body class="hidden">
@@ -38,19 +40,25 @@
         <h2>Setlists</h2>
         <% years.forEach(function (year) { %>
           <section>
-            <h3><%= year.year %></h3>
+            <h3>
+              <%= year.year %>
+            </h3>
             <% year.months.forEach(function (month) { %>
               <ul style="margin: 0; padding: 1rem 0; list-style-type: none;">
-                <li><%= month.name %></li>
+                <li>
+                  <%= month.name %>
+                </li>
                 <% month.dates.forEach(function (entry) { %>
                   <li>
-                    <a href="<%= basePath %>/setlists/<%= entry.ym %>/<%= entry.ymd %>/" target="_blank" rel="noopener noreferrer"><%= entry.date %></a>
+                    <a href="<%= basePath %>/setlists/<%= entry.ym %>/<%= entry.ymd %>/" target="_blank" rel="noopener noreferrer">
+                      <%= entry.date %>
+                    </a>
                   </li>
-                <% }) %>
+                  <% }) %>
               </ul>
-            <% }) %>
+              <% }) %>
           </section>
-        <% }) %>
+          <% }) %>
       </article>
     </main>
     <footer>

@@ -3,29 +3,31 @@
 
   <head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>
+      <%= title %>
+    </title>
     <%- include('includes/head', { title }); %>
-    <style>
-      body {
-        -webkit-transition: opacity 1.5s ease-in;
-        -moz-transition: opacity 1.5s ease-in;
-        -ms-transition: opacity 1.5s ease-in;
-        -o-transition: opacity 1.5s ease-in;
-        transition: opacity 1.5s ease-in;
-      }
+      <style>
+        body {
+          -webkit-transition: opacity 1.5s ease-in;
+          -moz-transition: opacity 1.5s ease-in;
+          -ms-transition: opacity 1.5s ease-in;
+          -o-transition: opacity 1.5s ease-in;
+          transition: opacity 1.5s ease-in;
+        }
 
-      body.hidden {
-        opacity: 0;
-      }
+        body.hidden {
+          opacity: 0;
+        }
 
-      body.visible {
-        opacity: 1;
-      }
+        body.visible {
+          opacity: 1;
+        }
 
-      span.badge {
-        display: none;
-      }
-    </style>
+        span.badge {
+          display: none;
+        }
+      </style>
   </head>
 
   <body class="hidden">
@@ -34,7 +36,9 @@
               height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
-      <h1><%= date %></h1>
+      <h1>
+        <%= date %>
+      </h1>
     </header>
     <main id="content" class="setlists">
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
@@ -44,42 +48,50 @@
           <h3 class="visuallyhidden">Details</h3>
           <% sets.forEach(function (set) { %>
             <ul>
-              <li><%= set.label %></li>
+              <li>
+                <%= set.label %>
+              </li>
               <% set.items.forEach(function (item) { %>
                 <li>
                   <% if (item.slug) { %>
-                    <a href="<%= basePath %>/songs/<%= item.slug %>/" target="_blank" rel="noopener noreferrer"><%= item.song %></a><%- item.suffix %>
-                  <% } else { %>
-                    <%= item.song %><%- item.suffix %>
-                  <% } %>
+                    <a href="<%= basePath %>/songs/<%= item.slug %>/" target="_blank" rel="noopener noreferrer">
+                      <%= item.song %>
+                    </a><%- item.suffix %>
+                      <% } else { %>
+                        <%= item.song %><%- item.suffix %>
+                            <% } %>
                 </li>
-              <% }) %>
+                <% }) %>
             </ul>
-          <% }) %>
-          <% if (hasAcoustic) { %>
-            <p><small>* Acoustic</small></p>
-          <% } %>
-          <% if (noteDetails) { %>
-            <p><small>** <%= noteDetails %></small></p>
-          <% } %>
+            <% }) %>
+              <% if (hasAcoustic) { %>
+                <p><small>* Acoustic</small></p>
+                <% } %>
+                  <% if (noteDetails) { %>
+                    <p><small>** <%= noteDetails %></small></p>
+                    <% } %>
         </section>
         <section>
           <h3>Adjacent Setlists</h3>
           <ul>
             <li>Previous Setlist</li>
             <% if (prev) { %>
-              <li><a href="<%= basePath %>/setlists/<%= prev.ym %>/<%= prev.ymd %>/" rel="noopener noreferrer"><%= prev.date %></a></li>
-            <% } else { %>
-              <li class="visuallyhidden"><a href="<%= basePath %>/setlists/" rel="noopener noreferrer"></a></li>
-            <% } %>
+              <li><a href="<%= basePath %>/setlists/<%= prev.ym %>/<%= prev.ymd %>/" rel="noopener noreferrer">
+                  <%= prev.date %>
+                </a></li>
+              <% } else { %>
+                <li class="visuallyhidden"><a href="<%= basePath %>/setlists/" rel="noopener noreferrer"></a></li>
+                <% } %>
           </ul>
           <ul>
             <li>Next Setlist</li>
             <% if (next) { %>
-              <li><a href="<%= basePath %>/setlists/<%= next.ym %>/<%= next.ymd %>/" rel="noopener noreferrer"><%= next.date %></a></li>
-            <% } else { %>
-              <!-- <li><a href="<%= basePath %>/setlists/" rel="noopener noreferrer"></a></li> -->
-            <% } %>
+              <li><a href="<%= basePath %>/setlists/<%= next.ym %>/<%= next.ymd %>/" rel="noopener noreferrer">
+                  <%= next.date %>
+                </a></li>
+              <% } else { %>
+                <!-- <li><a href="<%= basePath %>/setlists/" rel="noopener noreferrer"></a></li> -->
+                <% } %>
           </ul>
         </section>
       </article>

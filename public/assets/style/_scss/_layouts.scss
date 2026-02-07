@@ -144,7 +144,7 @@ main {
 
 // INDEX
 main.index {
-  padding-top: 11rem;
+  padding-top: 6rem;
 
   article {
     section {
@@ -181,6 +181,7 @@ main.index {
 
       h4 {
         padding: 1rem 0 0;
+        opacity: 0.5;
         font-size: 1.25rem;
       }
 
@@ -311,18 +312,28 @@ main.index {
         }
       }
     }
+
+    section#list {
+      .artist-group {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
   }
 }
 
 @media (min-width: 48rem) {
   main.index {
-    padding-top: 7rem;
-
     article {
       section {
         ul li {
           width: calc(50% - 1rem);
         }
+      }
+
+      section#list {
+        column-count: 2;
+        column-gap: 2rem;
       }
     }
   }
@@ -335,6 +346,10 @@ main.index {
         ul li {
           width: calc((100% / 3) - 1rem);
         }
+      }
+
+      section#list {
+        column-count: 3;
       }
     }
   }
@@ -352,6 +367,10 @@ main.index {
           }
         }
       }
+
+      section#list {
+        column-count: 4;
+      }
     }
   }
 }
@@ -363,6 +382,10 @@ main.index {
         ul li {
           width: calc(20% - 1rem);
         }
+      }
+
+      section#list {
+        column-count: 5;
       }
     }
   }
@@ -768,8 +791,7 @@ main.setlists {
         max-width: 50%;
         min-width: calc((100% / 3 - 1rem));
 
-        &:first-of-type {
-        }
+        &:first-of-type {}
       }
     }
 

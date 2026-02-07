@@ -1,0 +1,199 @@
+// FILTER CONTAINER
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  @include transform(translateX(150vw));
+  @include transition(all, 0.25s, ease);
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(0.125rem);
+    opacity: 0;
+    @include transition(all, 0.25s, ease);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0 1rem;
+
+    button {
+      cursor: pointer;
+
+      &:hover,
+      button:focus {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .dialog {
+    width: 100%;
+    max-height: 90vh;
+    padding: 1.5rem;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    color: inherit;
+    border: 1px solid $gray;
+    border-radius: 1rem;
+    opacity: 0;
+  }
+}
+
+
+// FILTER CONTROLS
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .filter-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    span.label {
+      display: none;
+    }
+
+    input[type="text"],
+    input[type="search"] {
+      width: 100%;
+      min-width: auto;
+      margin: 0;
+      padding: 0.5rem;
+      border: 1px solid $gray;
+      border-radius: 0.25rem;
+      font-family: "Courier", monospace;
+      font-size: 1rem;
+      line-height: 1.5;
+      background: transparent;
+      color: $gray;
+    }
+  }
+
+  .filter-row {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .filter-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.875rem;
+        border: 1px solid $gray;
+        padding: 0.25rem 0.75rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        user-select: none;
+
+        input {
+          accent-color: currentColor;
+        }
+      }
+    }
+  }
+
+  .filter-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      border: 1px solid $gray;
+      border-radius: 0.25rem;
+      cursor: pointer;
+
+      &:hover,
+      :focus {
+        opacity: 0.7;
+      }
+    }
+  }
+
+}
+
+
+// OPEN FILTERS
+.filter.filter--open {
+  z-index: 1000;
+  opacity: 1;
+  pointer-events: auto;
+  @include transform(translateX(0));
+
+  .overlay {
+    opacity: 1;
+  }
+
+  .dialog {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+body.filter-modal-open {
+  overflow: hidden;
+}
+
+
+// DARK MODE
+html.dark {
+  .filter {
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .dialog {
+      border-color: #ffffff;
+      background: #333333;
+    }
+
+    .filters {
+
+      input[type="text"],
+      input[type="search"] {
+        border-color: #ffffff;
+        color: #ffffff;
+      }
+    }
+
+    .filter-row {
+      .filter-tags {
+        .filter-tag {
+          border-color: #ffffff;
+
+          input {
+            accent-color: $gray;
+          }
+        }
+      }
+    }
+
+    .filter-actions {
+      button {
+        border-color: #ffffff;
+      }
+    }
+  }
+}
