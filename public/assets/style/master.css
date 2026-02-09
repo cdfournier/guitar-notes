@@ -550,7 +550,7 @@ main.index article section ul section p a span.album {
 }
 main.index article section ul input:checked ~ section {
   height: auto;
-  max-height: 100vh;
+  max-height: 100rem;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -558,7 +558,7 @@ main.index article section ul input:checked ~ section {
   transform: translateY(0);
 }
 main.index article section ul input:checked ~ section p {
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0;
 }
 main.index article section ul.manual {
   display: block;
@@ -1438,7 +1438,7 @@ html.dark .filter .filter-row .filter-tags .filter-tag {
   border-color: #ffffff;
 }
 html.dark .filter .filter-row .filter-tags .filter-tag:hover, html.dark .filter .filter-row .filter-tags .filter-tag:focus {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.125);
 }
 html.dark .filter .filter-row .filter-tags .filter-tag input[type=checkbox]:checked:before {
   background-image: url(../icons/check-white.svg);

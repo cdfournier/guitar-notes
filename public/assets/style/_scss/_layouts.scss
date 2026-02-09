@@ -266,11 +266,11 @@ main.index {
 
         input:checked~section {
           height: auto;
-          max-height: 100vh;
+          max-height: 100rem;
           @include transform(translateY(0));
 
           p {
-            padding: 0.5rem 0;
+            padding: 0.5rem 0 0;
           }
         }
       }
