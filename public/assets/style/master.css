@@ -292,7 +292,7 @@ header button :focus {
   top: 0;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 46.5rem) {
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -595,7 +595,7 @@ main.index article section#list .artist-group {
   page-break-inside: avoid;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 46.5rem) {
   main.index article section ul li {
     width: calc(50% - 1rem);
   }
@@ -1142,7 +1142,7 @@ footer nav form fieldset label input:checked:after {
   margin-left: 1.25rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 46.5rem) {
   footer {
     flex-direction: row;
     flex-wrap: wrap;
