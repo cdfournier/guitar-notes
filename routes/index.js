@@ -85,6 +85,10 @@ router.get('/setlists/:ym/:ymd', async function (req, res, next) {
   }
 });
 
+router.get('/show', function (req, res) {
+  res.render('show', { title: 'Setlist Builder | Guitar Notes' });
+});
+
 router.get('/songs/:slug', async function (req, res, next) {
   try {
     const slug = req.params.slug;

@@ -27,6 +27,15 @@
         </span>
         <span class="text">Filters</span>
       </button>
+      <a href="<%= basePath %>/show/" class="setlist-show-toggle is-hidden" data-setlist-show-toggle aria-label="Start show" aria-hidden="true" tabindex="-1">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M7 4v16l13 -8l-13 -8" />
+          </svg>
+        </span>
+        <span class="setlist-count-pill" data-setlist-count>0</span>
+      </a>
     </header>
     <div class="filter" data-filter aria-hidden="true">
       <div class="overlay" data-filter-close></div>
@@ -79,16 +88,30 @@
                   </h4>
                   <% group.songs.forEach(function (song) { %>
                     <p data-song-item data-artist="<%= song.artist %>" data-title="<%= song.song %>" data-tags="<%= song.tags || "" %>">
-                      <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/?lab=1" target="_blank" rel="noopener noreferrer">
-                        <span class="song">
-                          <%= song.song %>
-                        </span>
-                        <span class="album">
-                          <%= song.album %>
-                        </span>
-                        <% if (song.new) { %><span class="badge">new</span>
-                          <% } %>
-                      </a>
+                      <span class="song-link-row">
+                        <button type="button" class="setlist-add-button" data-setlist-add data-setlist-slug="<%= song['artist-song'] %>" data-setlist-title="<%= song.song %>" data-setlist-artist="<%= song.artist %>" data-setlist-href="<%= basePath %>/songs/<%= song['artist-song'] %>/?lab=1" aria-label="Add to setlist">
+                          <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-music-plus">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                              <path d="M9 17v-13h10v8" />
+                              <path d="M9 8h10" />
+                              <path d="M16 19h6" />
+                              <path d="M19 16v6" />
+                            </svg>
+                          </span>
+                        </button>
+                        <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/?lab=1" target="_blank" rel="noopener noreferrer">
+                          <span class="song">
+                            <%= song.song %>
+                          </span>
+                          <span class="album">
+                            <%= song.album %>
+                          </span>
+                          <% if (song.new) { %><span class="badge">new</span>
+                            <% } %>
+                        </a>
+                      </span>
                     </p>
                     <% }) %>
                 </section>
@@ -114,18 +137,7 @@
 
       // HEADER HIDE ON SCROLL
       var myElement = document.querySelector("header");
-      var headroom = new Headroom(myElement, {
-        "offset": 0,
-        "tolerance": {
-          "up": 20,
-          "down": 20
-        },
-        "classes": {
-          "initial": "header--fixed",
-          "pinned": "header--pinned",
-          "unpinned": "header--unpinned"
-        }
-      });
+      var headroom = new Headroom(myElement);
       headroom.init();
     </script>
   </body>

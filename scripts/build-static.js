@@ -114,6 +114,16 @@ async function buildIndexes() {
       out: 'lab-list.html',
       data: { title: 'Guitar Notes Lab list', groups: labGroups },
     },
+    {
+      view: 'show',
+      out: path.join('show', 'index.html'),
+      data: { title: 'Setlist Builder | Guitar Notes' },
+    },
+    {
+      view: 'show',
+      out: 'show.html',
+      data: { title: 'Setlist Builder | Guitar Notes' },
+    },
   ];
 
   for (const page of pages) {
@@ -199,13 +209,28 @@ async function build() {
   const dataLab = 'public/assets/data/guitar-notes-lab-data.json';
   const dataSetlists = 'public/assets/data/guitar-notes-setlists.json';
   const songsPrefix = 'public/assets/songs/';
+  const fullBuildPrefixes = ['views/', 'routes/', 'public/assets/js/', 'public/assets/style/'];
 
   const changedSet = new Set(changedFiles || []);
   const dataChanged = hasChanges && (changedSet.has(dataMain) || changedSet.has(dataLab));
   const setlistsChanged = hasChanges && changedSet.has(dataSetlists);
   const songTextChanged = hasChanges && Array.from(changedSet).some((file) => file.startsWith(songsPrefix));
+  const forceFullBuild = hasChanges && Array.from(changedSet).some((file) => (
+    fullBuildPrefixes.some((prefix) => file.startsWith(prefix)) ||
+    file === 'scripts/build-static.js' ||
+    file === 'app.js' ||
+    file === '.github/workflows/pages.yml'
+  ));
 
   if (!hasChanges) {
+    await buildIndexes();
+    await buildSongs();
+    await buildSetlists();
+    await ensureNoJekyll();
+    return;
+  }
+
+  if (forceFullBuild) {
     await buildIndexes();
     await buildSongs();
     await buildSetlists();

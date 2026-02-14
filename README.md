@@ -44,6 +44,14 @@ Then visit `http://localhost:3000`.
 - Setlists data: `public/assets/data/guitar-notes-setlists.json`
 - Song text files: `public/assets/songs/*.txt`
 
+## Setlist Builder
+- Add songs from grid/list/song pages using the add icon.
+- Open the builder at `/show` to review the current setlist, remove individual songs, or clear all songs.
+- Setlist order is preserved in the order songs were added.
+- Duplicate songs are allowed.
+- State is stored in browser `localStorage` under key `setlistDraft`.
+- Because state is local browser storage, setlists are device/browser specific.
+
 ## Deployment (GitHub Pages)
 This repo uses GitHub Actions to build and deploy on push to `master`.
 Workflow: `.github/workflows/pages.yml`.
