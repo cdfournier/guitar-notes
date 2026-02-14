@@ -52,6 +52,16 @@ Then visit `http://localhost:3000`.
 - State is stored in browser `localStorage` under key `setlistDraft`.
 - Because state is local browser storage, setlists are device/browser specific.
 
+## Show Tracker
+- Tracker start/stop controls are available in headers on grid/list pages and on `/show`.
+- While tracking is active, opening any song page auto-logs that song visit.
+- Stopping tracker mode automatically downloads `setlist.txt` (title-only, one per line) when there are tracked songs.
+- Stopping tracker mode also clears tracker session data from browser `localStorage`.
+- Tracker state uses browser `localStorage` keys:
+  - `setlistTrackerActive`
+  - `setlistTrackerStartedAt`
+  - `setlistTrackerSongs`
+
 ## Deployment (GitHub Pages)
 This repo uses GitHub Actions to build and deploy on push to `master`.
 Workflow: `.github/workflows/pages.yml`.

@@ -50,13 +50,16 @@ $('.info button').click(function () {
   }, 10000);
 });
 
-// SETLIST BUILDER
-(function setlistBuilder() {
+// SETLIST BUILDER + TRACKER
+(function setlistFeatures() {
   var SETLIST_KEY = 'setlistDraft';
+  var TRACKER_ACTIVE_KEY = 'setlistTrackerActive';
+  var TRACKER_STARTED_AT_KEY = 'setlistTrackerStartedAt';
+  var TRACKER_SONGS_KEY = 'setlistTrackerSongs';
 
-  function readSetlist() {
+  function readList(key) {
     try {
-      var raw = localStorage.getItem(SETLIST_KEY);
+      var raw = localStorage.getItem(key);
       if (!raw) return [];
       var parsed = JSON.parse(raw);
       return Array.isArray(parsed) ? parsed : [];
@@ -65,14 +68,54 @@ $('.info button').click(function () {
     }
   }
 
+  function readSetlist() {
+    return readList(SETLIST_KEY);
+  }
+
+  function readTrackerSongs() {
+    return readList(TRACKER_SONGS_KEY);
+  }
+
+  function isTrackerActive() {
+    return localStorage.getItem(TRACKER_ACTIVE_KEY) === 'true';
+  }
+
   function writeSetlist(entries) {
     localStorage.setItem(SETLIST_KEY, JSON.stringify(entries));
     dispatchSetlistUpdated(entries);
   }
 
+  function writeTrackerSongs(entries) {
+    localStorage.setItem(TRACKER_SONGS_KEY, JSON.stringify(entries));
+    dispatchTrackerUpdated(entries, isTrackerActive());
+  }
+
+  function setTrackerActive(active) {
+    localStorage.setItem(TRACKER_ACTIVE_KEY, active ? 'true' : 'false');
+    if (active && !localStorage.getItem(TRACKER_STARTED_AT_KEY)) {
+      localStorage.setItem(TRACKER_STARTED_AT_KEY, new Date().toISOString());
+    }
+    dispatchTrackerUpdated(readTrackerSongs(), active);
+  }
+
+  function clearTracker() {
+    localStorage.removeItem(TRACKER_SONGS_KEY);
+    localStorage.removeItem(TRACKER_STARTED_AT_KEY);
+    dispatchTrackerUpdated([], isTrackerActive());
+  }
+
   function dispatchSetlistUpdated(entries) {
     document.dispatchEvent(new CustomEvent('setlist:updated', {
       detail: { count: entries.length }
+    }));
+  }
+
+  function dispatchTrackerUpdated(entries, active) {
+    document.dispatchEvent(new CustomEvent('setlist:tracker-updated', {
+      detail: {
+        count: entries.length,
+        active: !!active
+      }
     }));
   }
 
@@ -99,7 +142,7 @@ $('.info button').click(function () {
     writeSetlist([]);
   }
 
-  function togglePlayButtons(count) {
+  function toggleSetlistButtons(count) {
     var toggles = document.querySelectorAll('[data-setlist-show-toggle]');
     toggles.forEach(function (toggle) {
       var visible = count > 0;
@@ -112,10 +155,26 @@ $('.info button').click(function () {
     });
   }
 
-  function updateCount(count) {
+  function updateSetlistCount(count) {
     var counters = document.querySelectorAll('[data-setlist-count]');
     counters.forEach(function (counter) {
       counter.textContent = String(count);
+    });
+  }
+
+  function updateTrackerCount(count) {
+    var counters = document.querySelectorAll('[data-setlist-tracker-count]');
+    counters.forEach(function (counter) {
+      counter.textContent = String(count);
+    });
+  }
+
+  function toggleTrackerButtons(active) {
+    var toggles = document.querySelectorAll('[data-setlist-tracker-toggle]');
+    toggles.forEach(function (toggle) {
+      toggle.classList.toggle('is-active', active);
+      toggle.setAttribute('aria-pressed', active ? 'true' : 'false');
+      toggle.setAttribute('aria-label', active ? 'Stop show tracker' : 'Start show tracker');
     });
   }
 
@@ -158,12 +217,71 @@ $('.info button').click(function () {
     }
   }
 
+  function renderTrackerPage(entries) {
+    var list = document.querySelector('[data-setlist-tracker-list]');
+    var empty = document.querySelector('[data-setlist-tracker-empty]');
+    if (!list) return;
+
+    list.innerHTML = '';
+
+    entries.forEach(function (entry) {
+      var li = document.createElement('li');
+      li.className = 'setlist-builder-item';
+      li.textContent = entry.title || entry.slug || 'Untitled song';
+      list.appendChild(li);
+    });
+
+    if (empty) {
+      empty.style.display = entries.length > 0 ? 'none' : '';
+    }
+  }
+
+  function exportTrackerList(entries) {
+    if (!entries.length) return;
+    var lines = entries.map(function (entry) {
+      return entry.title || entry.slug || 'Untitled song';
+    });
+    var blob = new Blob([lines.join('\n') + '\n'], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = 'setlist.txt';
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    URL.revokeObjectURL(url);
+  }
+
+  function autologSongPageVisitIfTracking() {
+    if (!isTrackerActive()) return;
+    var songNode = document.querySelector('[data-song-page]');
+    if (!songNode) return;
+
+    var entries = readTrackerSongs();
+    entries.push({
+      slug: songNode.getAttribute('data-song-slug') || '',
+      title: songNode.getAttribute('data-song-title') || '',
+      artist: songNode.getAttribute('data-song-artist') || '',
+      href: window.location.pathname + window.location.search,
+      loggedAt: Date.now()
+    });
+    writeTrackerSongs(entries);
+  }
+
   function refreshSetlistUi() {
     var entries = readSetlist();
     var count = entries.length;
-    updateCount(count);
-    togglePlayButtons(count);
+    updateSetlistCount(count);
+    toggleSetlistButtons(count);
     renderSetlistPage(entries);
+  }
+
+  function refreshTrackerUi() {
+    var active = isTrackerActive();
+    var entries = readTrackerSongs();
+    updateTrackerCount(entries.length);
+    toggleTrackerButtons(active);
+    renderTrackerPage(entries);
   }
 
   document.addEventListener('click', function (event) {
@@ -198,6 +316,40 @@ $('.info button').click(function () {
       if (window.confirm('Clear the current setlist?')) {
         clearSetlist();
       }
+      return;
+    }
+
+    var trackerToggleButton = event.target.closest('[data-setlist-tracker-toggle]');
+    if (trackerToggleButton) {
+      event.preventDefault();
+      var currentlyActive = isTrackerActive();
+      if (currentlyActive) {
+        var trackedEntries = readTrackerSongs();
+        if (trackedEntries.length > 0) {
+          exportTrackerList(trackedEntries);
+        }
+        setTrackerActive(false);
+        clearTracker();
+        return;
+      }
+      setTrackerActive(true);
+      return;
+    }
+
+    var trackerClearButton = event.target.closest('[data-setlist-tracker-clear]');
+    if (trackerClearButton) {
+      event.preventDefault();
+      if (readTrackerSongs().length === 0) return;
+      if (window.confirm('Clear the current tracked show list?')) {
+        clearTracker();
+      }
+      return;
+    }
+
+    var trackerExportButton = event.target.closest('[data-setlist-tracker-export]');
+    if (trackerExportButton) {
+      event.preventDefault();
+      exportTrackerList(readTrackerSongs());
     }
   });
 
@@ -205,14 +357,23 @@ $('.info button').click(function () {
     refreshSetlistUi();
   });
 
+  document.addEventListener('setlist:tracker-updated', function () {
+    refreshTrackerUi();
+  });
+
   window.addEventListener('storage', function (event) {
     if (event.key === SETLIST_KEY) {
       refreshSetlistUi();
     }
+    if (event.key === TRACKER_SONGS_KEY || event.key === TRACKER_ACTIVE_KEY) {
+      refreshTrackerUi();
+    }
   });
 
   window.addEventListener('DOMContentLoaded', function () {
+    autologSongPageVisitIfTracking();
     refreshSetlistUi();
+    refreshTrackerUi();
   });
 })();
 
