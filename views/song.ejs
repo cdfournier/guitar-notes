@@ -37,7 +37,7 @@
         </div>
       </section>
       <% } %>
-        <main>
+        <main data-song-page data-song-slug="<%= song['artist-song'] %>" data-song-title="<%= song.song %>" data-song-artist="<%= song.artist %>">
           <div id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
           <article>
             <h1 class="visuallyhidden">
