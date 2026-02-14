@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>
+      <%= title %>
+    </title>
+    <%- include('includes/head', { title }); %>
+  </head>
+
+  <body class="hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <h1>Setlist Builder</h1>
+    </header>
+    <main id="content" class="setlists setlist-builder">
+      <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
+      <article>
+        <section class="setlist-builder-controls">
+          <h2>Show Setlist</h2>
+          <div class="setlist-toolbar">
+            <p><span data-setlist-count>0</span> song(s)</p>
+            <button type="button" class="setlist-clear-button" data-setlist-clear aria-label="Clear setlist">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-playlist-x">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M19 8h-14" />
+                  <path d="M5 12h7" />
+                  <path d="M12 16h-7" />
+                  <path d="M16 14l4 4" />
+                  <path d="M20 14l-4 4" />
+                </svg>
+              </span>
+              <span class="text">Clear Setlist</span>
+            </button>
+          </div>
+          <ol class="setlist-builder-list" data-setlist-list></ol>
+          <p class="setlist-empty" data-setlist-empty>No songs in setlist yet. Add songs from any grid, list, or song page.</p>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <%- include('includes/footer-about'); %>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<%= basePath %>/assets/js/site.js"></script>
+    <script src="<%= basePath %>/assets/js/headroom.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("body").addClass("visible");
+        $("body").removeClass("hidden");
+      });
+      var myElement = document.querySelector("header");
+      var headroom = new Headroom(myElement);
+      headroom.init();
+    </script>
+  </body>
+
+</html>

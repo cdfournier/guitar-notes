@@ -217,3 +217,11 @@ html.dark {
 .headroom--unpinned {
   @include transform(translateY(-100vh));
 }
+
+.header--pinned {
+  @include transform(translateY(0));
+}
+
+.header--unpinned {
+  @include transform(translateY(-100vh));
+}
