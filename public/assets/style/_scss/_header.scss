@@ -127,9 +127,16 @@ header {
   }
 
   h1 {
+    flex: 1 1 auto;
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .filter-toggle,
+  .setlist-show-toggle {
+    flex-shrink: 0;
   }
 
   button {

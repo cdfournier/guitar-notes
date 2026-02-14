@@ -76,6 +76,7 @@
   gap: 0;
   opacity: 0;
   overflow: hidden;
+  white-space: nowrap;
   pointer-events: none;
   text-decoration: none;
 }
@@ -84,9 +85,18 @@
   width: auto;
   min-width: 1.25rem;
   max-width: 8rem;
+  flex-shrink: 0;
   gap: 0.375rem;
   opacity: 1;
+  overflow: visible;
+  padding-right: 0.125rem;
   pointer-events: auto;
+
+  .icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    flex-shrink: 0;
+  }
 }
 
 .setlist-show-toggle.is-visible:hover,

@@ -137,18 +137,7 @@
 
       // HEADER HIDE ON SCROLL
       var myElement = document.querySelector("header");
-      var headroom = new Headroom(myElement, {
-        "offset": 0,
-        "tolerance": {
-          "up": 20,
-          "down": 20
-        },
-        "classes": {
-          "initial": "header--fixed",
-          "pinned": "header--pinned",
-          "unpinned": "header--unpinned"
-        }
-      });
+      var headroom = new Headroom(myElement);
       headroom.init();
     </script>
   </body>
