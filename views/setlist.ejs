@@ -67,8 +67,10 @@
               <% if (hasAcoustic) { %>
                 <p><small>* Acoustic</small></p>
                 <% } %>
-                  <% if (noteDetails) { %>
-                    <p><small>** <%= noteDetails %></small></p>
+                  <% if (noteDetails && noteDetails.length) { %>
+                    <% noteDetails.forEach(function (entry) { %>
+                      <p><small>** <%= entry.song %>: <%= entry.details %></small></p>
+                    <% }) %>
                     <% } %>
         </section>
         <section>
