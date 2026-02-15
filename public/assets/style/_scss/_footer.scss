@@ -172,6 +172,21 @@ footer {
   }
 }
 
+@media (max-width: 63.9375rem) {
+  footer {
+    nav {
+      ul {
+        li {
+          span.icon {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 64rem) {
   footer {
     align-items: flex-start;

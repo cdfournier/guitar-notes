@@ -296,6 +296,52 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
   }
 }
 
+@media (max-width: 63.9375rem) {
+  .setlist-add-button,
+  .setlist-show-toggle,
+  .setlist-tracker-toggle,
+  .setlist-remove-button {
+    width: 2rem;
+    min-width: 2rem;
+    height: 2rem;
+    max-height: 2rem;
+  }
+
+  .song-link-row:hover .setlist-add-button,
+  .song-link-row:focus-within .setlist-add-button,
+  .setlist-add-button--always {
+    width: 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
+  }
+
+  .song-detail-line .setlist-add-button--always .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .setlist-show-toggle.is-visible {
+    min-width: 2rem;
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .setlist-show-toggle.is-hidden {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+  }
+
+  .setlist-add-button {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+  }
+}
+
 html.dark {
   .setlist-clear-button,
   .setlist-export-button {
