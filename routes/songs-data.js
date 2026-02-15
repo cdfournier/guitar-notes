@@ -5,10 +5,12 @@ const DATA_PATHS = {
   main: path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-data.json'),
   lab: path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-lab-data.json'),
 };
+const ENRICHMENT_PATH = path.join(__dirname, '..', 'public', 'assets', 'data', 'guitar-notes-enrichment.json');
 const SONGS_DIR = path.join(__dirname, '..', 'public', 'assets', 'songs');
 
 let cachedSongs = new Map();
 let fileIndex = null;
+let cachedEnrichment = null;
 
 function escapeHtml(value) {
   return String(value)
@@ -27,19 +29,77 @@ function normalizeTags(tags) {
     .filter(Boolean);
 }
 
+function isBlank(value) {
+  return value === null || value === undefined || String(value).trim() === '';
+}
+
+function parseEnrichment(raw) {
+  if (!raw || typeof raw !== 'object') return new Map();
+  const map = new Map();
+  const records = raw.records && typeof raw.records === 'object'
+    ? raw.records
+    : null;
+  const items = Array.isArray(raw.items) ? raw.items : null;
+
+  if (records) {
+    for (const [slug, value] of Object.entries(records)) {
+      if (slug) map.set(slug, value || null);
+    }
+    return map;
+  }
+
+  if (items) {
+    for (const item of items) {
+      if (item && item.slug) {
+        map.set(item.slug, item);
+      }
+    }
+  }
+
+  return map;
+}
+
+async function loadEnrichment() {
+  if (cachedEnrichment) return cachedEnrichment;
+  try {
+    const raw = await fs.readFile(ENRICHMENT_PATH, 'utf8');
+    cachedEnrichment = parseEnrichment(JSON.parse(raw));
+  } catch (err) {
+    if (err && err.code === 'ENOENT') {
+      cachedEnrichment = new Map();
+    } else {
+      throw err;
+    }
+  }
+  return cachedEnrichment;
+}
+
 async function loadSongs(kind = 'main') {
   if (cachedSongs.has(kind)) return cachedSongs.get(kind);
   const dataPath = DATA_PATHS[kind] || DATA_PATHS.main;
   const raw = await fs.readFile(dataPath, 'utf8');
   const data = JSON.parse(raw);
-  const normalized = data.map((song) => ({
-    ...song,
-    artist: typeof song.artist === 'string' ? song.artist.trim() : song.artist,
-    song: typeof song.song === 'string' ? song.song.trim() : song.song,
-    album: typeof song.album === 'string' ? song.album.trim() : song.album,
-    tags: typeof song.tags === 'string' ? song.tags.trim() : song.tags,
-    tagsArray: normalizeTags(song.tags),
-  }));
+  const enrichment = await loadEnrichment();
+  const normalized = data.map((song) => {
+    const entry = enrichment.get(song['artist-song']) || null;
+    const manualAlbum = typeof song.album === 'string' ? song.album.trim() : song.album;
+    const manualYear = song.year;
+    const fallbackAlbum = entry && typeof entry.album === 'string' ? entry.album.trim() : '';
+    const fallbackYear = entry && entry.year !== undefined && entry.year !== null && String(entry.year).trim() !== ''
+      ? Number(entry.year)
+      : null;
+
+    return {
+      ...song,
+      artist: typeof song.artist === 'string' ? song.artist.trim() : song.artist,
+      song: typeof song.song === 'string' ? song.song.trim() : song.song,
+      album: isBlank(manualAlbum) ? fallbackAlbum : manualAlbum,
+      year: isBlank(manualYear) ? fallbackYear : manualYear,
+      tags: typeof song.tags === 'string' ? song.tags.trim() : song.tags,
+      tagsArray: normalizeTags(song.tags),
+      enrichment: entry,
+    };
+  });
   cachedSongs.set(kind, normalized);
   return normalized;
 }

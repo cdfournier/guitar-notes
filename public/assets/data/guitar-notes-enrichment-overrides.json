@@ -1,0 +1,13 @@
+{
+  "records": {
+    "example-slug": {
+      "recordingMbid": "",
+      "releaseMbid": "",
+      "album": "",
+      "year": null,
+      "artworkUrl": "",
+      "matchConfidence": "override",
+      "reason": "Replace this example with a real song slug"
+    }
+  }
+}
