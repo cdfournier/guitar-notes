@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "build:static": "node ./scripts/build-static.js",
-    "build": "npm run build:static"
+    "build": "npm run build:static",
+    "audit:providers": "node ./scripts/audit-provider-coverage.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.7",
