@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-15T18:49:59.560Z",
+  "generatedAt": "2026-02-15T18:52:57.555Z",
   "provider": "musicbrainz",
   "includeLab": true,
   "totalSongs": 527,
@@ -876,17 +876,17 @@
       "song": "Christmas Is The Time To Say \"I Love You\"",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:57.606Z",
+      "updatedAt": "2026-02-15T18:52:55.343Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
-        "recordingMbid": "",
+        "recordingMbid": "6dd6bf76-7b7f-4819-8eb1-7b67c302ffdf",
         "releaseMbid": "79485bac-a682-410e-8488-feff7106eb3c",
         "score": 100
       },
-      "album": "",
-      "year": null,
-      "artworkUrl": ""
+      "album": "Christmas Is A Time To Say I Love You / White Christmas",
+      "year": 1983,
+      "artworkUrl": "https://coverartarchive.org/release/79485bac-a682-410e-8488-feff7106eb3c/front-500"
     },
     "billy-squier-everybody-wants-you": {
       "slug": "billy-squier-everybody-wants-you",
@@ -3540,17 +3540,17 @@
       "song": "The Break Up Song",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:54.176Z",
+      "updatedAt": "2026-02-15T18:52:54.116Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
-        "recordingMbid": "",
+        "recordingMbid": "c0b55399-8520-4796-b15c-9b5a77a8ec21",
         "releaseMbid": "f8527c24-4b37-4106-9cee-6d4de3f4896f",
         "score": 100
       },
-      "album": "",
-      "year": null,
-      "artworkUrl": ""
+      "album": "The Breakup Song",
+      "year": 1981,
+      "artworkUrl": "https://coverartarchive.org/release/f8527c24-4b37-4106-9cee-6d4de3f4896f/front-500"
     },
     "guns-n-roses-used-to-love-her": {
       "slug": "guns-n-roses-used-to-love-her",
@@ -4044,7 +4044,7 @@
       "song": "Rosehaven Theme Song",
       "source": "main",
       "provider": "musicbrainz",
-      "updatedAt": "2026-02-15T18:49:58.010Z",
+      "updatedAt": "2026-02-15T18:52:55.951Z",
       "matched": false,
       "matchConfidence": "none",
       "musicbrainz": {
@@ -4854,7 +4854,7 @@
       "song": "Porpoise Song (Theme From \"Head\")",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:58.768Z",
+      "updatedAt": "2026-02-15T18:52:57.001Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -4998,7 +4998,7 @@
       "song": "Seasick, Yet Still Docked/I Know It's Gonna Happen Someday",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:59.279Z",
+      "updatedAt": "2026-02-15T18:52:57.264Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -5448,7 +5448,7 @@
       "song": "Hey Hey, My My (Into The Black)",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:56.849Z",
+      "updatedAt": "2026-02-15T18:52:54.351Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -6870,7 +6870,7 @@
       "song": "Driven To Tears/When The World Is Running Down, You Make The Best Of What's Still Around",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:57.172Z",
+      "updatedAt": "2026-02-15T18:52:54.635Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -7140,7 +7140,7 @@
       "song": "Merry Christmas (I Don't Want To Fight Tonight)",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:59.559Z",
+      "updatedAt": "2026-02-15T18:52:57.554Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -7158,7 +7158,7 @@
       "song": "My Brain Is Hanging Upside Down (Bonzo Goes To Bitburg)",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:57.344Z",
+      "updatedAt": "2026-02-15T18:52:54.863Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -7230,7 +7230,7 @@
       "song": "Bastards Of The Young",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:57.606Z",
+      "updatedAt": "2026-02-15T18:52:55.076Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -8400,7 +8400,7 @@
       "song": "Handle With Care",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:49:57.857Z",
+      "updatedAt": "2026-02-15T18:52:55.597Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
