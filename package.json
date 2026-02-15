@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "build:static": "node ./scripts/build-static.js",
     "build": "npm run build:static",
-    "audit:providers": "node ./scripts/audit-provider-coverage.js"
+    "audit:providers": "node ./scripts/audit-provider-coverage.js",
+    "build:enrichment": "node ./scripts/build-song-enrichment.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.7",
