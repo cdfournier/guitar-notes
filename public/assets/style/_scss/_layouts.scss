@@ -322,6 +322,25 @@ main.index {
   }
 }
 
+@media (max-width: 63.9375rem) {
+  main article section p {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+  }
+
+  main.index article section h4 {
+    font-size: 1.5rem;
+  }
+
+  main.index article section ul li label {
+    font-size: 1.325rem;
+  }
+
+  main.index article section ul section p {
+    font-size: 1.125rem;
+  }
+}
+
 @media (min-width: 46.5rem) {
   main.index {
     article {
@@ -837,5 +856,54 @@ main.setlists {
       }
     }
 
+  }
+}
+
+// TABLET TUNING (iPad Mini + similar)
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  // Grid and list index pages: force two columns in portrait tablet.
+  main.index {
+    article {
+      section {
+        ul li {
+          width: calc(50% - 1rem);
+        }
+      }
+
+      section#list {
+        column-count: 2;
+        column-gap: 2rem;
+      }
+    }
+  }
+
+  // Setlists pages: force two columns in portrait tablet.
+  main.setlists {
+    section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      ul {
+        width: calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+        min-width: calc(50% - 0.5rem);
+      }
+    }
+  }
+
+  // Song pages: keep single-column in portrait tablet.
+  main article section#song {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  // Song pages: use two columns in landscape tablet.
+  main article section#song {
+    column-count: 2 !important;
+    column-gap: 2rem !important;
   }
 }

@@ -183,6 +183,17 @@ header {
   }
 }
 
+@media (max-width: 63.9375rem) {
+  header {
+    button {
+      span.icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
 @media (display-mode: fullscreen) {
   header {
     padding: 4rem 4rem 0;

@@ -6,13 +6,18 @@ html {
   margin: 0 auto;
   padding: 0;
   font-family: "Courier", monospace;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: black;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: none;
 }
 
+@media (min-width: 64rem) {
+  html {
+    font-size: 14px;
+  }
+}
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -307,6 +312,12 @@ header button :focus {
   }
   header form {
     padding: 0;
+  }
+}
+@media (max-width: 63.9375rem) {
+  header button span.icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media (display-mode: fullscreen) {
@@ -618,6 +629,21 @@ main.index article section#list .artist-group {
   page-break-inside: avoid;
 }
 
+@media (max-width: 63.9375rem) {
+  main article section p {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+  }
+  main.index article section h4 {
+    font-size: 1.5rem;
+  }
+  main.index article section ul li label {
+    font-size: 1.325rem;
+  }
+  main.index article section ul section p {
+    font-size: 1.125rem;
+  }
+}
 @media (min-width: 46.5rem) {
   main.index article section ul li {
     width: calc(50% - 1rem);
@@ -1013,6 +1039,36 @@ main.setlists section p + p {
     width: 20%;
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  main.index article section ul li {
+    width: calc(50% - 1rem);
+  }
+  main.index article section#list {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+  main.setlists section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main.setlists section ul {
+    width: calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+    min-width: calc(50% - 0.5rem);
+  }
+  main article section#song {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  main article section#song {
+    column-count: 2 !important;
+    column-gap: 2rem !important;
+  }
+}
 :root {
   --gray: #333333;
 }
@@ -1308,6 +1364,45 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     pointer-events: auto;
   }
 }
+@media (max-width: 63.9375rem) {
+  .setlist-add-button,
+  .setlist-show-toggle,
+  .setlist-tracker-toggle,
+  .setlist-remove-button {
+    width: 2rem;
+    min-width: 2rem;
+    height: 2rem;
+    max-height: 2rem;
+  }
+  .song-link-row:hover .setlist-add-button,
+  .song-link-row:focus-within .setlist-add-button,
+  .setlist-add-button--always {
+    width: 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
+  }
+  .song-detail-line .setlist-add-button--always .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .setlist-show-toggle.is-visible {
+    min-width: 2rem;
+  }
+  .setlist-show-toggle.is-visible .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .setlist-show-toggle.is-hidden {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+  }
+  .setlist-add-button {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+  }
+}
 html.dark .setlist-clear-button,
 html.dark .setlist-export-button {
   border-color: white;
@@ -1491,6 +1586,12 @@ footer nav form fieldset label input:checked:after {
   }
   footer nav {
     margin: 0 0 0 auto;
+  }
+}
+@media (max-width: 63.9375rem) {
+  footer nav ul li span.icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media (min-width: 64rem) {
