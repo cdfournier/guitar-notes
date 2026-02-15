@@ -78,6 +78,40 @@ function slugify(value, dropLeadingThe = false) {
   return text;
 }
 
+function toFlag(value) {
+  if (typeof value === 'boolean') return value;
+  const normalized = String(value || '').trim().toLowerCase();
+  if (!normalized) return false;
+  return normalized === 'yes' || normalized === 'true' || normalized === '1' || normalized === 'y' || normalized === 'yet';
+}
+
+function extractInlineMarkers(songTitle) {
+  let title = decodeHtml(songTitle || '').trim();
+  let note = false;
+  let acoustic = false;
+  let segue = false;
+
+  while (title.endsWith('>')) {
+    segue = true;
+    title = title.slice(0, -1).trim();
+  }
+
+  if (title.endsWith('**')) {
+    note = true;
+    title = title.slice(0, -2).trim();
+  } else if (title.endsWith('*')) {
+    acoustic = true;
+    title = title.slice(0, -1).trim();
+  }
+
+  return {
+    title,
+    note,
+    acoustic,
+    segue,
+  };
+}
+
 async function buildCache() {
   if (cache) return cache;
   const rawSetlists = await fs.readFile(SETLISTS_PATH, 'utf8');
@@ -144,14 +178,21 @@ async function buildCache() {
 
     const sets = [];
     let hasAcoustic = false;
-    let noteDetails = null;
+    const noteDetails = [];
 
     for (const row of rows) {
-      if (row.acoustic === 'yes' && row.note !== 'yes') {
+      const parsedSong = extractInlineMarkers(row.song);
+      const rowNote = toFlag(row.note) || parsedSong.note;
+      const rowAcoustic = toFlag(row.acoustic) || parsedSong.acoustic;
+      if (rowAcoustic && !rowNote) {
         hasAcoustic = true;
       }
-      if (!noteDetails && row.note === 'yes') {
-        noteDetails = row.details || 'Unfinished';
+      if (rowNote) {
+        const detailText = row.details || 'Unfinished';
+        noteDetails.push({
+          song: parsedSong.title || row.song,
+          details: detailText,
+        });
       }
     }
 
@@ -160,28 +201,34 @@ async function buildCache() {
       const items = [];
       const list = grouped.get(setKey).slice().sort((a, b) => (a.order || 0) - (b.order || 0));
       for (const row of list) {
+        const parsedSong = extractInlineMarkers(row.song);
+        const rowNote = toFlag(row.note) || parsedSong.note;
+        const rowAcoustic = toFlag(row.acoustic) || parsedSong.acoustic;
+        const rowSegue = toFlag(row.segue) || parsedSong.segue;
+        const songTitle = parsedSong.title || row.song;
+
         const artistKey = row.artist.toLowerCase();
-        const songKey = row.song.toLowerCase();
+        const songKey = songTitle.toLowerCase();
         let slug = songSlugMap.get(`${artistKey}|${songKey}`);
         if (!slug && row.artist && row.song) {
-          const candidate = `${slugify(row.artist, true)}-${slugify(row.song)}`;
+          const candidate = `${slugify(row.artist, true)}-${slugify(songTitle)}`;
           if (songSlugSet.has(candidate)) {
             slug = candidate;
           }
         }
 
         let suffix = '';
-        if (row.note === 'yes') {
+        if (rowNote) {
           suffix += '**';
-        } else if (row.acoustic === 'yes') {
+        } else if (rowAcoustic) {
           suffix += '*';
         }
-        if (row.segue === 'yes') {
+        if (rowSegue) {
           suffix += '&nbsp;&gt;';
         }
 
         items.push({
-          song: row.song,
+          song: songTitle,
           artist: row.artist,
           slug,
           suffix,

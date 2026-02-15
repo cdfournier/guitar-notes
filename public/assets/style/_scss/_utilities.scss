@@ -65,7 +65,7 @@
   min-width: 1.25rem;
   max-width: 1.25rem;
   margin-right: 0.375rem;
-  opacity: 0.7;
+  opacity: 1;
   pointer-events: auto;
 }
 
@@ -80,7 +80,7 @@
 
 .song-link-row .setlist-add-button:hover,
 .song-link-row .setlist-add-button:focus {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .setlist-show-toggle {
@@ -291,7 +291,7 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     min-width: 1.25rem;
     max-width: 1.25rem;
     margin-right: 0.375rem;
-    opacity: 0.7;
+    opacity: 1;
     pointer-events: auto;
   }
 }
