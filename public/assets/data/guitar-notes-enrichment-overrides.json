@@ -1,13 +1,46 @@
 {
   "records": {
-    "example-slug": {
+    "billy-squier-christmas-is-the-time-to-say-i-love-you": {
       "recordingMbid": "",
-      "releaseMbid": "",
-      "album": "",
-      "year": null,
-      "artworkUrl": "",
-      "matchConfidence": "override",
-      "reason": "Replace this example with a real song slug"
+      "releaseMbid": "79485bac-a682-410e-8488-feff7106eb3c",
+      "matchConfidence": "override"
+    },
+    "morrissey-seasick-yet-still-dockedi-know-its-gonna-happen-someday": {
+      "recordingMbid": "58fb03e2-2ec8-41f6-90c1-c900fe0ed452",
+      "matchConfidence": "override"
+    },
+    "oasis-hey-hey-my-my-into-the-black": {
+      "recordingMbid": "598d3007-ab11-4217-855b-044060dbdc6c",
+      "matchConfidence": "override"
+    },
+    "greg-kihn-band-the-break-up-song": {
+      "recordingMbid": "",
+      "releaseMbid": "f8527c24-4b37-4106-9cee-6d4de3f4896f",
+      "matchConfidence": "override"
+    },
+    "monkees-porpoise-song-theme-from-head": {
+      "recordingMbid": "91dbad1f-41c0-476a-a932-7b2147d6d726",
+      "matchConfidence": "override"
+    },
+    "police-driven-to-tearswhen-the-world-is-running-down-you-make-the-best-of-whats-still-around": {
+      "recordingMbid": "a0fbd960-4f2e-4a18-9e25-8ea60467014a",
+      "matchConfidence": "override"
+    },
+    "ramones-merry-christmas-i-dont-want-to-fight-tonight": {
+      "recordingMbid": "23f9b940-c7fb-4db7-b650-9c09e253bbd4",
+      "matchConfidence": "override"
+    },
+    "ramones-my-brain-is-hanging-upside-down-bonzo-goes-to-bitburg": {
+      "recordingMbid": "3176a5ee-53f3-479a-af32-c744efc212ec",
+      "matchConfidence": "override"
+    },
+    "replacements-bastards-of-the-young": {
+      "recordingMbid": "d342bcd3-bda3-4050-8c66-60f885e05f2f",
+      "matchConfidence": "override"
+    },
+    "traveling-wilburys-handle-with-care": {
+      "recordingMbid": "ea5d3599-55ef-49d4-9244-731f1f9a3ec2",
+      "matchConfidence": "override"
     }
   }
 }
