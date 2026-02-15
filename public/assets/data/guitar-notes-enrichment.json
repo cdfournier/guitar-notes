@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-15T18:52:57.555Z",
+  "generatedAt": "2026-02-15T18:57:06.202Z",
   "provider": "musicbrainz",
   "includeLab": true,
   "totalSongs": 527,
@@ -876,7 +876,7 @@
       "song": "Christmas Is The Time To Say \"I Love You\"",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:55.343Z",
+      "updatedAt": "2026-02-15T18:57:04.519Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -3540,7 +3540,7 @@
       "song": "The Break Up Song",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:54.116Z",
+      "updatedAt": "2026-02-15T18:57:02.605Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -4044,7 +4044,7 @@
       "song": "Rosehaven Theme Song",
       "source": "main",
       "provider": "musicbrainz",
-      "updatedAt": "2026-02-15T18:52:55.951Z",
+      "updatedAt": "2026-02-15T18:57:04.751Z",
       "matched": false,
       "matchConfidence": "none",
       "musicbrainz": {
@@ -4854,7 +4854,7 @@
       "song": "Porpoise Song (Theme From \"Head\")",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:57.001Z",
+      "updatedAt": "2026-02-15T18:57:05.969Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -4998,7 +4998,7 @@
       "song": "Seasick, Yet Still Docked/I Know It's Gonna Happen Someday",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:57.264Z",
+      "updatedAt": "2026-02-15T18:57:06.087Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -5448,7 +5448,7 @@
       "song": "Hey Hey, My My (Into The Black)",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:54.351Z",
+      "updatedAt": "2026-02-15T18:57:02.718Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -6870,7 +6870,7 @@
       "song": "Driven To Tears/When The World Is Running Down, You Make The Best Of What's Still Around",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:54.635Z",
+      "updatedAt": "2026-02-15T18:57:02.915Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -7140,7 +7140,7 @@
       "song": "Merry Christmas (I Don't Want To Fight Tonight)",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:57.554Z",
+      "updatedAt": "2026-02-15T18:57:06.200Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -7158,7 +7158,7 @@
       "song": "My Brain Is Hanging Upside Down (Bonzo Goes To Bitburg)",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:54.863Z",
+      "updatedAt": "2026-02-15T18:57:03.058Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {
@@ -7224,23 +7224,23 @@
       "year": 1994,
       "artworkUrl": "https://coverartarchive.org/release/e4629500-d301-4878-ac40-e70ea2655487/front-500"
     },
-    "replacements-bastards-of-the-young": {
-      "slug": "replacements-bastards-of-the-young",
+    "replacements-bastards-of-young": {
+      "slug": "replacements-bastards-of-young",
       "artist": "The Replacements",
-      "song": "Bastards Of The Young",
+      "song": "Bastards Of Young",
       "source": "main",
-      "provider": "override",
-      "updatedAt": "2026-02-15T18:52:55.076Z",
+      "provider": "musicbrainz",
+      "updatedAt": "2026-02-15T18:57:03.244Z",
       "matched": true,
-      "matchConfidence": "override",
+      "matchConfidence": "high",
       "musicbrainz": {
-        "recordingMbid": "d342bcd3-bda3-4050-8c66-60f885e05f2f",
-        "releaseMbid": "adc98a51-acc4-499d-8a67-db3e695bea1e",
+        "recordingMbid": "44aa804f-1457-4da0-a536-5b5894bf1191",
+        "releaseMbid": "5096de07-105a-4db4-bb3f-54a36bf2675d",
         "score": 100
       },
-      "album": "Tim",
-      "year": 1985,
-      "artworkUrl": "https://coverartarchive.org/release/adc98a51-acc4-499d-8a67-db3e695bea1e/front-500"
+      "album": "For Sale: Live at Maxwell’s 1986",
+      "year": 2017,
+      "artworkUrl": "https://coverartarchive.org/release/5096de07-105a-4db4-bb3f-54a36bf2675d/front-500"
     },
     "replacements-cant-hardly-wait": {
       "slug": "replacements-cant-hardly-wait",
@@ -8396,11 +8396,11 @@
     },
     "traveling-wilburys-handle-with-care": {
       "slug": "traveling-wilburys-handle-with-care",
-      "artist": "The Traveling Wilburys",
+      "artist": "Traveling Wilburys",
       "song": "Handle With Care",
       "source": "main",
       "provider": "override",
-      "updatedAt": "2026-02-15T18:52:55.597Z",
+      "updatedAt": "2026-02-15T18:57:04.634Z",
       "matched": true,
       "matchConfidence": "override",
       "musicbrainz": {

@@ -1487,6 +1487,7 @@ footer p.copyright {
 }
 footer .fair-use-note {
   display: block;
+  width: 100%;
   padding: 0 1rem 1rem;
   text-align: center;
 }
