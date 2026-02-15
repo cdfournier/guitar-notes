@@ -112,6 +112,7 @@ strong, em {
 
 small {
   font-size: 0.8rem;
+  line-height: 1.25;
 }
 
 .visuallyhidden {
@@ -1389,6 +1390,11 @@ footer p.copyright {
   line-height: 1.25;
   text-align: center;
 }
+footer .fair-use-note {
+  display: block;
+  padding: 0 1rem 1rem;
+  text-align: center;
+}
 footer nav {
   display: flex;
   align-items: center;
@@ -1487,6 +1493,9 @@ footer nav form fieldset label input:checked:after {
     justify-content: flex-end;
   }
   footer p.copyright {
+    text-align: right;
+  }
+  footer .fair-use-note {
     text-align: right;
   }
   footer nav {

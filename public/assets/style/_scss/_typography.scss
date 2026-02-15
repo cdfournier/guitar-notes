@@ -23,7 +23,10 @@ p {
 
 strong, em {display: inline;}
 
-small {font-size: 0.8rem;}
+small {
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
 
 .visuallyhidden {display: none;}
 
