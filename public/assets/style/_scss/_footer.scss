@@ -82,6 +82,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     padding: 1rem;
     ul {
       display: flex;
@@ -173,6 +175,8 @@ footer {
       text-align: right;
     }
     .fair-use-note {
+      width: 80%;
+      margin: 0 0 0 auto;
       text-align: right;
     }
     nav {

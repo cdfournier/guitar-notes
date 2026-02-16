@@ -68,6 +68,20 @@ $('.info button').click(function () {
     }
   }
 
+  function showToast(message) {
+    var toast = document.querySelector('[data-setlist-toast]');
+    var toastMessage = document.querySelector('[data-setlist-toast-message]');
+    if (!toast || !toastMessage || !message) return;
+
+    hideToast();
+    toastMessage.textContent = message;
+    toast.classList.add('is-visible');
+
+    toastTimer = setTimeout(function () {
+      hideToast();
+    }, 2400);
+  }
+
   function readList(key) {
     try {
       var raw = localStorage.getItem(key);
@@ -113,20 +127,6 @@ $('.info button').click(function () {
     localStorage.removeItem(TRACKER_SONGS_KEY);
     localStorage.removeItem(TRACKER_STARTED_AT_KEY);
     dispatchTrackerUpdated([], isTrackerActive());
-  }
-
-  function showToast(message) {
-    var toast = document.querySelector('[data-setlist-toast]');
-    var toastMessage = document.querySelector('[data-setlist-toast-message]');
-    if (!toast || !toastMessage || !message) return;
-
-    hideToast();
-    toastMessage.textContent = message;
-    toast.classList.add('is-visible');
-
-    toastTimer = setTimeout(function () {
-      hideToast();
-    }, 2400);
   }
 
   function dispatchSetlistUpdated(entries) {
@@ -277,25 +277,6 @@ $('.info button').click(function () {
     URL.revokeObjectURL(url);
   }
 
-  function startTracking() {
-    clearTracker();
-    localStorage.removeItem(TRACKER_STARTED_AT_KEY);
-    setTrackerActive(true);
-    showToast('Set tracking started.');
-  }
-
-  function stopTracking() {
-    var trackedEntries = readTrackerSongs();
-    if (trackedEntries.length > 0) {
-      exportTrackerList(trackedEntries);
-      showToast('Set stopped. Downloaded setlist.txt.');
-    } else {
-      showToast('Set stopped. No songs were tracked.');
-    }
-    setTrackerActive(false);
-    clearTracker();
-  }
-
   function autologSongPageVisitIfTracking() {
     if (!isTrackerActive()) return;
     var songNode = document.querySelector('[data-song-page]');
@@ -368,11 +349,21 @@ $('.info button').click(function () {
     var trackerToggleButton = event.target.closest('[data-setlist-tracker-toggle]');
     if (trackerToggleButton) {
       event.preventDefault();
-      if (isTrackerActive()) {
-        stopTracking();
-      } else {
-        startTracking();
+      var currentlyActive = isTrackerActive();
+      if (currentlyActive) {
+        var trackedEntries = readTrackerSongs();
+        if (trackedEntries.length > 0) {
+          exportTrackerList(trackedEntries);
+          showToast('Set stopped. Downloaded setlist.txt.');
+        } else {
+          showToast('Set stopped. No songs were tracked.');
+        }
+        setTrackerActive(false);
+        clearTracker();
+        return;
       }
+      setTrackerActive(true);
+      showToast('Set tracking started.');
       return;
     }
 

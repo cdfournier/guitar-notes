@@ -64,7 +64,7 @@
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.5rem;
+  margin-right: 0.375rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -73,7 +73,7 @@
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.5rem;
+  margin-right: 0.375rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -364,11 +364,9 @@ main.setlist-builder {
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     border: 1px solid $gray;
-    border-radius: 0.25rem;
+    border-radius: 2rem;
+    font-weight: bold;
     line-height: 1;
-    text-transform: uppercase;
-    color: inherit;
-    background: transparent;
     cursor: pointer;
 
     .icon {
@@ -387,6 +385,16 @@ main.setlist-builder {
     &:focus {
       opacity: 0.7;
     }
+  }
+
+  .setlist-clear-button {
+    color: inherit;
+    background: transparent;
+  }
+
+  .setlist-export-button {
+    color: $gray;
+    background: white;
   }
 }
 
@@ -408,7 +416,7 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     width: 1.25rem;
     min-width: 1.25rem;
     max-width: 1.25rem;
-    margin-right: 0.5rem;
+    margin-right: 0.375rem;
     opacity: 1;
     pointer-events: auto;
   }
@@ -433,6 +441,11 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     max-width: 2rem;
   }
 
+  .song-detail-line .setlist-add-button--always .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
   .setlist-tracker-fab {
     min-height: 3rem;
     padding: 0.625rem 1rem;
@@ -447,11 +460,6 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
   .setlist-toast {
     bottom: 5.25rem;
     font-size: 1rem;
-  }
-
-  .song-detail-line .setlist-add-button--always .icon {
-    width: 2rem;
-    height: 2rem;
   }
 
   .setlist-show-toggle.is-visible {
@@ -482,12 +490,26 @@ html.dark {
     border-color: white;
   }
 
+  .setlist-clear-button {
+    color: white;
+    background: transparent;
+  }
+
+  .setlist-export-button {
+    color: $gray;
+    background: white;
+  }
+
   .setlist-count-pill {
     color: $gray;
     background: white;
   }
 
-  .setlist-tracker-fab,
+  .setlist-tracker-fab {
+    color: $gray;
+    background: white;
+  }
+
   .setlist-toast {
     color: $gray;
     background: white;

@@ -1147,7 +1147,7 @@ main.setlists section p + p {
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.5rem;
+  margin-right: 0.375rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -1156,7 +1156,7 @@ main.setlists section p + p {
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.5rem;
+  margin-right: 0.375rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -1437,11 +1437,9 @@ main.setlist-builder .setlist-export-button {
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gray);
-  border-radius: 0.25rem;
+  border-radius: 2rem;
+  font-weight: bold;
   line-height: 1;
-  text-transform: uppercase;
-  color: inherit;
-  background: transparent;
   cursor: pointer;
 }
 main.setlist-builder .setlist-clear-button .icon,
@@ -1460,6 +1458,14 @@ main.setlist-builder .setlist-clear-button:hover, main.setlist-builder .setlist-
 main.setlist-builder .setlist-export-button:hover,
 main.setlist-builder .setlist-export-button:focus {
   opacity: 0.7;
+}
+main.setlist-builder .setlist-clear-button {
+  color: inherit;
+  background: transparent;
+}
+main.setlist-builder .setlist-export-button {
+  color: var(--gray);
+  background: white;
 }
 
 main.index article section#list .artist-group p[data-song-item] {
@@ -1484,7 +1490,7 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     width: 1.25rem;
     min-width: 1.25rem;
     max-width: 1.25rem;
-    margin-right: 0.5rem;
+    margin-right: 0.375rem;
     opacity: 1;
     pointer-events: auto;
   }
@@ -1506,6 +1512,10 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     min-width: 2rem;
     max-width: 2rem;
   }
+  .song-detail-line .setlist-add-button--always .icon {
+    width: 2rem;
+    height: 2rem;
+  }
   .setlist-tracker-fab {
     min-height: 3rem;
     padding: 0.625rem 1rem;
@@ -1518,10 +1528,6 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
   .setlist-toast {
     bottom: 5.25rem;
     font-size: 1rem;
-  }
-  .song-detail-line .setlist-add-button--always .icon {
-    width: 2rem;
-    height: 2rem;
   }
   .setlist-show-toggle.is-visible {
     min-width: 2rem;
@@ -1545,11 +1551,22 @@ html.dark .setlist-clear-button,
 html.dark .setlist-export-button {
   border-color: white;
 }
+html.dark .setlist-clear-button {
+  color: white;
+  background: transparent;
+}
+html.dark .setlist-export-button {
+  color: var(--gray);
+  background: white;
+}
 html.dark .setlist-count-pill {
   color: var(--gray);
   background: white;
 }
-html.dark .setlist-tracker-fab,
+html.dark .setlist-tracker-fab {
+  color: var(--gray);
+  background: white;
+}
 html.dark .setlist-toast {
   color: var(--gray);
   background: white;
@@ -1637,6 +1654,8 @@ footer nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 1rem;
 }
 footer nav ul {
@@ -1734,6 +1753,8 @@ footer nav form fieldset label input:checked:after {
     text-align: right;
   }
   footer .fair-use-note {
+    width: 80%;
+    margin: 0 0 0 auto;
     text-align: right;
   }
   footer nav {
@@ -1971,13 +1992,21 @@ html.dark footer nav form input:after {
 .filters .filter-actions button {
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gray);
-  border-radius: 0.25rem;
+  border-radius: 2rem;
+  font-weight: bold;
   line-height: 1;
   cursor: pointer;
 }
-.filters .filter-actions button:hover,
-.filters .filter-actions button :focus {
+.filters .filter-actions button:hover, .filters .filter-actions button:focus {
   opacity: 0.7;
+}
+.filters .filter-actions #song-filter-reset {
+  background: transparent;
+}
+.filters .filter-actions .filter-apply {
+  border-color: var(--gray);
+  color: white;
+  background: var(--gray);
 }
 
 .filter.filter--open {
@@ -2025,4 +2054,13 @@ html.dark .filter .filter-row .filter-tags .filter-tag input[type=checkbox]:chec
 }
 html.dark .filter .filter-actions button {
   border-color: #ffffff;
+}
+html.dark .filter .filter-actions #song-filter-reset {
+  color: #ffffff;
+  background: transparent;
+}
+html.dark .filter .filter-actions .filter-apply {
+  border-color: #ffffff;
+  color: var(--gray);
+  background: #ffffff;
 }
