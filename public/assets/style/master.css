@@ -1634,6 +1634,7 @@ footer p.copyright {
 }
 footer .fair-use-note {
   display: block;
+  width: 100%;
   padding: 0 1rem 1rem;
   text-align: center;
 }
@@ -1641,6 +1642,8 @@ footer nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 1rem;
 }
 footer nav ul {
@@ -1738,6 +1741,8 @@ footer nav form fieldset label input:checked:after {
     text-align: right;
   }
   footer .fair-use-note {
+    width: 80%;
+    margin: 0 0 0 auto;
     text-align: right;
   }
   footer nav {
