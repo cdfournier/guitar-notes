@@ -64,20 +64,6 @@
         </span>
         <span class="setlist-count-pill" data-setlist-count>0</span>
       </a>
-      <button type="button" class="setlist-tracker-toggle" data-setlist-tracker-toggle aria-label="Start show tracker" aria-pressed="false">
-        <span class="icon icon-start">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-play">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M7 4v16l13 -8l-13 -8" />
-          </svg>
-        </span>
-        <span class="icon icon-stop">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-stop">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M5 7a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2l0 -10" />
-          </svg>
-        </span>
-      </button>
     </header>
     <div class="filter" data-filter aria-hidden="true">
       <div class="overlay" data-filter-close></div>
@@ -2268,6 +2254,35 @@
         </section>
       </article>
     </main>
+    <div class="setlist-tracker-fab-wrap" data-setlist-tracker-controls>
+  <button type="button" class="setlist-tracker-fab" data-setlist-tracker-toggle aria-label="Start show tracker" aria-pressed="false">
+    <span class="icon icon-start">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-play">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M7 4v16l13 -8l-13 -8" />
+      </svg>
+    </span>
+    <span class="icon icon-stop">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-stop">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M5 7a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2l0 -10" />
+      </svg>
+    </span>
+    <span class="text text-start">Start Set</span>
+    <span class="text text-stop">Stop Set</span>
+  </button>
+</div>
+<div class="setlist-toast" data-setlist-toast role="status" aria-live="polite" aria-atomic="true">
+  <span class="setlist-toast-message" data-setlist-toast-message></span>
+  <button type="button" class="setlist-toast-close" data-setlist-toast-close aria-label="Close setlist message">
+    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  </button>
+</div>
+
     <footer>
       <section class="about" style="width: 100%;">
   <div class="text">

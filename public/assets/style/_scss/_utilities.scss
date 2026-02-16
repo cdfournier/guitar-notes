@@ -64,7 +64,7 @@
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.375rem;
+  margin-right: 0.5rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -73,7 +73,7 @@
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.375rem;
+  margin-right: 0.5rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -84,6 +84,7 @@
 }
 
 .setlist-show-toggle {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -96,6 +97,7 @@
 }
 
 .setlist-show-toggle.is-visible {
+  display: inline-flex;
   width: auto;
   min-width: 1.25rem;
   max-width: 8rem;
@@ -119,6 +121,7 @@
 }
 
 .setlist-show-toggle.is-hidden {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -142,6 +145,119 @@
   }
 }
 
+.setlist-tracker-fab-wrap {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  left: max(1rem, env(safe-area-inset-left));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 90;
+}
+
+.setlist-tracker-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.875rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  background: $gray;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  @include transition(all, 0.25s, ease);
+
+  .icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .icon-stop,
+  .text-stop {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &.is-active {
+    .icon-start,
+    .text-start {
+      display: none;
+    }
+
+    .icon-stop,
+    .text-stop {
+      display: inline-flex;
+    }
+  }
+}
+
+.setlist-toast {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: fixed;
+  left: 50%;
+  bottom: 4.5rem;
+  z-index: 90;
+  min-width: 12rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: white;
+  background: $gray;
+  opacity: 0;
+  pointer-events: none;
+  @include transform(translate(-50%, 0.5rem));
+  @include transition(all, 0.2s, ease);
+
+  .setlist-toast-message {
+    display: inline-block;
+    min-width: 0;
+  }
+
+  .setlist-toast-close {
+    display: inline-grid;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+    @include transition(opacity, 0.25s, ease);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &.is-visible {
+    opacity: 0.95;
+    pointer-events: auto;
+    @include transform(translate(-50%, 0));
+  }
+}
+
 .setlist-count-pill {
   display: inline-flex;
   align-items: center;
@@ -157,6 +273,7 @@
 }
 
 .info a.setlist-show-toggle {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -167,6 +284,7 @@
 }
 
 .info a.setlist-show-toggle.is-visible {
+  display: inline-flex;
   width: auto;
   min-width: 2.5rem;
   max-width: 8rem;
@@ -290,7 +408,7 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     width: 1.25rem;
     min-width: 1.25rem;
     max-width: 1.25rem;
-    margin-right: 0.375rem;
+    margin-right: 0.5rem;
     opacity: 1;
     pointer-events: auto;
   }
@@ -313,6 +431,22 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     width: 2rem;
     min-width: 2rem;
     max-width: 2rem;
+  }
+
+  .setlist-tracker-fab {
+    min-height: 3rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.9375rem;
+
+    .icon {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  .setlist-toast {
+    bottom: 5.25rem;
+    font-size: 1rem;
   }
 
   .song-detail-line .setlist-add-button--always .icon {
@@ -349,6 +483,12 @@ html.dark {
   }
 
   .setlist-count-pill {
+    color: $gray;
+    background: white;
+  }
+
+  .setlist-tracker-fab,
+  .setlist-toast {
     color: $gray;
     background: white;
   }
