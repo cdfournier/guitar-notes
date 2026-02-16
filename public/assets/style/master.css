@@ -404,18 +404,12 @@ main article section p {
   white-space: pre;
   text-overflow: ellipsis;
 }
-main article section#song:not(p) {
-  visibility: hidden;
-  line-height: 0;
-}
-main article section#song p {
+main article section#song {
   visibility: visible;
+  line-height: inherit;
 }
-@media not all and (min-resolution: 0.001dpcm) {
-  main article section#song:not(p) {
-    visibility: visible;
-    line-height: inherit;
-  }
+main article section#song > :not(p) {
+  display: none;
 }
 
 @media (min-width: 48rem) {
