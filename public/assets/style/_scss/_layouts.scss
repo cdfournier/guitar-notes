@@ -23,20 +23,13 @@ main {
       }
     }
 
-    section#song:not(p) {
-      visibility: hidden;
-      line-height: 0;
-    }
-
-    section#song p {
+    section#song {
       visibility: visible;
+      line-height: inherit;
     }
 
-    @media not all and (min-resolution:.001dpcm) {
-      section#song:not(p) {
-        visibility: visible;
-        line-height: inherit;
-      }
+    section#song> :not(p) {
+      display: none;
     }
   }
 }
