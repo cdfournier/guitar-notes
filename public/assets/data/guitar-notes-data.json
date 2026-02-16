@@ -2173,7 +2173,7 @@
    "year": 1986,
    "notes": "",
    "columns": "md",
-   "tags": "80s, Rock",
+   "tags": "80s, Rock, Horns",
    "new": "",
    "id": 115,
    "artist-regex": "Duran Duran",
@@ -6594,7 +6594,7 @@
  },
  {
    "artist-sort": "replacements, the",
-   "song": "Bastards Of The Young",
+   "song": "Bastards Of Young",
    "artist": "The Replacements",
    "album": "Tim",
    "year": 1985,
@@ -6607,9 +6607,9 @@
    "the-artist-regex": "Replacements",
    "artist-id": "replacements",
    "img": "replacements.jpg",
-   "song-regex": "Bastards Of The Young",
-   "song-id": "bastards-of-the-young",
-   "artist-song": "replacements-bastards-of-the-young"
+   "song-regex": "Bastards Of Young",
+   "song-id": "bastards-of-young",
+   "artist-song": "replacements-bastards-of-young"
  },
  {
    "artist-sort": "replacements, the",
@@ -7543,9 +7543,9 @@
    "artist-song": "traffic-light-up-or-leave-me-alone"
  },
  {
-   "artist-sort": "traveling wilburys, the",
+   "artist-sort": "traveling wilburys",
    "song": "Handle With Care",
-   "artist": "The Traveling Wilburys",
+   "artist": "Traveling Wilburys",
    "album": "Traveling Wilburys Vol. 1",
    "year": 1988,
    "notes": "",
@@ -7553,7 +7553,7 @@
    "tags": "80s, Rock",
    "new": "",
    "id": 398,
-   "artist-regex": "The Traveling Wilburys",
+   "artist-regex": "Traveling Wilburys",
    "the-artist-regex": "Traveling Wilburys",
    "artist-id": "traveling-wilburys",
    "img": "traveling-wilburys.jpg",
