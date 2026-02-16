@@ -200,6 +200,64 @@
   }
 }
 
+.setlist-toast {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: fixed;
+  left: 50%;
+  bottom: 4.5rem;
+  z-index: 90;
+  min-width: 12rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: white;
+  background: $gray;
+  opacity: 0;
+  pointer-events: none;
+  @include transform(translate(-50%, 0.5rem));
+  @include transition(all, 0.2s, ease);
+
+  .setlist-toast-message {
+    display: inline-block;
+    min-width: 0;
+  }
+
+  .setlist-toast-close {
+    display: inline-grid;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+    @include transition(opacity, 0.25s, ease);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &.is-visible {
+    opacity: 0.95;
+    pointer-events: auto;
+    @include transform(translate(-50%, 0));
+  }
+}
+
 .setlist-count-pill {
   display: inline-flex;
   align-items: center;
@@ -391,6 +449,11 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     }
   }
 
+  .setlist-toast {
+    bottom: 5.25rem;
+    font-size: 1rem;
+  }
+
   .setlist-show-toggle.is-visible {
     min-width: 2rem;
 
@@ -427,6 +490,11 @@ html.dark {
   }
 
   .setlist-tracker-fab {
+    color: $gray;
+    background: white;
+  }
+
+  .setlist-toast {
     color: $gray;
     background: white;
   }

@@ -56,6 +56,31 @@ $('.info button').click(function () {
   var TRACKER_ACTIVE_KEY = 'setlistTrackerActive';
   var TRACKER_STARTED_AT_KEY = 'setlistTrackerStartedAt';
   var TRACKER_SONGS_KEY = 'setlistTrackerSongs';
+  var toastTimer = null;
+
+  function hideToast() {
+    var toast = document.querySelector('[data-setlist-toast]');
+    if (!toast) return;
+    toast.classList.remove('is-visible');
+    if (toastTimer) {
+      clearTimeout(toastTimer);
+      toastTimer = null;
+    }
+  }
+
+  function showToast(message) {
+    var toast = document.querySelector('[data-setlist-toast]');
+    var toastMessage = document.querySelector('[data-setlist-toast-message]');
+    if (!toast || !toastMessage || !message) return;
+
+    hideToast();
+    toastMessage.textContent = message;
+    toast.classList.add('is-visible');
+
+    toastTimer = setTimeout(function () {
+      hideToast();
+    }, 2400);
+  }
 
   function readList(key) {
     try {
@@ -298,6 +323,7 @@ $('.info button').click(function () {
       setTimeout(function () {
         addButton.classList.remove('is-added');
       }, 300);
+      showToast('Song added to setlist.');
       return;
     }
 
@@ -315,6 +341,7 @@ $('.info button').click(function () {
       if (readSetlist().length === 0) return;
       if (window.confirm('Clear the current setlist?')) {
         clearSetlist();
+        showToast('Setlist cleared.');
       }
       return;
     }
@@ -327,12 +354,16 @@ $('.info button').click(function () {
         var trackedEntries = readTrackerSongs();
         if (trackedEntries.length > 0) {
           exportTrackerList(trackedEntries);
+          showToast('Set stopped. Downloaded setlist.txt.');
+        } else {
+          showToast('Set stopped. No songs were tracked.');
         }
         setTrackerActive(false);
         clearTracker();
         return;
       }
       setTrackerActive(true);
+      showToast('Set tracking started.');
       return;
     }
 
@@ -342,6 +373,7 @@ $('.info button').click(function () {
       if (readTrackerSongs().length === 0) return;
       if (window.confirm('Clear the current tracked show list?')) {
         clearTracker();
+        showToast('Tracked list cleared.');
       }
       return;
     }
@@ -350,6 +382,14 @@ $('.info button').click(function () {
     if (trackerExportButton) {
       event.preventDefault();
       exportTrackerList(readTrackerSongs());
+      showToast('Downloaded setlist.txt.');
+      return;
+    }
+
+    var toastCloseButton = event.target.closest('[data-setlist-toast-close]');
+    if (toastCloseButton) {
+      event.preventDefault();
+      hideToast();
     }
   });
 
