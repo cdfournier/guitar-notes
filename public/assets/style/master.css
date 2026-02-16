@@ -1438,10 +1438,8 @@ main.setlist-builder .setlist-export-button {
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gray);
   border-radius: 2rem;
+  font-weight: bold;
   line-height: 1;
-  text-transform: uppercase;
-  color: var(--gray);
-  background: white;
   cursor: pointer;
 }
 main.setlist-builder .setlist-clear-button .icon,
@@ -1460,6 +1458,14 @@ main.setlist-builder .setlist-clear-button:hover, main.setlist-builder .setlist-
 main.setlist-builder .setlist-export-button:hover,
 main.setlist-builder .setlist-export-button:focus {
   opacity: 0.7;
+}
+main.setlist-builder .setlist-clear-button {
+  color: inherit;
+  background: transparent;
+}
+main.setlist-builder .setlist-export-button {
+  color: var(--gray);
+  background: white;
 }
 
 main.index article section#list .artist-group p[data-song-item] {
@@ -1544,6 +1550,12 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
 html.dark .setlist-clear-button,
 html.dark .setlist-export-button {
   border-color: white;
+}
+html.dark .setlist-clear-button {
+  color: white;
+  background: transparent;
+}
+html.dark .setlist-export-button {
   color: var(--gray);
   background: white;
 }
@@ -1981,6 +1993,7 @@ html.dark footer nav form input:after {
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gray);
   border-radius: 2rem;
+  font-weight: bold;
   line-height: 1;
   cursor: pointer;
 }
@@ -1991,9 +2004,9 @@ html.dark footer nav form input:after {
   background: transparent;
 }
 .filters .filter-actions .filter-apply {
-  border-color: white;
-  color: var(--gray);
-  background: white;
+  border-color: var(--gray);
+  color: white;
+  background: var(--gray);
 }
 
 .filter.filter--open {

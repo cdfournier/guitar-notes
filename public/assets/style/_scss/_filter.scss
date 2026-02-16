@@ -164,6 +164,7 @@
       padding: 0.75rem 1.5rem;
       border: 1px solid $gray;
       border-radius: 2rem;
+      font-weight: bold;
       line-height: 1;
       cursor: pointer;
 
@@ -178,9 +179,9 @@
     }
 
     .filter-apply {
-      border-color: white;
-      color: $gray;
-      background: white;
+      border-color: $gray;
+      color: white;
+      background: $gray;
     }
   }
 
