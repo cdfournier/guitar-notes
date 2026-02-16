@@ -84,6 +84,7 @@
 }
 
 .setlist-show-toggle {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -96,6 +97,7 @@
 }
 
 .setlist-show-toggle.is-visible {
+  display: inline-flex;
   width: auto;
   min-width: 1.25rem;
   max-width: 8rem;
@@ -119,6 +121,7 @@
 }
 
 .setlist-show-toggle.is-hidden {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -142,6 +145,61 @@
   }
 }
 
+.setlist-tracker-fab-wrap {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  left: max(1rem, env(safe-area-inset-left));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 90;
+}
+
+.setlist-tracker-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.875rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  background: $gray;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  @include transition(all, 0.25s, ease);
+
+  .icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .icon-stop,
+  .text-stop {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &.is-active {
+    .icon-start,
+    .text-start {
+      display: none;
+    }
+
+    .icon-stop,
+    .text-stop {
+      display: inline-flex;
+    }
+  }
+}
+
 .setlist-count-pill {
   display: inline-flex;
   align-items: center;
@@ -157,6 +215,7 @@
 }
 
 .info a.setlist-show-toggle {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -167,6 +226,7 @@
 }
 
 .info a.setlist-show-toggle.is-visible {
+  display: inline-flex;
   width: auto;
   min-width: 2.5rem;
   max-width: 8rem;
@@ -246,11 +306,11 @@ main.setlist-builder {
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     border: 1px solid $gray;
-    border-radius: 0.25rem;
+    border-radius: 2rem;
     line-height: 1;
     text-transform: uppercase;
-    color: inherit;
-    background: transparent;
+    color: $gray;
+    background: white;
     cursor: pointer;
 
     .icon {
@@ -320,6 +380,17 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     height: 2rem;
   }
 
+  .setlist-tracker-fab {
+    min-height: 3rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.9375rem;
+
+    .icon {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
   .setlist-show-toggle.is-visible {
     min-width: 2rem;
 
@@ -346,9 +417,16 @@ html.dark {
   .setlist-clear-button,
   .setlist-export-button {
     border-color: white;
+    color: $gray;
+    background: white;
   }
 
   .setlist-count-pill {
+    color: $gray;
+    background: white;
+  }
+
+  .setlist-tracker-fab {
     color: $gray;
     background: white;
   }

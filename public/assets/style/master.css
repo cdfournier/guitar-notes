@@ -1167,6 +1167,7 @@ main.setlists section p + p {
 }
 
 .setlist-show-toggle {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -1179,6 +1180,7 @@ main.setlists section p + p {
 }
 
 .setlist-show-toggle.is-visible {
+  display: inline-flex;
   width: auto;
   min-width: 1.25rem;
   max-width: 8rem;
@@ -1201,6 +1203,7 @@ main.setlists section p + p {
 }
 
 .setlist-show-toggle.is-hidden {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -1215,6 +1218,57 @@ main.setlists section p + p {
   display: none;
 }
 .setlist-tracker-toggle.is-active .icon-stop {
+  display: inline-flex;
+}
+
+.setlist-tracker-fab-wrap {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  left: max(1rem, env(safe-area-inset-left));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 90;
+}
+
+.setlist-tracker-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.875rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  background: var(--gray);
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.setlist-tracker-fab .icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+}
+.setlist-tracker-fab .icon-stop,
+.setlist-tracker-fab .text-stop {
+  display: none;
+}
+.setlist-tracker-fab:hover, .setlist-tracker-fab:focus {
+  opacity: 0.7;
+}
+.setlist-tracker-fab.is-active .icon-start,
+.setlist-tracker-fab.is-active .text-start {
+  display: none;
+}
+.setlist-tracker-fab.is-active .icon-stop,
+.setlist-tracker-fab.is-active .text-stop {
   display: inline-flex;
 }
 
@@ -1233,6 +1287,7 @@ main.setlists section p + p {
 }
 
 .info a.setlist-show-toggle {
+  display: none;
   width: 0;
   min-width: 0;
   max-width: 0;
@@ -1243,6 +1298,7 @@ main.setlists section p + p {
 }
 
 .info a.setlist-show-toggle.is-visible {
+  display: inline-flex;
   width: auto;
   min-width: 2.5rem;
   max-width: 8rem;
@@ -1313,11 +1369,11 @@ main.setlist-builder .setlist-export-button {
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gray);
-  border-radius: 0.25rem;
+  border-radius: 2rem;
   line-height: 1;
   text-transform: uppercase;
-  color: inherit;
-  background: transparent;
+  color: var(--gray);
+  background: white;
   cursor: pointer;
 }
 main.setlist-builder .setlist-clear-button .icon,
@@ -1386,6 +1442,15 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     width: 2rem;
     height: 2rem;
   }
+  .setlist-tracker-fab {
+    min-height: 3rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.9375rem;
+  }
+  .setlist-tracker-fab .icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
   .setlist-show-toggle.is-visible {
     min-width: 2rem;
   }
@@ -1407,8 +1472,14 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
 html.dark .setlist-clear-button,
 html.dark .setlist-export-button {
   border-color: white;
+  color: var(--gray);
+  background: white;
 }
 html.dark .setlist-count-pill {
+  color: var(--gray);
+  background: white;
+}
+html.dark .setlist-tracker-fab {
   color: var(--gray);
   background: white;
 }
@@ -1828,13 +1899,20 @@ html.dark footer nav form input:after {
 .filters .filter-actions button {
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--gray);
-  border-radius: 0.25rem;
+  border-radius: 2rem;
   line-height: 1;
   cursor: pointer;
 }
-.filters .filter-actions button:hover,
-.filters .filter-actions button :focus {
+.filters .filter-actions button:hover, .filters .filter-actions button:focus {
   opacity: 0.7;
+}
+.filters .filter-actions #song-filter-reset {
+  background: transparent;
+}
+.filters .filter-actions .filter-apply {
+  border-color: white;
+  color: var(--gray);
+  background: white;
 }
 
 .filter.filter--open {
@@ -1882,4 +1960,13 @@ html.dark .filter .filter-row .filter-tags .filter-tag input[type=checkbox]:chec
 }
 html.dark .filter .filter-actions button {
   border-color: #ffffff;
+}
+html.dark .filter .filter-actions #song-filter-reset {
+  color: #ffffff;
+  background: transparent;
+}
+html.dark .filter .filter-actions .filter-apply {
+  border-color: #ffffff;
+  color: var(--gray);
+  background: #ffffff;
 }

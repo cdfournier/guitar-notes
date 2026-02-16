@@ -16,20 +16,6 @@
     <!-- End Google Tag Manager (noscript) -->
     <header>
       <h1>Setlist Builder</h1>
-      <button type="button" class="setlist-tracker-toggle" data-setlist-tracker-toggle aria-label="Start show tracker" aria-pressed="false">
-        <span class="icon icon-start">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-play">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M7 4v16l13 -8l-13 -8" />
-          </svg>
-        </span>
-        <span class="icon icon-stop">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-stop">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M5 7a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2l0 -10" />
-          </svg>
-        </span>
-      </button>
     </header>
     <main id="content" class="setlists setlist-builder">
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
@@ -57,6 +43,7 @@
         </section>
       </article>
     </main>
+    <%- include('includes/setlist-tracker-controls'); %>
     <footer>
       <%- include('includes/footer-about'); %>
     </footer>
