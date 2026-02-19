@@ -1,5 +1,3 @@
-C F
-
 C  F
    Here we go
 C             F
