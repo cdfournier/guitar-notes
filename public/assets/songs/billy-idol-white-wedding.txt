@@ -1,5 +1,3 @@
-Bm Bm E D
-
 Bm Bm E D - Bm Bm D E
 
 Bm                                 A  E
@@ -42,7 +40,7 @@ Bm Bm E D - Bm Bm D E - Bm Bm E E - Bm Bm D E
 
 Bm        A
 Pick it up
-E
+E                    Bm
 Take me back home yeah
 
 Bm                                 A  E
@@ -76,11 +74,11 @@ Look for something left in this world
 D     Bm
 Start again
 
-Bm      D                     E
+Bm            E               D           Bm
 Come on it's a nice day for a white wedding
-Bm          E            D
+Bm    E                  D   Bm
 It's a nice day to start again
-Bm          E            D
+Bm    E                  D   Bm
 It's a nice day to start again
-Bm          E            D
+Bm    E                  D   Bm
 It's a nice day to start again
