@@ -32,7 +32,7 @@ G        Em
 I didn't mean to be with you
 Em           C
 And when you said I scared you
-C      D                   G
+C      D                   G   D
 Well I guess you scared me too
 
 D          G
@@ -54,7 +54,7 @@ G        Em
 I didn't mean to be with you
 Em           C
 And when you said I scared you
-C      D                   G
+C      D                   G   D
 Well I guess you scared me too
 
 D           G
@@ -65,7 +65,7 @@ Em            C
 And if you're somewhere drunk and
 D                 Em
 Passed out on the floor
-   C            D        G
+   C            D        G    D
 Oh Joey I'm not angry anymore
 D        G    D        G
 Angry anymore angry anymore
