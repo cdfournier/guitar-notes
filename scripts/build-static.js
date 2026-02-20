@@ -18,6 +18,8 @@ const outputDir = process.env.OUTPUT_DIR
   : path.join(__dirname, '..', 'public');
 
 const basePath = (process.env.BASE_PATH || '').replace(/\/$/, '');
+const dataDir = path.join(__dirname, '..', 'public', 'assets', 'data');
+const canonicalSetlistsFile = 'guitar-notes-setlists.json';
 
 function getChangedFiles() {
   if (process.env.INCREMENTAL !== '1') return null;
@@ -201,7 +203,21 @@ async function ensureNoJekyll() {
   }
 }
 
+async function validateSetlistsDataFilename() {
+  const files = await fs.readdir(dataDir);
+  const candidates = files.filter((name) => /^guitar-notes-setlists.*\.json$/i.test(name));
+  const extras = candidates.filter((name) => name !== canonicalSetlistsFile);
+  if (extras.length === 0) return;
+
+  throw new Error(
+    `Unexpected setlists data file(s): ${extras.join(', ')}. ` +
+    `Use only ${canonicalSetlistsFile} in public/assets/data/.`
+  );
+}
+
 async function build() {
+  await validateSetlistsDataFilename();
+
   const changedFiles = getChangedFiles();
   const hasChanges = Array.isArray(changedFiles) && changedFiles.length > 0;
 
