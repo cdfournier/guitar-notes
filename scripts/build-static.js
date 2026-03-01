@@ -96,6 +96,7 @@ function shouldIncludeInPrecache(relPath) {
   if (rel === 'setlists.html') return false;
   if (rel.startsWith('show/')) return false;
   if (rel === 'show.html') return false;
+  if (rel === 'assets/data/guitar-notes-setlists.json') return false;
   if (rel === 'sw.js') return false;
   if (rel.endsWith('.map')) return false;
 
