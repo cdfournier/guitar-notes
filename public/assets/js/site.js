@@ -525,6 +525,33 @@ $('.info button').click(function () {
     });
   }
 
+  function normalizeStandaloneSongLinks() {
+    if (!isStandaloneMode()) return;
+
+    var links = document.querySelectorAll('a[href]');
+    links.forEach(function (link) {
+      var resolved = resolveHref(link.getAttribute('href'));
+      if (!resolved) return;
+      if (!isSongDetailPath(resolved.pathname)) return;
+
+      if (link.hasAttribute('target')) {
+        link.setAttribute('data-original-target', link.getAttribute('target') || '');
+      }
+      link.setAttribute('target', '_self');
+
+      // Keep rel lean and avoid noopener/noreferrer semantics intended for _blank.
+      var rel = (link.getAttribute('rel') || '')
+        .split(/\s+/)
+        .filter(Boolean)
+        .filter(function (token) { return token !== 'noopener' && token !== 'noreferrer'; });
+      if (rel.length > 0) {
+        link.setAttribute('rel', rel.join(' '));
+      } else {
+        link.removeAttribute('rel');
+      }
+    });
+  }
+
   function isSongDetailPath(pathname) {
     return /\/songs\/[^\/?#]+\/?$/.test(pathname || '');
   }
@@ -737,6 +764,7 @@ $('.info button').click(function () {
 
   window.addEventListener('DOMContentLoaded', function () {
     applyStandaloneNavMode();
+    normalizeStandaloneSongLinks();
     bindSongPanelInteractions();
     registerServiceWorker();
   });
