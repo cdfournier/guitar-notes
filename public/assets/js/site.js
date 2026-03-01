@@ -1,23 +1,20 @@
 // COLOR MODE CONTROLS
 window.addEventListener('DOMContentLoaded', function (theme) {
-  if (localStorage.getItem('theme') === 'true') {
-    $('html').toggleClass('dark');
-    $('input#switch-theme').prop('checked', true);
-  }
-  else {
+  var prefersDark = localStorage.getItem('theme') === 'true';
+  document.documentElement.classList.toggle('dark', prefersDark);
+  $('input#switch-theme').prop('checked', prefersDark);
+  if (localStorage.getItem('theme') === null) {
     localStorage.setItem('theme', false);
   }
 });
 $('input#switch-theme').click(function () {
-  $('html').toggleClass('dark');
-  if (localStorage.getItem('theme') === 'true') {
-    $('input#switch-theme').prop('checked', false);
-    localStorage.setItem('theme', false);
-  }
-  else {
-    $('input#switch-theme').prop('checked', true);
-    localStorage.setItem('theme', true);
-  }
+  var nextDark = localStorage.getItem('theme') !== 'true';
+  document.documentElement.classList.toggle('dark', nextDark);
+  $('input#switch-theme').prop('checked', nextDark);
+  localStorage.setItem('theme', nextDark ? 'true' : 'false');
+  document.dispatchEvent(new CustomEvent('theme:changed', {
+    detail: { dark: nextDark }
+  }));
 });
 
 // WELCOME LOGO
@@ -486,7 +483,6 @@ $('.info button').click(function () {
 
 // PWA RUNTIME
 (function pwaRuntime() {
-  var panelStateKey = '__songPanel';
   var forceModeKey = 'gn-force-app-mode';
   var songPanel = null;
 
@@ -574,7 +570,7 @@ $('.info button').click(function () {
   function normalizeStandaloneSongLinks() {
     if (!isStandaloneMode()) return;
 
-    var links = document.querySelectorAll('a[href]');
+    var links = document.querySelectorAll('a[data-song-open-panel][href]');
     links.forEach(function (link) {
       var resolved = resolveHref(link.getAttribute('href'));
       if (!resolved) return;
@@ -599,7 +595,17 @@ $('.info button').click(function () {
   }
 
   function isSongDetailPath(pathname) {
-    return /\/songs\/[^\/?#]+\/?$/.test(pathname || '');
+    if (!pathname) return false;
+    var cleanPath = pathname.split('?')[0].split('#')[0];
+    var segments = cleanPath.split('/').filter(Boolean);
+    var baseSegments = getBasePath().split('/').filter(Boolean);
+    if (segments.length !== baseSegments.length + 2) return false;
+    for (var i = 0; i < baseSegments.length; i += 1) {
+      if (segments[i] !== baseSegments[i]) return false;
+    }
+    if (segments[baseSegments.length] !== 'songs') return false;
+    if (segments[baseSegments.length + 1] === 'list') return false;
+    return true;
   }
 
   function resolveHref(url) {
@@ -641,6 +647,7 @@ $('.info button').click(function () {
     if (frame.getAttribute('src') !== url) {
       frame.setAttribute('src', url);
     }
+    syncFrameTheme(frame);
     panel.classList.add('is-open');
     panel.setAttribute('aria-hidden', 'false');
     document.body.classList.add('song-panel-open');
@@ -653,27 +660,12 @@ $('.info button').click(function () {
     document.body.classList.remove('song-panel-open');
   }
 
-  function openSongPanel(url, titleText, pushState) {
+  function openSongPanel(url, titleText) {
     showSongPanel(url, titleText);
-
-    if (pushState === false) return;
-
-    window.history.pushState({
-      url: url,
-      title: titleText || 'Song',
-      __songPanel: true
-    }, '', window.location.href);
   }
 
   function closeSongPanel() {
     if (!isPanelOpen()) return;
-
-    var state = window.history.state;
-    if (state && state[panelStateKey]) {
-      window.history.back();
-      return;
-    }
-
     hideSongPanel();
   }
 
@@ -692,7 +684,7 @@ $('.info button').click(function () {
       if (event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-      var link = event.target.closest('a[href]');
+      var link = event.target.closest('a[data-song-open-panel][href]');
       if (!link) return;
       if (link.closest('[data-song-panel]')) return;
 
@@ -701,7 +693,7 @@ $('.info button').click(function () {
       if (!isSongDetailPath(resolved.pathname)) return;
 
       event.preventDefault();
-      openSongPanel(resolved.href, link.textContent.trim(), true);
+      openSongPanel(resolved.href, link.textContent.trim());
     });
 
     document.addEventListener('keydown', function (event) {
@@ -710,17 +702,23 @@ $('.info button').click(function () {
       closeSongPanel();
     });
 
-    window.addEventListener('popstate', function (event) {
-      var state = event.state || {};
-      if (state[panelStateKey] && state.url) {
-        showSongPanel(state.url, state.title || 'Song');
-        return;
-      }
-
-      if (isPanelOpen()) {
-        hideSongPanel();
-      }
+    document.addEventListener('theme:changed', function () {
+      if (!isPanelOpen()) return;
+      var frame = getPanelFrame();
+      if (!frame) return;
+      syncFrameTheme(frame);
     });
+  }
+
+  function syncFrameTheme(frame) {
+    try {
+      if (!frame || !frame.contentDocument || !frame.contentDocument.documentElement) return;
+      var root = frame.contentDocument.documentElement;
+      var isDark = document.documentElement.classList.contains('dark');
+      root.classList.toggle('dark', isDark);
+    } catch (error) {
+      // Ignore frames that are not same-origin.
+    }
   }
 
   function ensureUpdateToast() {
@@ -805,6 +803,13 @@ $('.info button').click(function () {
     normalizeStandaloneSongLinks();
     bindSongPanelInteractions();
     registerServiceWorker();
+
+    var frame = getPanelFrame();
+    if (frame) {
+      frame.addEventListener('load', function () {
+        syncFrameTheme(frame);
+      });
+    }
   });
 })();
 

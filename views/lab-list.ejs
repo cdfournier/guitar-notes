@@ -88,7 +88,7 @@
                 <p data-song-item data-artist="<%= song.artist %>" data-title="<%= song.song %>" data-tags="<%= song.tags || '' %>">
                   <span class="song-link-row">
                     <span class="song-link-main">
-                      <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/?lab=1" target="_blank" rel="noopener noreferrer">
+                      <a href="<%= basePath %>/songs/<%= song['artist-song'] %>/?lab=1" target="_blank" rel="noopener noreferrer" data-song-open-panel>
                         <%= song.song %>
                           <% if (song.new) { %><span class="badge">new</span>
                             <% } %>
