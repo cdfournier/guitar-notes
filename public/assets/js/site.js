@@ -282,8 +282,7 @@ $('.info button').click(function () {
 
       var link = document.createElement('a');
       link.href = entry.href || '#';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+      link.setAttribute('data-song-open-panel', '');
       link.textContent = entry.title || entry.slug || 'Untitled song';
 
       row.appendChild(removeButton);
@@ -570,7 +569,7 @@ $('.info button').click(function () {
   function normalizeStandaloneSongLinks() {
     if (!isStandaloneMode()) return;
 
-    var links = document.querySelectorAll('a[data-song-open-panel][href]');
+    var links = document.querySelectorAll('a[href]');
     links.forEach(function (link) {
       var resolved = resolveHref(link.getAttribute('href'));
       if (!resolved) return;
@@ -684,7 +683,7 @@ $('.info button').click(function () {
       if (event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-      var link = event.target.closest('a[data-song-open-panel][href]');
+      var link = event.target.closest('a[href]');
       if (!link) return;
       if (link.closest('[data-song-panel]')) return;
 
