@@ -499,8 +499,10 @@ $('.info button').click(function () {
 
   function isStandaloneMode() {
     try {
-      if (window.localStorage && window.localStorage.getItem(forceModeKey) === '1') {
-        return true;
+      if (window.localStorage) {
+        var forced = window.localStorage.getItem(forceModeKey);
+        if (forced === '1') return true;
+        if (forced === '0') return false;
       }
     } catch (error) {
       // No-op when storage is unavailable.
@@ -515,7 +517,15 @@ $('.info button').click(function () {
         window.matchMedia('(display-mode: window-controls-overlay)').matches;
     }
     var iosStandalone = window.navigator && window.navigator.standalone === true;
-    return displayModeStandalone || iosStandalone;
+    if (displayModeStandalone || iosStandalone) return true;
+
+    // Brave app windows on localhost can report browser display-mode.
+    // Enable app behavior by default for local Brave development unless explicitly disabled.
+    var isLocalhost = window.location && window.location.hostname === 'localhost';
+    var isBrave = !!(window.navigator && window.navigator.brave);
+    if (isLocalhost && isBrave) return true;
+
+    return false;
   }
 
   function syncForceAppModeFromQuery() {
@@ -534,7 +544,7 @@ $('.info button').click(function () {
       if (enabled === '1') {
         window.localStorage.setItem(forceModeKey, '1');
       } else {
-        window.localStorage.removeItem(forceModeKey);
+        window.localStorage.setItem(forceModeKey, '0');
       }
     } catch (error) {
       // No-op when storage is unavailable.
