@@ -487,6 +487,7 @@ $('.info button').click(function () {
 // PWA RUNTIME
 (function pwaRuntime() {
   var panelStateKey = '__songPanel';
+  var forceModeKey = 'gn-force-app-mode';
   var songPanel = null;
 
   function getBasePath() {
@@ -497,12 +498,47 @@ $('.info button').click(function () {
   }
 
   function isStandaloneMode() {
+    try {
+      if (window.localStorage && window.localStorage.getItem(forceModeKey) === '1') {
+        return true;
+      }
+    } catch (error) {
+      // No-op when storage is unavailable.
+    }
+
     var displayModeStandalone = false;
     if (window.matchMedia) {
-      displayModeStandalone = window.matchMedia('(display-mode: standalone)').matches;
+      displayModeStandalone =
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.matchMedia('(display-mode: fullscreen)').matches ||
+        window.matchMedia('(display-mode: minimal-ui)').matches ||
+        window.matchMedia('(display-mode: window-controls-overlay)').matches;
     }
     var iosStandalone = window.navigator && window.navigator.standalone === true;
     return displayModeStandalone || iosStandalone;
+  }
+
+  function syncForceAppModeFromQuery() {
+    var params;
+    try {
+      params = new URLSearchParams(window.location.search || '');
+    } catch (error) {
+      return;
+    }
+
+    var enabled = params.get('appmode');
+    if (enabled !== '1' && enabled !== '0') return;
+
+    try {
+      if (!window.localStorage) return;
+      if (enabled === '1') {
+        window.localStorage.setItem(forceModeKey, '1');
+      } else {
+        window.localStorage.removeItem(forceModeKey);
+      }
+    } catch (error) {
+      // No-op when storage is unavailable.
+    }
   }
 
   function applyStandaloneNavMode() {
@@ -763,6 +799,7 @@ $('.info button').click(function () {
   }
 
   window.addEventListener('DOMContentLoaded', function () {
+    syncForceAppModeFromQuery();
     applyStandaloneNavMode();
     normalizeStandaloneSongLinks();
     bindSongPanelInteractions();
