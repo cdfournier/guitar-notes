@@ -617,7 +617,7 @@ $('.info button').click(function () {
     panel.className = 'song-panel';
     panel.setAttribute('data-song-panel', '');
     panel.setAttribute('aria-hidden', 'true');
-    panel.innerHTML = '<div class="song-panel__backdrop" data-song-panel-close></div><div class="song-panel__sheet"><header class="song-panel__header"><button type="button" class="song-panel__close" data-song-panel-close aria-label="Back"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M15 6l-6 6l6 6"></path></svg></button></header><iframe class="song-panel__frame" data-song-panel-frame loading="eager"></iframe></div>';
+    panel.innerHTML = '<div class="song-panel__backdrop" data-song-panel-close></div><div class="song-panel__sheet"><button type="button" class="song-panel__back-fab" data-song-panel-close aria-label="Back"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M15 6l-6 6l6 6"></path></svg></button><iframe class="song-panel__frame" data-song-panel-frame loading="eager"></iframe></div>';
     document.body.appendChild(panel);
     songPanel = panel;
     return panel;
