@@ -486,6 +486,9 @@ $('.info button').click(function () {
 
 // PWA RUNTIME
 (function pwaRuntime() {
+  var panelStateKey = '__songPanel';
+  var songPanel = null;
+
   function getBasePath() {
     if (typeof window.__BASE_PATH__ === 'string') {
       return window.__BASE_PATH__.replace(/\/$/, '');
@@ -518,6 +521,140 @@ $('.info button').click(function () {
       node.setAttribute('aria-hidden', 'true');
       if (node.tagName === 'A') {
         node.tabIndex = -1;
+      }
+    });
+  }
+
+  function isSongDetailPath(pathname) {
+    return /\/songs\/[^\/?#]+\/?$/.test(pathname || '');
+  }
+
+  function resolveHref(url) {
+    try {
+      return new URL(url, window.location.href);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function ensureSongPanel() {
+    if (songPanel) return songPanel;
+
+    var panel = document.createElement('section');
+    panel.className = 'song-panel';
+    panel.setAttribute('data-song-panel', '');
+    panel.setAttribute('aria-hidden', 'true');
+    panel.innerHTML = '<div class="song-panel__backdrop" data-song-panel-close></div><div class="song-panel__sheet"><header class="song-panel__header"><button type="button" class="song-panel__close" data-song-panel-close aria-label="Close song panel"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg></button><p class="song-panel__title" data-song-panel-title>Song</p></header><iframe class="song-panel__frame" data-song-panel-frame loading="eager"></iframe></div>';
+    document.body.appendChild(panel);
+    songPanel = panel;
+    return panel;
+  }
+
+  function getPanelFrame() {
+    var panel = ensureSongPanel();
+    return panel.querySelector('[data-song-panel-frame]');
+  }
+
+  function setPanelTitle(text) {
+    var panel = ensureSongPanel();
+    var title = panel.querySelector('[data-song-panel-title]');
+    if (!title) return;
+    title.textContent = text || 'Song';
+  }
+
+  function isPanelOpen() {
+    return !!(songPanel && songPanel.classList.contains('is-open'));
+  }
+
+  function showSongPanel(url, titleText) {
+    var panel = ensureSongPanel();
+    var frame = getPanelFrame();
+
+    if (!frame) return;
+
+    if (frame.getAttribute('src') !== url) {
+      frame.setAttribute('src', url);
+    }
+    setPanelTitle(titleText);
+
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('song-panel-open');
+  }
+
+  function hideSongPanel() {
+    if (!songPanel) return;
+    songPanel.classList.remove('is-open');
+    songPanel.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('song-panel-open');
+  }
+
+  function openSongPanel(url, titleText, pushState) {
+    showSongPanel(url, titleText);
+
+    if (pushState === false) return;
+
+    window.history.pushState({
+      url: url,
+      title: titleText || 'Song',
+      __songPanel: true
+    }, '', window.location.href);
+  }
+
+  function closeSongPanel() {
+    if (!isPanelOpen()) return;
+
+    var state = window.history.state;
+    if (state && state[panelStateKey]) {
+      window.history.back();
+      return;
+    }
+
+    hideSongPanel();
+  }
+
+  function bindSongPanelInteractions() {
+    if (!isStandaloneMode()) return;
+
+    document.addEventListener('click', function (event) {
+      var closeTrigger = event.target.closest('[data-song-panel-close]');
+      if (closeTrigger) {
+        event.preventDefault();
+        closeSongPanel();
+        return;
+      }
+
+      if (event.defaultPrevented) return;
+      if (event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      var link = event.target.closest('a[href]');
+      if (!link) return;
+      if (link.closest('[data-song-panel]')) return;
+
+      var resolved = resolveHref(link.getAttribute('href'));
+      if (!resolved) return;
+      if (!isSongDetailPath(resolved.pathname)) return;
+
+      event.preventDefault();
+      openSongPanel(resolved.href, link.textContent.trim(), true);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      if (!isPanelOpen()) return;
+      closeSongPanel();
+    });
+
+    window.addEventListener('popstate', function (event) {
+      var state = event.state || {};
+      if (state[panelStateKey] && state.url) {
+        showSongPanel(state.url, state.title || 'Song');
+        return;
+      }
+
+      if (isPanelOpen()) {
+        hideSongPanel();
       }
     });
   }
@@ -600,6 +737,7 @@ $('.info button').click(function () {
 
   window.addEventListener('DOMContentLoaded', function () {
     applyStandaloneNavMode();
+    bindSongPanelInteractions();
     registerServiceWorker();
   });
 })();

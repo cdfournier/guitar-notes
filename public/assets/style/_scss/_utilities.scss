@@ -310,6 +310,104 @@ span.album {
   }
 }
 
+.song-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  pointer-events: none;
+
+  .song-panel__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    @include transition(opacity, 0.325s, ease);
+  }
+
+  .song-panel__sheet {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    color: $gray;
+    background: white;
+    @include transition(transform, 0.325s, ease);
+    @include transform(translateX(100%));
+  }
+
+  .song-panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    min-height: 3rem;
+    margin: 0;
+    padding: max(0.5rem, env(safe-area-inset-top)) 0.75rem 0.5rem;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+    color: inherit;
+    background: white;
+  }
+
+  .song-panel__title {
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .song-panel__close {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+    @include transition(opacity, 0.25s, ease);
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .song-panel__frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    color-scheme: light dark;
+    background: white;
+  }
+
+  &.is-open {
+    pointer-events: auto;
+
+    .song-panel__backdrop {
+      opacity: 1;
+    }
+
+    .song-panel__sheet {
+      @include transform(translateX(0));
+    }
+  }
+}
+
 .setlist-count-pill {
   display: inline-flex;
   align-items: center;
@@ -561,5 +659,18 @@ html.dark {
   .setlist-toast {
     color: $gray;
     background: white;
+  }
+
+  .song-panel {
+    .song-panel__sheet,
+    .song-panel__header,
+    .song-panel__frame {
+      color: white;
+      background: $gray;
+    }
+
+    .song-panel__header {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
   }
 }
