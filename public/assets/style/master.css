@@ -1358,6 +1358,33 @@ span.album {
   transform: translate(-50%, 0);
 }
 
+.pwa-update-toast .pwa-update-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.pwa-update-toast .pwa-update-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: opacity 0.25s ease 0s;
+  -moz-transition: opacity 0.25s ease 0s;
+  -ms-transition: opacity 0.25s ease 0s;
+  -o-transition: opacity 0.25s ease 0s;
+  transition: opacity 0.25s ease 0s;
+}
+.pwa-update-toast .pwa-update-button:hover, .pwa-update-toast .pwa-update-button:focus {
+  opacity: 0.7;
+}
+
 .setlist-count-pill {
   display: inline-flex;
   align-items: center;

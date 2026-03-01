@@ -1,6 +1,7 @@
 const fs = require('fs/promises');
 const path = require('path');
 const ejs = require('ejs');
+const crypto = require('crypto');
 const { execSync } = require('child_process');
 
 const {
@@ -20,6 +21,8 @@ const outputDir = process.env.OUTPUT_DIR
 const basePath = (process.env.BASE_PATH || '').replace(/\/$/, '');
 const dataDir = path.join(__dirname, '..', 'public', 'assets', 'data');
 const canonicalSetlistsFile = 'guitar-notes-setlists.json';
+const pwaBasePath = basePath || '';
+const pwaScope = `${pwaBasePath}/` || '/';
 
 function getChangedFiles() {
   if (process.env.INCREMENTAL !== '1') return null;
@@ -47,6 +50,69 @@ function slugsFromSongFiles(files) {
     slugs.add(name);
   }
   return slugs;
+}
+
+function toPosixPath(value) {
+  return value.split(path.sep).join('/');
+}
+
+function toPublicUrl(relPath) {
+  let rel = toPosixPath(relPath);
+  if (rel.endsWith('/index.html')) {
+    rel = rel.slice(0, -'index.html'.length);
+  }
+  const leading = rel.startsWith('/') ? rel : `/${rel}`;
+  let url = `${pwaBasePath}${leading}`;
+  if (url.endsWith('/index.html')) {
+    url = url.slice(0, -'index.html'.length);
+  }
+  return url;
+}
+
+function hashContent(content) {
+  return crypto.createHash('sha256').update(content).digest('hex').slice(0, 12);
+}
+
+async function collectFilesRecursive(dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const childFiles = await collectFilesRecursive(fullPath);
+      files.push(...childFiles);
+    } else {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+function shouldIncludeInPrecache(relPath) {
+  const rel = toPosixPath(relPath);
+
+  if (rel.startsWith('v0/')) return false;
+  if (rel.startsWith('setlists/')) return false;
+  if (rel === 'setlists.html') return false;
+  if (rel.startsWith('show/')) return false;
+  if (rel === 'show.html') return false;
+  if (rel === 'sw.js') return false;
+  if (rel.endsWith('.map')) return false;
+
+  return (
+    rel.endsWith('.html') ||
+    rel.endsWith('.css') ||
+    rel.endsWith('.js') ||
+    rel.endsWith('.svg') ||
+    rel.endsWith('.png') ||
+    rel.endsWith('.jpg') ||
+    rel.endsWith('.jpeg') ||
+    rel.endsWith('.webp') ||
+    rel.endsWith('.ico') ||
+    rel.endsWith('.json') ||
+    rel.endsWith('.txt') ||
+    rel.endsWith('.webmanifest')
+  );
 }
 
 async function renderToFile(view, data, outPath) {
@@ -194,6 +260,182 @@ async function buildSetlists() {
   }
 }
 
+async function buildPwaArtifacts() {
+  const manifest = {
+    name: 'Guitar Notes',
+    short_name: 'Guitar Notes',
+    start_url: `${pwaBasePath}/songs/` || '/songs/',
+    scope: pwaScope,
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#333333',
+    icons: [
+      {
+        src: 'assets/icons/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: 'assets/icons/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+      {
+        src: 'assets/icons/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  };
+
+  await fs.writeFile(
+    path.join(outputDir, 'site.webmanifest'),
+    `${JSON.stringify(manifest, null, 2)}\n`
+  );
+
+  await fs.mkdir(path.join(outputDir, 'offline'), { recursive: true });
+  await fs.writeFile(
+    path.join(outputDir, 'offline', 'index.html'),
+    `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline | Guitar Notes</title>
+    <style>
+      html, body { margin: 0; padding: 0; }
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        font-family: "Courier", monospace;
+        color: #333333;
+        background: #ffffff;
+      }
+      main { max-width: 40rem; text-align: center; }
+      h1 { margin: 0 0 1rem; font-size: 1.75rem; line-height: 1.2; }
+      p { margin: 0; line-height: 1.6; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Offline</h1>
+      <p>Guitar Notes is currently offline. Reconnect to load content not yet cached.</p>
+    </main>
+  </body>
+</html>
+`
+  );
+
+  const files = await collectFilesRecursive(outputDir);
+  const precacheEntries = [];
+  const seen = new Set();
+
+  for (const fullPath of files) {
+    const relPath = path.relative(outputDir, fullPath);
+    if (!shouldIncludeInPrecache(relPath)) continue;
+
+    const raw = await fs.readFile(fullPath);
+    const rev = hashContent(raw);
+    const baseUrl = toPublicUrl(relPath);
+    const cacheUrl = `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}v=${rev}`;
+
+    if (seen.has(cacheUrl)) continue;
+    seen.add(cacheUrl);
+    precacheEntries.push(cacheUrl);
+  }
+
+  const offlineUrl = `${pwaBasePath}/offline/` || '/offline/';
+  if (!precacheEntries.some((value) => value.startsWith(`${offlineUrl}?v=`))) {
+    const offlineRaw = await fs.readFile(path.join(outputDir, 'offline', 'index.html'));
+    const offlineRev = hashContent(offlineRaw);
+    precacheEntries.push(`${offlineUrl}?v=${offlineRev}`);
+  }
+
+  precacheEntries.sort();
+  const cacheVersion = hashContent(Buffer.from(precacheEntries.join('\n')));
+
+  const swSource = `/* autogenerated by scripts/build-static.js */
+const CACHE_VERSION = ${JSON.stringify(cacheVersion)};
+const BASE_PATH = ${JSON.stringify(pwaBasePath)};
+const OFFLINE_URL = ${JSON.stringify(offlineUrl)};
+const PRECACHE = ${JSON.stringify(precacheEntries, null, 2)};
+const STATIC_CACHE = \`guitar-notes-static-\${CACHE_VERSION}\`;
+const RUNTIME_CACHE = \`guitar-notes-runtime-\${CACHE_VERSION}\`;
+
+self.addEventListener('install', (event) => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(STATIC_CACHE);
+    try {
+      await cache.addAll(PRECACHE);
+    } catch (err) {
+      // If full precache fails (storage/network), runtime cache still works.
+      console.warn('Precache incomplete', err);
+    }
+    self.skipWaiting();
+  })());
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.map((key) => {
+      if (key !== STATIC_CACHE && key !== RUNTIME_CACHE) {
+        return caches.delete(key);
+      }
+      return Promise.resolve();
+    }));
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+
+  const requestUrl = new URL(request.url);
+  if (requestUrl.origin !== self.location.origin) return;
+
+  event.respondWith((async () => {
+    const cached = await caches.match(request, { ignoreSearch: true });
+    const runtime = await caches.open(RUNTIME_CACHE);
+    const networkFetch = fetch(request)
+      .then((response) => {
+        if (response && response.ok) {
+          runtime.put(request, response.clone());
+        }
+        return response;
+      })
+      .catch(() => null);
+
+    if (cached) {
+      networkFetch.catch(() => null);
+      return cached;
+    }
+
+    const network = await networkFetch;
+    if (network) return network;
+
+    if (request.mode === 'navigate') {
+      const offline = await caches.match(OFFLINE_URL, { ignoreSearch: true });
+      if (offline) return offline;
+    }
+
+    return new Response('', { status: 504, statusText: 'Offline' });
+  })());
+});
+`;
+
+  await fs.writeFile(path.join(outputDir, 'sw.js'), swSource);
+}
+
 async function ensureNoJekyll() {
   const target = path.join(outputDir, '.nojekyll');
   try {
@@ -242,6 +484,7 @@ async function build() {
     await buildIndexes();
     await buildSongs();
     await buildSetlists();
+    await buildPwaArtifacts();
     await ensureNoJekyll();
     return;
   }
@@ -250,6 +493,7 @@ async function build() {
     await buildIndexes();
     await buildSongs();
     await buildSetlists();
+    await buildPwaArtifacts();
     await ensureNoJekyll();
     return;
   }
@@ -271,6 +515,7 @@ async function build() {
     await buildSetlists();
   }
 
+  await buildPwaArtifacts();
   await ensureNoJekyll();
 }
 

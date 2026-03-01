@@ -484,6 +484,126 @@ $('.info button').click(function () {
   });
 })();
 
+// PWA RUNTIME
+(function pwaRuntime() {
+  function getBasePath() {
+    if (typeof window.__BASE_PATH__ === 'string') {
+      return window.__BASE_PATH__.replace(/\/$/, '');
+    }
+    return '';
+  }
+
+  function isStandaloneMode() {
+    var displayModeStandalone = false;
+    if (window.matchMedia) {
+      displayModeStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    }
+    var iosStandalone = window.navigator && window.navigator.standalone === true;
+    return displayModeStandalone || iosStandalone;
+  }
+
+  function applyStandaloneNavMode() {
+    if (!isStandaloneMode()) return;
+
+    var setlistsLinks = document.querySelectorAll('[data-nav-setlists]');
+    setlistsLinks.forEach(function (node) {
+      node.style.display = 'none';
+      node.setAttribute('aria-hidden', 'true');
+    });
+
+    var showToggles = document.querySelectorAll('[data-setlist-show-toggle]');
+    showToggles.forEach(function (node) {
+      node.classList.remove('is-visible');
+      node.classList.add('is-hidden');
+      node.setAttribute('aria-hidden', 'true');
+      if (node.tagName === 'A') {
+        node.tabIndex = -1;
+      }
+    });
+  }
+
+  function ensureUpdateToast() {
+    var existing = document.querySelector('[data-pwa-update-toast]');
+    if (existing) return existing;
+
+    var toast = document.createElement('div');
+    toast.className = 'setlist-toast pwa-update-toast';
+    toast.setAttribute('data-pwa-update-toast', '');
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.innerHTML = '<span class="setlist-toast-message">Update available.</span><span class="pwa-update-actions"><button type="button" class="pwa-update-button" data-pwa-update-reload>Reload</button><button type="button" class="setlist-toast-close" data-pwa-update-close aria-label="Dismiss update message"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg></button></span>';
+    document.body.appendChild(toast);
+    return toast;
+  }
+
+  function showUpdateToast() {
+    var toast = ensureUpdateToast();
+    toast.classList.add('is-visible');
+  }
+
+  function hideUpdateToast() {
+    var toast = document.querySelector('[data-pwa-update-toast]');
+    if (!toast) return;
+    toast.classList.remove('is-visible');
+  }
+
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+
+    var basePath = getBasePath();
+    var swUrl = (basePath || '') + '/sw.js';
+
+    navigator.serviceWorker.register(swUrl).then(function (registration) {
+      function bindWaitingWorker(worker) {
+        if (!worker) return;
+        showUpdateToast();
+      }
+
+      bindWaitingWorker(registration.waiting);
+
+      registration.addEventListener('updatefound', function () {
+        var newWorker = registration.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', function () {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            bindWaitingWorker(newWorker);
+          }
+        });
+      });
+
+      document.addEventListener('click', function (event) {
+        var close = event.target.closest('[data-pwa-update-close]');
+        if (close) {
+          event.preventDefault();
+          hideUpdateToast();
+          return;
+        }
+
+        var reload = event.target.closest('[data-pwa-update-reload]');
+        if (!reload) return;
+        event.preventDefault();
+
+        if (registration.waiting) {
+          registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+          return;
+        }
+        window.location.reload();
+      });
+
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        window.location.reload();
+      });
+    }).catch(function () {
+      // No-op in environments where SW registration is unavailable.
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    applyStandaloneNavMode();
+    registerServiceWorker();
+  });
+})();
+
 // CLOCK
 function showTime() {
   var date = new Date();
