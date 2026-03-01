@@ -514,12 +514,6 @@ $('.info button').click(function () {
     var iosStandalone = window.navigator && window.navigator.standalone === true;
     if (displayModeStandalone || iosStandalone) return true;
 
-    // Brave app windows on localhost can report browser display-mode.
-    // Enable app behavior by default for local Brave development unless explicitly disabled.
-    var isLocalhost = window.location && window.location.hostname === 'localhost';
-    var isBrave = !!(window.navigator && window.navigator.brave);
-    if (isLocalhost && isBrave) return true;
-
     return false;
   }
 
