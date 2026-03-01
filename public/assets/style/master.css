@@ -1069,10 +1069,44 @@ main.setlists section p + p {
 }
 
 .song-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  gap: 0.5rem;
+}
+
+.song-link-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.song-link-main > a {
+  display: inline-block;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+span.album {
+  display: none;
+}
+
+.song-link-utility {
   display: inline-flex;
   align-items: center;
-  max-width: 100%;
-  gap: 0;
+  justify-content: center;
+  width: 1.25rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
 }
 
 .setlist-add-button,
@@ -1124,12 +1158,7 @@ main.setlists section p + p {
 }
 
 .setlist-add-button {
-  width: 0;
-  min-width: 0;
-  max-width: 0;
-  margin-right: 0;
   opacity: 0;
-  overflow: hidden;
   pointer-events: none;
 }
 .setlist-add-button.is-added {
@@ -1138,10 +1167,6 @@ main.setlists section p + p {
 
 .song-link-row:hover .setlist-add-button,
 .song-link-row:focus-within .setlist-add-button {
-  width: 1.25rem;
-  min-width: 1.25rem;
-  max-width: 1.25rem;
-  margin-right: 0.375rem;
   opacity: 1;
   pointer-events: auto;
 }
@@ -1150,9 +1175,8 @@ main.setlists section p + p {
   width: 1.25rem;
   min-width: 1.25rem;
   max-width: 1.25rem;
-  margin-right: 0.375rem;
+  margin-right: 0;
   opacity: 1;
-  pointer-events: auto;
 }
 
 .song-link-row .setlist-add-button:hover,
@@ -1479,36 +1503,30 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
   transform: translateY(0.325rem);
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .setlist-add-button {
-    width: 1.25rem;
-    min-width: 1.25rem;
-    max-width: 1.25rem;
-    margin-right: 0.375rem;
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
 @media (max-width: 63.9375rem) {
+  .song-link-utility {
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+  }
   .setlist-add-button,
   .setlist-show-toggle,
   .setlist-tracker-toggle,
   .setlist-remove-button {
-    width: 2rem;
-    min-width: 2rem;
-    height: 2rem;
-    max-height: 2rem;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    max-height: 1.5rem;
   }
-  .song-link-row:hover .setlist-add-button,
-  .song-link-row:focus-within .setlist-add-button,
+  .setlist-add-button,
   .setlist-add-button--always {
-    width: 2rem;
-    min-width: 2rem;
-    max-width: 2rem;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    max-width: 1.5rem;
   }
   .song-detail-line .setlist-add-button--always .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   .setlist-tracker-fab {
     min-height: 3rem;
@@ -1524,21 +1542,22 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     font-size: 1rem;
   }
   .setlist-show-toggle.is-visible {
-    min-width: 2rem;
+    min-width: 1.5rem;
   }
   .setlist-show-toggle.is-visible .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   .setlist-show-toggle.is-hidden {
     width: 0;
     min-width: 0;
     max-width: 0;
   }
+}
+@media (hover: none) and (pointer: coarse) {
   .setlist-add-button {
-    width: 0;
-    min-width: 0;
-    max-width: 0;
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 html.dark .setlist-clear-button,
@@ -2058,3 +2077,5 @@ html.dark .filter .filter-actions .filter-apply {
   color: var(--gray);
   background: #ffffff;
 }
+
+/*# sourceMappingURL=master.css.map */

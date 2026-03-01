@@ -56,6 +56,8 @@ $('.info button').click(function () {
   var TRACKER_ACTIVE_KEY = 'setlistTrackerActive';
   var TRACKER_STARTED_AT_KEY = 'setlistTrackerStartedAt';
   var TRACKER_SONGS_KEY = 'setlistTrackerSongs';
+  var ICON_MUSIC_PLUS = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-music-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M9 17v-13h10v8" /><path d="M9 8h10" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>';
+  var ICON_MUSIC_MINUS = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-music-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M9 17v-13h10v11" /><path d="M9 8h10" /><path d="M16 19h6" /></svg>';
   var toastTimer = null;
 
   function hideToast() {
@@ -165,6 +167,62 @@ $('.info button').click(function () {
 
   function clearSetlist() {
     writeSetlist([]);
+  }
+
+  function getEntryKey(entry) {
+    if (!entry) return '';
+    return entry.slug || entry.href || '';
+  }
+
+  function getButtonKey(button) {
+    if (!button) return '';
+    return button.getAttribute('data-setlist-slug') || button.getAttribute('data-setlist-href') || '';
+  }
+
+  function setAddButtonState(button, inSetlist) {
+    if (!button) return;
+    var icon = button.querySelector('.icon');
+    button.classList.toggle('is-in-setlist', inSetlist);
+    button.setAttribute('aria-label', inSetlist ? 'Remove from setlist' : 'Add to setlist');
+    if (icon) {
+      icon.innerHTML = inSetlist ? ICON_MUSIC_MINUS : ICON_MUSIC_PLUS;
+    }
+  }
+
+  function syncAddButtons(entries) {
+    var byKey = {};
+    entries.forEach(function (entry) {
+      var key = getEntryKey(entry);
+      if (!key) return;
+      byKey[key] = true;
+    });
+
+    var buttons = document.querySelectorAll('[data-setlist-add]');
+    buttons.forEach(function (button) {
+      var inRow = !!button.closest('.song-link-row');
+      if (!inRow) {
+        setAddButtonState(button, false);
+        return;
+      }
+      var key = getButtonKey(button);
+      setAddButtonState(button, !!byKey[key]);
+    });
+  }
+
+  function removeSongByKey(key) {
+    if (!key) return false;
+    var entries = readSetlist();
+    var index = -1;
+    for (var i = entries.length - 1; i >= 0; i -= 1) {
+      if (getEntryKey(entries[i]) === key) {
+        index = i;
+        break;
+      }
+    }
+    if (index < 0) return false;
+    entries.splice(index, 1);
+    writeSetlist(entries);
+    return true;
   }
 
   function toggleSetlistButtons(count) {
@@ -298,6 +356,7 @@ $('.info button').click(function () {
     var count = entries.length;
     updateSetlistCount(count);
     toggleSetlistButtons(count);
+    syncAddButtons(entries);
     renderSetlistPage(entries);
   }
 
@@ -313,6 +372,14 @@ $('.info button').click(function () {
     var addButton = event.target.closest('[data-setlist-add]');
     if (addButton) {
       event.preventDefault();
+      var inRow = !!addButton.closest('.song-link-row');
+      var key = getButtonKey(addButton);
+      var isInSetlist = inRow && addButton.classList.contains('is-in-setlist');
+      if (isInSetlist && removeSongByKey(key)) {
+        showToast('Song removed from setlist.');
+        return;
+      }
+
       addSong({
         slug: addButton.getAttribute('data-setlist-slug') || '',
         title: addButton.getAttribute('data-setlist-title') || '',
