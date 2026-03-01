@@ -548,16 +548,6 @@ $('.info button').click(function () {
       node.style.display = 'none';
       node.setAttribute('aria-hidden', 'true');
     });
-
-    var showToggles = document.querySelectorAll('[data-setlist-show-toggle]');
-    showToggles.forEach(function (node) {
-      node.classList.remove('is-visible');
-      node.classList.add('is-hidden');
-      node.setAttribute('aria-hidden', 'true');
-      if (node.tagName === 'A') {
-        node.tabIndex = -1;
-      }
-    });
   }
 
   function normalizeStandaloneSongLinks() {
