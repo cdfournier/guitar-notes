@@ -1,23 +1,20 @@
 // COLOR MODE CONTROLS
 window.addEventListener('DOMContentLoaded', function (theme) {
-  if (localStorage.getItem('theme') === 'true') {
-    $('html').toggleClass('dark');
-    $('input#switch-theme').prop('checked', true);
-  }
-  else {
+  var prefersDark = localStorage.getItem('theme') === 'true';
+  document.documentElement.classList.toggle('dark', prefersDark);
+  $('input#switch-theme').prop('checked', prefersDark);
+  if (localStorage.getItem('theme') === null) {
     localStorage.setItem('theme', false);
   }
 });
 $('input#switch-theme').click(function () {
-  $('html').toggleClass('dark');
-  if (localStorage.getItem('theme') === 'true') {
-    $('input#switch-theme').prop('checked', false);
-    localStorage.setItem('theme', false);
-  }
-  else {
-    $('input#switch-theme').prop('checked', true);
-    localStorage.setItem('theme', true);
-  }
+  var nextDark = localStorage.getItem('theme') !== 'true';
+  document.documentElement.classList.toggle('dark', nextDark);
+  $('input#switch-theme').prop('checked', nextDark);
+  localStorage.setItem('theme', nextDark ? 'true' : 'false');
+  document.dispatchEvent(new CustomEvent('theme:changed', {
+    detail: { dark: nextDark }
+  }));
 });
 
 // WELCOME LOGO
@@ -56,10 +53,45 @@ $('.info button').click(function () {
   var TRACKER_ACTIVE_KEY = 'setlistTrackerActive';
   var TRACKER_STARTED_AT_KEY = 'setlistTrackerStartedAt';
   var TRACKER_SONGS_KEY = 'setlistTrackerSongs';
+  var ICON_MUSIC_PLUS = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-music-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M9 17v-13h10v8" /><path d="M9 8h10" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>';
+  var ICON_MUSIC_MINUS = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-music-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M9 17v-13h10v11" /><path d="M9 8h10" /><path d="M16 19h6" /></svg>';
   var toastTimer = null;
 
-  function hideToast() {
+  function ensureToastElements() {
     var toast = document.querySelector('[data-setlist-toast]');
+    var toastMessage = document.querySelector('[data-setlist-toast-message]');
+    if (toast && toastMessage) {
+      return { toast: toast, message: toastMessage };
+    }
+
+    toast = document.createElement('div');
+    toast.className = 'setlist-toast';
+    toast.setAttribute('data-setlist-toast', '');
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.setAttribute('aria-atomic', 'true');
+
+    toastMessage = document.createElement('span');
+    toastMessage.className = 'setlist-toast-message';
+    toastMessage.setAttribute('data-setlist-toast-message', '');
+
+    var closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'setlist-toast-close';
+    closeButton.setAttribute('data-setlist-toast-close', '');
+    closeButton.setAttribute('aria-label', 'Close setlist message');
+    closeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>';
+
+    toast.appendChild(toastMessage);
+    toast.appendChild(closeButton);
+    document.body.appendChild(toast);
+
+    return { toast: toast, message: toastMessage };
+  }
+
+  function hideToast() {
+    var refs = ensureToastElements();
+    var toast = refs.toast;
     if (!toast) return;
     toast.classList.remove('is-visible');
     if (toastTimer) {
@@ -68,9 +100,23 @@ $('.info button').click(function () {
     }
   }
 
+  function relayToastToParent(message) {
+    if (!message) return;
+    try {
+      if (!window.parent || window.parent === window) return;
+      window.parent.postMessage({
+        type: 'gn:setlist-toast',
+        message: message
+      }, window.location.origin);
+    } catch (err) {
+      // Ignore cross-context errors.
+    }
+  }
+
   function showToast(message) {
-    var toast = document.querySelector('[data-setlist-toast]');
-    var toastMessage = document.querySelector('[data-setlist-toast-message]');
+    var refs = ensureToastElements();
+    var toast = refs.toast;
+    var toastMessage = refs.message;
     if (!toast || !toastMessage || !message) return;
 
     hideToast();
@@ -80,6 +126,8 @@ $('.info button').click(function () {
     toastTimer = setTimeout(function () {
       hideToast();
     }, 2400);
+
+    relayToastToParent(message);
   }
 
   function readList(key) {
@@ -158,13 +206,65 @@ $('.info button').click(function () {
 
   function removeSong(index) {
     var entries = readSetlist();
-    if (index < 0 || index >= entries.length) return;
+    if (index < 0 || index >= entries.length) return false;
     entries.splice(index, 1);
     writeSetlist(entries);
+    return true;
   }
 
   function clearSetlist() {
     writeSetlist([]);
+  }
+
+  function getEntryKey(entry) {
+    if (!entry) return '';
+    return entry.slug || entry.href || '';
+  }
+
+  function getButtonKey(button) {
+    if (!button) return '';
+    return button.getAttribute('data-setlist-slug') || button.getAttribute('data-setlist-href') || '';
+  }
+
+  function setAddButtonState(button, inSetlist) {
+    if (!button) return;
+    var icon = button.querySelector('.icon');
+    button.classList.toggle('is-in-setlist', inSetlist);
+    button.setAttribute('aria-label', inSetlist ? 'Remove from setlist' : 'Add to setlist');
+    if (icon) {
+      icon.innerHTML = inSetlist ? ICON_MUSIC_MINUS : ICON_MUSIC_PLUS;
+    }
+  }
+
+  function syncAddButtons(entries) {
+    var byKey = {};
+    entries.forEach(function (entry) {
+      var key = getEntryKey(entry);
+      if (!key) return;
+      byKey[key] = true;
+    });
+
+    var buttons = document.querySelectorAll('[data-setlist-add]');
+    buttons.forEach(function (button) {
+      var key = getButtonKey(button);
+      setAddButtonState(button, !!byKey[key]);
+    });
+  }
+
+  function removeSongByKey(key) {
+    if (!key) return false;
+    var entries = readSetlist();
+    var index = -1;
+    for (var i = entries.length - 1; i >= 0; i -= 1) {
+      if (getEntryKey(entries[i]) === key) {
+        index = i;
+        break;
+      }
+    }
+    if (index < 0) return false;
+    entries.splice(index, 1);
+    writeSetlist(entries);
+    return true;
   }
 
   function toggleSetlistButtons(count) {
@@ -229,6 +329,7 @@ $('.info button').click(function () {
       link.href = entry.href || '#';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
+      link.setAttribute('data-song-open-panel', '');
       link.textContent = entry.title || entry.slug || 'Untitled song';
 
       row.appendChild(removeButton);
@@ -298,6 +399,7 @@ $('.info button').click(function () {
     var count = entries.length;
     updateSetlistCount(count);
     toggleSetlistButtons(count);
+    syncAddButtons(entries);
     renderSetlistPage(entries);
   }
 
@@ -313,6 +415,13 @@ $('.info button').click(function () {
     var addButton = event.target.closest('[data-setlist-add]');
     if (addButton) {
       event.preventDefault();
+      var key = getButtonKey(addButton);
+      var isInSetlist = addButton.classList.contains('is-in-setlist');
+      if (isInSetlist && removeSongByKey(key)) {
+        showToast('Song removed from setlist.');
+        return;
+      }
+
       addSong({
         slug: addButton.getAttribute('data-setlist-slug') || '',
         title: addButton.getAttribute('data-setlist-title') || '',
@@ -331,7 +440,9 @@ $('.info button').click(function () {
     if (removeButton) {
       event.preventDefault();
       var index = Number(removeButton.getAttribute('data-setlist-index'));
-      removeSong(index);
+      if (removeSong(index)) {
+        showToast('Song removed from setlist.');
+      }
       return;
     }
 
@@ -410,10 +521,269 @@ $('.info button').click(function () {
     }
   });
 
+  window.addEventListener('message', function (event) {
+    if (!event || event.origin !== window.location.origin) return;
+    var data = event.data || {};
+    if (data.type !== 'gn:setlist-toast') return;
+    if (!data.message || typeof data.message !== 'string') return;
+    showToast(data.message);
+  });
+
   window.addEventListener('DOMContentLoaded', function () {
     autologSongPageVisitIfTracking();
     refreshSetlistUi();
     refreshTrackerUi();
+  });
+})();
+
+// PWA RUNTIME
+(function pwaRuntime() {
+  var forceModeKey = 'gn-force-app-mode';
+  var songPanel = null;
+
+  function getBasePath() {
+    if (typeof window.__BASE_PATH__ === 'string') {
+      return window.__BASE_PATH__.replace(/\/$/, '');
+    }
+    return '';
+  }
+
+  function isStandaloneMode() {
+    try {
+      if (window.localStorage) {
+        var forced = window.localStorage.getItem(forceModeKey);
+        if (forced === '1') return true;
+        if (forced === '0') return false;
+      }
+    } catch (error) {
+      // No-op when storage is unavailable.
+    }
+
+    var displayModeStandalone = false;
+    if (window.matchMedia) {
+      displayModeStandalone =
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.matchMedia('(display-mode: fullscreen)').matches ||
+        window.matchMedia('(display-mode: minimal-ui)').matches ||
+        window.matchMedia('(display-mode: window-controls-overlay)').matches;
+    }
+    var iosStandalone = window.navigator && window.navigator.standalone === true;
+    if (displayModeStandalone || iosStandalone) return true;
+
+    return false;
+  }
+
+  function syncForceAppModeFromQuery() {
+    var params;
+    try {
+      params = new URLSearchParams(window.location.search || '');
+    } catch (error) {
+      return;
+    }
+
+    var enabled = params.get('appmode');
+    if (enabled !== '1' && enabled !== '0') return;
+
+    try {
+      if (!window.localStorage) return;
+      if (enabled === '1') {
+        window.localStorage.setItem(forceModeKey, '1');
+      } else {
+        window.localStorage.setItem(forceModeKey, '0');
+      }
+    } catch (error) {
+      // No-op when storage is unavailable.
+    }
+  }
+
+  function applyStandaloneNavMode() {
+    if (!isStandaloneMode()) return;
+
+    var setlistsLinks = document.querySelectorAll('[data-nav-setlists]');
+    setlistsLinks.forEach(function (node) {
+      node.style.display = 'none';
+      node.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  function normalizeStandaloneSongLinks() {
+    if (!isStandaloneMode()) return;
+
+    var links = document.querySelectorAll('a[href]');
+    links.forEach(function (link) {
+      var resolved = resolveHref(link.getAttribute('href'));
+      if (!resolved) return;
+      if (!isSongDetailPath(resolved.pathname)) return;
+
+      if (link.hasAttribute('target')) {
+        link.setAttribute('data-original-target', link.getAttribute('target') || '');
+      }
+      link.setAttribute('target', '_self');
+
+      // Keep rel lean and avoid noopener/noreferrer semantics intended for _blank.
+      var rel = (link.getAttribute('rel') || '')
+        .split(/\s+/)
+        .filter(Boolean)
+        .filter(function (token) { return token !== 'noopener' && token !== 'noreferrer'; });
+      if (rel.length > 0) {
+        link.setAttribute('rel', rel.join(' '));
+      } else {
+        link.removeAttribute('rel');
+      }
+    });
+  }
+
+  function isSongDetailPath(pathname) {
+    if (!pathname) return false;
+    var cleanPath = pathname.split('?')[0].split('#')[0];
+    var segments = cleanPath.split('/').filter(Boolean);
+    var baseSegments = getBasePath().split('/').filter(Boolean);
+    if (segments.length !== baseSegments.length + 2) return false;
+    for (var i = 0; i < baseSegments.length; i += 1) {
+      if (segments[i] !== baseSegments[i]) return false;
+    }
+    if (segments[baseSegments.length] !== 'songs') return false;
+    if (segments[baseSegments.length + 1] === 'list') return false;
+    return true;
+  }
+
+  function resolveHref(url) {
+    try {
+      return new URL(url, window.location.href);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function ensureSongPanel() {
+    if (songPanel) return songPanel;
+
+    var panel = document.createElement('section');
+    panel.className = 'song-panel';
+    panel.setAttribute('data-song-panel', '');
+    panel.setAttribute('aria-hidden', 'true');
+    panel.innerHTML = '<div class="song-panel__backdrop" data-song-panel-close></div><div class="song-panel__sheet"><button type="button" class="song-panel__back-fab" data-song-panel-close aria-label="Back"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M15 6l-6 6l6 6"></path></svg></button><iframe class="song-panel__frame" data-song-panel-frame loading="eager"></iframe></div>';
+    document.body.appendChild(panel);
+    songPanel = panel;
+    return panel;
+  }
+
+  function getPanelFrame() {
+    var panel = ensureSongPanel();
+    return panel.querySelector('[data-song-panel-frame]');
+  }
+
+  function isPanelOpen() {
+    return !!(songPanel && songPanel.classList.contains('is-open'));
+  }
+
+  function showSongPanel(url, titleText) {
+    var panel = ensureSongPanel();
+    var frame = getPanelFrame();
+
+    if (!frame) return;
+
+    if (frame.getAttribute('src') !== url) {
+      frame.setAttribute('src', url);
+    }
+    syncFrameTheme(frame);
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('song-panel-open');
+  }
+
+  function hideSongPanel() {
+    if (!songPanel) return;
+    songPanel.classList.remove('is-open');
+    songPanel.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('song-panel-open');
+  }
+
+  function openSongPanel(url, titleText) {
+    showSongPanel(url, titleText);
+  }
+
+  function closeSongPanel() {
+    if (!isPanelOpen()) return;
+    hideSongPanel();
+  }
+
+  function bindSongPanelInteractions() {
+    if (!isStandaloneMode()) return;
+
+    document.addEventListener('click', function (event) {
+      var closeTrigger = event.target.closest('[data-song-panel-close]');
+      if (closeTrigger) {
+        event.preventDefault();
+        closeSongPanel();
+        return;
+      }
+
+      if (event.defaultPrevented) return;
+      if (event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      var link = event.target.closest('a[href]');
+      if (!link) return;
+      if (link.closest('[data-song-panel]')) return;
+
+      var resolved = resolveHref(link.getAttribute('href'));
+      if (!resolved) return;
+      if (!isSongDetailPath(resolved.pathname)) return;
+
+      event.preventDefault();
+      openSongPanel(resolved.href, link.textContent.trim());
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      if (!isPanelOpen()) return;
+      closeSongPanel();
+    });
+
+    document.addEventListener('theme:changed', function () {
+      if (!isPanelOpen()) return;
+      var frame = getPanelFrame();
+      if (!frame) return;
+      syncFrameTheme(frame);
+    });
+  }
+
+  function syncFrameTheme(frame) {
+    try {
+      if (!frame || !frame.contentDocument || !frame.contentDocument.documentElement) return;
+      var root = frame.contentDocument.documentElement;
+      var isDark = document.documentElement.classList.contains('dark');
+      root.classList.toggle('dark', isDark);
+    } catch (error) {
+      // Ignore frames that are not same-origin.
+    }
+  }
+
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+
+    var basePath = getBasePath();
+    var swUrl = (basePath || '') + '/sw.js';
+
+    navigator.serviceWorker.register(swUrl).catch(function () {
+      // No-op in environments where SW registration is unavailable.
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    syncForceAppModeFromQuery();
+    applyStandaloneNavMode();
+    normalizeStandaloneSongLinks();
+    bindSongPanelInteractions();
+    registerServiceWorker();
+
+    var frame = getPanelFrame();
+    if (frame) {
+      frame.addEventListener('load', function () {
+        syncFrameTheme(frame);
+      });
+    }
   });
 })();
 
