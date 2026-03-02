@@ -57,8 +57,41 @@ $('.info button').click(function () {
   var ICON_MUSIC_MINUS = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-music-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M9 17v-13h10v11" /><path d="M9 8h10" /><path d="M16 19h6" /></svg>';
   var toastTimer = null;
 
-  function hideToast() {
+  function ensureToastElements() {
     var toast = document.querySelector('[data-setlist-toast]');
+    var toastMessage = document.querySelector('[data-setlist-toast-message]');
+    if (toast && toastMessage) {
+      return { toast: toast, message: toastMessage };
+    }
+
+    toast = document.createElement('div');
+    toast.className = 'setlist-toast';
+    toast.setAttribute('data-setlist-toast', '');
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.setAttribute('aria-atomic', 'true');
+
+    toastMessage = document.createElement('span');
+    toastMessage.className = 'setlist-toast-message';
+    toastMessage.setAttribute('data-setlist-toast-message', '');
+
+    var closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'setlist-toast-close';
+    closeButton.setAttribute('data-setlist-toast-close', '');
+    closeButton.setAttribute('aria-label', 'Close setlist message');
+    closeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>';
+
+    toast.appendChild(toastMessage);
+    toast.appendChild(closeButton);
+    document.body.appendChild(toast);
+
+    return { toast: toast, message: toastMessage };
+  }
+
+  function hideToast() {
+    var refs = ensureToastElements();
+    var toast = refs.toast;
     if (!toast) return;
     toast.classList.remove('is-visible');
     if (toastTimer) {
@@ -67,9 +100,23 @@ $('.info button').click(function () {
     }
   }
 
+  function relayToastToParent(message) {
+    if (!message) return;
+    try {
+      if (!window.parent || window.parent === window) return;
+      window.parent.postMessage({
+        type: 'gn:setlist-toast',
+        message: message
+      }, window.location.origin);
+    } catch (err) {
+      // Ignore cross-context errors.
+    }
+  }
+
   function showToast(message) {
-    var toast = document.querySelector('[data-setlist-toast]');
-    var toastMessage = document.querySelector('[data-setlist-toast-message]');
+    var refs = ensureToastElements();
+    var toast = refs.toast;
+    var toastMessage = refs.message;
     if (!toast || !toastMessage || !message) return;
 
     hideToast();
@@ -79,6 +126,8 @@ $('.info button').click(function () {
     toastTimer = setTimeout(function () {
       hideToast();
     }, 2400);
+
+    relayToastToParent(message);
   }
 
   function readList(key) {
@@ -157,9 +206,10 @@ $('.info button').click(function () {
 
   function removeSong(index) {
     var entries = readSetlist();
-    if (index < 0 || index >= entries.length) return;
+    if (index < 0 || index >= entries.length) return false;
     entries.splice(index, 1);
     writeSetlist(entries);
+    return true;
   }
 
   function clearSetlist() {
@@ -196,11 +246,6 @@ $('.info button').click(function () {
 
     var buttons = document.querySelectorAll('[data-setlist-add]');
     buttons.forEach(function (button) {
-      var inRow = !!button.closest('.song-link-row');
-      if (!inRow) {
-        setAddButtonState(button, false);
-        return;
-      }
       var key = getButtonKey(button);
       setAddButtonState(button, !!byKey[key]);
     });
@@ -282,6 +327,8 @@ $('.info button').click(function () {
 
       var link = document.createElement('a');
       link.href = entry.href || '#';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
       link.setAttribute('data-song-open-panel', '');
       link.textContent = entry.title || entry.slug || 'Untitled song';
 
@@ -368,9 +415,8 @@ $('.info button').click(function () {
     var addButton = event.target.closest('[data-setlist-add]');
     if (addButton) {
       event.preventDefault();
-      var inRow = !!addButton.closest('.song-link-row');
       var key = getButtonKey(addButton);
-      var isInSetlist = inRow && addButton.classList.contains('is-in-setlist');
+      var isInSetlist = addButton.classList.contains('is-in-setlist');
       if (isInSetlist && removeSongByKey(key)) {
         showToast('Song removed from setlist.');
         return;
@@ -394,7 +440,9 @@ $('.info button').click(function () {
     if (removeButton) {
       event.preventDefault();
       var index = Number(removeButton.getAttribute('data-setlist-index'));
-      removeSong(index);
+      if (removeSong(index)) {
+        showToast('Song removed from setlist.');
+      }
       return;
     }
 
@@ -471,6 +519,14 @@ $('.info button').click(function () {
     if (event.key === TRACKER_SONGS_KEY || event.key === TRACKER_ACTIVE_KEY) {
       refreshTrackerUi();
     }
+  });
+
+  window.addEventListener('message', function (event) {
+    if (!event || event.origin !== window.location.origin) return;
+    var data = event.data || {};
+    if (data.type !== 'gn:setlist-toast') return;
+    if (!data.message || typeof data.message !== 'string') return;
+    showToast(data.message);
   });
 
   window.addEventListener('DOMContentLoaded', function () {
@@ -704,78 +760,13 @@ $('.info button').click(function () {
     }
   }
 
-  function ensureUpdateToast() {
-    var existing = document.querySelector('[data-pwa-update-toast]');
-    if (existing) return existing;
-
-    var toast = document.createElement('div');
-    toast.className = 'setlist-toast pwa-update-toast';
-    toast.setAttribute('data-pwa-update-toast', '');
-    toast.setAttribute('role', 'status');
-    toast.setAttribute('aria-live', 'polite');
-    toast.innerHTML = '<span class="setlist-toast-message">Update available.</span><span class="pwa-update-actions"><button type="button" class="pwa-update-button" data-pwa-update-reload>Reload</button><button type="button" class="setlist-toast-close" data-pwa-update-close aria-label="Dismiss update message"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg></button></span>';
-    document.body.appendChild(toast);
-    return toast;
-  }
-
-  function showUpdateToast() {
-    var toast = ensureUpdateToast();
-    toast.classList.add('is-visible');
-  }
-
-  function hideUpdateToast() {
-    var toast = document.querySelector('[data-pwa-update-toast]');
-    if (!toast) return;
-    toast.classList.remove('is-visible');
-  }
-
   function registerServiceWorker() {
     if (!('serviceWorker' in navigator)) return;
 
     var basePath = getBasePath();
     var swUrl = (basePath || '') + '/sw.js';
 
-    navigator.serviceWorker.register(swUrl).then(function (registration) {
-      function bindWaitingWorker(worker) {
-        if (!worker) return;
-        showUpdateToast();
-      }
-
-      bindWaitingWorker(registration.waiting);
-
-      registration.addEventListener('updatefound', function () {
-        var newWorker = registration.installing;
-        if (!newWorker) return;
-        newWorker.addEventListener('statechange', function () {
-          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            bindWaitingWorker(newWorker);
-          }
-        });
-      });
-
-      document.addEventListener('click', function (event) {
-        var close = event.target.closest('[data-pwa-update-close]');
-        if (close) {
-          event.preventDefault();
-          hideUpdateToast();
-          return;
-        }
-
-        var reload = event.target.closest('[data-pwa-update-reload]');
-        if (!reload) return;
-        event.preventDefault();
-
-        if (registration.waiting) {
-          registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-          return;
-        }
-        window.location.reload();
-      });
-
-      navigator.serviceWorker.addEventListener('controllerchange', function () {
-        window.location.reload();
-      });
-    }).catch(function () {
+    navigator.serviceWorker.register(swUrl).catch(function () {
       // No-op in environments where SW registration is unavailable.
     });
   }

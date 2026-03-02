@@ -374,7 +374,6 @@ self.addEventListener('install', (event) => {
       // If full precache fails (storage/network), runtime cache still works.
       console.warn('Precache incomplete', err);
     }
-    self.skipWaiting();
   })());
 });
 
@@ -387,14 +386,7 @@ self.addEventListener('activate', (event) => {
       }
       return Promise.resolve();
     }));
-    await self.clients.claim();
   })());
-});
-
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
 });
 
 self.addEventListener('fetch', (event) => {
@@ -405,31 +397,49 @@ self.addEventListener('fetch', (event) => {
   if (requestUrl.origin !== self.location.origin) return;
 
   event.respondWith((async () => {
-    const cached = await caches.match(request, { ignoreSearch: true });
+    const cached = await caches.match(request);
     const runtime = await caches.open(RUNTIME_CACHE);
-    const networkFetch = fetch(request)
+    const destination = request.destination || '';
+    const isDocument = request.mode === 'navigate' || destination === 'document';
+    const isCoreAsset = destination === 'script' || destination === 'style' || destination === 'worker';
+
+    const fetchAndCache = () => fetch(request)
       .then((response) => {
         if (response && response.ok) {
           runtime.put(request, response.clone());
         }
         return response;
-      })
-      .catch(() => null);
+      });
 
+    // Network-first for HTML + JS/CSS so code updates land predictably.
+    if (isDocument || isCoreAsset) {
+      try {
+        return await fetchAndCache();
+      } catch (networkError) {
+        if (cached) return cached;
+        if (isDocument) {
+          const offline = await caches.match(OFFLINE_URL);
+          if (offline) return offline;
+        }
+        return new Response('', { status: 504, statusText: 'Offline' });
+      }
+    }
+
+    // Cache-first for media/data to keep PWA snappy offline.
     if (cached) {
-      networkFetch.catch(() => null);
+      fetchAndCache().catch(() => null);
       return cached;
     }
 
-    const network = await networkFetch;
-    if (network) return network;
-
-    if (request.mode === 'navigate') {
-      const offline = await caches.match(OFFLINE_URL, { ignoreSearch: true });
-      if (offline) return offline;
+    try {
+      return await fetchAndCache();
+    } catch (networkError) {
+      if (isDocument) {
+        const offline = await caches.match(OFFLINE_URL);
+        if (offline) return offline;
+      }
+      return new Response('', { status: 504, statusText: 'Offline' });
     }
-
-    return new Response('', { status: 504, statusText: 'Offline' });
   })());
 });
 `;
