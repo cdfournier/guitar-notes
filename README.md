@@ -52,6 +52,14 @@ Then visit `http://localhost:3000`.
 - State is stored in browser `localStorage` under key `setlistDraft`.
 - Because state is local browser storage, setlists are device/browser specific.
 
+## What's New (v2.5.0)
+- PWA-focused navigation improvements for song pages and in-app behavior.
+- Setlist Builder action feedback standardized with toast messaging.
+- Service worker caching strategy updated for better freshness of HTML/JS/CSS updates.
+- Offline/manifest assets added for installed app behavior:
+  - `public/site.webmanifest`
+  - `public/offline/index.html`
+
 ## Show Tracker
 - Tracker start/stop controls are available in headers on grid/list pages and on `/show`.
 - While tracking is active, opening any song page auto-logs that song visit.
@@ -69,6 +77,14 @@ Workflow: `.github/workflows/pages.yml`.
 ## Scripts
 - `npm start` — run Express locally
 - `npm run build:static` — render static site into `public/`
+
+## Dev Notes
+- Service worker behavior:
+  - Network-first for HTML/JS/CSS (to avoid stale UI/runtime logic after deploys).
+  - Cache-first for most static/media assets (for offline resilience and speed).
+- Local test troubleshooting (especially after JS/PWA changes):
+  - Hard refresh the page.
+  - If behavior looks stale, unregister the localhost service worker in DevTools, then reload.
 
 ## Built With
 - [Express](https://expressjs.com/)
