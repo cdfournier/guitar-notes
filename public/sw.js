@@ -292,11 +292,13 @@ self.addEventListener('fetch', (event) => {
   if (requestUrl.origin !== self.location.origin) return;
 
   event.respondWith((async () => {
-    const cached = await caches.match(request);
     const runtime = await caches.open(RUNTIME_CACHE);
     const destination = request.destination || '';
     const isDocument = request.mode === 'navigate' || destination === 'document';
     const isCoreAsset = destination === 'script' || destination === 'style' || destination === 'worker';
+    const cached = isDocument
+      ? await caches.match(request, { ignoreSearch: true })
+      : await caches.match(request);
 
     const fetchAndCache = () => fetch(request)
       .then((response) => {
