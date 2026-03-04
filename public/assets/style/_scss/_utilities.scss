@@ -283,6 +283,30 @@ span.album {
   }
 }
 
+.offline-cache-status {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 95;
+  max-width: min(22rem, calc(100vw - 2rem));
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: white;
+  background: $gray;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  @include transform(translateY(0.375rem));
+  @include transition(all, 0.2s, ease);
+
+  &.is-visible {
+    opacity: 0.95;
+    @include transform(translateY(0));
+  }
+}
+
 html.song-panel-open,
 body.song-panel-open {
   .setlist-toast {
@@ -574,6 +598,11 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     font-size: 1rem;
   }
 
+  .offline-cache-status {
+    bottom: max(5.25rem, calc(env(safe-area-inset-bottom) + 4.5rem));
+    font-size: 0.875rem;
+  }
+
   .setlist-show-toggle.is-visible {
     min-width: 1.5rem;
 
@@ -631,6 +660,11 @@ html.dark {
   }
 
   .setlist-toast {
+    color: $gray;
+    background: white;
+  }
+
+  .offline-cache-status {
     color: $gray;
     background: white;
   }

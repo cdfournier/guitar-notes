@@ -529,6 +529,12 @@ $('.info button').click(function () {
     showToast(data.message);
   });
 
+  window.addEventListener('gn:toast', function (event) {
+    var detail = event && event.detail ? event.detail : null;
+    if (!detail || typeof detail.message !== 'string' || !detail.message) return;
+    showToast(detail.message);
+  });
+
   window.addEventListener('DOMContentLoaded', function () {
     autologSongPageVisitIfTracking();
     refreshSetlistUi();
@@ -539,6 +545,9 @@ $('.info button').click(function () {
 // PWA RUNTIME
 (function pwaRuntime() {
   var forceModeKey = 'gn-force-app-mode';
+  var offlineManifestUrl = '/assets/data/offline-cache-manifest.json';
+  var offlineProgressKey = 'gn-offline-cache-progress';
+  var offlineStatusTimer = null;
   var songPanel = null;
 
   function getBasePath() {
@@ -546,6 +555,40 @@ $('.info button').click(function () {
       return window.__BASE_PATH__.replace(/\/$/, '');
     }
     return '';
+  }
+
+  function getOfflineManifestUrl() {
+    return (getBasePath() || '') + offlineManifestUrl;
+  }
+
+  function shouldRunOfflineWarmOnPage() {
+    var path = (window.location.pathname || '').split('?')[0];
+    var basePath = getBasePath();
+
+    if (basePath && path.indexOf(basePath + '/') === 0) {
+      path = path.slice(basePath.length) || '/';
+    }
+
+    if (!path.startsWith('/')) path = '/' + path;
+    if (isSongDetailPath(path)) return false;
+
+    return (
+      path === '/' ||
+      path === '/index.html' ||
+      path === '/grid.html' ||
+      path === '/list.html' ||
+      path === '/songs/' ||
+      path === '/songs' ||
+      path === '/songs/list/' ||
+      path === '/songs/list' ||
+      path === '/lab/' ||
+      path === '/lab' ||
+      path === '/lab/list/' ||
+      path === '/lab/list' ||
+      path === '/show/' ||
+      path === '/show' ||
+      path === '/show.html'
+    );
   }
 
   function isStandaloneMode() {
@@ -655,6 +698,128 @@ $('.info button').click(function () {
     }
   }
 
+  function readOfflineProgress() {
+    try {
+      var raw = window.localStorage && window.localStorage.getItem(offlineProgressKey);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return null;
+      return parsed;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function writeOfflineProgress(progress) {
+    try {
+      if (!window.localStorage) return;
+      window.localStorage.setItem(offlineProgressKey, JSON.stringify(progress));
+    } catch (error) {
+      // Ignore storage failures.
+    }
+  }
+
+  function dispatchToast(message) {
+    window.dispatchEvent(new CustomEvent('gn:toast', { detail: { message: message } }));
+  }
+
+  function ensureOfflineStatusChip() {
+    var chip = document.querySelector('[data-offline-cache-status]');
+    if (chip) return chip;
+
+    chip = document.createElement('div');
+    chip.className = 'offline-cache-status';
+    chip.setAttribute('data-offline-cache-status', '');
+    chip.setAttribute('role', 'status');
+    chip.setAttribute('aria-live', 'polite');
+    chip.textContent = 'Preparing offline cache...';
+    document.body.appendChild(chip);
+    return chip;
+  }
+
+  function showOfflineStatus(text, persistent) {
+    var chip = ensureOfflineStatusChip();
+    chip.textContent = text;
+    chip.classList.add('is-visible');
+    if (offlineStatusTimer) {
+      clearTimeout(offlineStatusTimer);
+      offlineStatusTimer = null;
+    }
+    if (!persistent) {
+      offlineStatusTimer = setTimeout(function () {
+        chip.classList.remove('is-visible');
+      }, 2500);
+    }
+  }
+
+  function hideOfflineStatus() {
+    var chip = document.querySelector('[data-offline-cache-status]');
+    if (!chip) return;
+    chip.classList.remove('is-visible');
+    if (offlineStatusTimer) {
+      clearTimeout(offlineStatusTimer);
+      offlineStatusTimer = null;
+    }
+  }
+
+  function formatOfflineProgress(done, total) {
+    if (!total) return 'Offline cache: 0%';
+    var percent = Math.min(100, Math.floor((done / total) * 100));
+    return 'Offline cache: ' + percent + '% (' + done + '/' + total + ')';
+  }
+
+  function normalizeManifestUrls(urls) {
+    var seen = {};
+    var list = [];
+    var basePath = getBasePath();
+    urls.forEach(function (url) {
+      if (typeof url !== 'string' || !url) return;
+      if (!url.startsWith('/')) return;
+      if (url === '/sw.js') return;
+      if (url.indexOf('/offline/') === 0) return;
+      var prefixed = url;
+      if (basePath && url.indexOf(basePath + '/') !== 0) {
+        prefixed = basePath + url;
+      }
+      if (seen[prefixed]) return;
+      seen[prefixed] = true;
+      list.push(prefixed);
+    });
+    return list;
+  }
+
+  async function isUrlCached(url) {
+    if (!('caches' in window)) return false;
+    try {
+      var resolved = resolveHref(url);
+      var candidates = [];
+      var basePath = getBasePath();
+
+      if (resolved) {
+        candidates.push(resolved.href);
+        candidates.push(resolved.origin + resolved.pathname);
+        candidates.push(resolved.pathname);
+        if (basePath && resolved.pathname.indexOf(basePath + '/') === 0) {
+          var withoutBase = resolved.pathname.slice(basePath.length) || '/';
+          candidates.push(withoutBase);
+        }
+      } else if (typeof url === 'string' && url) {
+        candidates.push(url);
+      }
+
+      for (var i = 0; i < candidates.length; i += 1) {
+        var candidate = candidates[i];
+        if (!candidate) continue;
+        var match = await caches.match(candidate, { ignoreSearch: true });
+        if (match) return true;
+      }
+
+      return false;
+    } catch (error) {
+      return false;
+    }
+  }
+
   function ensureSongPanel() {
     if (songPanel) return songPanel;
 
@@ -700,6 +865,12 @@ $('.info button').click(function () {
   }
 
   function openSongPanel(url, titleText) {
+    if (!navigator.onLine) {
+      isUrlCached(url).then(function () {
+        showSongPanel(url, titleText);
+      });
+      return;
+    }
     showSongPanel(url, titleText);
   }
 
@@ -771,12 +942,127 @@ $('.info button').click(function () {
     });
   }
 
+  async function fetchOfflineManifest() {
+    var response = await fetch(getOfflineManifestUrl(), { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error('Offline manifest unavailable');
+    }
+    var manifest = await response.json();
+    if (!manifest || !Array.isArray(manifest.urls)) {
+      throw new Error('Offline manifest invalid');
+    }
+    return {
+      version: manifest.version || 'v1',
+      urls: normalizeManifestUrls(manifest.urls)
+    };
+  }
+
+  async function cacheUrl(cache, url) {
+    var request = new Request(url, { credentials: 'same-origin' });
+    var existing = await cache.match(request);
+    if (existing) return true;
+    try {
+      var response = await fetch(request);
+      if (!response || !response.ok) return false;
+      await cache.put(request, response.clone());
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  async function warmOfflineLibrary() {
+    if (!isStandaloneMode()) return;
+    if (!shouldRunOfflineWarmOnPage()) return;
+    if (!('caches' in window) || !('fetch' in window)) return;
+
+    var manifest;
+    try {
+      manifest = await fetchOfflineManifest();
+    } catch (error) {
+      return;
+    }
+
+    var total = manifest.urls.length;
+    if (!total) return;
+
+    var cacheName = 'guitar-notes-library-' + manifest.version;
+    var cache = await caches.open(cacheName);
+    var progress = readOfflineProgress();
+    var startIndex = 0;
+    var cachedCount = 0;
+
+    if (progress && progress.version === manifest.version) {
+      if (progress.complete === true) {
+        return;
+      }
+      startIndex = Math.max(0, Math.min(total, Number(progress.nextIndex) || 0));
+      cachedCount = Math.max(0, Math.min(total, Number(progress.cachedCount) || 0));
+    }
+
+    showOfflineStatus(formatOfflineProgress(cachedCount, total), true);
+
+    if (!navigator.onLine) {
+      dispatchToast('Offline cache paused. Reconnect to continue.');
+      return;
+    }
+
+    var batchSize = 12;
+    for (var index = startIndex; index < total; index += batchSize) {
+      var batch = manifest.urls.slice(index, Math.min(index + batchSize, total));
+      var results = await Promise.all(batch.map(function (url) {
+        return cacheUrl(cache, url);
+      }));
+
+      for (var i = 0; i < results.length; i += 1) {
+        if (results[i]) cachedCount += 1;
+      }
+
+      var nextIndex = Math.min(index + batch.length, total);
+      writeOfflineProgress({
+        version: manifest.version,
+        nextIndex: nextIndex,
+        cachedCount: cachedCount,
+        total: total,
+        updatedAt: Date.now(),
+        complete: nextIndex >= total
+      });
+
+      showOfflineStatus(formatOfflineProgress(cachedCount, total), true);
+
+      if (!navigator.onLine) {
+        dispatchToast('Offline cache paused. Reconnect to continue.');
+        return;
+      }
+
+      await new Promise(function (resolve) {
+        setTimeout(resolve, 80);
+      });
+    }
+
+    showOfflineStatus('Offline library ready.', false);
+    dispatchToast('Offline cache complete.');
+    writeOfflineProgress({
+      version: manifest.version,
+      nextIndex: total,
+      cachedCount: total,
+      total: total,
+      updatedAt: Date.now(),
+      complete: true
+    });
+
+    setTimeout(function () {
+      hideOfflineStatus();
+    }, 2800);
+  }
+
   window.addEventListener('DOMContentLoaded', function () {
     syncForceAppModeFromQuery();
     applyStandaloneNavMode();
     normalizeStandaloneSongLinks();
     bindSongPanelInteractions();
     registerServiceWorker();
+    warmOfflineLibrary();
 
     var frame = getPanelFrame();
     if (frame) {
