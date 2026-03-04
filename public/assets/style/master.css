@@ -1359,6 +1359,41 @@ span.album {
   transform: translate(-50%, 0);
 }
 
+.offline-cache-status {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 95;
+  max-width: min(22rem, 100vw - 2rem);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: white;
+  background: var(--gray);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(0.375rem);
+  -moz-transform: translateY(0.375rem);
+  -ms-transform: translateY(0.375rem);
+  -o-transform: translateY(0.375rem);
+  transform: translateY(0.375rem);
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+.offline-cache-status.is-visible {
+  opacity: 0.95;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
 html.song-panel-open .setlist-toast,
 body.song-panel-open .setlist-toast {
   z-index: 130;
@@ -1643,6 +1678,10 @@ main.index article section#list .artist-group p[data-song-item] .setlist-add-but
     bottom: 5.25rem;
     font-size: 1rem;
   }
+  .offline-cache-status {
+    bottom: max(5.25rem, env(safe-area-inset-bottom) + 4.5rem);
+    font-size: 0.875rem;
+  }
   .setlist-show-toggle.is-visible {
     min-width: 1.5rem;
   }
@@ -1688,6 +1727,10 @@ html.dark .setlist-tracker-fab {
   background: white;
 }
 html.dark .setlist-toast {
+  color: var(--gray);
+  background: white;
+}
+html.dark .offline-cache-status {
   color: var(--gray);
   background: white;
 }
