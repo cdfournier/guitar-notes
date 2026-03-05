@@ -698,6 +698,19 @@ $('.info button').click(function () {
     }
   }
 
+  function toCanonicalSongUrl(resolvedUrl) {
+    if (!resolvedUrl) return null;
+    try {
+      var canonical = new URL(resolvedUrl.href);
+      if (!isSongDetailPath(canonical.pathname)) return canonical.href;
+      canonical.search = '';
+      canonical.hash = '';
+      return canonical.href;
+    } catch (error) {
+      return resolvedUrl.href;
+    }
+  }
+
   function readOfflineProgress() {
     try {
       var raw = window.localStorage && window.localStorage.getItem(offlineProgressKey);
@@ -903,7 +916,7 @@ $('.info button').click(function () {
       if (!isSongDetailPath(resolved.pathname)) return;
 
       event.preventDefault();
-      openSongPanel(resolved.href, link.textContent.trim());
+      openSongPanel(toCanonicalSongUrl(resolved), link.textContent.trim());
     });
 
     document.addEventListener('keydown', function (event) {
