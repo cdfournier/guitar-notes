@@ -17,6 +17,18 @@ $(document).on('change', '[data-theme-toggle]', function () {
   }));
 });
 
+// PAGE INIT
+window.addEventListener('DOMContentLoaded', function () {
+  document.body.classList.add('visible');
+  document.body.classList.remove('hidden');
+
+  if (typeof window.Headroom !== 'function') return;
+  var header = document.querySelector('header');
+  if (!header) return;
+  var headroom = new Headroom(header);
+  headroom.init();
+});
+
 // SHARED OVERLAY SCROLL LOCK
 (function sharedScrollLock() {
   var lockDepth = 0;
