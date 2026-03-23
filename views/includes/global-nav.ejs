@@ -1,0 +1,6 @@
+<nav<% if (typeof navClass === 'string' && navClass) { %> class="<%= navClass %>"<% } %> aria-label="<%= navLabel || 'Global navigation' %>">
+  <%- include('global-nav-links'); %>
+  <form>
+    <%- include('theme-toggle', { toggleId: toggleId || 'switch-theme' }); %>
+  </form>
+</nav>

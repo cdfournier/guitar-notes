@@ -140,112 +140,206 @@ a:hover, a:focus {
   opacity: 0.7;
 }
 
+html.is-scroll-locked,
+body.is-scroll-locked {
+  overflow: hidden;
+}
+
 header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  --header-pad-x: 2rem;
+  --header-pad-top: 2rem;
+  --header-pad-bottom: 2rem;
+  display: block;
   position: fixed;
   z-index: 50;
   top: 0;
   width: 100vw;
   margin: 0;
-  padding: 2rem;
-  gap: 1rem;
+  padding: var(--header-pad-top) var(--header-pad-x) var(--header-pad-bottom);
   background: white;
 }
-header form {
+header .header-bar {
   display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 1rem 0 0;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
-header form fieldset {
-  width: 100%;
+header h1 {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+header .setlist-show-toggle,
+header .menu-toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   margin: 0;
   padding: 0;
   border: none;
-  column-span: all;
-}
-header form fieldset label {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 0.875rem;
-  font-weight: bold;
-  line-height: 1.5;
-}
-header form fieldset label input[type=text],
-header form fieldset label input[type=search] {
-  min-width: auto;
-  margin: 0;
-  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-  border: 1px solid var(--gray);
-  border-radius: 0.25rem;
-  font-family: "Courier", monospace;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--gray);
+  color: inherit;
   background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: opacity 0.25s ease 0s;
+  -moz-transition: opacity 0.25s ease 0s;
+  -ms-transition: opacity 0.25s ease 0s;
+  -o-transition: opacity 0.25s ease 0s;
+  transition: opacity 0.25s ease 0s;
 }
-header form fieldset label span.label {
+header .setlist-show-toggle:hover, header .setlist-show-toggle:focus,
+header .menu-toggle:hover,
+header .menu-toggle:focus {
+  opacity: 0.7;
+}
+header .menu-toggle .icon-close {
   display: none;
 }
-header form fieldset label span.icon {
-  display: flex;
+header .menu-toggle .text {
+  display: none;
+}
+header .setlist-show-toggle .icon,
+header .menu-toggle .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+header .setlist-show-toggle .icon svg,
+header .menu-toggle .icon svg {
+  width: 100%;
+  height: auto;
+}
+header .header-menu {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.25s ease 0s;
+  -moz-transition: opacity 0.25s ease 0s;
+  -ms-transition: opacity 0.25s ease 0s;
+  -o-transition: opacity 0.25s ease 0s;
+  transition: opacity 0.25s ease 0s;
+}
+header .header-menu__scrim {
+  appearance: none;
   position: absolute;
-  bottom: 0;
+  inset: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+header .header-menu__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
   left: 0;
-  width: 2rem;
-  height: 2.5rem;
-  padding: 0.25rem 0 0.425rem 0.5rem;
+  padding: calc(var(--header-pad-top) + 2.5rem + var(--header-pad-bottom)) var(--header-pad-x) 2rem;
+  background: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  max-height: calc(100dvh - 1rem);
+  overflow-y: auto;
+  -webkit-transform: translateY(-1rem);
+  -moz-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  -o-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+  -webkit-transition: transform 0.325s ease 0s;
+  -moz-transition: transform 0.325s ease 0s;
+  -ms-transition: transform 0.325s ease 0s;
+  -o-transition: transform 0.325s ease 0s;
+  transition: transform 0.325s ease 0s;
+}
+header .header-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+header .header-menu__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header .header-menu__nav li {
+  padding: 0;
+}
+header .header-menu__nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  text-decoration: none;
+}
+header .header-menu__nav a:hover, header .header-menu__nav a:focus {
   opacity: 0.7;
 }
-header form fieldset label button[type=reset].clear-search {
+header .header-menu__nav .icon {
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+header .header-menu__nav .text {
+  display: inline;
+}
+header .header-menu__nav form {
+  margin: 0;
+}
+header .header-menu__nav fieldset {
   display: flex;
   align-items: center;
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.25rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+header .header-menu__nav label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+}
+header .header-menu__nav label span {
+  display: grid;
   width: 1.5rem;
-  height: 2.125rem;
-  opacity: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  -webkit-transition: all 0.325s ease 0s;
-  -moz-transition: all 0.325s ease 0s;
-  -ms-transition: all 0.325s ease 0s;
-  -o-transition: all 0.325s ease 0s;
-  transition: all 0.325s ease 0s;
+  height: auto;
+  aspect-ratio: 1/1;
 }
-header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search,
-header form fieldset label input[type=text]:not(:placeholder-shown) ~ button.clear-search {
-  opacity: 0.7;
+header .header-menu__nav label span svg {
+  width: 100%;
+  height: 100%;
 }
-header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search:hover, header form fieldset label input[type=text]:not(:placeholder-shown) ~ span.clear-search:focus,
-header form fieldset label input[type=text]:not(:placeholder-shown) ~ button.clear-search:hover,
-header form fieldset label input[type=text]:not(:placeholder-shown) ~ button.clear-search:focus {
-  opacity: 1;
-}
-header form fieldset label input[type=checkbox] {
-  position: absolute;
+header .header-menu__nav label input {
+  position: relative;
   top: 0;
   right: 0;
   width: 2.5rem;
   min-width: 2.5rem;
   height: 1.25rem;
-  margin: 0;
+  margin: 0 0.5rem;
   padding: 0;
   border: 1px solid var(--gray);
   border-radius: 2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
   appearance: none;
 }
-header form fieldset label input[type=checkbox]:after {
+header .header-menu__nav label input:after {
   display: block;
   position: absolute;
   top: 0.125rem;
@@ -261,41 +355,36 @@ header form fieldset label input[type=checkbox]:after {
   -o-transition: all 0.25s ease 0s;
   transition: all 0.25s ease 0s;
 }
-header form fieldset label input[type=checkbox]:checked:after {
+header .header-menu__nav label input:checked:after {
   margin-left: 1.25rem;
 }
-header form fieldset + fieldset {
-  padding: 1rem 0 0;
+header .header-menu__filters {
+  padding-top: 1.5rem;
 }
-header h1 {
-  flex: 1 1 auto;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+header .header-menu__filters h2 {
+  margin: 0 0 1rem;
 }
-header .filter-toggle,
-header .setlist-show-toggle,
-header .setlist-tracker-toggle {
-  flex-shrink: 0;
-}
-header button {
-  cursor: pointer;
-}
-header button span.icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-header button span.icon svg {
-  width: 100%;
-  height: auto;
-}
-header button span.text {
+
+html.menu-open header .menu-toggle .icon-menu,
+body.menu-open header .menu-toggle .icon-menu {
   display: none;
 }
-header button:hover,
-header button :focus {
-  opacity: 0.7;
+html.menu-open header .menu-toggle .icon-close,
+body.menu-open header .menu-toggle .icon-close {
+  display: inline-flex;
+}
+html.menu-open header .header-menu,
+body.menu-open header .header-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+html.menu-open header .header-menu__panel,
+body.menu-open header .header-menu__panel {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .header--fixed {
@@ -306,38 +395,47 @@ header button :focus {
 }
 
 @media (min-width: 46.5rem) {
-  header {
+  header .header-menu__nav {
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    padding: 2rem;
+    flex-wrap: wrap;
   }
-  header form {
-    padding: 0;
+  header .header-menu__nav ul {
+    flex: 1 1 auto;
+    flex-flow: row wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  header .header-menu__nav form {
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 }
 @media (max-width: 63.9375rem) {
-  header button span.icon {
+  header .setlist-show-toggle .icon,
+  header .menu-toggle .icon {
     width: 2rem;
     height: 2rem;
   }
 }
 @media (display-mode: fullscreen) {
   header {
-    padding: 4rem 4rem 0;
+    --header-pad-top: 4rem;
+    --header-pad-x: 4rem;
+    --header-pad-bottom: 0;
   }
 }
 html.dark header {
   background: var(--gray);
 }
-html.dark header form fieldset input[type=text],
-html.dark header form fieldset input[type=search],
-html.dark header form fieldset input[type=checkbox] {
-  border-color: white;
-  color: white;
+html.dark header .header-menu__panel {
+  background: var(--gray);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
 }
-html.dark header form fieldset input[type=text]:after,
-html.dark header form fieldset input[type=search]:after,
-html.dark header form fieldset input[type=checkbox]:after {
+html.dark header .header-menu__nav label input {
+  border-color: white;
+}
+html.dark header .header-menu__nav label input:after {
   background: white;
 }
 
@@ -1988,65 +2086,6 @@ html.dark footer nav form input:after {
   background: white;
 }
 
-.filter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  -webkit-transform: translateX(150vw);
-  -moz-transform: translateX(150vw);
-  -ms-transform: translateX(150vw);
-  -o-transform: translateX(150vw);
-  transform: translateX(150vw);
-  -webkit-transition: all 0.25s ease 0s;
-  -moz-transition: all 0.25s ease 0s;
-  -ms-transition: all 0.25s ease 0s;
-  -o-transition: all 0.25s ease 0s;
-  transition: all 0.25s ease 0s;
-}
-.filter .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(0.125rem);
-  opacity: 0;
-  -webkit-transition: all 0.25s ease 0s;
-  -moz-transition: all 0.25s ease 0s;
-  -ms-transition: all 0.25s ease 0s;
-  -o-transition: all 0.25s ease 0s;
-  transition: all 0.25s ease 0s;
-}
-.filter .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0 0 1rem;
-}
-.filter .header button {
-  cursor: pointer;
-}
-.filter .header button:hover, .filter .header button:focus {
-  opacity: 0.7;
-}
-.filter .dialog {
-  width: 100%;
-  max-height: 90vh;
-  padding: 1.5rem;
-  overflow: auto;
-  position: relative;
-  z-index: 1;
-  background: #ffffff;
-  color: inherit;
-  border: 1px solid var(--gray);
-  border-radius: 1rem;
-  opacity: 0;
-}
-
 .filters {
   display: flex;
   flex-direction: column;
@@ -2159,7 +2198,7 @@ html.dark footer nav form input:after {
 .filters .filter-actions {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 .filters .filter-actions button {
@@ -2182,58 +2221,36 @@ html.dark footer nav form input:after {
   background: var(--gray);
 }
 
-.filter.filter--open {
-  z-index: 1000;
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-}
-.filter.filter--open .overlay {
-  opacity: 1;
-}
-.filter.filter--open .dialog {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-body.filter-modal-open {
-  overflow: hidden;
-}
-
-html.dark .filter .overlay {
-  background: rgba(0, 0, 0, 0.6);
-}
-html.dark .filter .dialog {
-  border-color: #ffffff;
-  background: #333333;
-}
-html.dark .filter .filters input[type=text],
-html.dark .filter .filters input[type=search] {
+html.dark .filters input[type=text],
+html.dark .filters input[type=search] {
   border-color: #ffffff;
   color: #ffffff;
 }
-html.dark .filter .filter-row .filter-tags .filter-tag {
+html.dark .filters .filter-row .filter-tags .filter-tag {
   border-color: #ffffff;
 }
-html.dark .filter .filter-row .filter-tags .filter-tag:hover, html.dark .filter .filter-row .filter-tags .filter-tag:focus {
+html.dark .filters .filter-row .filter-tags .filter-tag:hover, html.dark .filters .filter-row .filter-tags .filter-tag:focus {
   background-color: rgba(255, 255, 255, 0.125);
 }
-html.dark .filter .filter-row .filter-tags .filter-tag input[type=checkbox]:checked:before {
+html.dark .filters .filter-row .filter-tags .filter-tag input[type=checkbox]:checked:before {
   background-image: url(../icons/check-white.svg);
 }
-html.dark .filter .filter-actions button {
+html.dark .filters .filter-actions button {
   border-color: #ffffff;
 }
-html.dark .filter .filter-actions #song-filter-reset {
+html.dark .filters .filter-actions #song-filter-reset {
   color: #ffffff;
   background: transparent;
 }
-html.dark .filter .filter-actions .filter-apply {
+html.dark .filters .filter-actions .filter-apply {
   border-color: #ffffff;
   color: var(--gray);
   background: #ffffff;
+}
+
+@media (min-width: 64rem) {
+  .filters .filter-field input[type=text],
+  .filters .filter-field input[type=search] {
+    max-width: 50vw;
+  }
 }

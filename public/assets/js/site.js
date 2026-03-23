@@ -2,20 +2,75 @@
 window.addEventListener('DOMContentLoaded', function (theme) {
   var prefersDark = localStorage.getItem('theme') === 'true';
   document.documentElement.classList.toggle('dark', prefersDark);
-  $('input#switch-theme').prop('checked', prefersDark);
+  $('[data-theme-toggle]').prop('checked', prefersDark);
   if (localStorage.getItem('theme') === null) {
     localStorage.setItem('theme', false);
   }
 });
-$('input#switch-theme').click(function () {
-  var nextDark = localStorage.getItem('theme') !== 'true';
+$(document).on('change', '[data-theme-toggle]', function () {
+  var nextDark = this.checked;
   document.documentElement.classList.toggle('dark', nextDark);
-  $('input#switch-theme').prop('checked', nextDark);
+  $('[data-theme-toggle]').prop('checked', nextDark);
   localStorage.setItem('theme', nextDark ? 'true' : 'false');
   document.dispatchEvent(new CustomEvent('theme:changed', {
     detail: { dark: nextDark }
   }));
 });
+
+// SHARED OVERLAY SCROLL LOCK
+(function sharedScrollLock() {
+  var lockDepth = 0;
+  var scrollTop = 0;
+  var previousScrollBehavior = '';
+
+  function focusWithoutScroll(element) {
+    if (!element || typeof element.focus !== 'function') return;
+    try {
+      element.focus({ preventScroll: true });
+    } catch (error) {
+      element.focus();
+    }
+  }
+
+  function lockScroll() {
+    if (lockDepth === 0) {
+      scrollTop = window.scrollY || window.pageYOffset || 0;
+      previousScrollBehavior = document.documentElement.style.scrollBehavior || '';
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.documentElement.classList.add('is-scroll-locked');
+      document.body.classList.add('is-scroll-locked');
+      document.body.style.position = 'fixed';
+      document.body.style.top = (-scrollTop) + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    }
+
+    lockDepth += 1;
+  }
+
+  function unlockScroll() {
+    if (lockDepth === 0) return;
+
+    lockDepth -= 1;
+    if (lockDepth > 0) return;
+
+    document.documentElement.classList.remove('is-scroll-locked');
+    document.body.classList.remove('is-scroll-locked');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo({ top: scrollTop, left: 0, behavior: 'auto' });
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+  }
+
+  window.GuitarNotesUi = window.GuitarNotesUi || {};
+  window.GuitarNotesUi.lockScroll = lockScroll;
+  window.GuitarNotesUi.unlockScroll = unlockScroll;
+  window.GuitarNotesUi.focusWithoutScroll = focusWithoutScroll;
+})();
 
 // WELCOME LOGO
 window.addEventListener('DOMContentLoaded', function (visited) {
@@ -46,6 +101,98 @@ $('.info button').click(function () {
     $('.alert').removeClass('show')
   }, 10000);
 });
+
+// HEADER MENU
+(function headerMenu() {
+  var menu = document.querySelector('[data-header-menu]');
+  var toggle = document.querySelector('[data-menu-toggle]');
+  if (!menu || !toggle) return;
+
+  var closeTargets = menu.querySelectorAll('[data-menu-close]');
+  var focusTarget = menu.querySelector('[data-header-menu-focus]') || menu.querySelector('a[href], button, input');
+  var lastActiveElement = null;
+
+  function isOpen() {
+    return menu.classList.contains('is-open');
+  }
+
+  function lockScroll() {
+    if (window.GuitarNotesUi && typeof window.GuitarNotesUi.lockScroll === 'function') {
+      window.GuitarNotesUi.lockScroll();
+    }
+  }
+
+  function unlockScroll() {
+    if (window.GuitarNotesUi && typeof window.GuitarNotesUi.unlockScroll === 'function') {
+      window.GuitarNotesUi.unlockScroll();
+    }
+  }
+
+  function focusWithoutScroll(element) {
+    if (window.GuitarNotesUi && typeof window.GuitarNotesUi.focusWithoutScroll === 'function') {
+      window.GuitarNotesUi.focusWithoutScroll(element);
+      return;
+    }
+    if (element && typeof element.focus === 'function') {
+      element.focus();
+    }
+  }
+
+  function openMenu() {
+    if (isOpen()) return;
+    lastActiveElement = document.activeElement;
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+    lockScroll();
+    if (focusTarget && typeof focusTarget.focus === 'function') {
+      window.setTimeout(function () {
+        focusWithoutScroll(focusTarget);
+      }, 30);
+    }
+  }
+
+  function closeMenu() {
+    if (!isOpen()) return;
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    focusWithoutScroll(lastActiveElement);
+    unlockScroll();
+  }
+
+  toggle.addEventListener('click', function () {
+    if (isOpen()) {
+      closeMenu();
+      return;
+    }
+    openMenu();
+  });
+
+  closeTargets.forEach(function (target) {
+    target.addEventListener('click', function () {
+      closeMenu();
+    });
+  });
+
+  menu.addEventListener('click', function (event) {
+    var link = event.target.closest('a[href]');
+    if (!link) return;
+    closeMenu();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key !== 'Escape') return;
+    if (!isOpen()) return;
+    closeMenu();
+  });
+})();
 
 // SETLIST BUILDER + TRACKER
 (function setlistFeatures() {
@@ -868,6 +1015,9 @@ $('.info button').click(function () {
     panel.classList.add('is-open');
     panel.setAttribute('aria-hidden', 'false');
     document.body.classList.add('song-panel-open');
+    if (window.GuitarNotesUi && typeof window.GuitarNotesUi.lockScroll === 'function') {
+      window.GuitarNotesUi.lockScroll();
+    }
   }
 
   function hideSongPanel() {
@@ -875,6 +1025,9 @@ $('.info button').click(function () {
     songPanel.classList.remove('is-open');
     songPanel.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('song-panel-open');
+    if (window.GuitarNotesUi && typeof window.GuitarNotesUi.unlockScroll === 'function') {
+      window.GuitarNotesUi.unlockScroll();
+    }
   }
 
   function openSongPanel(url, titleText) {

@@ -31,9 +31,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF6BNKF"
               height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header>
-      <h1>Guitar Notes</h1>
-    </header>
+    <%- include('includes/page-header', { heading: 'Guitar Notes', showFilters: false }); %>
     <main id="content" class="setlists">
       <div style="display: none;" id="clock" class="clock" onload="showTime()" aria-live="polite"></div>
       <article>

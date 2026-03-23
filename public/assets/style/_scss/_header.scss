@@ -1,129 +1,28 @@
 // HEADER
+html.is-scroll-locked,
+body.is-scroll-locked {
+  overflow: hidden;
+}
+
 header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  --header-pad-x: 2rem;
+  --header-pad-top: 2rem;
+  --header-pad-bottom: 2rem;
+  display: block;
   position: fixed;
   z-index: 50;
   top: 0;
   width: 100vw;
   margin: 0;
-  padding: 2rem;
-  gap: 1rem;
+  padding: var(--header-pad-top) var(--header-pad-x) var(--header-pad-bottom);
   background: white;
 
-  form {
+  .header-bar {
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 1rem 0 0;
-
-    fieldset {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border: none;
-      column-span: all;
-
-      label {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        font-size: 0.875rem;
-        font-weight: bold;
-        line-height: 1.5;
-
-        input[type="text"],
-        input[type="search"] {
-          min-width: auto;
-          margin: 0;
-          padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-          border: 1px solid $gray;
-          border-radius: 0.25rem;
-          font-family: "Courier", monospace;
-          font-size: 1rem;
-          line-height: 1.5;
-          color: $gray;
-          background: transparent;
-        }
-
-        span.label {
-          display: none;
-        }
-
-        span.icon {
-          display: flex;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 2rem;
-          height: 2.5rem;
-          padding: 0.25rem 0 0.425rem 0.5rem;
-          opacity: 0.7;
-        }
-
-        button[type="reset"].clear-search {
-          display: flex;
-          align-items: center;
-          position: absolute;
-          right: 0.5rem;
-          bottom: 0.25rem;
-          width: 1.5rem;
-          height: 2.125rem;
-          opacity: 0;
-          @include appearance(none);
-          @include transition(all, 0.325s, ease);
-        }
-
-        input[type="text"]:not(:placeholder-shown)~span.clear-search,
-        input[type="text"]:not(:placeholder-shown)~button.clear-search {
-          opacity: 0.7;
-
-          &:hover,
-          &:focus {
-            opacity: 1;
-          }
-        }
-
-        input[type="checkbox"] {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 2.5rem;
-          min-width: 2.5rem;
-          height: 1.25rem;
-          margin: 0;
-          padding: 0;
-          border: 1px solid $gray;
-          border-radius: 2rem;
-          appearance: none;
-
-          &:after {
-            display: block;
-            position: absolute;
-            top: 0.125rem;
-            left: 0.125rem;
-            width: 0.875rem;
-            height: 0.875rem;
-            border-radius: 100%;
-            background: $gray;
-            content: "";
-            @include transition(all, 0.25s, ease);
-          }
-
-          &:checked:after {
-            margin-left: 1.25rem;
-          }
-        }
-      }
-
-      &+fieldset {
-        padding: 1rem 0 0;
-      }
-    }
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
   }
 
   h1 {
@@ -134,16 +33,48 @@ header {
     white-space: nowrap;
   }
 
-  .filter-toggle,
-  .setlist-show-toggle,
-  .setlist-tracker-toggle {
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     flex-shrink: 0;
   }
 
-  button {
+  .setlist-show-toggle,
+  .menu-toggle {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background: transparent;
     cursor: pointer;
+    text-decoration: none;
+    @include transition(opacity, 0.25s, ease);
 
-    span.icon {
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  .menu-toggle {
+    .icon-close {
+      display: none;
+    }
+
+    .text {
+      display: none;
+    }
+  }
+
+  .setlist-show-toggle,
+  .menu-toggle {
+    .icon {
       width: 1.5rem;
       height: 1.5rem;
 
@@ -152,14 +83,175 @@ header {
         height: auto;
       }
     }
+  }
 
-    span.text {
-      display: none;
+  .header-menu {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(opacity, 0.25s, ease);
+  }
+
+  .header-menu__scrim {
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .header-menu__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: calc(var(--header-pad-top) + 2.5rem + var(--header-pad-bottom)) var(--header-pad-x) 2rem;
+    background: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    max-height: calc(100dvh - 1rem);
+    overflow-y: auto;
+    @include transform(translateY(-1rem));
+    @include transition(transform, 0.325s, ease);
+  }
+
+  .header-menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    &:hover,
-    :focus {
-      opacity: 0.7;
+    li {
+      padding: 0;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.25rem 0;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+
+    .icon {
+      display: grid;
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .text {
+      display: inline;
+    }
+
+    form {
+      margin: 0;
+    }
+
+    fieldset {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 0;
+
+      span {
+        display: grid;
+        width: 1.5rem;
+        height: auto;
+        aspect-ratio: 1 / 1;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      input {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 2.5rem;
+        min-width: 2.5rem;
+        height: 1.25rem;
+        margin: 0 0.5rem;
+        padding: 0;
+        border: 1px solid $gray;
+        border-radius: 2rem;
+        @include appearance(none);
+
+        &:after {
+          display: block;
+          position: absolute;
+          top: 0.125rem;
+          left: 0.125rem;
+          width: 0.875rem;
+          height: 0.875rem;
+          border-radius: 100%;
+          background: $gray;
+          content: "";
+          @include transition(all, 0.25s, ease);
+        }
+
+        &:checked:after {
+          margin-left: 1.25rem;
+        }
+      }
+    }
+  }
+
+  .header-menu__filters {
+    padding-top: 1.5rem;
+
+    h2 {
+      margin: 0 0 1rem;
+    }
+  }
+}
+
+html.menu-open,
+body.menu-open {
+  header {
+    .menu-toggle {
+      .icon-menu {
+        display: none;
+      }
+
+      .icon-close {
+        display: inline-flex;
+      }
+    }
+
+    .header-menu {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .header-menu__panel {
+      @include transform(translateY(0));
     }
   }
 }
@@ -173,20 +265,31 @@ header {
 
 @media (min-width: 46.5rem) {
   header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
+    .header-menu__nav {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
-    form {
-      padding: 0;
+      ul {
+        flex: 1 1 auto;
+        flex-flow: row wrap;
+        gap: 0.75rem 1.5rem;
+      }
+
+      form {
+        flex: 0 0 auto;
+        margin-left: auto;
+      }
     }
   }
 }
 
 @media (max-width: 63.9375rem) {
   header {
-    button {
-      span.icon {
+    .setlist-show-toggle,
+    .menu-toggle {
+      .icon {
         width: 2rem;
         height: 2rem;
       }
@@ -196,7 +299,9 @@ header {
 
 @media (display-mode: fullscreen) {
   header {
-    padding: 4rem 4rem 0;
+    --header-pad-top: 4rem;
+    --header-pad-x: 4rem;
+    --header-pad-bottom: 0;
   }
 }
 
@@ -206,16 +311,19 @@ html.dark {
   header {
     background: $gray;
 
-    form fieldset {
+    .header-menu__panel {
+      background: $gray;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    }
 
-      input[type="text"],
-      input[type="search"],
-      input[type="checkbox"] {
-        border-color: white;
-        color: white;
+    .header-menu__nav {
+      label {
+        input {
+          border-color: white;
 
-        &:after {
-          background: white;
+          &:after {
+            background: white;
+          }
         }
       }
     }
