@@ -286,7 +286,7 @@ header .header-menu__nav a {
 header .header-menu__nav a:hover, header .header-menu__nav a:focus {
   opacity: 0.7;
 }
-header .header-menu__nav .icon {
+header .header-menu__nav a .icon {
   display: grid;
   width: 1.5rem;
   height: 1.5rem;
@@ -314,7 +314,7 @@ header .header-menu__nav label {
 }
 header .header-menu__nav label span {
   display: grid;
-  width: 1.5rem;
+  width: 1.25rem;
   height: auto;
   aspect-ratio: 1/1;
 }

@@ -148,7 +148,7 @@ header {
       }
     }
 
-    .icon {
+    a .icon {
       display: grid;
       width: 1.5rem;
       height: 1.5rem;
@@ -180,7 +180,7 @@ header {
 
       span {
         display: grid;
-        width: 1.5rem;
+        width: 1.25rem;
         height: auto;
         aspect-ratio: 1 / 1;
 
