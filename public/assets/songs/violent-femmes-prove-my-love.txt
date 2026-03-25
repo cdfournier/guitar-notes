@@ -17,7 +17,7 @@ D               A         E       D
 Oh tell me now (What do I have to do)
 D               A         E       D
 Oh tell me now (What do I have to do)
-A              D       E
+      A        D       E
 Oh to prove my love to you
 
 A
@@ -43,7 +43,7 @@ D                 A         E       D
 Yeah tell me now (What do I have to do)
 D                 A         E       D
 Yeah tell me now (What do I have to do)
-A                D       E
+        A        D       E
 Yeah to prove my love to you
 
 A
@@ -77,5 +77,5 @@ D                    A         E       D
 I'd cross the ocean (What do I have to do)
 D              A         E       D
 I'd do it all (What do I have to do)
-A             D       E
+     A        D       E
 Oh I prove my love to you

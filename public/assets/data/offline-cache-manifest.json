@@ -1,5 +1,5 @@
 {
-  "version": "02403a4c1fa7",
+  "version": "c9b10d5799f2",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -322,6 +322,7 @@
     "/assets/songs/bob-dylan-must-be-santa.txt",
     "/assets/songs/bob-dylan-new-morning.txt",
     "/assets/songs/bob-dylan-tangled-up-in-blue.txt",
+    "/assets/songs/bob-dylan-tell-me-momma.txt",
     "/assets/songs/bob-dylan-the-man-in-me.txt",
     "/assets/songs/bob-dylan-things-have-changed.txt",
     "/assets/songs/body-count-the-winner-loses.txt",
@@ -1119,6 +1120,7 @@
     "/songs/bob-dylan-new-morning/",
     "/songs/bob-dylan-tangled-up-in-blue.html",
     "/songs/bob-dylan-tangled-up-in-blue/",
+    "/songs/bob-dylan-tell-me-momma/",
     "/songs/bob-dylan-the-man-in-me.html",
     "/songs/bob-dylan-the-man-in-me/",
     "/songs/bob-dylan-things-have-changed.html",
