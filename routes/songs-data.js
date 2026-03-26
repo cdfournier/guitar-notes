@@ -177,9 +177,13 @@ async function groupSongsByArtist(kind = 'main') {
 
 function textToParagraphs(text) {
   if (!text) return [];
-  const cleaned = text.replace(/\r\n/g, '\n').trim();
-  if (!cleaned) return [];
-  return cleaned.split(/\n{2,}/).map((block) => escapeHtml(block));
+  const normalized = text.replace(/\r\n/g, '\n');
+  if (!normalized.trim()) return [];
+  return normalized
+    .split(/\n{2,}/)
+    .map((block) => block.replace(/\n+$/g, ''))
+    .filter((block) => block.trim().length > 0)
+    .map((block) => escapeHtml(block));
 }
 
 module.exports = {
