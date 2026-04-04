@@ -1,5 +1,5 @@
 D G
-  I walked in the bank
+    I walked in the bank
 G
 The black leather bag
 Em
@@ -11,8 +11,8 @@ I looked into the bankers eyes
 D
 Don't you dare pull that alarm
 
-G
-I screamed hit the floor
+D G
+    I screamed hit the floor
 G
 A woman screamed please help me Lord
 Em
@@ -27,8 +27,8 @@ For once in my life
 D                       Em
 Can I do this one thing right
 
-G
-Felt the pressure tight
+D G
+   Felt the pressure tight
 G
 A weekend man a weekend heist
 Em
@@ -38,7 +38,7 @@ Uncle Sam this money jam you put me in
 D
 Took a human life to pay the debt
 
-G
+  G
 I didn't hear the guards outside I heard a scream I turned surprised
 Em
 Felt the smoking pistol in my grip
