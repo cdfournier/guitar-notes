@@ -302,6 +302,10 @@ body.menu-open {
     --header-pad-top: 4rem;
     --header-pad-x: 4rem;
     --header-pad-bottom: 0;
+
+    .header-menu__panel {
+      padding: 8rem 4rem;
+    }
   }
 }
 

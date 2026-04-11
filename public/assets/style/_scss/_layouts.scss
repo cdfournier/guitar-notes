@@ -315,6 +315,12 @@ main.index {
   }
 }
 
+@media (display-mode: fullscreen) {
+  main.index {
+    padding-top: 8rem;
+  }
+}
+
 @media (max-width: 63.9375rem) {
   main article section p {
     font-size: 1.25rem;

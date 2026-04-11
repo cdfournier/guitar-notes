@@ -1,5 +1,5 @@
 {
-  "version": "80a5991a1f87",
+  "version": "4bdc8fbde7ec",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -1003,6 +1003,7 @@
     "/setlists/202603/20260329/",
     "/setlists/202604/20260404/",
     "/setlists/202604/20260405/",
+    "/setlists/202604/20260410/",
     "/setlists/template.html",
     "/show.html",
     "/show/",
