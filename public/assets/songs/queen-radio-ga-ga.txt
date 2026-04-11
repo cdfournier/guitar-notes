@@ -35,7 +35,7 @@ And just complain when you're not there
 You had your time you had the power
        D
 You've yet to have your finest hour
-A E   F#m D
+A E   F#m E
 Radio (Radio)
 
 E              A     E
@@ -75,7 +75,7 @@ When we grow tired of all this visual
 You had your time you had the power
        D
 You've yet to have your finest hour
-A E   F#m D
+A E   F#m E
 Radio (Radio)
 
 E              A     E
@@ -107,5 +107,5 @@ E - Em - A - F#
 You had your time you had the power
        D
 You've yet to have your finest hour
-A E   F#m D
+A E   F#m E
 Radio (Radio)
