@@ -892,16 +892,16 @@ main.setlists {
     }
   }
 
-  // Song pages: keep single-column in portrait tablet.
-  main article section#song {
+  // Song pages without an explicit column class stay single-column in portrait tablet.
+  main article section#song:not(.sm):not(.md):not(.lg) {
     column-count: 1 !important;
     column-gap: 0 !important;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-  // Song pages: use two columns in landscape tablet.
-  main article section#song {
+  // Song pages without an explicit column class use two columns in landscape tablet.
+  main article section#song:not(.sm):not(.md):not(.lg) {
     column-count: 2 !important;
     column-gap: 2rem !important;
   }

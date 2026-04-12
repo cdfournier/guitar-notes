@@ -1159,13 +1159,13 @@ main.setlists section p + p {
     max-width: calc(50% - 0.5rem);
     min-width: calc(50% - 0.5rem);
   }
-  main article section#song {
+  main article section#song:not(.sm):not(.md):not(.lg) {
     column-count: 1 !important;
     column-gap: 0 !important;
   }
 }
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-  main article section#song {
+  main article section#song:not(.sm):not(.md):not(.lg) {
     column-count: 2 !important;
     column-gap: 2rem !important;
   }
