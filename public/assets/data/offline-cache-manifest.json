@@ -1,5 +1,5 @@
 {
-  "version": "405f4af93f49",
+  "version": "b3229f0ec9a7",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -393,6 +393,7 @@
     "/assets/songs/cult-edie-ciao-baby.txt",
     "/assets/songs/cult-love-removal-machine.txt",
     "/assets/songs/cult-she-sells-sanctuary.txt",
+    "/assets/songs/cure-close-to-me.txt",
     "/assets/songs/cure-in-between-days.txt",
     "/assets/songs/cure-just-like-heaven.txt",
     "/assets/songs/cure-pictures-of-you.txt",
@@ -1004,6 +1005,8 @@
     "/setlists/202604/20260404/",
     "/setlists/202604/20260405/",
     "/setlists/202604/20260410/",
+    "/setlists/202604/20260418/",
+    "/setlists/202604/20260419/",
     "/setlists/template.html",
     "/show.html",
     "/show/",
@@ -1272,6 +1275,7 @@
     "/songs/cult-love-removal-machine/",
     "/songs/cult-she-sells-sanctuary.html",
     "/songs/cult-she-sells-sanctuary/",
+    "/songs/cure-close-to-me/",
     "/songs/cure-in-between-days.html",
     "/songs/cure-in-between-days/",
     "/songs/cure-just-like-heaven.html",

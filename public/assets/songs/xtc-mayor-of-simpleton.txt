@@ -61,11 +61,11 @@ It takes brains to do that anyway (and anyway)
 
 D     C       D             G            Am
 And I can't unravel riddles problems and puns
-Am      C    D               G      Am
+        C    D               G      Am
 How the home computer has me on the run
-Am    G                   E
+      G                   E
 And I may be the Mayor of Simpleton
-E     Am       D
+      Am       D
 But I know one thing
 D            C    D    C D
 And that's I love you (I love you)
@@ -76,7 +76,7 @@ C                             D
 (Please be upstanding for the Mayor of Simpleton)
 C                             D
 Then I'm the man who grew the money tree
-C                             D
+C                          D
 (No chain of office and no hope of getting one)
 
 G                            A
@@ -86,11 +86,11 @@ That they're paupers and that's how they'll stay
 
 D      C          D               G         Am
 Well I don't know how many pounds make up a ton
-D          C     D           G          Am
+           C     D           G          Am
 Of all the Nobel prizes that I've never won
-Am    G                   E
+      G                   E
 And I may be the Mayor of Simpleton
-E     Am       D
+      Am       D
 But I know one thing
 D            C    D   C D
 And that's I love you
@@ -99,7 +99,7 @@ D        C                        D
 When all logic grows cold and all thinking gets done
 D         C                       D              G   C G
 You'll be warm in the arms of the Mayor of Simpleton
-D         C                       D              G   C G
+G         C                       D              G   C G
 You'll be warm in the arms of the Mayor of Simpleton
-D         C                       D
+G         C                       D
 You'll be warm in the arms of the Mayor
