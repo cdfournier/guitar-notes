@@ -1,7 +1,7 @@
 Bm
-They say in chess you've got to kill the queen and then you made it
-D    A Bm
-Oh I do  you
+They say in chess you've got to kill the queen and then you mate it
+D   A      Bm
+Oh I do you
 Bm
 A funny thing a king who gets himself assassinated
 D       A            Bm
@@ -11,8 +11,8 @@ Altitude
 
 Bm
 You took a town by storm the mess you made was nominated
-D    A Bm
-Oh I do  you
+D   A      Bm
+Oh I do you
 Bm
 Now put away your welcome soon you'll find you've overstayed it
 D       A            Bm
@@ -31,8 +31,8 @@ This time my fortune faded
 
 Bm
 The medicated state of mind you've found is overrated
-D    A Bm
-Oh I do  you
+D   A      Bm
+Oh I do you
 Bm
 You saw it all come down and now it's time to imitate it
 D       A            Bm
@@ -51,7 +51,7 @@ This time my fortune faded
 
 Bm A
 
-Bm                    D
+Bm                          D  A
 Come on God do I seem bulletproof
 
 A         G
