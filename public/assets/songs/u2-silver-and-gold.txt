@@ -1,23 +1,23 @@
-E
+E                  A
 In the shithouse a shotgun
-E
+E                     A
 Praying hands hold me down
-E
+E                      A
 If only the hunter was hunted
-E
+E                            A
 In this tin can town tin can town
-E
+E                     A
 No stars in the black night
-E
+E                       A
 Looks like the sky fall down
-E
+E                A
 No sun in the daylight
-E
+E               A
 Looks like it's chained to the ground chained to the ground
 
 E                   A
 The warden says the exodus sold
-A      B             A
+A      D             A
 If you want a way out
            E    A          E
 Silver and gold silver and gold
@@ -43,7 +43,7 @@ I am someone I am someone   I am someone
 
 E                  A
 Captains and Kings in the ship's hold
-A    B             A
+A    D             A
 They came to collect
            E    A          E    A
 Silver and gold silver and gold
@@ -80,7 +80,7 @@ Inside the free set them free
 
 E                    A
 A prize fighter in a corner is told
-B                 A               E
+D                 A               E
 Hit where it hurts for silver and gold
 A          E
 Silver and gold
