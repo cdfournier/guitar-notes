@@ -9,14 +9,14 @@ Oh those small communities
 
 A       E             D
 All my friends are so small town
-A          E           D          E
+A          E           D
 My parents live in the same small town
 A  E         D
 My job is so small town
          Bm              E
 Provides little opportunity
 
-A E D E - A E D E
+A E D - A E D
 
 A        E    D
 Educated in a small town
@@ -45,8 +45,7 @@ Yeah I can be myself here in this small town
     D             A              E
 And people let me be just what I wanna be
 
-A E D E - A E D E
-F#m  A D A - F#m  A E - F#m  A D A - E A
+A E D - A E D
 
 A           E         D
 Got nothing against a big town
@@ -66,5 +65,5 @@ Gonna die in this small town
           Bm                     E
 Oh that's probably where they'll bury me
 
-A E D E - A E D E - A E D E - A E D E
-A E D E - A E D E - A E D E - A E D
+A E D - A E D - A E D - A E D
+A E D - A E D - A E D - A E D
