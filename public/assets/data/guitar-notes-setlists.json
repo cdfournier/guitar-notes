@@ -15340,12 +15340,12 @@
    "set": "1",
    "order": 1,
    "song": "Are You Experienced",
-   "artist": "The Jimi Hendrix Experience",
+   "artist": "",
    "acoustic": "",
    "segue": "",
    "note": "",
    "details": "",
-   "artist-song": "Are You Experienced"
+   "artist-song": ""
  },
  {
    "date": "Saturday, May 2, 2026",
@@ -15940,12 +15940,12 @@
    "set": "1",
    "order": 6,
    "song": "Are You Experienced",
-   "artist": "The Jimi Hendrix Experience",
+   "artist": "",
    "acoustic": "",
    "segue": "",
    "note": "",
    "details": "",
-   "artist-song": "Are You Experienced"
+   "artist-song": ""
  },
  {
    "date": "Saturday, May 9, 2026",
@@ -16126,5 +16126,125 @@
    "note": "",
    "details": "",
    "artist-song": "Radio Ga Ga"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 1,
+   "song": "Key West Intermezzo (I Saw You First)",
+   "artist": "John Mellencamp",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Key West Intermezzo I Saw You First"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 2,
+   "song": "Check It Out",
+   "artist": "John Mellencamp",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Check It Out"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 3,
+   "song": "Cherry Bomb",
+   "artist": "John Mellencamp",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Cherry Bomb"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 4,
+   "song": "Crumblin Down",
+   "artist": "John Mellencamp",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Crumblin Down"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 5,
+   "song": "Lonely Ol' Night",
+   "artist": "John Mellencamp",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Lonely Ol Night"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 6,
+   "song": "Paper In Fire",
+   "artist": "John Mellencamp",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Paper In Fire"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 7,
+   "song": "Black Friday",
+   "artist": "Steely Dan",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Black Friday"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 8,
+   "song": "Daddy Dont Live In That New York City No More",
+   "artist": "Steely Dan",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Daddy Dont Live In That New York City No More"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 9,
+   "song": "Do It Again",
+   "artist": "Steely Dan",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Do It Again"
+ },
+ {
+   "date": "Friday, May 15, 2026",
+   "set": "1",
+   "order": 10,
+   "song": "Kid Charlemagne",
+   "artist": "Steely Dan",
+   "acoustic": "",
+   "segue": "",
+   "note": "",
+   "details": "",
+   "artist-song": "Kid Charlemagne"
  }
 ]
