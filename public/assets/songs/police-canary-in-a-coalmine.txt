@@ -18,7 +18,7 @@ You get so dizzy even walking in a straight line
 
 E
 Canary in a coalmine canary in a coalmine
-E           C        A
+E                  C  A
 Canary in a coalmine
 
 E
@@ -32,7 +32,7 @@ You get so dizzy even walking in a straight line
 
 E
 Canary in a coalmine canary in a coalmine
-E           C        A
+E                  C  A
 Canary in a coalmine
 
 E - E C A - E
@@ -48,9 +48,9 @@ You get so dizzy even walking in a straight line
 
 E
 Canary in a coalmine canary in a coalmine
-E           C        A
+E                  C  A
 Canary in a coalmine
 E
 Canary in a coalmine canary in a coalmine
-E           C        A
+E                  C  A
 Canary in a coalmine
