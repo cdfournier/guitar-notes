@@ -1,5 +1,5 @@
 {
-  "version": "1bf55fc8e2ac",
+  "version": "d82211e75f3e",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -336,6 +336,7 @@
     "/assets/songs/bob-dylan-tell-me-momma.txt",
     "/assets/songs/bob-dylan-the-man-in-me.txt",
     "/assets/songs/bob-dylan-things-have-changed.txt",
+    "/assets/songs/bob-dylan-to-be-alone-with-you.txt",
     "/assets/songs/body-count-hey-joe.txt",
     "/assets/songs/body-count-the-winner-loses.txt",
     "/assets/songs/butthole-surfers-pepper.txt",
@@ -1193,6 +1194,7 @@
     "/songs/bob-dylan-the-man-in-me/",
     "/songs/bob-dylan-things-have-changed.html",
     "/songs/bob-dylan-things-have-changed/",
+    "/songs/bob-dylan-to-be-alone-with-you/",
     "/songs/body-count-hey-joe/",
     "/songs/body-count-the-winner-loses.html",
     "/songs/body-count-the-winner-loses/",
