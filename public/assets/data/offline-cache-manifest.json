@@ -1,5 +1,5 @@
 {
-  "version": "95bbcf711bdf",
+  "version": "0b91238d9430",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -548,6 +548,7 @@
     "/assets/songs/kiss-forever.txt",
     "/assets/songs/kiss-hard-luck-woman.txt",
     "/assets/songs/kiss-plaster-caster.txt",
+    "/assets/songs/kiss-sure-know-something.txt",
     "/assets/songs/kit-warhurst-rosehaven-theme-song.txt",
     "/assets/songs/led-zeppelin-your-time-is-gonna-come.txt",
     "/assets/songs/lemonheads-confetti.txt",
@@ -1555,6 +1556,7 @@
     "/songs/kiss-hard-luck-woman/",
     "/songs/kiss-plaster-caster.html",
     "/songs/kiss-plaster-caster/",
+    "/songs/kiss-sure-know-something/",
     "/songs/kit-warhurst-rosehaven-theme-song.html",
     "/songs/kit-warhurst-rosehaven-theme-song/",
     "/songs/led-zeppelin-your-time-is-gonna-come.html",
