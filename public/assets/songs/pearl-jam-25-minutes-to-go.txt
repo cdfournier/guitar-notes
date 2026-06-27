@@ -38,8 +38,8 @@ F
 
 F
 Well I call out to the Warden to take my plea
-F                 C
-With 17 minute to go
+F                  C
+With 17 minutes to go
 C
 He says call me back in a week or three
 C                        F
@@ -84,7 +84,7 @@ With 8 more minutes to go
 G
 
 G
-Now I'm climbing up the ladder with the scaffolding
+Now I'm climbing up the ladder with a scaffold peg
 G                      D
 With 7 more minutes to go
 D
@@ -114,5 +114,5 @@ G
 I can hear the buzzards and I see the crows
 G                     D
 With 1 more minute to go
-D
+D                                 A
 And now I'm swinging and here I go
