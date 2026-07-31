@@ -13,7 +13,7 @@ A                                D E
 They're going through a tight wind
 A                             D E
 The kids are losing their minds
-E              A  D  A 
+E              A  D E
 The Blitzkrieg Bop
 
 A                             D E
@@ -22,7 +22,7 @@ A                           D E
 They're generating steam heat
 A                       D E
 Pulsating to the backbeat
-E              A  D  A
+E              A
 The Blitzkrieg Bop
 
 D
@@ -40,7 +40,7 @@ A                                D E
 They're going through a tight wind
 A                             D E
 The kids are losing their minds
-E              A  D  A
+E              A  D E
 The Blitzkrieg Bop
 
 A                             D E
@@ -49,7 +49,7 @@ A                           D E
 They're generating steam heat
 A                       D E
 Pulsating to the backbeat
-E              A  D  A
+E              A
 The Blitzkrieg Bop
 
 D
@@ -67,7 +67,7 @@ A                                D E
 They're going through a tight wind
 A                             D E
 The kids are losing their minds
-E              A  D  A
+E              A  D E
 The Blitzkrieg Bop
 
 A                             D E
@@ -76,7 +76,7 @@ A                           D E
 They're generating steam heat
 A                       D E
 Pulsating to the backbeat
-E              A  D  A
+E              A
 The Blitzkrieg Bop
 
 Hey ho let's go
