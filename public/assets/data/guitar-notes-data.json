@@ -10372,5 +10372,24 @@
    "song-regex": "The Old Laughing Lady",
    "song-id": "the-old-laughing-lady",
    "artist-song": "neil-young-the-old-laughing-lady"
+ },
+ {
+   "artist-sort": "zevon, warren",
+   "song": "Keep Me In Your Heart",
+   "artist": "Warren Zevon",
+   "album": "The Wind",
+   "year": 2003,
+   "notes": "",
+   "columns": "sm md",
+   "tags": "20s, Rock",
+   "new": "yes",
+   "id": 547,
+   "artist-regex": "Warren Zevon",
+   "the-artist-regex": "Warren Zevon",
+   "artist-id": "warren-zevon",
+   "img": "warren-zevon.jpg",
+   "song-regex": "Keep Me In Your Heart",
+   "song-id": "keep-me-in-your-heart",
+   "artist-song": "warren-zevon-keep-me-in-your-heart"
  }
 ]

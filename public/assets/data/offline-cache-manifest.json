@@ -1,5 +1,5 @@
 {
-  "version": "f2b85c0b6235",
+  "version": "56e54bfcedf6",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -231,6 +231,7 @@
     "/assets/images/velvet-underground.jpg",
     "/assets/images/violent-femmes.jpg",
     "/assets/images/wallflowers.jpg",
+    "/assets/images/warren-zevon.jpg",
     "/assets/images/ween.jpg",
     "/assets/images/weezer.jpg",
     "/assets/images/wham.jpg",
@@ -883,6 +884,7 @@
     "/assets/songs/violent-femmes-kiss-off.txt",
     "/assets/songs/violent-femmes-prove-my-love.txt",
     "/assets/songs/wallflowers-one-headlight.txt",
+    "/assets/songs/warren-zevon-keep-me-in-your-heart.txt",
     "/assets/songs/ween-piss-up-a-rope.txt",
     "/assets/songs/ween-roses-are-free.txt",
     "/assets/songs/weezer-crab.txt",
@@ -2172,6 +2174,7 @@
     "/songs/violent-femmes-prove-my-love/",
     "/songs/wallflowers-one-headlight.html",
     "/songs/wallflowers-one-headlight/",
+    "/songs/warren-zevon-keep-me-in-your-heart/",
     "/songs/ween-piss-up-a-rope.html",
     "/songs/ween-piss-up-a-rope/",
     "/songs/ween-roses-are-free.html",
