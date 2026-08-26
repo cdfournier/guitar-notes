@@ -1,5 +1,5 @@
 {
-  "version": "56e54bfcedf6",
+  "version": "5ae4543d5972",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -922,6 +922,7 @@
     "/assets/songs/world-party-way-down-now.txt",
     "/assets/songs/xtc-mayor-of-simpleton.txt",
     "/assets/songs/yes-lift-me-up.txt",
+    "/assets/songs/zz-top-tush.txt",
     "/assets/style/master.css",
     "/assets/style/master.min.css",
     "/grid.html",
@@ -2248,6 +2249,7 @@
     "/songs/xtc-mayor-of-simpleton.html",
     "/songs/xtc-mayor-of-simpleton/",
     "/songs/yes-lift-me-up.html",
-    "/songs/yes-lift-me-up/"
+    "/songs/yes-lift-me-up/",
+    "/songs/zz-top-tush/"
   ]
 }

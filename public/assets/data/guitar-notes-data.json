@@ -10391,5 +10391,24 @@
    "song-regex": "Keep Me In Your Heart",
    "song-id": "keep-me-in-your-heart",
    "artist-song": "warren-zevon-keep-me-in-your-heart"
+ },
+ {
+   "artist-sort": "zz-top",
+   "song": "Tush",
+   "artist": "ZZ Top",
+   "album": "Fandango!",
+   "year": 1975,
+   "notes": "",
+   "columns": "sm",
+   "tags": "70s, Rock",
+   "new": "yes",
+   "id": 548,
+   "artist-regex": "ZZ Top",
+   "the-artist-regex": "ZZ Top",
+   "artist-id": "zz-top",
+   "img": "zz-top.jpg",
+   "song-regex": "Tush",
+   "song-id": "tush",
+   "artist-song": "zz-top-tush"
  }
 ]
