@@ -1,5 +1,5 @@
 {
-  "version": "5ae4543d5972",
+  "version": "359e08fb813b",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -253,7 +253,7 @@
     "/assets/images/world-party.jpg",
     "/assets/images/xtc.jpg",
     "/assets/images/yes.jpg",
-    "/assets/images/zztop.jpg",
+    "/assets/images/zz-top.jpg",
     "/assets/js/filters.js",
     "/assets/js/headroom.js",
     "/assets/js/jquery-3.7.1.min.js",
@@ -1073,6 +1073,7 @@
     "/setlists/202607/20260726/",
     "/setlists/202607/20260728/",
     "/setlists/202608/20260823/",
+    "/setlists/202608/20260829/",
     "/setlists/template.html",
     "/show.html",
     "/show/",
