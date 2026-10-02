@@ -1328,24 +1328,5 @@
    "song-regex": "Rockin In The Free World",
    "song-id": "rockin-in-the-free-world",
    "artist-song": "neil-young-rockin-in-the-free-world"
- },
- {
-   "artist-sort": "rolling stones, the",
-   "song": "Gimme Shelter",
-   "artist": "The Rolling Stones",
-   "album": "Let It Bleed",
-   "year": 1969,
-   "notes": "",
-   "columns": "sm md",
-   "tags": "60s, Rock",
-   "new": "",
-   "id": 71,
-   "artist-regex": "The Rolling Stones",
-   "the-artist-regex": "Rolling Stones",
-   "artist-id": "rolling-stones",
-   "img": "rolling-stones.jpg",
-   "song-regex": "Gimme Shelter",
-   "song-id": "gimme-shelter",
-   "artist-song": "rolling-stones-gimme-shelter"
  }
 ]
