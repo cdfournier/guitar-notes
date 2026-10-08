@@ -9,19 +9,19 @@ C Am E G
 
 C                     Am
  You always seemed so sure
-E                     G
+E         G
  That one day we'd be fighting
 C              Am
  In a suburban war
-E                  G
+E             G
  Your part of town against mine
-G         C                        Am
-I saw you standing on the opposite shore
-E                    G           C
- But by the time the first bombs fell
-C               Am
+C                 Am        E
+I saw you standing   on the opposite shore
+G          C                    Am
+But by the time the first bombs fell
+Am              E
 We were already bored
-E                G
+G
  We were already already bored
 
 C            Am
@@ -37,19 +37,19 @@ I'm moving past the feeling again
 The kids want to be so hard
 E          G
  But in my dreams we're still screaming
-     C                   Am
+C                        Am
  And running through the yard
-    E          G
-And all of the walls that they built
+E               G
+ And all of the walls that they built
        C                 Am
 In the seventies finally fall
-    E          G
-And all of the houses they built
+E               G
+ And all of the houses they built
        C                 Am
 In the seventies finally fall
-Am
-Meant nothing at all
 E                 G
+ Meant nothing at all
+G
  Meant nothing at all it meant nothing
 
 C            Am
@@ -67,11 +67,11 @@ C                Am
  So can you understand
 E              G
  That I want a daughter
-G                C     Am
- While I'm still young
-Am        E
+          C         Am
+While I'm still young
+E                  G
 I want to hold her hand
-E   G
+G                 C
 And show her some beauty
 C                     Am
 Before this damage is done
@@ -81,19 +81,20 @@ G       C               Am
 If it's too much to ask
 Am             E   G
 Then send me a son
+
 C             Am
 Under the overpass
 E               G
  In the parking lot we're still waiting
-G    C              Am
+C            Am
 It's already passed
 E             G
  So move your feet from hot pavement
-G   C             Am
+C            Am
 And into the grass
-Am                 E
+E                  G
 Cause it's already passed
-E            G
+G
 It's already already passed
 
 C            Am
@@ -102,12 +103,12 @@ E           D
  I'm moving past the feeling
 C           Am
 Sometimes I can't believe it
-E          D                C     Am E G
-I'm moving past the feeling again
-E          D                C     Am E G
-I'm moving past the feeling
-E          D                C     Am E G
-I'm moving past the feeling
+E           D                C     Am
+ I'm moving past the feeling again
+E           D                C     Am
+ I'm moving past the feeling
+E           D                C     Am
+ I'm moving past the feeling
 
 C Am E      G
       In my dreams

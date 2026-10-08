@@ -66,12 +66,6 @@ F#
 It's just a reflektor (just a reflektor)
 Bm
 Just a reflektor
-Bm
-Just a reflektor
-Bm
-Just a reflektor (just a reflektor)
-Bm
-And just a reflektor (just a reflektor)
 
 Em
 Just a reflection of a reflection
@@ -81,16 +75,6 @@ Bm
 But I see you on the other side (just a reflektor)
 Bm
 We all got things to hide (just a reflektor)
-Em
-Just a reflection of a reflection
-Em                                   A
-Of a reflection of a reflection of a reflection
-Bm
-But I see you on the other side (just a reflektor)
-Bm
-We all got things to hide (just a reflektor)
-Bm
-All right let's go back
 
 Bm               F#m
 Our song it skips on little silver discs
@@ -123,12 +107,7 @@ D
 Turns out it was just a reflektor
 F#
 It's just a reflektor (just a reflektor)
-Em
-Thought you were praying to the resurrector
-D
-Turns out it was just a reflektor
-F#
-It's just a reflektor (just a reflektor)
+
 Em
 Thought you were praying to the resurrector
 D
