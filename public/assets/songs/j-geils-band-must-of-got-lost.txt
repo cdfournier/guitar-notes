@@ -35,7 +35,7 @@ C     G       F
 Honey I don't know
 C             G                F
 They say it's hard to see love coming
-Dm  G        C
+    Dm       G             C
 But babe you always see it go
 
 C
@@ -127,6 +127,7 @@ C                                Dm
 I must of got lost I must of got lost
 F             G             C
 Give away the days you were mine
+
 C
 I must of got lost
 C             Dm
