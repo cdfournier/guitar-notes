@@ -84,13 +84,13 @@ For that runaway child
 And I say
 
 F C G
-  Yeah sad alone and blue
+     Yeah sad alone and blue
 F C G
-  Getting over you
+     Getting over you
 F     C          G
   How how do you think it feels yeah
-F C      G
-  To get up in the morning sweat over you
+F C G
+     To get up in the morning sweat over you
 G
 I get up in my morning sweat over you
 G
@@ -99,11 +99,6 @@ G
 Get my leg over leg over
 G
 Sweet sixteen
-
-Am
-That runaway child
-Oh sweet sixteen
-Runaway girl
 
 Am               F
 Gave my heart an engagement ring
