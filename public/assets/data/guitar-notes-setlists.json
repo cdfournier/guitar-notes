@@ -21306,7 +21306,7 @@
    "song": "AC/DC Bag",
    "artist": "Phish",
    "acoustic": "",
-   "segue": "",
+   "segue": "yes",
    "note": "",
    "details": "",
    "artist-song": "ACDC Bag"
@@ -21342,7 +21342,7 @@
    "song": "Train Song",
    "artist": "Phish",
    "acoustic": "",
-   "segue": "",
+   "segue": "yes",
    "note": "",
    "details": "",
    "artist-song": "Train Song"
@@ -21354,7 +21354,7 @@
    "song": "Prince Caspian",
    "artist": "Phish",
    "acoustic": "",
-   "segue": "",
+   "segue": "yes",
    "note": "",
    "details": "",
    "artist-song": "Prince Caspian"
