@@ -7,9 +7,7 @@ Stay all day
 D      F#m
 If you want to
 
-F#m A - D F#m - D
-F#m A - D F#m - D
-F#m A - D F#m - D
+F#m A D F#m D F#m
 
 F#m        A
 Missy aggravation
@@ -31,9 +29,7 @@ Stay all day
 D      F#m
 If you want to
 
-F#m A - D F#m - D
-F#m A - D F#m - D
-F#m A - D F#m - D
+F#m A D F#m D F#m
 
 F#m              A
 Sleeping on your belly
@@ -55,9 +51,7 @@ Stay all day
 D      F#m
 If you want to
 
-F#m A - D F#m - D
-F#m A - D F#m - D
-F#m A - D F#m - D
+F#m A D F#m D F#m
 
 F#m            A
 Chained to the pillars
@@ -79,4 +73,4 @@ Stay all day
 D      F#m
 If you want to
 
-F#m A - D F#m - D F#m
+F#m A D F#m D F#m
