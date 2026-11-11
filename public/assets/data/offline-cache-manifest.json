@@ -1,5 +1,5 @@
 {
-  "version": "db5c6cc4076c",
+  "version": "ff018b301be7",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -54,6 +54,7 @@
     "/assets/images/cake.jpg",
     "/assets/images/camper-van-beethoven.jpg",
     "/assets/images/cheap-trick.jpg",
+    "/assets/images/chris-isaak.jpg",
     "/assets/images/cinderella.jpg",
     "/assets/images/clash 2.jpg",
     "/assets/images/clash.jpg",
@@ -368,6 +369,8 @@
     "/assets/songs/cheap-trick-i-want-you-to-want-me.txt",
     "/assets/songs/cheap-trick-surrender.txt",
     "/assets/songs/cheap-trick-the-flame.txt",
+    "/assets/songs/chris-isaak-think-of-tomorrow.txt",
+    "/assets/songs/chris-isaak-wicked-game.txt",
     "/assets/songs/cinderella-coming-home.txt",
     "/assets/songs/cinderella-gypsy-road.txt",
     "/assets/songs/cinderella-nobodys-fool.txt",
@@ -1309,6 +1312,8 @@
     "/songs/cheap-trick-surrender/",
     "/songs/cheap-trick-the-flame.html",
     "/songs/cheap-trick-the-flame/",
+    "/songs/chris-isaak-think-of-tomorrow/",
+    "/songs/chris-isaak-wicked-game/",
     "/songs/cinderella-coming-home.html",
     "/songs/cinderella-coming-home/",
     "/songs/cinderella-gypsy-road.html",
