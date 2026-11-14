@@ -1,5 +1,5 @@
 {
-  "version": "ff018b301be7",
+  "version": "6b5727f68663",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -898,6 +898,8 @@
     "/assets/songs/van-halen-aint-talkin-bout-love.txt",
     "/assets/songs/van-halen-dreams.txt",
     "/assets/songs/van-halen-finish-what-you-started.txt",
+    "/assets/songs/van-halen-ill-wait.txt",
+    "/assets/songs/van-halen-little-guitars.txt",
     "/assets/songs/van-halen-when-its-love.txt",
     "/assets/songs/van-halen-why-cant-this-be-love.txt",
     "/assets/songs/vaughan-brothers-telephone-song.txt",
@@ -2228,6 +2230,8 @@
     "/songs/van-halen-dreams.html",
     "/songs/van-halen-dreams/",
     "/songs/van-halen-finish-what-you-started.html",
+    "/songs/van-halen-ill-wait/",
+    "/songs/van-halen-little-guitars/",
     "/songs/van-halen-when-its-love.html",
     "/songs/van-halen-why-cant-this-be-love.html",
     "/songs/van-halen-why-cant-this-be-love/",
