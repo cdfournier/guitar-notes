@@ -1,5 +1,5 @@
 {
-  "version": "6b5727f68663",
+  "version": "7fcf1840c2df",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -70,6 +70,7 @@
     "/assets/images/crowded-house.jpg",
     "/assets/images/cult.jpg",
     "/assets/images/cure.jpg",
+    "/assets/images/cymande.jpg",
     "/assets/images/danzig.jpg",
     "/assets/images/darkness.jpg",
     "/assets/images/david-bowie.jpg",
@@ -422,6 +423,7 @@
     "/assets/songs/cure-in-between-days.txt",
     "/assets/songs/cure-just-like-heaven.txt",
     "/assets/songs/cure-pictures-of-you.txt",
+    "/assets/songs/cymande-bra.txt",
     "/assets/songs/danzig-thirteen.txt",
     "/assets/songs/darkness-givin-up.txt",
     "/assets/songs/david-bowie-dead-man-walking.txt",
@@ -1408,6 +1410,7 @@
     "/songs/cure-just-like-heaven/",
     "/songs/cure-pictures-of-you.html",
     "/songs/cure-pictures-of-you/",
+    "/songs/cymande-bra/",
     "/songs/danzig-thirteen.html",
     "/songs/danzig-thirteen/",
     "/songs/darkness-givin-up.html",
