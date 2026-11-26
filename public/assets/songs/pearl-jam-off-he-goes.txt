@@ -9,7 +9,7 @@ But he's always moving much too fast
 
                          Am
 Said he'll see me on the flip side
-                  F            Am
+                  F      C     Am
 On this trip he's taking for a ride
 
           F    C F        C
@@ -19,18 +19,18 @@ There he goes with his perfectly unkempt clothes
 F        C
 There he goes
 
-C Am
+F C - F Am
 
      F           C        F             C
 He's yet to come back but I've seen his picture
-   F       C        F        C     Am
+   F       C        F       C      Am
 It doesn't look the same up on the rack
-   G      F
+   F      C
 We go way back
 
-F                  Am
+C                  Am
 I wonder about his insides
-                           F               Am
+                           F       C       Am
 It's like his thoughts are too big for his size
 
           F   C       F       C
@@ -40,9 +40,9 @@ Off he goes with his perfectly unkept hope
 F        C
 There he goes
 
-C Am
+F C - F Am
 
-          F      C    F          C
+          F      C           F     C
 And now I rub my eyes for he has returned
 F        C     F        C        F                Am
 Seems my preconceptions are what should have been burned
@@ -68,4 +68,4 @@ Just what is gonna happen next
            F     C         F   C
 Before his first step he's off again
 
-F C
+F C - F Am

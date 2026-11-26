@@ -1,5 +1,5 @@
 {
-  "version": "782f46dd77d6",
+  "version": "1abdb6a6e856",
   "urls": [
     "/",
     "/assets/data/guitar-notes-data.json",
@@ -139,6 +139,7 @@
     "/assets/images/lf-born-again-in-the-usa.jpg",
     "/assets/images/lf-loose-fur.jpg",
     "/assets/images/liz-phair.jpg",
+    "/assets/images/lola-young.jpg",
     "/assets/images/loose-fur.jpg",
     "/assets/images/los-lobos.jpg",
     "/assets/images/lush.jpg",
@@ -583,6 +584,7 @@
     "/assets/songs/liz-phair-fuck-and-run.txt",
     "/assets/songs/liz-phair-red-light-fever.txt",
     "/assets/songs/liz-phair-shitloads-of-money.txt",
+    "/assets/songs/lola-young-messy.txt",
     "/assets/songs/loose-fur-laminated-cat.txt",
     "/assets/songs/los-lobos-bertha.txt",
     "/assets/songs/lush-superblast.txt",
@@ -1674,6 +1676,7 @@
     "/songs/liz-phair-red-light-fever/",
     "/songs/liz-phair-shitloads-of-money.html",
     "/songs/liz-phair-shitloads-of-money/",
+    "/songs/lola-young-messy/",
     "/songs/loose-fur-laminated-cat.html",
     "/songs/loose-fur-laminated-cat/",
     "/songs/los-lobos-bertha.html",

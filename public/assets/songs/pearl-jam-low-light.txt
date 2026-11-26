@@ -40,7 +40,7 @@ C             D
 Your first my last
 
 G - Em C G - G - Em C G
-D Em C G - D Em - C Am - C D
+D Em C G - D Em - C Am - C D G
 
 Em    C    G
 Voice goes by
@@ -56,7 +56,7 @@ Low light eye sight
 D   Em
 Low light
 
-D
+D Em C
 
   D        Em
 I need the light
